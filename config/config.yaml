@@ -1,0 +1,45 @@
+#config_version=5
+
+
+hardware:
+  platform: virtual_pinball
+# hardware:
+#   platform: p3_roc
+#   driverboards: pdb
+
+# p_roc:
+#   pd_led_boards:
+#     5:
+#       use_ws281x_0: True
+
+config:
+- autofire_coils.yaml
+- ball_devices.yaml 
+- coils.yaml
+# - diverters.yaml
+# - drop_targets.yaml
+# - flippers.yaml
+- keyboard.yaml
+# - lights.yaml
+# - machine_vars.yaml
+- modes.yaml
+# - player_vars.yaml
+- playfields.yaml
+- switches.yaml
+
+window:
+    width: 800
+    height: 600
+    source_display: window
+    # effects:
+    #   - type: glow
+    #     blur_size: 5.0
+    #     intensity: .6
+    #     glow_speed: 1.0
+    #     glow_amplitude: .2
+        
+
+displays:
+  window:
+     width: 800
+     height: 600

@@ -1,0 +1,42 @@
+#config_version=5
+
+player_vars:
+  # index of the which song the player has selected
+  song_selected:
+    initial_value: -1
+  # keep track of how much the player has charged the bash target for song selection
+  bash_0_charge:
+    initial_value: 0
+  bash_1_charge:
+    initial_value: 0
+  bash_2_charge:
+    initial_value: 0
+  bash_3_charge:
+    initial_value: 0
+  bash_4_charge:
+    initial_value: 0
+  # 1 means it was played, 2 means it was completed
+  song_0_completed:
+    initial_value: 0
+  song_1_completed:
+    initial_value: 0
+  song_2_completed:
+    initial_value: 0
+  song_3_completed:
+    initial_value: 0
+  song_4_completed:
+    initial_value: 0
+  bonus_multiplier:
+    initial_value: 1
+  energy:
+    initial_value: 0
+  score:
+    initial_value: 0
+  # number of uncontrollable urge hurry ups collected
+  urges_collected:
+    initial_value: 0
+  # devolved letters collected
+  letters:
+    initial_value: 0
+  balls_locked:
+    initial_value: 0

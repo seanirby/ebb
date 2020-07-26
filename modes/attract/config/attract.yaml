@@ -1,0 +1,10 @@
+#config_version=5
+
+slides:
+  attract:
+    widgets:
+      - type: text
+        text: PRESS START
+
+slide_player:
+  mode_attract_started: attract

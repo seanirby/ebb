@@ -1,0 +1,24 @@
+#config_version=5
+
+autofire_coils:
+  # ac_sling_left_top:
+  #   coil: c_slings_left
+  #   switch: s_sling_left_top
+  # ac_sling_left_bottom:
+  #   coil: c_slings_left
+  #   switch: s_sling_left_bottom
+  # ac_sling_right_top:
+  #   coil: c_slings_right
+  #   switch: s_sling_right_top
+  # ac_sling_right_bottom:
+  #   coil: c_slings_right
+  #   switch: s_sling_right_bottom
+  pop_1:
+    coil: c_pop_1
+    switch: s_pop_1
+  pop_2:
+    coil: c_pop_2
+    switch: s_pop_2
+  pop_3:
+    coil: c_pop_3
+    switch: s_pop_3

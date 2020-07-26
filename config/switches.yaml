@@ -1,0 +1,35 @@
+#config_version=5
+
+switches:
+  s_start:
+    number: 0
+    tags: start
+  s_enter_playfield:
+    number: 1
+    type: 'NC'
+  s_launch:
+    number: 2
+  s_drain:
+    number: 3
+  s_plunger:
+    number: 4
+  s_left_flipper:
+    number: 5
+    tags: left_flipper
+  s_right_flipper:
+    number: 6
+    tags: right_flipper
+  s_trough_1:
+    number: 7
+  s_trough_2:
+    number: 8
+  s_trough_3:
+    number: 9
+  s_pop_1:
+    number: 10
+  s_pop_2:
+    number: 11
+  s_pop_3:
+    number: 12
+
+    

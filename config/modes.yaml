@@ -1,0 +1,33 @@
+#config_version=5
+
+modes:
+  # testing
+  # - test
+
+  # utility
+  # - slide_listener
+  # - autostack
+
+  # global
+  - base
+  # - bash_resolver
+  # - charged_flips
+  # - dev
+  # - drops
+  # - mystery
+  # - urge
+  # - mball
+
+  # # song challenges
+  # - song_award
+  # - first
+  # - second
+  # - third
+  # - fourth
+  # - fifth
+  # - sixth
+  # - seventh
+  # - eighth
+
+  # ball end
+  # - bonus

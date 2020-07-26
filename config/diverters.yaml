@@ -1,0 +1,18 @@
+#config_version=5
+# diverters:
+#   div_left:
+#     activation_coil: c_diverter_left
+#     type: hold
+#     activation_time: 1s
+#     activation_switches: s_orbit_right, s_inner_loop
+#     enable_events: ball_started
+#     disable_events: ball_ended
+#     deactivation_switches: s_orbit_left, s_top_lane_left, s_top_lane_center, s_top_lane_right
+#   div_right:
+#     activation_coil: c_diverter_right
+#     type: hold
+#     activation_time: 1s
+#     activation_switches: s_orbit_left
+#     enable_events: ball_started
+#     disable_events: ball_ended
+#     deactivation_switches: s_orbit_right, s_top_lane_left, s_top_lane_center, s_top_lane_right

@@ -1,0 +1,81 @@
+#config_version=5
+
+machine_vars:
+  d_active_mode:
+    initial_value: "base"
+    value_type: str
+    persist: False
+  # display variables for modes
+  d_attract_1:
+    initial_value: 'PRESS!START!!!!!'
+    value_type: str
+    persist: False
+  d_attract_2:
+    initial_value: '!!!!!!PRESS!STAR'
+    value_type: str
+    persist: False
+  d_test_1:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_test_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_base_1:
+    initial_value: 'BASE!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_base_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_drops_1:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_drops_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_urge_1:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_urge_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_mystery_1:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_mystery_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_mball_1:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_mball_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_dev_1:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_dev_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_song_award_1:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+  d_song_award_2:
+    initial_value: '!!!!!!!!!!!!!!!!'
+    value_type: str
+    persist: False
+

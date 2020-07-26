@@ -1,0 +1,240 @@
+#config_version=5
+
+light_settings:
+  default_fade_ms: 20 
+  default_color_correction_profile: correction_profile
+  color_correction_profiles:
+    correction_profile:
+      whitepoint: [1.0, 1.0, 1.0]
+      gamma: 2.5
+      linear_slope: 1.0
+      linear_cutoff: 0.0
+
+lights:
+  l_pop_a:
+    channels:
+      red:
+        - number: 5-80
+  l_pop_b:
+    channels:
+      red:
+        - number: 5-78
+  l_pop_c:
+    channels:
+      red:
+        - number: 5-73
+  # top lanes
+  l_serial_chain_0_1:
+    number: 5-100-101-102
+    subtype: led
+    type: grb
+  l_serial_chain_0_2:
+    number: 5-103-104-105
+    subtype: led
+    type: grb
+  l_serial_chain_0_3:
+    number: 5-106-107-108
+    subtype: led
+    type: grb
+  # left zone ?
+  l_serial_chain_0_4:
+    number: 5-109-110-111
+    subtype: led
+    type: grb
+    tags: third_shot
+  l_serial_chain_0_5:
+    number: 5-112-113-114
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_6:
+    number: 5-115-116-117
+    subtype: led
+    type: grb
+    tags: first_shot
+  # left turnaround
+  l_serial_chain_0_7:
+    number: 5-118-119-120
+    subtype: led
+    type: grb
+    tags: first_shot
+  l_serial_chain_0_8:
+    number: 5-121-122-123
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_9:
+    number: 5-124-125-126
+    subtype: led
+    type: grb
+    tags: third_shot
+  # left orbit
+  l_serial_chain_0_10:
+    number: 5-127-128-129
+    subtype: led
+    type: grb
+    tags: third_shot
+  l_serial_chain_0_11:
+    number: 5-130-131-132
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_12:
+    number: 5-133-134-135
+    subtype: led
+    type: grb
+    tags: first_shot
+  # bash
+  l_serial_chain_0_13:
+    number: 5-136-137-138
+    subtype: led
+    type: grb
+    tags: bash_left
+  l_serial_chain_0_14:
+    number: 5-139-140-141
+    subtype: led
+    type: grb
+    tags: bash_left_up
+  l_serial_chain_0_15:
+    number: 5-142-143-144
+    subtype: led
+    type: grb
+    tags: bash_up
+  l_serial_chain_0_16:
+    number: 5-145-146-147
+    subtype: led
+    type: grb
+    tags: bash_right_up
+  l_serial_chain_0_17:
+    number: 5-148-149-150
+    subtype: led
+    type: grb
+    tags: bash_right
+  # right lair
+  l_serial_chain_0_18:
+    number: 5-151-152-153
+    subtype: led
+    type: grb
+    tags: first_shot
+  l_serial_chain_0_19:
+    number: 5-154-155-156
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_20:
+    number: 5-157-158-159
+    subtype: led
+    type: grb
+    tags: third_shot
+  # inner loop
+  l_serial_chain_0_21:
+    number: 5-160-161-162
+    subtype: led
+    type: grb
+    tags: third_shot
+  l_serial_chain_0_22:
+    number: 5-163-164-165
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_23:
+    number: 5-166-167-168
+    subtype: led
+    type: grb
+    tags: first_shot
+  # right ramp
+  l_serial_chain_0_24:
+    number: 5-169-170-171
+    subtype: led
+    type: grb
+    tags: third_shot
+  l_serial_chain_0_25:
+    number: 5-172-173-174
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_26:
+    number: 5-175-176-177
+    subtype: led
+    type: grb
+    tags: first_shot
+  # scoop
+  l_serial_chain_0_27:
+    number: 5-178-179-180
+    subtype: led
+    type: grb
+    tags: third_shot
+  l_serial_chain_0_28:
+    number: 5-181-182-183
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_29:
+    number: 5-184-185-186
+    subtype: led
+    type: grb
+    tags: first_shot
+  # right orbit  
+  l_serial_chain_0_30:
+    number: 5-187-188-189
+    subtype: led
+    type: grb
+    tags: first_shot
+  l_serial_chain_0_31:
+    number: 5-190-191-192
+    subtype: led
+    type: grb
+    tags: second_shot
+  l_serial_chain_0_32:
+    number: 5-193-194-195
+    subtype: led
+    type: grb
+    tags: third_shot
+
+  # bottom lanes
+  l_serial_chain_0_33:
+    number: 5-196-197-198
+    subtype: led
+    type: grb
+  l_serial_chain_0_34:
+    number: 5-199-200-201
+    subtype: led
+    type: grb
+  l_serial_chain_0_35:
+    number: 5-202-203-204
+    subtype: led
+    type: grb
+  l_serial_chain_0_36:
+    number: 5-205-206-207
+    subtype: led
+    type: grb
+  l_serial_chain_0_37:
+    number: 5-208-209-210
+    subtype: led
+    type: grb
+    tags: first_shot
+  l_serial_chain_0_38:
+    number: 5-211-212-213
+    subtype: led
+    type: grb
+  l_serial_chain_0_39:
+    number: 5-214-215-216
+    subtype: led
+    type: grb
+  l_serial_chain_0_40:
+    number: 5-217-218-219
+    subtype: led
+    type: grb
+  # lights that dont exist yet
+  l_serial_chain_0_41:
+    number: 5-220-221-222
+    subtype: led
+    type: grb
+  l_serial_chain_0_42:
+    number: 5-223-224-225
+    subtype: led
+    type: grb
+  l_serial_chain_0_43:
+    number: 5-226-227-228
+    subtype: led
+    type: grb

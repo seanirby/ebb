@@ -1,0 +1,18 @@
+#config_version=5
+
+drop_targets:
+  d_a:
+    switch: s_drop_top
+  d_b:
+    switch: s_drop_middle
+  d_c:
+    switch: s_drop_bottom
+
+
+# drop_target_banks:
+#   # posts event drop_target_bank_drops_down when all down
+#   drops:
+#     drop_targets: d_a,d_b,d_c
+#     reset_coils: c_drops
+#     # reset_events: drops_state_reset_bank
+

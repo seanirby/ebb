@@ -1,0 +1,24 @@
+#config_version=5
+
+keyboard:
+  s:
+    switch: s_start
+  t:
+    switch: s_trough
+    toggle: True
+  # r:
+  #   switch: s_orbit_left
+  o:
+    switch: s_orbit_right
+  # i:
+  #   switch: s_right_inlane
+  p:
+    switch: s_plunger
+  # d:
+  #   event: drop_target_bank_drops_down
+  # l:
+  #   event: dev_award_letter
+  # n:
+  #   event: s_left_flipper_active
+  # m:
+  #   event: s_right_flipper_active

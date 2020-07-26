@@ -1,0 +1,11 @@
+*~
+data/*
+logs/*
+sounds/*
+monitor/logs/*
+.projectile
+__pycache__/
+*.py[co]
+venv/
+*.bundle
+*.bat
