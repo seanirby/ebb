@@ -1,0 +1,131 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+shows:
+  none_lit:
+    - duration: -1 
+      lights:
+        (a): off
+        (b): off
+        (c): off
+        (d): off
+  one_lit:
+    - duration: -1 
+      lights:
+        (a): on
+        (b): off
+        (c): off
+        (d): off
+  two_lit:
+    - duration: -1 
+      lights:
+        (a): on
+        (b): on
+        (c): off
+        (d): off
+  three_lit:
+    - duration: -1 
+      lights:
+        (a): on
+        (b): on
+        (c): on
+        (d): off
+  four_lit:
+    - duration: -1 
+      lights:
+        (a): on
+        (b): on
+        (c): on
+        (d): on
+
+shot_profiles:
+    left_target:
+        states:
+          - name: none_lit
+            show: none_lit
+          - name: one_lit
+            show: one_lit
+          - name: two_lit
+            show: two_lit
+          - name: three_lit
+            show: three_lit
+          - name: four_lit
+            show: four_lit
+
+shots:
+  # right targets
+  sh_target_right_1:
+    hit_events: s_target_right_1_active
+    show_tokens:
+      light: l_target_right_1_1
+  sh_target_right_2:
+    hit_events: s_target_right_2_active
+    show_tokens:
+      light: l_target_right_2_1
+  sh_target_right_3:
+    hit_events: s_target_right_3_active
+    show_tokens:
+      light: l_target_right_3_1
+  sh_target_right_4:
+    hit_events: s_target_right_4_active
+    show_tokens:
+      light: l_target_right_4_1
+  # left targets
+  sh_target_left_1:
+    profile: left_target
+    hit_events: s_target_left_1_active
+    show_tokens: 
+      a: l_target_left_1_1
+      b: l_target_left_1_2
+      c: l_target_left_1_3
+      d: l_target_left_1_4
+  sh_target_left_2:
+    profile: left_target
+    hit_events: s_target_left_2_active
+    show_tokens: 
+      a: l_target_left_2_1
+      b: l_target_left_2_2
+      c: l_target_left_2_3
+      d: l_target_left_2_4
+  sh_target_left_3:
+    profile: left_target
+    hit_events: s_target_left_3_active
+    show_tokens: 
+      a: l_target_left_3_1
+      b: l_target_left_3_2
+      c: l_target_left_3_3
+      d: l_target_left_3_4
+  sh_target_left_4:
+    profile: left_target
+    hit_events: s_target_left_4_active
+    show_tokens: 
+      a: l_target_left_4_1
+      b: l_target_left_4_2
+      c: l_target_left_4_3
+      d: l_target_left_4_4
+  sh_target_left_5:
+    profile: left_target
+    hit_events: s_target_left_5_active
+    show_tokens: 
+      a: l_target_left_5_1
+      b: l_target_left_5_2
+      c: l_target_left_5_3
+      d: l_target_left_5_4
+  sh_target_left_6:
+    profile: left_target
+    hit_events: s_target_left_6_active
+    show_tokens: 
+      a: l_target_left_6_1
+      b: l_target_left_6_2
+      c: l_target_left_6_3
+      d: l_target_left_6_4
+  sh_target_left_7:
+    profile: left_target
+    hit_events: s_target_left_7_active
+    show_tokens: 
+      a: l_target_left_7_1
+      b: l_target_left_7_2
+      c: l_target_left_7_3
+      d: l_target_left_7_4

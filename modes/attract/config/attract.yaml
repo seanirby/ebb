@@ -6,5 +6,31 @@ slides:
       - type: text
         text: PRESS START
 
+
+
+shows:
+  attract:
+  - duration: 1
+    lights:
+      l1: on
+      l2: off
+      l3: off
+  - duration: 1
+    lights:
+      l1: off
+      l2: on
+      l3: off
+  - duration: 1
+    lights:
+      l1: off
+      l2: off
+      l3: on
+
+show_player:
+  mode_attract_started: attract
+  mode_attract_stopped:
+    attract:
+      action: stop
+
 slide_player:
   mode_attract_started: attract

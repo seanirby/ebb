@@ -10,24 +10,8 @@ modes:
 
   # global
   - base
-  # - bash_resolver
-  # - charged_flips
-  # - dev
-  # - drops
-  # - mystery
-  # - urge
-  # - mball
-
-  # # song challenges
-  # - song_award
-  # - first
-  # - second
-  # - third
-  # - fourth
-  # - fifth
-  # - sixth
-  # - seventh
-  # - eighth
+  - lanes
+  - targets
 
   # ball end
   # - bonus

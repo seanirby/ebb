@@ -31,5 +31,32 @@ switches:
     number: 11
   s_pop_3:
     number: 12
-
-    
+  s_lane_upper_2:
+    number: 14
+  s_lane_upper_3:
+    number: 15
+  s_lane_upper_1:
+    number: 13
+  s_target_right_1:
+    number: 16
+  s_target_right_2:
+    number: 17
+  s_target_right_3:
+    number: 18
+  s_target_right_4:
+    number: 19
+  s_target_left_1:
+    number: 20
+  s_target_left_2:
+    number: 21
+  s_target_left_3:
+    number: 22
+  s_target_left_4:
+    number: 23
+  s_target_left_5:
+    number: 24
+  s_target_left_6:
+    number: 25
+  s_target_left_7:
+    number: 26
+  

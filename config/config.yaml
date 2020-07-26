@@ -20,7 +20,7 @@ config:
 # - drop_targets.yaml
 # - flippers.yaml
 - keyboard.yaml
-# - lights.yaml
+- lights.yaml
 # - machine_vars.yaml
 - modes.yaml
 # - player_vars.yaml
