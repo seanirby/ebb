@@ -73,3 +73,13 @@ switches:
     number: 32
   s_hook_release:
     number: 33
+  s_drops_upper_1:
+    number: 34
+  s_drops_upper_2:
+    number: 35
+  s_drops_upper_3:
+    number: 36
+  s_scoop_upper:
+    number: 37
+  s_scoop_lower:
+    number: 38

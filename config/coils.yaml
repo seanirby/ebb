@@ -46,9 +46,6 @@ coils:
   #   number: A3-B0-4
   #   default_hold_power: .5
   #   allow_enable: true
-  c_scoop_eject:
-    number: A3-B1-0
-    default_pulse_ms: 100
   c_trough_eject:
     number: coil1
     default_pulse_ms: 100
@@ -77,3 +74,21 @@ coils:
     number: coil8
     default_hold_power: 0.25
     allow_enable: true
+  c_drops_upper_1:
+    number: coil9
+    default_hold_power: 0.25
+    allow_enable: true
+  c_drops_upper_2:
+    number: coil10
+    default_hold_power: 0.25
+    allow_enable: true
+  c_drops_upper_3:
+    number: coil11
+    default_hold_power: 0.25
+    allow_enable: true
+  c_scoop_upper:
+    number: coil12
+    default_pulse_ms: 100
+  c_scoop_lower:
+    number: coil13
+    default_pulse_ms: 100

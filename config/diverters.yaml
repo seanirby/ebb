@@ -7,5 +7,25 @@ diverters:
     activation_switches: s_hook_release
     enable_events: ball_started
     disable_events: ball_ended
-    debug: True
-
+  div_drops_upper_1:
+    activation_coil: c_drops_upper_1
+    type: hold
+    activate_events: ball_started
+    deactivate_events: s_drops_upper_1_active
+    enable_events: ball_started
+    disable_events: ball_ended
+  div_drops_upper_2:
+    activation_coil: c_drops_upper_2
+    type: hold
+    activate_events: ball_started
+    deactivate_events: s_drops_upper_2_active
+    enable_events: ball_started
+    disable_events: ball_ended
+  div_drops_upper_3:
+    activation_coil: c_drops_upper_3
+    type: hold
+    activate_events: ball_started
+    deactivate_events: s_drops_upper_3_active
+    enable_events: ball_started
+    disable_events: ball_ended
+    
