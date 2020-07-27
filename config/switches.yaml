@@ -11,7 +11,7 @@ switches:
     number: 2
   s_drain:
     number: 3
-  s_plunger:
+  s_plunger_lane:
     number: 4
   s_left_flipper:
     number: 5
@@ -59,4 +59,17 @@ switches:
     number: 25
   s_target_left_7:
     number: 26
-  
+  s_outlane_left:
+    number: 27
+  s_inlane_left:
+    number: 28
+  s_inlane_right:
+    number: 29
+  s_outlane_right:
+    number: 30
+  s_sling_left:
+    number: 31
+  s_sling_right:
+    number: 32
+  s_hook_release:
+    number: 33

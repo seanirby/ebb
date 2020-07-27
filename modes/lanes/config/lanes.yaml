@@ -19,3 +19,19 @@ shots:
     show_tokens:
       light: l3
       leds: l3
+  sh_outlane_left:
+    switch: s_outlane_left
+    show_tokens:
+      light: l_outlane_left_1
+  sh_inlane_left:
+    switch: s_inlane_left
+    show_tokens:
+      light: l_inlane_left_1
+  sh_inlane_right:
+    switch: s_inlane_right
+    show_tokens:
+      light: l_inlane_right_1
+  sh_outlane_right:
+    switch: s_outlane_right
+    show_tokens:
+      light: l_outlane_right_1

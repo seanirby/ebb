@@ -7,10 +7,17 @@ slides:
   base:
     widgets:
       - type: text
-        text: (score)
+        text: BALL (ball)
+        z: 10
+        y: 0
+        x: right
+        anchor_x: right
+        anchor_y: bottom
+      - type: text
+        text: SCORE (score)
         y: 100
       - type: text
-        text: (player)
+        text: PLAYER (player)
         y: 200
 
 slide_player:
@@ -23,3 +30,7 @@ variable_player:
     score: 100
   s_pop_3_active:
     score: 100
+  s_sling_left_active:
+    score: 1000
+  s_sling_right_active:
+    score: 1000

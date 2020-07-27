@@ -8,15 +8,9 @@ ball_devices:
     eject_targets: bd_plunger
     entrance_count_delay: 300ms
   bd_plunger:
-    ball_switches: s_plunger
+    ball_switches: s_plunger_lane
     eject_coil: c_plunger_eject
     entrance_count_delay: 300ms
     eject_timeouts: 3s
-    # player_controlled_eject_event: s_launch
+    player_controlled_eject_event: s_launch
     debug: True
-    # mechanical_eject: true
-  # bd_scoop:
-  #   ball_switches: s_scoop
-  #   eject_coil: c_scoop_eject
-  #   eject_timeouts: 1s
-

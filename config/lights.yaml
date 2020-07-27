@@ -109,4 +109,15 @@ lights:
   l_target_left_7_4:
     number: 45
     subtype: led
-
+  l_outlane_left_1:
+    number: 46
+    subtype: led
+  l_inlane_left_1:
+    number: 47
+    subtype: led
+  l_inlane_right_1:
+    number: 48
+    subtype: led
+  l_outlane_right_1:
+    number: 49
+    subtype: led

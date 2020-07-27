@@ -16,7 +16,7 @@ config:
 - autofire_coils.yaml
 - ball_devices.yaml 
 - coils.yaml
-# - diverters.yaml
+- diverters.yaml
 # - drop_targets.yaml
 # - flippers.yaml
 - keyboard.yaml
