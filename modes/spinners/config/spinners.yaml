@@ -1,0 +1,67 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+shows:
+  spinner_right_unlit:
+    - duration: -1
+      lights:
+        (a): off
+        (b): off
+        (c): off
+        (d): off
+  spinner_right_one_lit:
+    - duration: -1
+      lights:
+        (a): on
+        (b): off
+        (c): off
+        (d): off
+  spinner_right_two_lit:
+    - duration: -1
+      lights:
+        (a): on
+        (b): on
+        (c): off
+        (d): off
+  spinner_right_three_lit:
+    - duration: -1
+      lights:
+        (a): on
+        (b): on
+        (c): on
+        (d): off
+  spinner_right_four_lit:
+    - duration: -1
+      lights:
+        (a): on
+        (b): on
+        (c): on
+        (d): on
+
+shot_profiles:
+  spinner_right:
+    loop: True
+    states:
+      - name: unlit
+        show: spinner_right_unlit
+      - name: one_lit
+        show: spinner_right_one_lit
+      - name: two_lit
+        show: spinner_right_two_lit
+      - name: three_lit
+        show: spinner_right_three_lit
+      - name: four_lit
+        show: spinner_right_four_lit
+
+shots:
+  sh_spinner_right:
+    hit_events: s_spinner_right_active
+    profile: spinner_right
+    show_tokens:
+      a: l_spinner_right_1
+      b: l_spinner_right_2
+      c: l_spinner_right_3
+      d: l_spinner_right_4
+      

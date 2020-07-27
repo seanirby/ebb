@@ -12,6 +12,7 @@ modes:
   - base
   - lanes
   - targets
+  - spinners
 
   # ball end
   # - bonus

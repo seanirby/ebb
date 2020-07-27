@@ -121,3 +121,20 @@ lights:
   l_outlane_right_1:
     number: 49
     subtype: led
+  l_spinner_right_1:
+    number: 50
+    subtype: led
+    tags: l_spinner_right
+  l_spinner_right_2:
+    number: 51
+    subtype: led
+    tags: l_spinner_right
+  l_spinner_right_3:
+    number: 52
+    subtype: led
+    tags: l_spinner_right
+  l_spinner_right_4:
+    number: 53
+    subtype: led
+    tags: l_spinner_right
+
