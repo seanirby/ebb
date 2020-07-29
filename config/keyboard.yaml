@@ -4,7 +4,7 @@ keyboard:
   s:
     switch: s_start
   t:
-    switch: s_trough
+    switch: s_trough_1
     toggle: True
   # r:
   #   switch: s_orbit_left
