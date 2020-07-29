@@ -14,7 +14,8 @@ hardware:
 
 config:
 - autofire_coils.yaml
-- ball_devices.yaml 
+- ball_devices.yaml
+- ball_saves.yaml
 - coils.yaml
 - diverters.yaml
 # - drop_targets.yaml

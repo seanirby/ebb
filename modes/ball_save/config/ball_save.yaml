@@ -1,0 +1,21 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+show_player:
+  ball_save_default_timer_start:
+    flash:
+      speed: 3
+      show_tokens:
+        light: l_ball_save
+  ball_save_default_hurry_up:
+    flash:
+      speed: 6
+      show_tokens:
+        light: l_ball_save
+  ball_save_default_disabled:
+    flash:
+      action: stop
+    
+  

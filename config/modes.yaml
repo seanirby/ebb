@@ -10,6 +10,7 @@ modes:
 
   # global
   - base
+  - ball_save
   - lanes
   - targets
   - spinners

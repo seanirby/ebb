@@ -137,4 +137,6 @@ lights:
     number: 53
     subtype: led
     tags: l_spinner_right
-
+  l_ball_save:
+    number: 54
+    subtype: led
