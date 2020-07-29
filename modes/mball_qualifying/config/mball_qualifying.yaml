@@ -1,0 +1,23 @@
+#config_version=5
+
+mode:
+  start_events: start_mball_qualifying
+  stop_events: start_mball_locked
+  code: mball_qualifying.MballQualifying
+
+variable_player:
+  s_drops_upper_1_active:
+    mball_progress:
+      int: 1
+      action: set
+  s_drops_upper_2_active:
+    mball_progress:
+      int: 2
+      action: set
+  s_drops_upper_3_active:
+    mball_progress:
+      int: 3
+      action: set
+
+event_player:
+  multiball_lock_scoop_upper_full: start_mball_locked

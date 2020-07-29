@@ -1,0 +1,10 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  stop_events: start_mball_qualifying, start_mball_locked
+
+event_player:
+  mode_mball_startup_started{device.multiball_locks.scoop_upper.locked_balls == 0}: start_mball_qualifying
+  mode_mball_startup_started{device.multiball_locks.scoop_upper.locked_balls > 0}: start_mball_locked
+    

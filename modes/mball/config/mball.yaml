@@ -1,49 +1,17 @@
 #config_version=5
 
 mode:
-  start_events: ball_starting
-  code: mball.Mball
+  start_events: start_mball
+  stop_events: start_mball_qualifying
 
-# state_machines:
-#   mball:
-#     states:
-#       start: {}
-#       qualifying: {}
-#       locked: {}
-#       active: {}
-#     transitions:
-#       # start
-#       - source: start
-#         target: qualifying
-#         events: 
-#       - source: start
-#         target: locked
-#         events: 
-#       # qualifying
-#       - source: qualifying
-#         target: locked
-#         events: 
-#       # locked
-#       - source: locked
-#         target: active
-#         events: 
-#       # active
+event_player:
+  timer_mball_eject_delay_complete:
+    - mball_activate_drop_1
+    - mball_activate_drop_2
+    - mball_activate_drop_3
+  multiball_main_ended: start_mball_qualifying
 
-multiballs:
-  main:
-    ball_count: 2
-    ball_count_type: total
-    shoot_again: 11s
-    ball_locks: bd_scoop_upper
-    start_events: mball_main_start
-
-multiball_locks:
-  scoop_upper:
-    balls_to_lock: 1
-    lock_devices: bd_scoop_upper
-    locked_ball_counting_strategy: physical_only
-    # reset_count_for_current_player_events: multiball_main_started
-
-
-
-    
+timers:
+  mball_eject_delay:
+    start_running: True
+    end_value: 3
