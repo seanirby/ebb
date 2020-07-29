@@ -8,3 +8,8 @@ mode:
 event_player:
   s_drops_upper_3_active: start_mball
     
+variable_player:
+  mode_mball_locked_started:
+    mball_progress:
+      int: 0
+      action: set

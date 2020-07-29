@@ -2,7 +2,7 @@
 
 player_vars:
   mball_progress:
-    initial_value: 2
+    initial_value: 0
   mballs_played:
     initial_value: 0
 

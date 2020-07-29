@@ -6,9 +6,9 @@ mode:
 
 event_player:
   timer_mball_eject_delay_complete:
-    - mball_activate_drop_1
-    - mball_activate_drop_2
-    - mball_activate_drop_3
+    - activate_upper_drop_1
+    - activate_upper_drop_2
+    - activate_upper_drop_3
   multiball_main_ended: start_mball_qualifying
 
 timers:
