@@ -24,11 +24,11 @@ slide_player:
   mode_base_started: base
 
 variable_player:
+  s_pop_0_active:
+    score: 100
   s_pop_1_active:
     score: 100
   s_pop_2_active:
-    score: 100
-  s_pop_3_active:
     score: 100
   s_sling_left_active:
     score: 1000

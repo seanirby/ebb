@@ -19,17 +19,17 @@ switches:
   s_right_flipper:
     number: 6
     tags: right_flipper
-  s_trough_1:
+  s_trough_0:
     number: 7
-  s_trough_2:
+  s_trough_1:
     number: 8
-  s_trough_3:
+  s_trough_2:
     number: 9
-  s_pop_1:
+  s_pop_0:
     number: 10
-  s_pop_2:
+  s_pop_1:
     number: 11
-  s_pop_3:
+  s_pop_2:
     number: 12
   s_lane_upper_2:
     number: 14
