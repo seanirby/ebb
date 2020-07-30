@@ -12,19 +12,19 @@ shows:
   attract:
   - duration: 1
     lights:
+      l0: on
+      l1: off
+      l2: off
+  - duration: 1
+    lights:
+      l0: off
       l1: on
       l2: off
-      l3: off
   - duration: 1
     lights:
+      l0: off
       l1: off
       l2: on
-      l3: off
-  - duration: 1
-    lights:
-      l1: off
-      l2: off
-      l3: on
 
 show_player:
   mode_attract_started: attract

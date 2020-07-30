@@ -31,19 +31,19 @@ switches:
     number: 11
   s_pop_2:
     number: 12
-  s_lane_upper_2:
-    number: 14
-  s_lane_upper_3:
-    number: 15
-  s_lane_upper_1:
+  s_lane_upper_0:
     number: 13
-  s_target_right_1:
+  s_lane_upper_1:
+    number: 14
+  s_lane_upper_2:
+    number: 15
+  s_target_right_0:
     number: 16
-  s_target_right_2:
+  s_target_right_1:
     number: 17
-  s_target_right_3:
+  s_target_right_2:
     number: 18
-  s_target_right_4:
+  s_target_right_3:
     number: 19
   s_target_left_1:
     number: 20
@@ -73,11 +73,11 @@ switches:
     number: 32
   s_hook_release:
     number: 33
-  s_drops_upper_1:
+  s_drops_upper_0:
     number: 34
-  s_drops_upper_2:
+  s_drops_upper_1:
     number: 35
-  s_drops_upper_3:
+  s_drops_upper_2:
     number: 36
   s_scoop_upper:
     number: 37

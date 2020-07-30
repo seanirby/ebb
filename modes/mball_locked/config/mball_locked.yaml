@@ -6,7 +6,7 @@ mode:
   code: mball_locked.MballLocked
 
 event_player:
-  s_drops_upper_3_active: start_mball
+  s_drops_upper_2_active: start_mball
     
 variable_player:
   mode_mball_locked_started:

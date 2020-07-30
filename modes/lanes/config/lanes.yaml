@@ -4,21 +4,18 @@ mode:
   start_events: ball_starting
 
 shots:
+  sh_lane_upper_0:
+    hit_events: s_lane_upper_0_active
+    show_tokens:
+      light: l0
   sh_lane_upper_1:
     hit_events: s_lane_upper_1_active
     show_tokens:
       light: l1
-      leds: l1
   sh_lane_upper_2:
     hit_events: s_lane_upper_2_active
     show_tokens:
       light: l2
-      leds: l2
-  sh_lane_upper_3:
-    hit_events: s_lane_upper_3_active
-    show_tokens:
-      light: l3
-      leds: l3
   sh_outlane_left:
     switch: s_outlane_left
     show_tokens:

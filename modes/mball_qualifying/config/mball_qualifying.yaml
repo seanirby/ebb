@@ -6,15 +6,15 @@ mode:
   code: mball_qualifying.MballQualifying
 
 variable_player:
-  s_drops_upper_1_active:
+  s_drops_upper_0_active:
     mball_progress:
       int: 1
       action: set
-  s_drops_upper_2_active:
+  s_drops_upper_1_active:
     mball_progress:
       int: 2
       action: set
-  s_drops_upper_3_active:
+  s_drops_upper_2_active:
     mball_progress:
       int: 3
       action: set

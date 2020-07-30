@@ -2,26 +2,26 @@
 
 lights:
   # lanes
-  l1:
+  l0:
     number: l1
     subtype: led
-  l2:
+  l1:
     number: l2
     subtype: led
-  l3:
+  l2:
     number: l3
     subtype: led
   # right targets
-  l_target_right_1_1:
+  l_target_right_0_0:
     number: l4
     subtype: led
-  l_target_right_2_1:
+  l_target_right_1_0:
     number: l5
     subtype: led
-  l_target_right_3_1:
+  l_target_right_2_0:
     number: l6
     subtype: led
-  l_target_right_4_1:
+  l_target_right_3_0:
     number: l7
     subtype: led
   # left targets
