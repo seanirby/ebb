@@ -1,0 +1,161 @@
+#config_version=5
+
+# when first row of racks is down, the scoop lights to collect
+
+mode:
+  start_events: ball_starting
+  code: racks.Racks
+
+shot_profiles:
+  rack_collect:
+    states:
+      - name: flash
+        show: flash
+        speed: 6
+  l:
+    states:
+      - name: off
+        show: off
+      - name: on
+        show: on
+      - name: flash
+        show: flash
+        speed: 6
+
+shots:
+  sh_rack_collect:
+    enable_events: enable_rack_collect
+    disable_events: disable_rack_collect
+    profile: rack_collect
+    switch: s_scoop_lower
+    show_tokens:
+      light: l_scoop_lower_1
+  sh_tl_1:
+    hit_events: s_target_left_1_active
+  sh_tl_2:
+    hit_events: s_target_left_2_active
+  sh_tl_3:
+    hit_events: s_target_left_3_active
+  sh_tl_4:
+    hit_events: s_target_left_4_active
+  sh_tl_5:
+    hit_events: s_target_left_5_active
+  sh_tl_6:
+    hit_events: s_target_left_6_active
+  sh_tl_7:
+    hit_events: s_target_left_7_active
+  l_1_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_1_1
+  l_1_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_1_2
+  l_1_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_1_3
+  l_1_4:
+    profile: l
+    show_tokens:
+      light: l_target_left_1_4
+  l_2_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_2_1
+  l_2_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_2_2
+  l_2_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_2_3
+  l_2_4:
+    profile: l
+    show_tokens:
+      light: l_target_left_2_4
+  l_3_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_3_1
+  l_3_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_3_2
+  l_3_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_3_3
+  l_3_4:
+    profile: l
+    show_tokens:
+      light: l_target_left_3_4
+  l_4_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_4_1
+  l_4_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_4_2
+  l_4_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_4_3
+  l_4_4:
+    profile: l
+    show_tokens:
+      light: l_target_left_4_4
+  l_5_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_5_1
+  l_5_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_5_2
+  l_5_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_5_3
+  l_5_4:
+    profile: l
+    show_tokens:
+      light: l_target_left_5_4
+  l_6_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_6_1
+  l_6_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_6_2
+  l_6_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_6_3
+  l_6_4:
+    profile: l
+    show_tokens:
+      light: l_target_left_6_4
+  l_7_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_7_1
+  l_7_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_7_2
+  l_7_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_7_3
+  l_7_4:
+    profile: l
+    show_tokens:
+      light: l_target_left_7_4
+
+    
+    

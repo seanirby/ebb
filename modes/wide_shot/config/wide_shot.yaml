@@ -1,0 +1,71 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  code: wide_shot.WideShot
+
+shot_profiles:
+  wsl:
+    states:
+      - name: off
+        show: off
+      - name: flash
+        show: flash
+        speed: 6
+      - name: on
+        show: on
+  wide_shot:
+    manual_advance: True
+    states:
+      - name: flash
+        show: flash
+      - name: on
+        show: on
+
+shots:
+  sh_wide_shot:
+    switch: s_target_right_1
+    advance_events: wide_shot_qualified, wide_shot_collected
+    profile: wide_shot
+  # 'shots' for lights on grid
+  sh_wsl_1:
+    profile: wsl
+    show_tokens:
+      light: l_target_left_1_4
+  sh_wsl_2:
+    profile: wsl
+    show_tokens:
+      light: l_target_left_2_4
+  sh_wsl_3:
+    profile: wsl
+    show_tokens:
+      light: l_target_left_3_4
+  sh_wsl_4:
+    profile: wsl
+    show_tokens:
+      light: l_target_left_4_4
+  sh_wsl_5:
+    profile: wsl
+    show_tokens:
+      light: l_target_left_5_4
+  sh_wsl_6:
+    profile: wsl
+    show_tokens:
+      light: l_target_left_6_4
+  sh_wsl_7:
+    profile: wsl
+    show_tokens:
+      light: l_target_left_7_4
+
+event_player:
+  sh_wide_shot_hit{device.shots.sh_wide_shot.state_name=='flash'}:  wide_shot_qualified
+  wide_shot_qualified: wide_shot_advance_progress
+  sh_wide_shot_hit{device.shots.sh_wide_shot.state_name=='on' and current_player.wide_shot_progress < 4}: wide_shot_advance_progress
+
+# variable_player:
+#   wide_shot_collected:
+#     wide_shot_progress:
+#       int: 0
+#       action: set
+#   wide_shot_advance_progress:
+#     wide_shot_progress: 1

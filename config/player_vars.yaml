@@ -5,4 +5,25 @@ player_vars:
     initial_value: 0
   mballs_played:
     initial_value: 0
+  racks:
+    initial_value: 0
+  # target left progress
+  tl_1_progress:
+    initial_value: 0
+  tl_2_progress:
+    initial_value: 0
+  tl_3_progress:
+    initial_value: 0
+  tl_4_progress:
+    initial_value: 0
+  tl_5_progress:
+    initial_value: 0
+  tl_6_progress:
+    initial_value: 0
+  tl_7_progress:
+    initial_value: 0
+  wide_shot_progress:
+    initial_value: 0
+  wide_shot_position:
+    initial_value: 4
 

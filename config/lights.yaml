@@ -140,3 +140,6 @@ lights:
   l_ball_save:
     number: 54
     subtype: led
+  l_scoop_lower_1:
+    number: 55
+    subtype: led

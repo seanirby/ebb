@@ -12,13 +12,14 @@ modes:
   - base
   - ball_save
   - lanes
-  - targets
+  # - targets
   - spinners
   - multiball_config
   - mball_startup
   - mball_qualifying
   - mball_locked
   - mball
+  - racks
 
   # ball end
   # - bonus
