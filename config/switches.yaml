@@ -45,19 +45,19 @@ switches:
     number: 18
   s_target_right_3:
     number: 19
-  s_target_left_1:
+  s_target_left_0:
     number: 20
-  s_target_left_2:
+  s_target_left_1:
     number: 21
-  s_target_left_3:
+  s_target_left_2:
     number: 22
-  s_target_left_4:
+  s_target_left_3:
     number: 23
-  s_target_left_5:
+  s_target_left_4:
     number: 24
-  s_target_left_6:
+  s_target_left_5:
     number: 25
-  s_target_left_7:
+  s_target_left_6:
     number: 26
   s_outlane_left:
     number: 27

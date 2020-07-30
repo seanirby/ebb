@@ -29,7 +29,9 @@ shots:
     profile: rack_collect
     switch: s_scoop_lower
     show_tokens:
-      light: l_scoop_lower_1
+      light: l_scoop_lower_0
+  sh_tl_0:
+    hit_events: s_target_left_0_active
   sh_tl_1:
     hit_events: s_target_left_1_active
   sh_tl_2:
@@ -42,8 +44,26 @@ shots:
     hit_events: s_target_left_5_active
   sh_tl_6:
     hit_events: s_target_left_6_active
-  sh_tl_7:
-    hit_events: s_target_left_7_active
+  l_0_0:
+    profile: l
+    show_tokens:
+      light: l_target_left_0_0
+  l_0_1:
+    profile: l
+    show_tokens:
+      light: l_target_left_0_1
+  l_0_2:
+    profile: l
+    show_tokens:
+      light: l_target_left_0_2
+  l_0_3:
+    profile: l
+    show_tokens:
+      light: l_target_left_0_3
+  l_1_0:
+    profile: l
+    show_tokens:
+      light: l_target_left_1_0
   l_1_1:
     profile: l
     show_tokens:
@@ -56,10 +76,10 @@ shots:
     profile: l
     show_tokens:
       light: l_target_left_1_3
-  l_1_4:
+  l_2_0:
     profile: l
     show_tokens:
-      light: l_target_left_1_4
+      light: l_target_left_2_0
   l_2_1:
     profile: l
     show_tokens:
@@ -72,10 +92,10 @@ shots:
     profile: l
     show_tokens:
       light: l_target_left_2_3
-  l_2_4:
+  l_3_0:
     profile: l
     show_tokens:
-      light: l_target_left_2_4
+      light: l_target_left_3_0
   l_3_1:
     profile: l
     show_tokens:
@@ -88,10 +108,10 @@ shots:
     profile: l
     show_tokens:
       light: l_target_left_3_3
-  l_3_4:
+  l_4_0:
     profile: l
     show_tokens:
-      light: l_target_left_3_4
+      light: l_target_left_4_0
   l_4_1:
     profile: l
     show_tokens:
@@ -104,10 +124,10 @@ shots:
     profile: l
     show_tokens:
       light: l_target_left_4_3
-  l_4_4:
+  l_5_0:
     profile: l
     show_tokens:
-      light: l_target_left_4_4
+      light: l_target_left_5_0
   l_5_1:
     profile: l
     show_tokens:
@@ -120,10 +140,10 @@ shots:
     profile: l
     show_tokens:
       light: l_target_left_5_3
-  l_5_4:
+  l_6_0:
     profile: l
     show_tokens:
-      light: l_target_left_5_4
+      light: l_target_left_6_0
   l_6_1:
     profile: l
     show_tokens:
@@ -136,26 +156,5 @@ shots:
     profile: l
     show_tokens:
       light: l_target_left_6_3
-  l_6_4:
-    profile: l
-    show_tokens:
-      light: l_target_left_6_4
-  l_7_1:
-    profile: l
-    show_tokens:
-      light: l_target_left_7_1
-  l_7_2:
-    profile: l
-    show_tokens:
-      light: l_target_left_7_2
-  l_7_3:
-    profile: l
-    show_tokens:
-      light: l_target_left_7_3
-  l_7_4:
-    profile: l
-    show_tokens:
-      light: l_target_left_7_4
-
     
     

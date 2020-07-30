@@ -60,8 +60,8 @@ shots:
     hit_events: s_spinner_right_active
     profile: spinner_right
     show_tokens:
-      a: l_spinner_right_1
-      b: l_spinner_right_2
-      c: l_spinner_right_3
-      d: l_spinner_right_4
+      a: l_spinner_right_0
+      b: l_spinner_right_1
+      c: l_spinner_right_2
+      d: l_spinner_right_3
       
