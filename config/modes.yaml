@@ -20,6 +20,7 @@ modes:
   - mball
   - racks
   - wide_shot
+  - spot_ball
 
   # ball end
   # - bonus

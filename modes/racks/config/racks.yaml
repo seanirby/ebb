@@ -32,19 +32,19 @@ shots:
     show_tokens:
       light: l_scoop_lower_0
   sh_tl_0:
-    hit_events: s_target_left_0_active
+    hit_events: s_target_left_0_active, spot_ball_0
   sh_tl_1:
-    hit_events: s_target_left_1_active
+    hit_events: s_target_left_1_active, spot_ball_1
   sh_tl_2:
-    hit_events: s_target_left_2_active
+    hit_events: s_target_left_2_active, spot_ball_2
   sh_tl_3:
-    hit_events: s_target_left_3_active
+    hit_events: s_target_left_3_active, spot_ball_3
   sh_tl_4:
-    hit_events: s_target_left_4_active
+    hit_events: s_target_left_4_active, spot_ball_4
   sh_tl_5:
-    hit_events: s_target_left_5_active
+    hit_events: s_target_left_5_active, spot_ball_5
   sh_tl_6:
-    hit_events: s_target_left_6_active
+    hit_events: s_target_left_6_active, spot_ball_6
   l_0_0:
     profile: l
     show_tokens:
