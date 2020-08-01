@@ -1,0 +1,62 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  code: awards.Awards
+
+shot_profiles:
+  award_select:
+    states:
+      - name: flash
+        show: flash_stop
+  award:
+    states:
+      - name: off
+        show: off
+      - name: on
+        show: on
+      - name: flash
+        show: flash_stop
+        speed: 10
+
+shots:
+  sh_award_select_up:
+    profile: award_select
+    switch: s_target_right_1
+    show_tokens:
+      light: l_target_right_1_0
+  sh_award_select_down:
+    profile: award_select
+    switch: s_target_right_2
+    show_tokens:
+      light: l_target_right_2_0
+  sh_award_0:
+    profile: award
+    show_tokens:
+      light: l_award_0
+  sh_award_1:
+    profile: award
+    show_tokens:
+      light: l_award_1
+  sh_award_2:
+    profile: award
+    show_tokens:
+      light: l_award_2
+  sh_award_3:
+    profile: award
+    show_tokens:
+      light: l_award_3
+  sh_award_4:
+    profile: award
+    show_tokens:
+      light: l_award_4
+  sh_award_5:
+    profile: award
+    show_tokens:
+      light: l_award_5
+  sh_award_6:
+    profile: award
+    show_tokens:
+      light: l_award_6
+  
+    

@@ -22,8 +22,25 @@ player_vars:
     initial_value: 0
   tl_6_progress:
     initial_value: 0
+  # wide shot
   wide_shot_progress:
     initial_value: 0
   wide_shot_position:
     initial_value: 4
-
+  # awards collected
+  award_selected:
+    initial_value: 0
+  award_0_collected:
+    initial_value: 0
+  award_1_collected:
+    initial_value: 0
+  award_2_collected:
+    initial_value: 0
+  award_3_collected:
+    initial_value: 0
+  award_4_collected:
+    initial_value: 0
+  award_5_collected:
+    initial_value: 0
+  award_6_collected:
+    initial_value: 0

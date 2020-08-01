@@ -164,3 +164,27 @@ lights:
   l_wide_shot_vpx_6:
     number: 62
     subtype: led
+  l_scoop_lower_1:
+    number: 63
+    subtype: led
+  l_award_0:
+    number: 64
+    subtype: led
+  l_award_1:
+    number: 65
+    subtype: led
+  l_award_2:
+    number: 66
+    subtype: led
+  l_award_3:
+    number: 67
+    subtype: led
+  l_award_4:
+    number: 68
+    subtype: led
+  l_award_5:
+    number: 69
+    subtype: led
+  l_award_6:
+    number: 70
+    subtype: led

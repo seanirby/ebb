@@ -6,17 +6,6 @@ mode:
   priority: 200
 
 shows:
-  off_stop:
-    - duration: -1
-      lights:
-        (light): stop
-  flash_stop:
-    - time: 0
-      lights:
-        (light): on
-    - time: 1
-      lights:
-        (light): stop
   wsl_on:
     - duration: -1
       lights:
