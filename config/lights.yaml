@@ -143,3 +143,24 @@ lights:
   l_scoop_lower_0:
     number: 55
     subtype: led
+  l_wide_shot_vpx_0:
+    number: 56
+    subtype: led
+  l_wide_shot_vpx_1:
+    number: 57
+    subtype: led
+  l_wide_shot_vpx_2:
+    number: 58
+    subtype: led
+  l_wide_shot_vpx_3:
+    number: 59
+    subtype: led
+  l_wide_shot_vpx_4:
+    number: 60
+    subtype: led
+  l_wide_shot_vpx_5:
+    number: 61
+    subtype: led
+  l_wide_shot_vpx_6:
+    number: 62
+    subtype: led

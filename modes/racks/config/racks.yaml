@@ -5,6 +5,7 @@
 mode:
   start_events: ball_starting
   code: racks.Racks
+  priority: 100
 
 shot_profiles:
   rack_collect:

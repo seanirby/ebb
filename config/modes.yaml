@@ -12,7 +12,6 @@ modes:
   - base
   - ball_save
   - lanes
-  # - targets
   - spinners
   - multiball_config
   - mball_startup
@@ -20,6 +19,7 @@ modes:
   - mball_locked
   - mball
   - racks
+  - wide_shot
 
   # ball end
   # - bonus
