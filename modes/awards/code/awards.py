@@ -30,10 +30,49 @@ class Awards(Mode):
         return self.player["award_position"]
 
     def handle_select_award(self, **kwargs):
-        direction = kwargs["direction"]
-        self.player["award_position"] = (self.award_position() + direction) % NUM_AWARDS
-        self.init_lights()
+        awards = []
+
+        for award in range(0, NUM_AWARDS):
+            if not(self.is_award_collected(award)):
+                awards.append(award)
+
+        if len(awards) == 1:
+            self.player["award_position"] = awards[0]
+            return
+        else:
+            direction = kwargs["direction"]
+            pos = self.award_position()
+
+            # because this function could be called from 'handle_award_collected' we manually put in the active position into the awards array so it can be the basis for the next selection
+            awards.append(pos)
+            awards = list(set(awards))
+            awards.sort()
+
+            i = awards.index(pos)
+            next_i = (i + direction) % len(awards)
+            self.player["award_position"] = awards[next_i]
+            self.init_lights()
+
+    def are_all_awards_collected(self):
+        for award in range(0, NUM_AWARDS):
+            if not(self.is_award_collected(award)):
+                return False
+        return True
+
+    def reset_awards(self):
+        for award in range(0, NUM_AWARDS):
+            self.player["award_{}_collected".format(award)] = 0
 
     def handle_award_collected(self, **kwargs):
-        print('bar')
+        pos = self.award_position()
+        self.player["award_{}_collected".format(pos)] = 1
 
+        if self.are_all_awards_collected():
+            self.player["award_position"] = 0
+            self.reset_awards()
+        else:
+            self.handle_select_award(direction=1)
+
+        self.init_lights()
+        
+        

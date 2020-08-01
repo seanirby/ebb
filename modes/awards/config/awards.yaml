@@ -5,10 +5,16 @@ mode:
   code: awards.Awards
 
 shot_profiles:
+  award_collect:
+    states:
+      - name: flash
+        show: flash_stop
+        speed: 6
   award_select:
     states:
       - name: flash
         show: flash_stop
+        speed: 6
   award:
     states:
       - name: off
@@ -20,6 +26,13 @@ shot_profiles:
         speed: 10
 
 shots:
+  sh_award_collect:
+    switch: s_scoop_lower
+    profile: award_collect
+    enable_events: timer_award_collect_started
+    disable_events: timer_award_collect_complete, sh_award_collect_hit
+    show_tokens:
+      light: l_scoop_lower_1
   sh_award_select_up:
     profile: award_select
     switch: s_target_right_1
@@ -59,4 +72,13 @@ shots:
     show_tokens:
       light: l_award_6
   
-    
+timers:
+  award_collect:
+    end_value: 5
+    control_events:
+      - action: start
+        event: s_hook_release_active
+      - action: reset
+        event: timer_award_collect_complete
+      - action: reset
+        event: sh_award_collect_hit
