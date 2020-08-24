@@ -6,31 +6,29 @@ slides:
       - type: text
         text: PRESS START
 
+# shows:
+#   attract:
+#   - duration: 1
+#     lights:
+#       l0: on
+#       l1: off
+#       l2: off
+#   - duration: 1
+#     lights:
+#       l0: off
+#       l1: on
+#       l2: off
+#   - duration: 1
+#     lights:
+#       l0: off
+#       l1: off
+#       l2: on
 
-
-shows:
-  attract:
-  - duration: 1
-    lights:
-      l0: on
-      l1: off
-      l2: off
-  - duration: 1
-    lights:
-      l0: off
-      l1: on
-      l2: off
-  - duration: 1
-    lights:
-      l0: off
-      l1: off
-      l2: on
-
-show_player:
-  mode_attract_started: attract
-  mode_attract_stopped:
-    attract:
-      action: stop
+# show_player:
+#   mode_attract_started: attract
+#   mode_attract_stopped:
+#     attract:
+#       action: stop
 
 slide_player:
   mode_attract_started: attract

@@ -2,48 +2,54 @@
 
 coils:
   c_trough_eject:
-    number: coil1
-    default_pulse_ms: 100
+    number: A10-B0-5 #doesnt exist
   c_plunger_eject:
-    number: coil2
-    default_pulse_ms: 100
-  c_pop_0:
-    number: coil3
-    default_pulse_power: 0.95
-    default_pulse_ms: 100
-  c_pop_1:
-    number: coil4
-    default_pulse_power: 0.95
-    default_pulse_ms: 100
-  c_pop_2:
-    number: coil5
-    default_pulse_power: 0.95
-    default_pulse_ms: 100
-  c_sling_left:
-    number: coil6
-    default_pulse_ms: 100
-  c_sling_right:
-    number: coil7
-    default_pulse_ms: 100
-  c_diverter_hook:
-    number: coil8
-    default_hold_power: 0.25
+    number: A10-B0-6 #doesnt exist
+  c_flipper_lower_right_main:
+    number: A1-B0-0
+    default_pulse_ms: 23
+  c_flipper_lower_right_hold:
+    number: A1-B0-1
     allow_enable: true
-  c_drops_upper_0:
-    number: coil9
-    default_hold_power: 0.25
+  c_flipper_lower_left_main:
+    number: A1-B0-2
+    default_pulse_ms: 23
+  c_flipper_lower_left_hold:
+    number: A1-B0-3
     allow_enable: true
-  c_drops_upper_1:
-    number: coil10
-    default_hold_power: 0.25
-    allow_enable: true
-  c_drops_upper_2:
-    number: coil11
-    default_hold_power: 0.25
-    allow_enable: true
-  c_scoop_upper:
-    number: coil12
-    default_pulse_ms: 100
-  c_scoop_lower:
-    number: coil13
-    default_pulse_ms: 100
+
+  # c_pop_0:
+  #   number: coil3
+  #   default_pulse_power: 0.95
+  # c_pop_1:
+  #   number: coil4
+  #   default_pulse_power: 0.95
+  # c_pop_2:
+  #   number: coil5
+  #   default_pulse_power: 0.95
+  # c_sling_left:
+  #   number: coil6
+  # c_sling_right:
+  #   number: coil7
+  # c_diverter_hook:
+  #   number: coil8
+  #   default_hold_power: 0.25
+  #   allow_enable: true
+  # c_drops_upper_0:
+  #   number: coil9
+  #   default_hold_power: 0.25
+  #   allow_enable: true
+  # c_drops_upper_1:
+  #   number: coil10
+  #   default_hold_power: 0.25
+  #   allow_enable: true
+  # c_drops_upper_2:
+  #   number: coil11
+  #   default_hold_power: 0.25
+  #   allow_enable: true
+  # c_scoop_upper:
+  #   number: coil12
+  #   default_pulse_ms: 100
+  # c_scoop_lower:
+  #   number: coil13
+  #   default_pulse_ms: 100

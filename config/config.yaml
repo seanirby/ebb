@@ -1,27 +1,27 @@
 #config_version=5
 
 
-hardware:
-  platform: virtual_pinball
 # hardware:
-#   platform: p3_roc
-#   driverboards: pdb
+#   platform: virtual_pinball
+hardware:
+  platform: p3_roc
+  driverboards: pdb
 
-# p_roc:
-#   pd_led_boards:
-#     5:
-#       use_ws281x_0: True
+p_roc:
+  pd_led_boards:
+    5:
+      use_ws281x_0: True
 
 config:
-- autofire_coils.yaml
+# - autofire_coils.yaml
 - ball_devices.yaml
-- ball_saves.yaml
+# - ball_saves.yaml
 - coils.yaml
-- diverters.yaml
+# - diverters.yaml
 # - drop_targets.yaml
-# - flippers.yaml
+- flippers.yaml
 - keyboard.yaml
-- lights.yaml
+# - lights.yaml
 # - machine_vars.yaml
 - modes.yaml
 - player_vars.yaml
