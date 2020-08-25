@@ -3,12 +3,12 @@
 flippers:
   lower_left_flipper:
     main_coil: c_flipper_lower_left_main
-    hold_coil: c_flipper_lower_left_hold
+    # hold_coil: c_flipper_lower_left_hold
     activation_switch: s_left_flipper
     enable_events: machine_reset_phase_3
   lower_right_flipper:
     main_coil: c_flipper_lower_right_main
-    hold_coil: c_flipper_lower_right_hold
+    # hold_coil: c_flipper_lower_right_hold
     activation_switch: s_right_flipper
     enable_events: machine_reset_phase_3
   # mid_right_flipper:
