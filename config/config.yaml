@@ -18,7 +18,7 @@ config:
 # - ball_saves.yaml
 - coils.yaml
 # - diverters.yaml
-# - drop_targets.yaml
+- drop_targets.yaml
 - flippers.yaml
 - keyboard.yaml
 # - lights.yaml

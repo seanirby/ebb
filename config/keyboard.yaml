@@ -13,7 +13,7 @@ keyboard:
   # i:
   #   switch: s_right_inlane
   p:
-    switch: s_plunger
+    switch: s_plunger_lane
   # d:
   #   event: drop_target_bank_drops_down
   # l:

@@ -19,12 +19,18 @@ switches:
   s_right_flipper:
     number: A0-B0-1
     tags: right_flipper
+  s_hook_1:
+    number: A0-B0-2
+    tags: playfield_active
+  s_hook_drop:
+    number: A0-B0-3
   s_trough_0:
     number: A11-B0-1 #doesnt exit
   s_trough_1:
     number: A11-B0-2 #doesnt exit
   s_trough_2:
     number: A11-B0-3 #doesnt exit
+
   # s_pop_0:
   #   number: 10
   # s_pop_1:

@@ -34,3 +34,12 @@ slide_player:
 #     score: 1000
 #   s_sling_right_active:
 #     score: 1000
+
+timers:
+  drop_right:
+    end_value: 3
+    control_events:
+      - action: start
+        event: s_hook_1_active
+      - action: reset
+        event: timer_drop_right_complete
