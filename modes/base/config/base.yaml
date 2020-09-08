@@ -37,9 +37,21 @@ slide_player:
 
 timers:
   drop_right:
-    end_value: 3
+    end_value: 15
+    tick_interval: 100ms
     control_events:
       - action: start
         event: s_hook_1_active
       - action: reset
         event: timer_drop_right_complete
+  drop_saucer:
+    end_value: 35
+    tick_interval: 100ms
+    control_events:
+      - action: start
+        event: s_hook_1_active
+      - action: reset
+        event: timer_drop_saucer_complete
+
+event_player:
+  s_saucer_drop_active{device.timers.drop_saucer.running == False}: reset_saucer_drop

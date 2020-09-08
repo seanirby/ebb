@@ -7,25 +7,44 @@ coils:
     number: A10-B0-6 #doesnt exist
   c_flipper_lower_right_main:
     number: A1-B0-0
-    default_hold_power: 0.125
-    default_pulse_ms: 22
+    default_hold_power: 0.2
+    default_pulse_ms: 22.5
   c_flipper_upper_right_main:
-    number: A1-B0-4
+    number: A1-B0-3
     default_hold_power: 0.125
     default_pulse_ms: 24.5
      # c_flipper_lower_right_hold:
   #   number: A1-B0-1
   #   allow_enable: true
   c_flipper_lower_left_main:
-    number: A1-B0-2
-    default_hold_power: 0.125
-    default_pulse_ms: 22
+    number: A1-B0-1
+    default_hold_power: 0.2
+    default_pulse_ms: 22.5
   c_drop_right:
-    number: A1-B1-0
-    default_pulse_ms: 35
+    number: A1-B0-2
+    default_pulse_ms: 25
   c_drop_right_knockdown:
-    number: A1-B1-1
+    number: A1-B0-4
     default_pulse_ms: 10
+  c_pop_a:
+    number: A3-B0-0
+    default_pulse_ms: 15
+  c_pop_b:
+    number: A3-B0-1
+    default_pulse_ms: 15
+  c_pop_c:
+    number: A3-B0-2
+    default_pulse_ms: 15
+  c_saucer_drop:
+    number: A3-B0-3
+    default_pulse_ms: 15
+  c_saucer_drop_knockdown:
+    number: A3-B0-5
+    default_pulse_ms: 10
+
+
+
+
   # c_flipper_lower_left_hold:
   #   number: A1-B0-3
   #   allow_enable: true

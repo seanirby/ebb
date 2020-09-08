@@ -7,6 +7,13 @@ drop_targets:
     reset_events: s_hook_1_active
     knockdown_events: timer_drop_right_complete
     knockdown_coil: c_drop_right_knockdown
+  drop_saucer:
+    switch: s_saucer_drop
+    reset_coil: c_saucer_drop
+    # reset_events: ball_starting
+    reset_events: ball_starting, timer_drop_saucer_complete, reset_saucer_drop
+    knockdown_events: s_hook_1_active
+    knockdown_coil: c_saucer_drop_knockdown
     
 
 # drop_target_banks:

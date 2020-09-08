@@ -13,7 +13,7 @@ p_roc:
       use_ws281x_0: True
 
 config:
-# - autofire_coils.yaml
+- autofire_coils.yaml
 - ball_devices.yaml
 # - ball_saves.yaml
 - coils.yaml
