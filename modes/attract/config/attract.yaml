@@ -6,29 +6,41 @@ slides:
       - type: text
         text: PRESS START
 
-# shows:
-#   attract:
-#   - duration: 1
-#     lights:
-#       l0: on
-#       l1: off
-#       l2: off
-#   - duration: 1
-#     lights:
-#       l0: off
-#       l1: on
-#       l2: off
-#   - duration: 1
-#     lights:
-#       l0: off
-#       l1: off
-#       l2: on
+shows:
+  beef:
+  - duration: 1
+    lights:
+      l_serial_chain_0_1: red
+      l_serial_chain_0_2: blue
+      l_serial_chain_0_3: green
+      l_serial_chain_0_4: orange
+      l_serial_chain_0_5: yellow
+      l_serial_chain_0_6: purple
+      l_serial_chain_0_7: blue
+      l_serial_chain_0_8: purple
+      l_serial_chain_0_9: blue
+      l_serial_chain_0_10: purple
 
-# show_player:
-#   mode_attract_started: attract
-#   mode_attract_stopped:
-#     attract:
-#       action: stop
+  - duration: 1
+    lights:
+      l_serial_chain_0_1: yellow
+      l_serial_chain_0_2: orange
+      l_serial_chain_0_3: blue
+      l_serial_chain_0_4: red
+      l_serial_chain_0_5: green
+      l_serial_chain_0_6: blue
+      l_serial_chain_0_7: purple
+      l_serial_chain_0_8: blue
+      l_serial_chain_0_9: purple
+      l_serial_chain_0_10: blue
+
+# #     lights:
+# #       l0: off
+# #       l1: off
+# #       l2: on
+
+show_player:
+  mode_attract_started: beef
 
 slide_player:
   mode_attract_started: attract

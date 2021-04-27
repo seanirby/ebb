@@ -7,12 +7,12 @@ autofire_coils:
   # ac_sling_right:
   #   coil: c_sling_right
   #   switch: s_sling_right
-  pop_a:
-    coil: c_pop_a
-    switch: s_pop_a
-  pop_b:
-    coil: c_pop_b
-    switch: s_pop_b
-  pop_c:
-    coil: c_pop_c
-    switch: s_pop_c
+  pop_center:
+    coil: c_pop_center
+    switch: s_pop_center
+  pop_left:
+    coil: c_pop_left
+    switch: s_pop_left
+  pop_right:
+    coil: c_pop_right
+    switch: s_pop_right

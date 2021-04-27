@@ -1,86 +1,88 @@
 #config_version=5
 
 coils:
-  c_trough_eject:
-    number: A10-B0-5 #doesnt exist
   c_plunger_eject:
-    number: A10-B0-6 #doesnt exist
-  c_flipper_lower_right_main:
-    number: A1-B0-0
-    default_hold_power: 0.2
-    default_pulse_ms: 22.5
+    number: A6-B1-7
+    default_pulse_ms: 12
+  c_trough_eject:
+    number: A6-B1-5
+    default_pulse_ms: 18
   c_flipper_upper_right_main:
-    number: A1-B0-3
-    default_hold_power: 0.125
-    default_pulse_ms: 24.5
-     # c_flipper_lower_right_hold:
-  #   number: A1-B0-1
-  #   allow_enable: true
-  c_flipper_lower_left_main:
-    number: A1-B0-1
-    default_hold_power: 0.2
-    default_pulse_ms: 22.5
-  c_drop_right:
-    number: A1-B0-2
+    number: A6-B0-0
+    default_hold_power: 0.4
+    default_pulse_ms: 17
+  c_smart_drop_right_knockdown:
+    number: A6-B0-1
+    default_pulse_ms: 10
+  c_smart_drop_right:
+    number: A6-B0-2
     default_pulse_ms: 25
-  c_drop_right_knockdown:
-    number: A1-B0-4
-    default_pulse_ms: 10
-  c_pop_a:
-    number: A3-B0-0
-    default_pulse_ms: 15
-  c_pop_b:
-    number: A3-B0-1
-    default_pulse_ms: 15
-  c_pop_c:
-    number: A3-B0-2
-    default_pulse_ms: 15
-  c_saucer_drop:
-    number: A3-B0-3
-    default_pulse_ms: 15
-  c_saucer_drop_knockdown:
-    number: A3-B0-5
-    default_pulse_ms: 10
+  c_flipper_lower_left_main:
+    number: A6-B0-3
+    default_hold_power: 0.4
+    default_pulse_ms: 18
+  c_flipper_lower_right_main:
+    number: A6-B0-4
+    default_hold_power: 0.4
+    default_pulse_ms: 18
+  c_scoop:
+    number: A7-B0-0
+    default_pulse_ms: 9
+  c_pop_right:
+    number: A7-B1-0
+    default_pulse_ms: 12
+  c_pop_center:
+    number: A7-B1-1
+    default_pulse_ms: 12
+  c_pop_left:
+    number: A7-B1-2
+    default_pulse_ms: 12
+  c_saucer:
+    number: A7-B1-5
+    default_pulse_ms: 25 #was 50
+
+  # c_saucer_drop:
+  #   number: A3-B0-3
+  #   default_pulse_ms: 15
+  # c_saucer_drop_knockdown:
+  #   number: A3-B0-5
+  #   default_pulse_ms: 10
 
 
 
+  # # c_flipper_lower_left_hold:
+  # #   number: A1-B0-3
+  # #   allow_enable: true
 
-  # c_flipper_lower_left_hold:
-  #   number: A1-B0-3
-  #   allow_enable: true
-
-  # c_pop_0:
-  #   number: coil3
-  #   default_pulse_power: 0.95
-  # c_pop_1:
-  #   number: coil4
-  #   default_pulse_power: 0.95
-  # c_pop_2:
-  #   number: coil5
-  #   default_pulse_power: 0.95
-  # c_sling_left:
-  #   number: coil6
-  # c_sling_right:
-  #   number: coil7
-  # c_diverter_hook:
-  #   number: coil8
-  #   default_hold_power: 0.25
-  #   allow_enable: true
-  # c_drops_upper_0:
-  #   number: coil9
-  #   default_hold_power: 0.25
-  #   allow_enable: true
-  # c_drops_upper_1:
-  #   number: coil10
-  #   default_hold_power: 0.25
-  #   allow_enable: true
-  # c_drops_upper_2:
-  #   number: coil11
-  #   default_hold_power: 0.25
-  #   allow_enable: true
-  # c_scoop_upper:
-  #   number: coil12
-  #   default_pulse_ms: 100
-  # c_scoop_lower:
-  #   number: coil13
-  #   default_pulse_ms: 100
+  # # c_pop_0:
+  # #   number: coil3
+  # #   default_pulse_power: 0.95
+  # # c_pop_1:
+  # #   number: coil4
+  # #   default_pulse_power: 0.95
+  # # c_pop_2:
+  # #   number: coil5
+  # #   default_pulse_power: 0.95
+  # # c_sling_left:
+  # #   number: coil6
+  # # c_sling_right:
+  # #   number: coil7
+  # # c_diverter_hook:
+  # #   number: coil8
+  # #   default_hold_power: 0.25
+  # #   allow_enable: true
+  # # c_drops_upper_0:
+  # #   number: coil9
+  # #   default_hold_power: 0.25
+  # #   allow_enable: true
+  # # c_drops_upper_1:
+  # #   number: coil10
+  # #   default_hold_power: 0.25
+  # #   allow_enable: true
+  # # c_drops_upper_2:
+  # #   number: coil11
+  # #   default_hold_power: 0.25
+  # #   allow_enable: true
+  # # c_scoop_lower:
+  # #   number: coil13
+  # #   default_pulse_ms: 100

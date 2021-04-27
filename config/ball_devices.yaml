@@ -2,23 +2,29 @@
 
 ball_devices:
   bd_trough:
-    ball_switches: s_trough_0, s_trough_1, s_trough_2
+    ball_switches: s_trough_1
     eject_coil: c_trough_eject
+    mechanical_eject: False
     tags: drain, home, trough
     eject_targets: bd_plunger
     entrance_count_delay: 300ms
   bd_plunger:
     ball_switches: s_plunger_lane
+    mechanical_eject: True
     eject_coil: c_plunger_eject
-    entrance_count_delay: 300ms
+    entrance_count_delay: 2s
     eject_timeouts: 2s
-    player_controlled_eject_event: s_launch
+    player_controlled_eject_event: s_launch_active
     debug: True
-  # bd_scoop_upper:
-  #   ball_switches: s_scoop_upper
-  #   eject_coil: c_scoop_upper
-  #   entrance_count_delay: 2s
-  #   eject_timeouts: 3s
+  bd_saucer:
+    ball_switches: s_saucer
+    eject_coil: c_saucer
+    entrance_count_delay: 1500ms
+  bd_scoop_upper:
+    ball_switches: s_scoop
+    eject_coil: c_scoop
+    entrance_count_delay: 2s
+    eject_timeouts: 3s
   # bd_scoop_lower:
   #   ball_switches: s_scoop_lower
   #   eject_coil: c_scoop_lower

@@ -2,46 +2,54 @@
 
 switches:
   s_start:
-    number: A11-B0-7 #doesnt exit
+    number: A11-B0-7 #doesnt exist
     tags: start
   s_enter_playfield:
-    number: A11-B0-6 #doesnt exit
+    number: A11-B0-6 #doesnt exist
     type: 'NC'
   s_launch:
-    number: A11-B0-5 #doesnt exit
-  # s_drain:
-  #   number: 3
-  s_plunger_lane:
-    number: A11-B0-4 #doesnt exit
+    number: A11-B0-5 #doesnt exist
+  s_drain:
+    number: A11-B0-4
   s_left_flipper:
-    number: A0-B0-0
+    number: A0-B1-2
     tags: left_flipper
   s_right_flipper:
-    number: A0-B0-1
+    number: A0-B1-7
     tags: right_flipper
-  s_hook_1:
-    number: A0-B0-2
-    tags: playfield_active
-  s_hook_drop:
-    number: A0-B0-3
-  s_saucer_drop:
-    number: A0-B0-4
-  s_pop_a:
-    number: A0-B0-5
+  s_scoop:
+    number: A3-B1-0
+    type: NC
+  s_saucer:
+    number: A3-B0-1
+  s_thin_standup_left:
+    number: A2-B0-0
+  s_thin_standup_right:
+    number: A2-B0-1
+  s_smart_drop_right:
+    number: A2-B0-2
+  s_hook:
+    number: A2-B0-3
+  s_pop_center:
+    number: A3-B0-3
     debounce: quick
-  s_pop_b:
-    number: A0-B0-6
+  s_pop_right:
+    number: A3-B0-4
     debounce: quick
-  s_pop_c:
-    number: A0-B0-7
+  s_pop_left:
+    number: A3-B0-5
     debounce: quick
-
-  s_trough_0:
-    number: A11-B0-1 #doesnt exit
+  s_trough_jam:
+    number: A1-B0-06
+    type: 'NC'
   s_trough_1:
-    number: A11-B0-2 #doesnt exit
-  s_trough_2:
-    number: A11-B0-3 #doesnt exit
+    number: A1-B0-05
+    type: 'NC'
+  s_plunger_lane:
+    number: A1-B0-07
+
+  # s_trough_2:
+  #   number: A11-B0-3 #doesnt exit
 
   # s_pop_0:
   #   number: 10
@@ -97,8 +105,6 @@ switches:
   #   number: 35
   # s_drops_upper_2:
   #   number: 36
-  # s_scoop_upper:
-  #   number: 37
   # s_scoop_lower:
   #   number: 38
   # s_spinner_right:

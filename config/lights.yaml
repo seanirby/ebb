@@ -1,190 +1,243 @@
 #config_version=5
 
+light_settings:
+  default_fade_ms: 20 
+  default_color_correction_profile: correction_profile
+  color_correction_profiles:
+    correction_profile:
+      whitepoint: [1.0, 1.0, 1.0]
+      gamma: 2.5
+      linear_slope: 1.0
+      linear_cutoff: 0.0
+
 lights:
-  # lanes
-  l0:
-    number: l1
+  l_serial_chain_0_1:
+    number: 8-100-101-102
     subtype: led
-  l1:
-    number: l2
+    type: grb
+  l_serial_chain_0_2:
+    number: 8-103-104-105
     subtype: led
-  l2:
-    number: l3
+    type: grb
+  l_serial_chain_0_3:
+    number: 8-106-107-108
     subtype: led
-  # right targets
-  l_target_right_0_0:
-    number: l4
+    type: grb
+  l_serial_chain_0_4:
+    number: 8-109-110-111
     subtype: led
-  l_target_right_1_0:
-    number: l5
+    type: grb
+  l_serial_chain_0_5:
+    number: 8-112-113-114
     subtype: led
-  l_target_right_2_0:
-    number: l6
+    type: grb
+  l_serial_chain_0_6:
+    number: 8-115-116-117
     subtype: led
-  l_target_right_3_0:
-    number: l7
+    type: grb
+  l_serial_chain_0_7:
+    number: 8-118-119-120
     subtype: led
-  # left targets
-  l_target_left_0_0:
-    number: l8
+    type: grb
+  l_serial_chain_0_8:
+    number: 8-121-122-123
     subtype: led
-  l_target_left_0_1:
-    number: l9
+    type: grb
+  l_serial_chain_0_9:
+    number: 8-124-125-126
     subtype: led
-  l_target_left_0_2:
-    number: 20
+    type: grb
+  l_serial_chain_0_10:
+    number: 8-127-128-129
     subtype: led
-  l_target_left_0_3:
-    number: 21
-    subtype: led
-  l_target_left_1_0:
-    number: 22
-    subtype: led
-  l_target_left_1_1:
-    number: 23
-    subtype: led
-  l_target_left_1_2:
-    number: 24
-    subtype: led
-  l_target_left_1_3:
-    number: 25
-    subtype: led
-  l_target_left_2_0:
-    number: 26
-    subtype: led
-  l_target_left_2_1:
-    number: 27
-    subtype: led
-  l_target_left_2_2:
-    number: 28
-    subtype: led
-  l_target_left_2_3:
-    number: 29
-    subtype: led
-  l_target_left_3_0:
-    number: 30
-    subtype: led
-  l_target_left_3_1:
-    number: 31
-    subtype: led
-  l_target_left_3_2:
-    number: 32
-    subtype: led
-  l_target_left_3_3:
-    number: 33
-    subtype: led
-  l_target_left_4_0:
-    number: 34
-    subtype: led
-  l_target_left_4_1:
-    number: 35
-    subtype: led
-  l_target_left_4_2:
-    number: 36
-    subtype: led
-  l_target_left_4_3:
-    number: 37
-    subtype: led
-  l_target_left_5_0:
-    number: 38
-    subtype: led
-  l_target_left_5_1:
-    number: 39
-    subtype: led
-  l_target_left_5_2:
-    number: 40
-    subtype: led
-  l_target_left_5_3:
-    number: 41
-    subtype: led
-  l_target_left_6_0:
-    number: 42
-    subtype: led
-  l_target_left_6_1:
-    number: 43
-    subtype: led
-  l_target_left_6_2:
-    number: 44
-    subtype: led
-  l_target_left_6_3:
-    number: 45
-    subtype: led
-  l_outlane_left_0:
-    number: 46
-    subtype: led
-  l_inlane_left_0:
-    number: 47
-    subtype: led
-  l_inlane_right_0:
-    number: 48
-    subtype: led
-  l_outlane_right_0:
-    number: 49
-    subtype: led
-  l_spinner_right_0:
-    number: 50
-    subtype: led
-    tags: l_spinner_right
-  l_spinner_right_1:
-    number: 51
-    subtype: led
-    tags: l_spinner_right
-  l_spinner_right_2:
-    number: 52
-    subtype: led
-    tags: l_spinner_right
-  l_spinner_right_3:
-    number: 53
-    subtype: led
-    tags: l_spinner_right
-  l_ball_save:
-    number: 54
-    subtype: led
-  l_scoop_lower_0:
-    number: 55
-    subtype: led
-  l_wide_shot_vpx_0:
-    number: 56
-    subtype: led
-  l_wide_shot_vpx_1:
-    number: 57
-    subtype: led
-  l_wide_shot_vpx_2:
-    number: 58
-    subtype: led
-  l_wide_shot_vpx_3:
-    number: 59
-    subtype: led
-  l_wide_shot_vpx_4:
-    number: 60
-    subtype: led
-  l_wide_shot_vpx_5:
-    number: 61
-    subtype: led
-  l_wide_shot_vpx_6:
-    number: 62
-    subtype: led
-  l_scoop_lower_1:
-    number: 63
-    subtype: led
-  l_award_0:
-    number: 64
-    subtype: led
-  l_award_1:
-    number: 65
-    subtype: led
-  l_award_2:
-    number: 66
-    subtype: led
-  l_award_3:
-    number: 67
-    subtype: led
-  l_award_4:
-    number: 68
-    subtype: led
-  l_award_5:
-    number: 69
-    subtype: led
-  l_award_6:
-    number: 70
-    subtype: led
+    type: grb
+
+
+# lights:
+#   # lanes
+#   l0:
+#     number: l1
+#     subtype: led
+#   l1:
+#     number: l2
+#     subtype: led
+#   l2:
+#     number: l3
+#     subtype: led
+#   # right targets
+#   l_target_right_0_0:
+#     number: l4
+#     subtype: led
+#   l_target_right_1_0:
+#     number: l5
+#     subtype: led
+#   l_target_right_2_0:
+#     number: l6
+#     subtype: led
+#   l_target_right_3_0:
+#     number: l7
+#     subtype: led
+#   # left targets
+#   l_target_left_0_0:
+#     number: l8
+#     subtype: led
+#   l_target_left_0_1:
+#     number: l9
+#     subtype: led
+#   l_target_left_0_2:
+#     number: 20
+#     subtype: led
+#   l_target_left_0_3:
+#     number: 21
+#     subtype: led
+#   l_target_left_1_0:
+#     number: 22
+#     subtype: led
+#   l_target_left_1_1:
+#     number: 23
+#     subtype: led
+#   l_target_left_1_2:
+#     number: 24
+#     subtype: led
+#   l_target_left_1_3:
+#     number: 25
+#     subtype: led
+#   l_target_left_2_0:
+#     number: 26
+#     subtype: led
+#   l_target_left_2_1:
+#     number: 27
+#     subtype: led
+#   l_target_left_2_2:
+#     number: 28
+#     subtype: led
+#   l_target_left_2_3:
+#     number: 29
+#     subtype: led
+#   l_target_left_3_0:
+#     number: 30
+#     subtype: led
+#   l_target_left_3_1:
+#     number: 31
+#     subtype: led
+#   l_target_left_3_2:
+#     number: 32
+#     subtype: led
+#   l_target_left_3_3:
+#     number: 33
+#     subtype: led
+#   l_target_left_4_0:
+#     number: 34
+#     subtype: led
+#   l_target_left_4_1:
+#     number: 35
+#     subtype: led
+#   l_target_left_4_2:
+#     number: 36
+#     subtype: led
+#   l_target_left_4_3:
+#     number: 37
+#     subtype: led
+#   l_target_left_5_0:
+#     number: 38
+#     subtype: led
+#   l_target_left_5_1:
+#     number: 39
+#     subtype: led
+#   l_target_left_5_2:
+#     number: 40
+#     subtype: led
+#   l_target_left_5_3:
+#     number: 41
+#     subtype: led
+#   l_target_left_6_0:
+#     number: 42
+#     subtype: led
+#   l_target_left_6_1:
+#     number: 43
+#     subtype: led
+#   l_target_left_6_2:
+#     number: 44
+#     subtype: led
+#   l_target_left_6_3:
+#     number: 45
+#     subtype: led
+#   l_outlane_left_0:
+#     number: 46
+#     subtype: led
+#   l_inlane_left_0:
+#     number: 47
+#     subtype: led
+#   l_inlane_right_0:
+#     number: 48
+#     subtype: led
+#   l_outlane_right_0:
+#     number: 49
+#     subtype: led
+#   l_spinner_right_0:
+#     number: 50
+#     subtype: led
+#     tags: l_spinner_right
+#   l_spinner_right_1:
+#     number: 51
+#     subtype: led
+#     tags: l_spinner_right
+#   l_spinner_right_2:
+#     number: 52
+#     subtype: led
+#     tags: l_spinner_right
+#   l_spinner_right_3:
+#     number: 53
+#     subtype: led
+#     tags: l_spinner_right
+#   l_ball_save:
+#     number: 54
+#     subtype: led
+#   l_scoop_lower_0:
+#     number: 55
+#     subtype: led
+#   l_wide_shot_vpx_0:
+#     number: 56
+#     subtype: led
+#   l_wide_shot_vpx_1:
+#     number: 57
+#     subtype: led
+#   l_wide_shot_vpx_2:
+#     number: 58
+#     subtype: led
+#   l_wide_shot_vpx_3:
+#     number: 59
+#     subtype: led
+#   l_wide_shot_vpx_4:
+#     number: 60
+#     subtype: led
+#   l_wide_shot_vpx_5:
+#     number: 61
+#     subtype: led
+#   l_wide_shot_vpx_6:
+#     number: 62
+#     subtype: led
+#   l_scoop_lower_1:
+#     number: 63
+#     subtype: led
+#   l_award_0:
+#     number: 64
+#     subtype: led
+#   l_award_1:
+#     number: 65
+#     subtype: led
+#   l_award_2:
+#     number: 66
+#     subtype: led
+#   l_award_3:
+#     number: 67
+#     subtype: led
+#   l_award_4:
+#     number: 68
+#     subtype: led
+#   l_award_5:
+#     number: 69
+#     subtype: led
+#   l_award_6:
+#     number: 70
+#     subtype: led
