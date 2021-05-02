@@ -12,7 +12,7 @@ light_settings:
 
 lights:
   # drop upper
-  l_serial_chain_0_1:
+  l_smart_drop_upper:
     number: 8-100-101-102
     subtype: led
     type: grb
@@ -36,23 +36,19 @@ lights:
     number: 8-112-113-114
     subtype: led
     type: grb
-  # spinner 4
-  l_serial_chain_0_6:
+  l_spinner_rectangle:
     number: 8-115-116-117
     subtype: led
     type: grb
-  # spinner 3
-  l_serial_chain_0_7:
+  l_spinner_arrow_2:
     number: 8-118-119-120
     subtype: led
     type: grb
-  # spinner 2
-  l_serial_chain_0_8:
+  l_spinner_arrow_1:
     number: 8-121-122-123
     subtype: led
     type: grb
-  # spinner 1
-  l_serial_chain_0_9:
+  l_spinner_arrow_0:
     number: 8-124-125-126
     subtype: led
     type: grb

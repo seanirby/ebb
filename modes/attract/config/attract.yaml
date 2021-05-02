@@ -10,15 +10,15 @@ shows:
   beef:
   - duration: .2
     lights:
-      l_serial_chain_0_1: blue
+      l_smart_drop_upper: blue
       l_serial_chain_0_2: green
       l_serial_chain_0_3: blue
       l_serial_chain_0_4: green
       l_serial_chain_0_5: blue
-      l_serial_chain_0_6: green
-      l_serial_chain_0_7: blue
-      l_serial_chain_0_8: green
-      l_serial_chain_0_9: blue
+      l_spinner_rectangle: red
+      l_spinner_arrow_2: red
+      l_spinner_arrow_1: red
+      l_spinner_arrow_0: red
       l_serial_chain_0_10: green
       l_serial_chain_0_11: blue
       l_hook_2: green
@@ -58,15 +58,15 @@ shows:
 
   - duration: .2
     lights:
-      l_serial_chain_0_1: green
+      l_smart_drop_upper: green
       l_serial_chain_0_2: blue
       l_serial_chain_0_3: green
       l_serial_chain_0_4: blue
       l_serial_chain_0_5: green
-      l_serial_chain_0_6: blue
-      l_serial_chain_0_7: green
-      l_serial_chain_0_8: blue
-      l_serial_chain_0_9: green
+      l_spinner_rectangle: yellow
+      l_spinner_arrow_2: yellow
+      l_spinner_arrow_1: yellow
+      l_spinner_arrow_0: yellow
       l_serial_chain_0_10: blue
       l_serial_chain_0_11: green
       l_hook_2: blue

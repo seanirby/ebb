@@ -1,31 +1,20 @@
 #config_version=5
+
 diverters:
-  div_right:
-    activation_coil: c_diverter_hook
-    type: hold
-    activation_time: 2s
-    activation_switches: s_hook_release
-    enable_events: ball_starting
-    disable_events: ball_ended
-  div_drops_upper_0:
-    activation_coil: c_drops_upper_0
-    type: hold
-    activate_events: activate_upper_drop_0
-    deactivate_events: s_drops_upper_0_active, deactivate_upper_drop_0
-    enable_events: ball_starting
-    disable_events: ball_ended
-  div_drops_upper_1:
-    activation_coil: c_drops_upper_1
-    type: hold
-    activate_events: activate_upper_drop_1
-    deactivate_events: s_drops_upper_1_active, deactivate_upper_drop_1
-    enable_events: ball_starting
-    disable_events: ball_ended
-  div_drops_upper_2:
-    activation_coil: c_drops_upper_2
-    type: hold
-    activate_events: activate_upper_drop_2
-    deactivate_events: s_drops_upper_2_active, deactivate_upper_drop_2
+  # div_drop_right:
+  #   activation_coil: c_diverter_hook
+  #   type: hold
+  #   activation_time: 2s
+  #   activation_switches: s_hook_release
+  #   enable_events: ball_starting
+  #   disable_events: ball_ended
+  div_smart_drop_upper:
+    activation_coil: c_smart_drop_upper
+    deactivation_coil: c_smart_drop_upper_knockdown
+    type: pulse
+    # TODO: come up with better activat/deactivate names
+    activate_events: activate_smart_drop_upper
+    deactivate_events: s_smart_drop_upper_active, deactivate_smart_drop_upper
     enable_events: ball_starting
     disable_events: ball_ended
     

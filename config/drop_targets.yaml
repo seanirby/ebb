@@ -1,19 +1,19 @@
 #config_version=5
 
 drop_targets:
-  drop_right:
+  smart_drop_right:
     switch: s_hook
     reset_coil: c_smart_drop_right
-    reset_events: s_hook_active
-    knockdown_events: timer_smart_drop_right_complete, s_force_knockdown_coils_active
+    reset_events: sh_racks_qualify_collect_hit
+    knockdown_events: ball_starting, timer_smart_drop_right_complete, s_force_knockdown_coils_active
     knockdown_coil: c_smart_drop_right_knockdown
-  drop_left:
+  smart_drop_left:
     switch: s_smart_drop_left
     reset_coil: c_smart_drop_left
     reset_events: ball_starting, timer_smart_drop_left_complete, reset_smart_drop_left
     knockdown_events: s_hook_active, s_force_knockdown_coils_active
     knockdown_coil: c_smart_drop_left_knockdown
-  drop_upper:
+  smart_drop_upper:
     switch: s_smart_drop_upper
     reset_coil: c_smart_drop_upper
     reset_events: ball_starting, timer_smart_drop_left_complete, reset_smart_drop_upper

@@ -3,21 +3,104 @@
 mode:
   start_events: start_mball_qualifying
   stop_events: start_mball_locked
-  code: mball_qualifying.MballQualifying
+
+shows:
+  mball_qualifying_none_qualified:
+    - lights:
+        (l0): (color)
+        (l1): (color)
+        (l2): (color)
+    - lights:
+        (l0): off
+        (l1): off
+        (l2): off
+  mball_qualifying_one_qualified:
+    - lights:
+        (l0): (color)
+        (l1): (color)
+        (l2): (color)
+    - lights:
+        (l0): (color)
+        (l1): off
+        (l2): off
+  mball_qualifying_two_qualified:
+    - lights:
+        (l0): (color)
+        (l1): (color)
+        (l2): (color)
+    - lights:
+        (l0): (color)
+        (l1): (color)
+        (l2): off
+  mball_qualifying_lock_qualified:
+    - duration: -1
+      lights:
+        (l0): (color)
+        (l1): (color)
+        (l2): (color)
+
+shot_profiles:
+  qualify_lock:
+    states:
+      #TODO: do i even need this state
+      - name: none_qualified
+      #TODO: do i need quotes around show names
+        show: mball_qualifying_none_qualified
+        speed: 2
+      - name: one_qualified
+        show: mball_qualifying_one_qualified
+        speed: 4
+      - name: two_qualified
+        show: mball_qualifying_two_qualified
+        speed: 6
+      - name: lock_qualifying
+        show: mball_qualifying_lock_qualified
+        
+  lock:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: flash_color
+        speed: 8
+
+shots:
+  sh_qualify_lock:
+    switch: s_smart_drop_upper
+    advance_events: mball_qualifying_advance_progress_1, mball_qualifying_advance_progress_2
+    profile: qualify_lock
+    reset_events: mode_mball_qualifying_stopping
+    show_tokens:
+      l0: l_spinner_arrow_0
+      l1: l_spinner_arrow_1
+      l2: l_spinner_arrow_2
+      color: green
+  sh_lock:
+    switch: s_scoop
+    advance_events: mball_qualifying_lock_qualified
+    profile: lock
+    reset_events: mode_mball_qualifying_stopping
+    show_tokens:
+      light: l_smart_drop_upper
+      color: green
+
 
 variable_player:
-  s_drops_upper_0_active:
+  s_smart_drop_upper_active:
     mball_progress:
       int: 1
-      action: set
-  s_drops_upper_1_active:
-    mball_progress:
-      int: 2
-      action: set
-  s_drops_upper_2_active:
-    mball_progress:
-      int: 3
-      action: set
 
 event_player:
-  multiball_lock_scoop_upper_full: start_mball_locked
+  # TODO handle setting shot to starting state based on progress
+  # What event gets fired when a player variable is updated
+  # init
+  mode_mball_qualifying_started{current_player.mball_progress==1}: mball_qualifying_advance_progress_1
+  mode_mball_qualifying_started{current_player.mball_progress==2}:
+    - mball_qualifying_advance_progress_1
+    - mball_qualifying_advance_progress_2
+  mode_mball_qualifying_started{current_player.mball_progress==3}: mball_qualifying_lock_qualified, deactivate_smart_drop_upper
+
+  # progression
+  sh_qualify_lock_hit{current_player.mball_progress < 3}: activate_smart_drop_upper
+  sh_qualify_lock_hit{current_player.mball_progress >= 3}: mball_qualifying_lock_qualified, deactivate_smart_drop_upper
+  multiball_lock_scoop_full: start_mball_locked

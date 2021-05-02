@@ -6,6 +6,6 @@ ball_saves:
     hurry_up_time: 2s
     grace_period: 2s
     enable_events: ball_starting
-    timer_start_events: balldevice_bd_plunger_ball_eject_success
+    timer_start_events: balldevice_bd_plunger_ball_eject_success, s_orbit_active
     auto_launch: yes
     balls_to_save: 1

@@ -8,7 +8,12 @@ mode:
   priority: 100
 
 shot_profiles:
-  rack_collect:
+  racks_qualify_collect:
+    states:
+      - name: flash
+        show: flash
+        speed: 6
+  racks_collect:
     states:
       - name: flash
         show: flash
@@ -24,13 +29,20 @@ shot_profiles:
         speed: 6
 
 shots:
-  sh_rack_collect:
-    enable_events: enable_rack_collect
-    disable_events: disable_rack_collect
-    profile: rack_collect
-    switch: s_saucer
+  sh_racks_qualify_collect:
+    profile: racks_qualify_collect
+    enable_events: racks_enable_qualify_collect
+    disable_events: racks_rack_collected, sh_racks_qualify_collect_hit
+    switch: s_hook
     show_tokens:
       light: l_hook_2
+  sh_racks_collect:
+    profile: racks_collect
+    enable_events: sh_racks_qualify_collect_hit
+    disable_events: racks_rack_collected, timer_smart_drop_left_complete
+    switch: s_saucer
+    show_tokens:
+      light: l_drop_left_arrow_2
   sh_tl_0:
     hit_events: s_standup_left_0_active, spot_ball_0
   sh_tl_1:
@@ -158,4 +170,25 @@ shots:
     # show_tokens:
     #   light: l_target_left_6_3
     
-    
+timers:
+  smart_drop_right:
+    end_value: 15
+    tick_interval: 100ms
+    control_events:
+      - action: start
+        event: sh_racks_qualify_collect_hit
+      - action: reset
+        event: timer_smart_drop_right_complete
+  smart_drop_left:
+    end_value: 35
+    tick_interval: 100ms
+    control_events:
+      - action: start
+        event: sh_racks_qualify_collect_hit
+      - action: reset
+        event: timer_smart_drop_left_complete
+
+# TODO: move this 
+event_player:
+  s_smart_drop_left_active{device.timers.smart_drop_left.running == False}: reset_smart_drop_left
+  # s_smart_drop_upper_active{device.timers.smart_drop_left.running == False}: reset_smart_drop_upper

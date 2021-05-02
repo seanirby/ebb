@@ -3,10 +3,26 @@
 mode:
   start_events: start_mball_locked
   stop_events: start_mball
-  code: mball_locked.MballLocked
+  # code: mball_locked.MballLocked
+
+shot_profiles:
+  mball_locked_release:
+    states:
+      - name: lit
+        show: flash_color
+        speed: 10
+
+shots:
+  sh_mball_locked_release:
+    switch: s_smart_drop_upper
+    profile: mball_locked_release
+    show_tokens:
+      light: l_smart_drop_upper
+      color: red
 
 event_player:
-  s_drops_upper_2_active: start_mball
+  mode_mball_locked_started: activate_smart_drop_upper
+  sh_mball_locked_release_hit: start_mball
     
 variable_player:
   mode_mball_locked_started:

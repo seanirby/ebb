@@ -3,20 +3,22 @@
 mode:
   start_events: ball_starting
 
-# I don't know why I need a mode for this but I can't define these in machine config
+# TODO: I don't know why I need a mode for this but I can't define
+# these in machine config
 
 multiballs:
   main:
     ball_count: 2
     ball_count_type: total
     shoot_again: 11s
-    ball_locks: bd_scoop_upper
+    ball_locks: bd_scoop
+    # TODO: rename this
     start_events: start_mball
 
 multiball_locks:
-  scoop_upper:
+  scoop:
     balls_to_lock: 1
-    lock_devices: bd_scoop_upper
+    lock_devices: bd_scoop
     locked_ball_counting_strategy: physical_only
     enable_events: mode_mball_qualifying_started
     disable_events: multiball_main_started

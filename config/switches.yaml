@@ -24,11 +24,26 @@ switches:
     number: A0-B1-7
     tags: right_flipper
   # Board 1
-  s_trough_jam:
-    number: A1-B0-06
+  s_trough_6:
+    number: A1-B0-00
+    type: 'NC'
+  s_trough_5:
+    number: A1-B0-01
+    type: 'NC'
+  s_trough_4:
+    number: A1-B0-02
+    type: 'NC'
+  s_trough_3:
+    number: A1-B0-03
+    type: 'NC'
+  s_trough_2:
+    number: A1-B0-04
     type: 'NC'
   s_trough_1:
     number: A1-B0-05
+    type: 'NC'
+  s_trough_jam:
+    number: A1-B0-06
     type: 'NC'
   s_plunger_lane:
     number: A1-B0-07
