@@ -8,31 +8,101 @@ slides:
 
 shows:
   beef:
-  - duration: 1
+  - duration: .2
     lights:
-      l_serial_chain_0_1: red
+      l_serial_chain_0_1: blue
+      l_serial_chain_0_2: green
+      l_serial_chain_0_3: blue
+      l_serial_chain_0_4: green
+      l_serial_chain_0_5: blue
+      l_serial_chain_0_6: green
+      l_serial_chain_0_7: blue
+      l_serial_chain_0_8: green
+      l_serial_chain_0_9: blue
+      l_serial_chain_0_10: green
+      l_serial_chain_0_11: blue
+      l_hook_2: green
+      l_hook_1: blue
+      l_serial_chain_0_14: green
+      l_serial_chain_0_15: blue
+      l_serial_chain_0_16: green
+      l_serial_chain_0_17: blue
+      l_serial_chain_0_18: green
+      l_serial_chain_0_19: blue
+      l_serial_chain_0_20: green
+      l_serial_chain_0_21: blue
+      l_serial_chain_0_22: green
+      l_drop_left_arrow_1: blue
+      l_drop_left_arrow_2: green
+      l_drop_left_arrow_3: blue
+      l_serial_chain_0_26: green
+      l_serial_chain_0_27: blue 
+      l_serial_chain_0_28: green
+      l_serial_chain_0_29: blue
+      l_serial_chain_0_30: green
+      l_serial_chain_0_31: blue
+      l_serial_chain_0_32: green
+      l_serial_chain_0_33: blue
+      l_serial_chain_0_34: green
+      l_serial_chain_0_35: blue
+      l_serial_chain_0_36: green
+      l_serial_chain_0_37: blue
+      l_serial_chain_0_38: green
+      l_serial_chain_0_39: blue
+      l_serial_chain_0_40: green
+      l_ball_save: blue
+      # l_serial_chain_0_42: green
+      # l_serial_chain_0_43: blue
+      # l_serial_chain_0_44: green
+      # l_serial_chain_0_45: blue
+
+  - duration: .2
+    lights:
+      l_serial_chain_0_1: green
       l_serial_chain_0_2: blue
       l_serial_chain_0_3: green
-      l_serial_chain_0_4: orange
-      l_serial_chain_0_5: yellow
-      l_serial_chain_0_6: purple
-      l_serial_chain_0_7: blue
-      l_serial_chain_0_8: purple
-      l_serial_chain_0_9: blue
-      l_serial_chain_0_10: purple
-
-  - duration: 1
-    lights:
-      l_serial_chain_0_1: yellow
-      l_serial_chain_0_2: orange
-      l_serial_chain_0_3: blue
-      l_serial_chain_0_4: red
+      l_serial_chain_0_4: blue
       l_serial_chain_0_5: green
       l_serial_chain_0_6: blue
-      l_serial_chain_0_7: purple
+      l_serial_chain_0_7: green
       l_serial_chain_0_8: blue
-      l_serial_chain_0_9: purple
+      l_serial_chain_0_9: green
       l_serial_chain_0_10: blue
+      l_serial_chain_0_11: green
+      l_hook_2: blue
+      l_hook_1: green
+      l_serial_chain_0_14: blue
+      l_serial_chain_0_15: green
+      l_serial_chain_0_16: blue
+      l_serial_chain_0_17: green
+      l_serial_chain_0_18: blue
+      l_serial_chain_0_19: green
+      l_serial_chain_0_20: blue
+      l_serial_chain_0_21: green
+      l_serial_chain_0_22: blue
+      l_drop_left_arrow_1: green
+      l_drop_left_arrow_2: blue
+      l_drop_left_arrow_3: green
+      l_serial_chain_0_26: blue
+      l_serial_chain_0_27: green
+      l_serial_chain_0_28: blue
+      l_serial_chain_0_29: green
+      l_serial_chain_0_30: blue
+      l_serial_chain_0_31: green
+      l_serial_chain_0_32: blue
+      l_serial_chain_0_33: green
+      l_serial_chain_0_34: blue
+      l_serial_chain_0_35: green
+      l_serial_chain_0_36: blue
+      l_serial_chain_0_37: green
+      l_serial_chain_0_38: blue
+      l_serial_chain_0_39: green
+      l_serial_chain_0_40: blue
+      l_ball_save: green
+      # l_serial_chain_0_42: blue
+      # l_serial_chain_0_43: green
+      # l_serial_chain_0_44: blue
+      # l_serial_chain_0_45: green
 
 # #     lights:
 # #       l0: off

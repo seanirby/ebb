@@ -10,7 +10,7 @@ modes:
 
   # global
   - base
-  # - ball_save
+  - ball_save
   # - lanes
   # - spinners
   # - multiball_config
@@ -18,7 +18,7 @@ modes:
   # - mball_qualifying
   # - mball_locked
   # - mball
-  # - racks
+  - racks
   # - wide_shot
   # - spot_ball
   # - awards

@@ -3,6 +3,8 @@
 keyboard:
   s:
     switch: s_start
+  f:
+    switch: s_force_knockdown_coils
   t:
     switch: s_trough_0
     toggle: True

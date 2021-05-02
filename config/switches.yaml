@@ -1,27 +1,52 @@
 #config_version=5
 
 switches:
+  # Virtual/Keyboard switches
+  s_force_knockdown_coils:
+    number: A11-B0-3
   s_start:
-    number: A11-B0-7 #doesnt exist
+    number: A11-B0-7
     tags: start
   s_enter_playfield:
-    number: A11-B0-6 #doesnt exist
+    number: A11-B0-6
     type: 'NC'
   s_launch:
-    number: A11-B0-5 #doesnt exist
+    number: A11-B0-5
   s_drain:
     number: A11-B0-4
+  # Board 0
   s_left_flipper:
     number: A0-B1-2
     tags: left_flipper
   s_right_flipper:
     number: A0-B1-7
     tags: right_flipper
-  s_scoop:
-    number: A3-B1-0
-    type: NC
-  s_saucer:
-    number: A3-B0-1
+  # Board 1
+  s_trough_jam:
+    number: A1-B0-06
+    type: 'NC'
+  s_trough_1:
+    number: A1-B0-05
+    type: 'NC'
+  s_plunger_lane:
+    number: A1-B0-07
+  s_outlane_left:
+    number: A1-B1-0
+  s_inlane_left:
+    number: A1-B1-1
+  s_sling_left_lower:
+    number: A1-B1-2
+  s_sling_left_upper:
+    number: A1-B1-3
+  s_sling_right_upper:
+    number: A1-B1-4
+  s_sling_right_lower:
+    number: A1-B1-5
+  s_inlane_right:
+    number: A1-B1-6
+  s_outlane_right:
+    number: A1-B1-7
+  # Board 2 (Center Playfield)
   s_thin_standup_left:
     number: A2-B0-0
   s_thin_standup_right:
@@ -30,6 +55,32 @@ switches:
     number: A2-B0-2
   s_hook:
     number: A2-B0-3
+  s_standup_upper:
+    number: A2-B0-4
+  s_orbit:
+    number: A2-B0-5
+    tags: playfield_active
+  s_standup_left_0:
+    number: A2-B1-0
+  s_standup_left_1:
+    number: A2-B1-1
+  s_standup_left_2:
+    number: A2-B1-2
+  s_standup_left_3:
+    number: A2-B1-3
+  s_standup_left_4:
+    number: A2-B1-4
+  s_standup_left_5:
+    number: A2-B1-5
+  s_standup_left_6:
+    number: A2-B1-6
+  # Board 3 (Upper Playfield)
+  s_smart_drop_left:
+    number: A3-B0-0
+  s_saucer:
+    number: A3-B0-1
+  s_standup_center:
+    number: A3-B0-2
   s_pop_center:
     number: A3-B0-3
     debounce: quick
@@ -39,73 +90,14 @@ switches:
   s_pop_left:
     number: A3-B0-5
     debounce: quick
-  s_trough_jam:
-    number: A1-B0-06
-    type: 'NC'
-  s_trough_1:
-    number: A1-B0-05
-    type: 'NC'
-  s_plunger_lane:
-    number: A1-B0-07
-
-  # s_trough_2:
-  #   number: A11-B0-3 #doesnt exit
-
-  # s_pop_0:
-  #   number: 10
-  # s_pop_1:
-  #   number: 11
-  # s_pop_2:
-  #   number: 12
-  # s_lane_upper_0:
-  #   number: 13
-  # s_lane_upper_1:
-  #   number: 14
-  # s_lane_upper_2:
-  #   number: 15
-  # s_target_right_0:
-  #   number: 16
-  # s_target_right_1:
-  #   number: 17
-  # s_target_right_2:
-  #   number: 18
-  # s_target_right_3:
-  #   number: 19
-  # s_target_left_0:
-  #   number: 20
-  # s_target_left_1:
-  #   number: 21
-  # s_target_left_2:
-  #   number: 22
-  # s_target_left_3:
-  #   number: 23
-  # s_target_left_4:
-  #   number: 24
-  # s_target_left_5:
-  #   number: 25
-  # s_target_left_6:
-  #   number: 26
-  # s_outlane_left:
-  #   number: 27
-  # s_inlane_left:
-  #   number: 28
-  # s_inlane_right:
-  #   number: 29
-  # s_outlane_right:
-  #   number: 30
-  # s_sling_left:
-  #   number: 31
-  # s_sling_right:
-  #   number: 32
-  # s_hook_release:
-  #   number: 33
-  # s_drops_upper_0:
-  #   number: 34
-  # s_drops_upper_1:
-  #   number: 35
-  # s_drops_upper_2:
-  #   number: 36
-  # s_scoop_lower:
-  #   number: 38
-  # s_spinner_right:
-  #   number: 39
+  s_scoop:
+    number: A3-B1-0
+    type: NC
+  s_smart_drop_upper:
+    number: A3-B1-1
+  s_upper_lane_right:
+    number: A3-B1-2
+  s_upper_lane_center:
+    number: A3-B1-3
+  s_upper_lane_left:
+    number: A3-B1-4

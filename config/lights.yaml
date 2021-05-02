@@ -1,7 +1,7 @@
 #config_version=5
 
 light_settings:
-  default_fade_ms: 20 
+  default_fade_ms: 100
   default_color_correction_profile: correction_profile
   color_correction_profiles:
     correction_profile:
@@ -11,52 +11,233 @@ light_settings:
       linear_cutoff: 0.0
 
 lights:
+  # drop upper
   l_serial_chain_0_1:
     number: 8-100-101-102
     subtype: led
     type: grb
+  # lane upper
   l_serial_chain_0_2:
     number: 8-103-104-105
     subtype: led
     type: grb
+  # lane center
   l_serial_chain_0_3:
     number: 8-106-107-108
     subtype: led
     type: grb
+  # lane right
   l_serial_chain_0_4:
     number: 8-109-110-111
     subtype: led
     type: grb
+  # standup upper
   l_serial_chain_0_5:
     number: 8-112-113-114
     subtype: led
     type: grb
+  # spinner 4
   l_serial_chain_0_6:
     number: 8-115-116-117
     subtype: led
     type: grb
+  # spinner 3
   l_serial_chain_0_7:
     number: 8-118-119-120
     subtype: led
     type: grb
+  # spinner 2
   l_serial_chain_0_8:
     number: 8-121-122-123
     subtype: led
     type: grb
+  # spinner 1
   l_serial_chain_0_9:
     number: 8-124-125-126
     subtype: led
     type: grb
+  # standup center
   l_serial_chain_0_10:
     number: 8-127-128-129
     subtype: led
     type: grb
-
+  # thin standup left
+  l_serial_chain_0_11:
+    number: 8-130-131-132
+    subtype: led
+    type: grb
+  # hook 2
+  l_hook_2:
+    number: 8-133-134-135
+    subtype: led
+    type: grb
+  # hook 1
+  l_hook_1:
+    number: 8-136-137-138
+    subtype: led
+    type: grb
+  # thin standup right
+  l_serial_chain_0_14:
+    number: 8-139-140-141
+    subtype: led
+    type: grb
+  # drop right
+  l_serial_chain_0_15:
+    number: 8-142-143-144
+    subtype: led
+    type: grb
+  # drop left rectangle 1
+  l_serial_chain_0_16:
+    number: 8-145-146-147
+    subtype: led
+    type: grb
+  # drop left rectangle 2
+  l_serial_chain_0_17:
+    number: 8-148-149-150
+    subtype: led
+    type: grb
+  # drop left rectangle 3
+  l_serial_chain_0_18:
+    number: 8-151-152-153
+    subtype: led
+    type: grb
+  # drop left rectangle 4
+  l_serial_chain_0_19:
+    number: 8-154-155-156
+    subtype: led
+    type: grb
+  # drop left rectangle 5
+  l_serial_chain_0_20:
+    number: 8-157-158-159
+    subtype: led
+    type: grb
+  # drop left rectangle 6
+  l_serial_chain_0_21:
+    number: 8-160-161-162
+    subtype: led
+    type: grb
+  # drop left rectangle 7
+  l_serial_chain_0_22:
+    number: 8-163-164-165
+    subtype: led
+    type: grb
+  # drop left arrow 1
+  l_drop_left_arrow_1:
+    number: 8-166-167-168
+    subtype: led
+    type: grb
+  # drop left arrow 2
+  l_drop_left_arrow_2:
+    number: 8-169-170-171
+    subtype: led
+    type: grb
+  # drop left arrow 3
+  l_drop_left_arrow_3:
+    number: 8-172-173-174
+    subtype: led
+    type: grb
+  # rectangle lower 3
+  l_serial_chain_0_26:
+    number: 8-175-176-177
+    subtype: led
+    type: grb
+  # rectangle lower 2
+  l_serial_chain_0_27:
+    number: 8-178-179-180
+    subtype: led
+    type: grb
+  # rectangle lower 1
+  l_serial_chain_0_28:
+    number: 8-181-182-183
+    subtype: led
+    type: grb
+  # outlane right
+  l_serial_chain_0_29:
+    number: 8-184-185-186
+    subtype: led
+    type: grb
+  # inlane right
+  l_serial_chain_0_30:
+    number: 8-187-188-189
+    subtype: led
+    type: grb
+  # inlane left
+  l_serial_chain_0_31:
+    number: 8-190-191-192
+    subtype: led
+    type: grb
+  # outlane left
+  l_serial_chain_0_32:
+    number: 8-193-194-195
+    subtype: led
+    type: grb
+  # circle lower 8
+  l_serial_chain_0_33:
+    number: 8-196-197-198
+    subtype: led
+    type: grb
+  # circle lower 7
+  l_serial_chain_0_34:
+    number: 8-199-200-201
+    subtype: led
+    type: grb
+  # circle lower 6
+  l_serial_chain_0_35:
+    number: 8-202-203-204
+    subtype: led
+    type: grb
+  # circle lower 5
+  l_serial_chain_0_36:
+    number: 8-205-206-207
+    subtype: led
+    type: grb
+  # circle lower 4
+  l_serial_chain_0_37:
+    number: 8-208-209-210
+    subtype: led
+    type: grb
+  # circle lower 3
+  l_serial_chain_0_38:
+    number: 8-211-212-213 
+    subtype: led
+    type: grb
+  # circle lower 2
+  l_serial_chain_0_39:
+    number: 8-214-215-216
+    subtype: led
+    type: grb
+  # circle lower 1
+  l_serial_chain_0_40:
+    number: 8-217-218-219
+    subtype: led
+    type: grb
+  # drain
+  l_ball_save:
+    number: 8-220-221-222
+    subtype: led
+    type: grb
+  # TBD below
+  # l_serial_chain_0_42:
+  #   number: 8-223-224-225
+  #   subtype: led
+  #   type: grb
+  # l_serial_chain_0_43:
+  #   number: 8-226-227-228
+  #   subtype: led
+  #   type: grb
+  # l_serial_chain_0_44:
+  #   number: 8-229-230-231
+  #   subtype: led
+  #   type: grb
+  # l_serial_chain_0_45:
+  #   number: 8-232-233-234
+  #   subtype: led
+  #   type: grb
 
 # lights:
 #   # lanes
 #   l0:
-#     number: l1
+    #     number: l1
 #     subtype: led
 #   l1:
 #     number: l2
