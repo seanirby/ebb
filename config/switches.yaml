@@ -4,6 +4,8 @@ switches:
   # Virtual/Keyboard switches
   s_force_knockdown_coils:
     number: A11-B0-3
+  s_force_ball_save:
+    number: A11-B0-8
   s_start:
     number: A11-B0-7
     tags: start

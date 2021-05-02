@@ -8,10 +8,10 @@ keyboard:
   t:
     switch: s_trough_0
     toggle: True
-  # r:
-  #   switch: s_orbit_left
+  b:
+    switch: s_force_ball_save
   o:
-    switch: s_orbit_right
+    switch: s_orbit
   # i:
   #   switch: s_right_inlane
   p:
