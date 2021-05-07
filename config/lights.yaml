@@ -167,43 +167,35 @@ lights:
     number: 8-193-194-195
     subtype: led
     type: grb
-  # circle lower 8
-  l_serial_chain_0_33:
+  l_status_circle_7:
     number: 8-196-197-198
     subtype: led
     type: grb
-  # circle lower 7
-  l_serial_chain_0_34:
+  l_status_circle_6:
     number: 8-199-200-201
     subtype: led
     type: grb
-  # circle lower 6
-  l_serial_chain_0_35:
+  l_status_circle_5:
     number: 8-202-203-204
     subtype: led
     type: grb
-  # circle lower 5
-  l_serial_chain_0_36:
+  l_status_circle_4:
     number: 8-205-206-207
     subtype: led
     type: grb
-  # circle lower 4
-  l_serial_chain_0_37:
+  l_status_circle_3:
     number: 8-208-209-210
     subtype: led
     type: grb
-  # circle lower 3
-  l_serial_chain_0_38:
+  l_status_circle_2:
     number: 8-211-212-213 
     subtype: led
     type: grb
-  # circle lower 2
-  l_serial_chain_0_39:
+  l_status_circle_1:
     number: 8-214-215-216
     subtype: led
     type: grb
-  # circle lower 1
-  l_serial_chain_0_40:
+  l_status_circle_0:
     number: 8-217-218-219
     subtype: led
     type: grb

@@ -2,6 +2,7 @@ from mpf.core.mode import Mode
 
 NUM_TARGETS = 7
 MAX_PROGRESS = 4
+NUM_RACKS = 8
 
 OFF = 0
 ON = 1
@@ -17,6 +18,19 @@ class Racks(Mode):
         self.add_mode_event_handler("sh_racks_collect_hit", self.handle_rack_collected)
 
     def init_lights(self):
+        rack_progress = self.player.racks
+        for i in range(0, NUM_RACKS):
+            status_shot_name = "sh_racks_status_{}".format(i)
+            status_shot = self.machine.shots[status_shot_name]
+            if i < rack_progress:
+                # collected rack
+                status_shot.jump(2)
+            elif i == rack_progress:
+                # current rack
+                status_shot.jump(1)
+            else:
+                status_shot.jump(0)
+            
         for i in range(0, NUM_TARGETS):
             progress = self.player["tl_{}_progress".format(i)]
             for j in range(0, MAX_PROGRESS):
@@ -40,18 +54,14 @@ class Racks(Mode):
         self.update_if_rack_can_be_collected()
 
     def handle_rack_collected(self, **kwargs):
-        # update score
+        self.player.racks += 1
         self.player.score += 1000000
-        # reset players progress
+
         for i in range(0,NUM_TARGETS):
             self.player["tl_{}_progress".format(i)] = 0
-        # update target lights
-        self.init_lights()
-        # disable rack collect shot
-        self.machine.events.post("racks_rack_collected")
 
-        # TODO: potentially update difficulty
-        # play a show
+        self.init_lights()
+        self.machine.events.post("racks_rack_collected")
 
     def update_target_progress(self, target_number):
         target_progress_var = "tl_{}_progress".format(target_number)

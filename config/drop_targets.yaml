@@ -18,7 +18,7 @@ drop_targets:
     reset_coil: c_smart_drop_upper
     reset_events: ball_starting, timer_smart_drop_left_complete, reset_smart_drop_upper
     knockdown_coil: c_smart_drop_upper_knockdown
-    knockdown_events: s_force_knockdown_coils_active
+    knockdown_events: s_force_knockdown_coils_active, balldevice_bd_scoop_ejecting_ball
 
     # reset_events: ball_starting
 

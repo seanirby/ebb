@@ -42,19 +42,15 @@ shows:
       l_serial_chain_0_30: green
       l_serial_chain_0_31: blue
       l_serial_chain_0_32: green
-      l_serial_chain_0_33: blue
-      l_serial_chain_0_34: green
-      l_serial_chain_0_35: blue
-      l_serial_chain_0_36: green
-      l_serial_chain_0_37: blue
-      l_serial_chain_0_38: green
-      l_serial_chain_0_39: blue
-      l_serial_chain_0_40: green
+      l_status_circle_7: blue
+      l_status_circle_6: green
+      l_status_circle_5: blue
+      l_status_circle_4: green
+      l_status_circle_3: blue
+      l_status_circle_2: green
+      l_status_circle_1: blue
+      l_status_circle_0: green
       l_ball_save: blue
-      # l_serial_chain_0_42: green
-      # l_serial_chain_0_43: blue
-      # l_serial_chain_0_44: green
-      # l_serial_chain_0_45: blue
 
   - duration: .2
     lights:
@@ -90,24 +86,15 @@ shows:
       l_serial_chain_0_30: blue
       l_serial_chain_0_31: green
       l_serial_chain_0_32: blue
-      l_serial_chain_0_33: green
-      l_serial_chain_0_34: blue
-      l_serial_chain_0_35: green
-      l_serial_chain_0_36: blue
-      l_serial_chain_0_37: green
-      l_serial_chain_0_38: blue
-      l_serial_chain_0_39: green
-      l_serial_chain_0_40: blue
+      l_status_circle_7: green
+      l_status_circle_6: blue
+      l_status_circle_5: green
+      l_status_circle_4: blue
+      l_status_circle_3: green
+      l_status_circle_2: blue
+      l_status_circle_1: green
+      l_status_circle_0: blue
       l_ball_save: green
-      # l_serial_chain_0_42: blue
-      # l_serial_chain_0_43: green
-      # l_serial_chain_0_44: blue
-      # l_serial_chain_0_45: green
-
-# #     lights:
-# #       l0: off
-# #       l1: off
-# #       l2: on
 
 show_player:
   mode_attract_started: beef

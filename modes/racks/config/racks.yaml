@@ -8,6 +8,15 @@ mode:
   priority: 100
 
 shot_profiles:
+  racks_status:
+    states:
+      - name: unlit
+        show: off
+      - name: current
+        show: flash_color
+        speed: 6
+      - name: collected
+        show: led_color
   racks_qualify_collect:
     states:
       - name: flash
@@ -29,6 +38,54 @@ shot_profiles:
         speed: 6
 
 shots:
+  sh_racks_status_0:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_0
+      color: blue
+  sh_racks_status_1:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_1
+      color: blue
+  sh_racks_status_2:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_2
+      color: blue
+  sh_racks_status_3:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_3
+      color: blue
+  sh_racks_status_4:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_4
+      color: blue
+  sh_racks_status_5:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_5
+      color: blue
+  sh_racks_status_6:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_6
+      color: blue
+  sh_racks_status_7:
+    profile: racks_status
+    start_enabled: True
+    show_tokens:
+      light: l_status_circle_7
+      color: blue
   sh_racks_qualify_collect:
     profile: racks_qualify_collect
     enable_events: racks_enable_qualify_collect
@@ -191,4 +248,6 @@ timers:
 # TODO: move this 
 event_player:
   s_smart_drop_left_active{device.timers.smart_drop_left.running == False}: reset_smart_drop_left
+  mode_racks_started{current_player.racks==0}: racks_collected_0
+  racks_rack_collected{current_player.racks==1}: racks_collected_1
   # s_smart_drop_upper_active{device.timers.smart_drop_left.running == False}: reset_smart_drop_upper

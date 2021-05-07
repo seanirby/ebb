@@ -4,15 +4,19 @@ autofire_coils:
   ac_sling_left_upper:
     coil: c_sling_left
     switch: s_sling_left_upper
+    # enable_events: machine_reset_phase_3
   ac_sling_right_upper:
     coil: c_sling_right
     switch: s_sling_right_upper
+    # enable_events: machine_reset_phase_3
   ac_sling_left_lower:
     coil: c_sling_left
     switch: s_sling_left_lower
+    # enable_events: machine_reset_phase_3
   ac_sling_right_lower:
     coil: c_sling_right
     switch: s_sling_right_lower
+    # enable_events: machine_reset_phase_3
   pop_center:
     coil: c_pop_center
     switch: s_pop_center
