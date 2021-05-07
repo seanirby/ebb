@@ -62,12 +62,12 @@ lights:
     subtype: led
     type: grb
   # hook 2
-  l_hook_2:
+  l_hook_1:
     number: 8-133-134-135
     subtype: led
     type: grb
   # hook 1
-  l_hook_1:
+  l_hook_0:
     number: 8-136-137-138
     subtype: led
     type: grb
@@ -109,17 +109,17 @@ lights:
     subtype: led
     type: grb
   # drop left arrow 1
-  l_drop_left_arrow_1:
+  l_drop_left_arrow_0:
     number: 8-166-167-168
     subtype: led
     type: grb
   # drop left arrow 2
-  l_drop_left_arrow_2:
+  l_drop_left_arrow_1:
     number: 8-169-170-171
     subtype: led
     type: grb
   # drop left arrow 3
-  l_drop_left_arrow_3:
+  l_drop_left_arrow_2:
     number: 8-172-173-174
     subtype: led
     type: grb

@@ -23,6 +23,27 @@ slides:
 slide_player:
   mode_base_started: base
 
+timers:
+  base_drop_right:
+    end_value: 15
+    tick_interval: 100ms
+    control_events:
+      - action: start
+        event: s_hook_active
+      - action: reset
+        event: timer_base_drop_right_complete
+  base_drop_left:
+    end_value: 35
+    tick_interval: 100ms
+    control_events:
+      - action: start
+        event: s_hook_active
+      - action: reset
+        event: timer_base_drop_left_complete
+
+event_player:
+  s_drop_left_active{device.timers.base_drop_left.running==False}: reset_drop_left
+
 # variable_player:
 #   s_pop_0_active:
 #     score: 100

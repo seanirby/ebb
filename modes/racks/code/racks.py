@@ -14,7 +14,7 @@ class Racks(Mode):
         for i in range(0, NUM_TARGETS):
             self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
 
-        self.add_mode_event_handler("timer_drop_left_complete", self.update_if_rack_can_be_collected)
+        self.add_mode_event_handler("timer_base_drop_left_complete", self.update_if_rack_can_be_collected)
         self.add_mode_event_handler("sh_racks_collect_hit", self.handle_rack_collected)
 
     def init_lights(self):

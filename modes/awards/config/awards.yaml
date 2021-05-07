@@ -5,10 +5,15 @@ mode:
   code: awards.Awards
 
 # steps:
-# make sure i can select an awards and it cycles
-# logic for awards qualifying
+# DONE - make sure i can select an awards and it cycles
+# TODO - collect awards
 
 shot_profiles:
+  awards_qualify_collect:
+    states:
+      - name: flash
+        show: flash_stop
+        speed: 6
   awards_collect:
     states:
       - name: flash
@@ -29,13 +34,20 @@ shot_profiles:
         speed: 10
 
 shots:
-  # sh_awards_collect:
-  #   switch: s_scoop_lower
-  #   profile: awards_collect
-  #   enable_events: timer_awards_collect_started
-  #   disable_events: timer_awards_collect_complete, sh_awards_collect_hit
-  #   show_tokens:
-  #     light: l_scoop_lower_1
+  sh_awards_qualify_collect:
+    switch: s_hook
+    profile: awards_qualify_collect
+    enable_events: mode_awards_started, timer_base_drop_left_complete
+    disable_events: timer_base_drop_left_started
+    show_tokens:
+      light: l_hook_0
+  sh_awards_collect:
+    switch: s_saucer
+    profile: awards_collect
+    enable_events: timer_base_drop_left_started
+    disable_events: mode_awards_started, timer_base_drop_left_complete
+    show_tokens:
+      light: l_drop_left_arrow_0
   sh_awards_select_left:
     profile: awards_select
     switch: s_thin_standup_left
@@ -74,14 +86,3 @@ shots:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_6
-  
-# timers:
-#   awards_collect:
-#     end_value: 5
-#     control_events:
-#       - action: start
-#         event: s_hook_active
-#       - action: reset
-#         event: timer_awards_collect_complete
-#       - action: reset
-#         event: sh_awards_collect_hit

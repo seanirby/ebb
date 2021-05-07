@@ -20,6 +20,11 @@ keyboard:
   #   event: drop_target_bank_drops_down
   # l:
   #   event: dev_award_letter
+  v:
+    switch: s_saucer
+    toggle: True
+  h:
+    switch: s_hook
   n:
     switch: s_thin_standup_left
   m:
