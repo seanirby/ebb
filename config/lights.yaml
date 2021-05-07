@@ -12,7 +12,7 @@ light_settings:
 
 lights:
   # drop upper
-  l_smart_drop_upper:
+  l_drop_upper:
     number: 8-100-101-102
     subtype: led
     type: grb

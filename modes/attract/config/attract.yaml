@@ -10,7 +10,7 @@ shows:
   beef:
   - duration: .2
     lights:
-      l_smart_drop_upper: blue
+      l_drop_upper: blue
       l_serial_chain_0_2: green
       l_serial_chain_0_3: blue
       l_serial_chain_0_4: green
@@ -54,7 +54,7 @@ shows:
 
   - duration: .2
     lights:
-      l_smart_drop_upper: green
+      l_drop_upper: green
       l_serial_chain_0_2: blue
       l_serial_chain_0_3: green
       l_serial_chain_0_4: blue

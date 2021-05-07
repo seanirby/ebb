@@ -29,20 +29,20 @@ coils:
     default_hold_power: 0.4
     default_pulse_ms: 25
     # default_pulse_ms: 17
-  c_smart_drop_right_knockdown:
+  c_drop_right_knockdown:
     number: A6-B0-1
     default_pulse_ms: 12
-  c_smart_drop_right:
+  c_drop_right:
     number: A6-B0-2
     default_pulse_ms: 25
   # Board 7 (Upper)
   c_scoop:
     number: A7-B0-0
     default_pulse_ms: 9
-  c_smart_drop_upper_knockdown:
+  c_drop_upper_knockdown:
     number: A7-B0-1
     default_pulse_ms: 15
-  c_smart_drop_upper:
+  c_drop_upper:
     number: A7-B0-2
     default_pulse_ms: 25
   c_pop_right:
@@ -54,10 +54,10 @@ coils:
   c_pop_left:
     number: A7-B1-2
     default_pulse_ms: 12
-  c_smart_drop_left_knockdown:
+  c_drop_left_knockdown:
     number: A7-B1-3
     default_pulse_ms: 15
-  c_smart_drop_left:
+  c_drop_left:
     number: A7-B1-4
     default_pulse_ms: 18
   c_saucer:

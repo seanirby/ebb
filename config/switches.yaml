@@ -68,7 +68,7 @@ switches:
     number: A2-B0-0
   s_thin_standup_right:
     number: A2-B0-1
-  s_smart_drop_right:
+  s_drop_right:
     number: A2-B0-2
   s_hook:
     number: A2-B0-3
@@ -92,7 +92,7 @@ switches:
   s_standup_left_6:
     number: A2-B1-6
   # Board 3 (Upper Playfield)
-  s_smart_drop_left:
+  s_drop_left:
     number: A3-B0-0
   s_saucer:
     number: A3-B0-1
@@ -110,7 +110,7 @@ switches:
   s_scoop:
     number: A3-B1-0
     type: NC
-  s_smart_drop_upper:
+  s_drop_upper:
     number: A3-B1-1
   s_upper_lane_right:
     number: A3-B1-2

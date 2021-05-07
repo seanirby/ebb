@@ -6,7 +6,7 @@ mode:
 
 event_player:
   timer_mball_eject_delay_complete:
-    - activate_smart_drop_upper
+    - activate_drop_upper
   multiball_main_ended: start_mball_qualifying
 
 timers:

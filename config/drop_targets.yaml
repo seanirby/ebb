@@ -1,23 +1,23 @@
 #config_version=5
 
 drop_targets:
-  smart_drop_right:
+  drop_right:
     switch: s_hook
-    reset_coil: c_smart_drop_right
+    reset_coil: c_drop_right
     reset_events: sh_racks_qualify_collect_hit
-    knockdown_events: ball_starting, timer_smart_drop_right_complete, s_force_knockdown_coils_active
-    knockdown_coil: c_smart_drop_right_knockdown
-  smart_drop_left:
-    switch: s_smart_drop_left
-    reset_coil: c_smart_drop_left
-    reset_events: ball_starting, timer_smart_drop_left_complete, reset_smart_drop_left
+    knockdown_events: ball_starting, timer_drop_right_complete, s_force_knockdown_coils_active
+    knockdown_coil: c_drop_right_knockdown
+  drop_left:
+    switch: s_drop_left
+    reset_coil: c_drop_left
+    reset_events: ball_starting, timer_drop_left_complete, reset_drop_left
     knockdown_events: s_hook_active, s_force_knockdown_coils_active
-    knockdown_coil: c_smart_drop_left_knockdown
-  smart_drop_upper:
-    switch: s_smart_drop_upper
-    reset_coil: c_smart_drop_upper
-    reset_events: ball_starting, timer_smart_drop_left_complete, reset_smart_drop_upper
-    knockdown_coil: c_smart_drop_upper_knockdown
+    knockdown_coil: c_drop_left_knockdown
+  drop_upper:
+    switch: s_drop_upper
+    reset_coil: c_drop_upper
+    reset_events: ball_starting, timer_drop_left_complete, reset_drop_upper
+    knockdown_coil: c_drop_upper_knockdown
     knockdown_events: s_force_knockdown_coils_active, balldevice_bd_scoop_ejecting_ball
 
     # reset_events: ball_starting

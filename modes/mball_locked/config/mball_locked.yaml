@@ -14,14 +14,14 @@ shot_profiles:
 
 shots:
   sh_mball_locked_release:
-    switch: s_smart_drop_upper
+    switch: s_drop_upper
     profile: mball_locked_release
     show_tokens:
-      light: l_smart_drop_upper
+      light: l_drop_upper
       color: red
 
 event_player:
-  mode_mball_locked_started: activate_smart_drop_upper
+  mode_mball_locked_started: activate_drop_upper
   sh_mball_locked_release_hit: start_mball
     
 variable_player:
