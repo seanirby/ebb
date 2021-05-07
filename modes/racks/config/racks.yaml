@@ -117,115 +117,115 @@ shots:
   l_0_0:
     profile: l
     # show_tokens:
-    #   light: l_target_left_0_0
+    #   light: l_standup_left_0_0
   l_0_1:
     profile: l
     # show_tokens:
-    #   light: l_target_left_0_1
+    #   light: l_standup_left_0_1
   l_0_2:
     profile: l
     # show_tokens:
-    #   light: l_target_left_0_2
+    #   light: l_standup_left_0_2
   l_0_3:
     profile: l
     # show_tokens:
-    #   light: l_target_left_0_3
+    #   light: l_standup_left_0_3
   l_1_0:
     profile: l
     # show_tokens:
-    #   light: l_target_left_1_0
+    #   light: l_standup_left_1_0
   l_1_1:
     profile: l
     # show_tokens:
-    #   light: l_target_left_1_1
+    #   light: l_standup_left_1_1
   l_1_2:
     profile: l
     # show_tokens:
-    #   light: l_target_left_1_2
+    #   light: l_standup_left_1_2
   l_1_3:
     profile: l
     # show_tokens:
-    #   light: l_target_left_1_3
+    #   light: l_standup_left_1_3
   l_2_0:
     profile: l
     # show_tokens:
-    #   light: l_target_left_2_0
+    #   light: l_standup_left_2_0
   l_2_1:
     profile: l
     # show_tokens:
-    #   light: l_target_left_2_1
+    #   light: l_standup_left_2_1
   l_2_2:
     profile: l
     # show_tokens:
-    #   light: l_target_left_2_2
+    #   light: l_standup_left_2_2
   l_2_3:
     profile: l
     # show_tokens:
-    #   light: l_target_left_2_3
+    #   light: l_standup_left_2_3
   l_3_0:
     profile: l
     # show_tokens:
-    #   light: l_target_left_3_0
+    #   light: l_standup_left_3_0
   l_3_1:
     profile: l
     # show_tokens:
-    #   light: l_target_left_3_1
+    #   light: l_standup_left_3_1
   l_3_2:
     profile: l
     # show_tokens:
-    #   light: l_target_left_3_2
+    #   light: l_standup_left_3_2
   l_3_3:
     profile: l
     # show_tokens:
-    #   light: l_target_left_3_3
+    #   light: l_standup_left_3_3
   l_4_0:
     profile: l
     # show_tokens:
-    #   light: l_target_left_4_0
+    #   light: l_standup_left_4_0
   l_4_1:
     profile: l
     # show_tokens:
-    #   light: l_target_left_4_1
+    #   light: l_standup_left_4_1
   l_4_2:
     profile: l
     # show_tokens:
-    #   light: l_target_left_4_2
+    #   light: l_standup_left_4_2
   l_4_3:
     profile: l
     # show_tokens:
-    #   light: l_target_left_4_3
+    #   light: l_standup_left_4_3
   l_5_0:
     profile: l
     # show_tokens:
-    #   light: l_target_left_5_0
+    #   light: l_standup_left_5_0
   l_5_1:
     profile: l
     # show_tokens:
-    #   light: l_target_left_5_1
+    #   light: l_standup_left_5_1
   l_5_2:
     profile: l
     # show_tokens:
-    #   light: l_target_left_5_2
+    #   light: l_standup_left_5_2
   l_5_3:
     profile: l
     # show_tokens:
-    #   light: l_target_left_5_3
+    #   light: l_standup_left_5_3
   l_6_0:
     profile: l
     # show_tokens:
-    #   light: l_target_left_6_0
+    #   light: l_standup_left_6_0
   l_6_1:
     profile: l
     # show_tokens:
-    #   light: l_target_left_6_1
+    #   light: l_standup_left_6_1
   l_6_2:
     profile: l
     # show_tokens:
-    #   light: l_target_left_6_2
+    #   light: l_standup_left_6_2
   l_6_3:
     profile: l
     # show_tokens:
-    #   light: l_target_left_6_3
+    #   light: l_standup_left_6_3
     
 # TODO: move this 
 event_player:

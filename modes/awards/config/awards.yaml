@@ -4,10 +4,6 @@ mode:
   start_events: ball_starting
   code: awards.Awards
 
-# steps:
-# DONE - make sure i can select an awards and it cycles
-# TODO - collect awards
-
 shot_profiles:
   awards_qualify_collect:
     states:
