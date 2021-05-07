@@ -18,8 +18,8 @@ AWARDS_EVENTS = [
 class Awards(Mode):
     def mode_start(self, **kwargs):
         self.init_lights()
-        self.add_mode_event_handler("sh_awards_select_left_hit", self.handle_select_award, direction = -1)
-        self.add_mode_event_handler("sh_awards_select_right_hit", self.handle_select_award, direction = 1)
+        self.add_mode_event_handler("sh_awards_select_left_hit", self.handle_select_award, direction = 1)
+        self.add_mode_event_handler("sh_awards_select_right_hit", self.handle_select_award, direction = -1)
         self.add_mode_event_handler("sh_awards_collect_hit", self.handle_award_collected)
 
     def init_lights(self, **kwargs):
@@ -27,10 +27,13 @@ class Awards(Mode):
             light = self.machine.shots["sh_awards_{}".format(award)]
             if not(self.is_award_collected(award)):
                 if self.award_selected() == award:
+                    print("award {} selected".format(award))
                     light.jump(AWARDS_FLASH)
                 else:
+                    print("award {} off".format(award))
                     light.jump(AWARDS_OFF)
             else:
+                print("award {} collected".format(award))
                 light.jump(AWARDS_ON)
 
     def is_award_collected(self, award):

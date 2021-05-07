@@ -21,6 +21,6 @@ keyboard:
   # l:
   #   event: dev_award_letter
   n:
-    event: s_thin_standup_left
+    switch: s_thin_standup_left
   m:
-    event: s_thin_standup_right
+    switch: s_thin_standup_right
