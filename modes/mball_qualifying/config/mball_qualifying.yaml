@@ -98,9 +98,11 @@ event_player:
   mode_mball_qualifying_started{current_player.mball_progress==2}:
     - mball_qualifying_advance_progress_1
     - mball_qualifying_advance_progress_2
+  mode_mball_qualifying_started{current_player.mball_progress<3}: activate_drop_upper
   mode_mball_qualifying_started{current_player.mball_progress==3}: mball_qualifying_lock_qualified, deactivate_drop_upper
 
   # progression
   sh_qualify_lock_hit{current_player.mball_progress < 3}: activate_drop_upper
   sh_qualify_lock_hit{current_player.mball_progress >= 3}: mball_qualifying_lock_qualified, deactivate_drop_upper
   multiball_lock_scoop_full: start_mball_locked
+
