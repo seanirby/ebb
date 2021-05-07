@@ -11,7 +11,7 @@ FLASH = 2
 class Racks(Mode):
     def mode_start(self, **kwargs):
         self.init_lights()
-        for i in range(0, NUM_TARGETS):
+        for i in range(1, NUM_TARGETS):
             self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
 
         self.add_mode_event_handler("timer_base_drop_left_complete", self.update_if_rack_can_be_collected)
@@ -31,16 +31,19 @@ class Racks(Mode):
             else:
                 status_shot.jump(0)
             
-        for i in range(0, NUM_TARGETS):
+        for i in range(1, NUM_TARGETS):
             progress = self.player["tl_{}_progress".format(i)]
             for j in range(0, MAX_PROGRESS):
                 shot_name = "l_{}_{}".format(i, j)
                 shot = self.machine.shots[shot_name]
-                if j == 0 and progress == 0:
-                    shot.jump(FLASH)
-                elif progress > j:
+                if j < progress:
+                    # complete
                     shot.jump(ON)
+                elif j == progress:
+                    # current
+                    shot.jump(FLASH)
                 else:
+                    # incomplete
                     shot.jump(OFF)
     
     def handle_target_hit(self, **kwargs):
@@ -49,7 +52,7 @@ class Racks(Mode):
 
         for target in targets:
             self.update_target_progress(target)
-            self.update_show(target)
+            self.update_target_show(target)
 
         self.update_if_rack_can_be_collected()
 
@@ -57,7 +60,7 @@ class Racks(Mode):
         self.player.racks += 1
         self.player.score += 1000000
 
-        for i in range(0,NUM_TARGETS):
+        for i in range(1 ,NUM_TARGETS):
             self.player["tl_{}_progress".format(i)] = 0
 
         self.init_lights()
@@ -68,7 +71,7 @@ class Racks(Mode):
         current_progress = self.player[target_progress_var]
         self.player[target_progress_var] = min(current_progress + 1, MAX_PROGRESS)
 
-    def update_show(self,target_number):
+    def update_target_show(self, target_number):
         progress = self.player["tl_{}_progress".format(target_number)]
         for i in range(0, progress):
             shot_name = "l_{}_{}".format(target_number, i)
@@ -76,7 +79,7 @@ class Racks(Mode):
 
     def update_if_rack_can_be_collected(self, **kwargs):
         update = True
-        for i in range(0, NUM_TARGETS):
+        for i in range(1, NUM_TARGETS):
             progress = self.player["tl_{}_progress".format(i)]
             if progress == 0:
                 update = False

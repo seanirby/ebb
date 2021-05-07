@@ -8,8 +8,8 @@ player_vars:
   racks:
     initial_value: 0
   # target left progress
-  tl_0_progress:
-    initial_value: 0
+  # tl_0_progress:
+  #   initial_value: 0
   tl_1_progress:
     initial_value: 0
   tl_2_progress:
