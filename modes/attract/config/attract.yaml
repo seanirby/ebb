@@ -20,18 +20,18 @@ shows:
       l_spinner_arrow_1: red
       l_spinner_arrow_0: red
       l_serial_chain_0_10: green
-      l_serial_chain_0_11: blue
+      l_thin_standup_left: blue
       l_hook_2: green
       l_hook_1: blue
-      l_serial_chain_0_14: green
+      l_thin_standup_right: green
       l_serial_chain_0_15: blue
-      l_serial_chain_0_16: green
-      l_serial_chain_0_17: blue
-      l_serial_chain_0_18: green
-      l_serial_chain_0_19: blue
-      l_serial_chain_0_20: green
-      l_serial_chain_0_21: blue
-      l_serial_chain_0_22: green
+      l_drop_left_rectangle_0: green
+      l_drop_left_rectangle_1: blue
+      l_drop_left_rectangle_2: green
+      l_drop_left_rectangle_3: blue
+      l_drop_left_rectangle_4: green
+      l_drop_left_rectangle_5: blue
+      l_drop_left_rectangle_6: green
       l_drop_left_arrow_1: blue
       l_drop_left_arrow_2: green
       l_drop_left_arrow_3: blue
@@ -64,18 +64,18 @@ shows:
       l_spinner_arrow_1: yellow
       l_spinner_arrow_0: yellow
       l_serial_chain_0_10: blue
-      l_serial_chain_0_11: green
+      l_thin_standup_left: green
       l_hook_2: blue
       l_hook_1: green
-      l_serial_chain_0_14: blue
+      l_thin_standup_right: blue
       l_serial_chain_0_15: green
-      l_serial_chain_0_16: blue
-      l_serial_chain_0_17: green
-      l_serial_chain_0_18: blue
-      l_serial_chain_0_19: green
-      l_serial_chain_0_20: blue
-      l_serial_chain_0_21: green
-      l_serial_chain_0_22: blue
+      l_drop_left_rectangle_0: blue
+      l_drop_left_rectangle_1: green
+      l_drop_left_rectangle_2: blue
+      l_drop_left_rectangle_3: green
+      l_drop_left_rectangle_4: blue
+      l_drop_left_rectangle_5: green
+      l_drop_left_rectangle_6: blue
       l_drop_left_arrow_1: green
       l_drop_left_arrow_2: blue
       l_drop_left_arrow_3: green

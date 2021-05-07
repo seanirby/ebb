@@ -21,7 +21,7 @@ modes:
   - racks
   # - wide_shot
   # - spot_ball
-  # - awards
+  - awards
 
   # ball end
   # - bonus

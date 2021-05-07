@@ -57,8 +57,7 @@ lights:
     number: 8-127-128-129
     subtype: led
     type: grb
-  # thin standup left
-  l_serial_chain_0_11:
+  l_thin_standup_left:
     number: 8-130-131-132
     subtype: led
     type: grb
@@ -72,8 +71,7 @@ lights:
     number: 8-136-137-138
     subtype: led
     type: grb
-  # thin standup right
-  l_serial_chain_0_14:
+  l_thin_standup_right:
     number: 8-139-140-141
     subtype: led
     type: grb
@@ -82,38 +80,31 @@ lights:
     number: 8-142-143-144
     subtype: led
     type: grb
-  # drop left rectangle 1
-  l_serial_chain_0_16:
+  l_drop_left_rectangle_0:
     number: 8-145-146-147
     subtype: led
     type: grb
-  # drop left rectangle 2
-  l_serial_chain_0_17:
+  l_drop_left_rectangle_1:
     number: 8-148-149-150
     subtype: led
     type: grb
-  # drop left rectangle 3
-  l_serial_chain_0_18:
+  l_drop_left_rectangle_2:
     number: 8-151-152-153
     subtype: led
     type: grb
-  # drop left rectangle 4
-  l_serial_chain_0_19:
+  l_drop_left_rectangle_3:
     number: 8-154-155-156
     subtype: led
     type: grb
-  # drop left rectangle 5
-  l_serial_chain_0_20:
+  l_drop_left_rectangle_4:
     number: 8-157-158-159
     subtype: led
     type: grb
-  # drop left rectangle 6
-  l_serial_chain_0_21:
+  l_drop_left_rectangle_5:
     number: 8-160-161-162
     subtype: led
     type: grb
-  # drop left rectangle 7
-  l_serial_chain_0_22:
+  l_drop_left_rectangle_6:
     number: 8-163-164-165
     subtype: led
     type: grb

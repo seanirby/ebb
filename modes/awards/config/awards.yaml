@@ -4,18 +4,21 @@ mode:
   start_events: ball_starting
   code: awards.Awards
 
+# steps:
+# make sure i can select an awards and it cycles
+# logic for awards qualifying
+
 shot_profiles:
-  award_collect:
+  awards_collect:
     states:
       - name: flash
         show: flash_stop
         speed: 6
-  award_select:
+  awards_select:
     states:
-      - name: flash
-        show: flash_stop
-        speed: 6
-  award:
+      - name: lit
+        show: on
+  awards:
     states:
       - name: off
         show: off
@@ -26,59 +29,59 @@ shot_profiles:
         speed: 10
 
 shots:
-  sh_award_collect:
-    switch: s_scoop_lower
-    profile: award_collect
-    enable_events: timer_award_collect_started
-    disable_events: timer_award_collect_complete, sh_award_collect_hit
+  # sh_awards_collect:
+  #   switch: s_scoop_lower
+  #   profile: awards_collect
+  #   enable_events: timer_awards_collect_started
+  #   disable_events: timer_awards_collect_complete, sh_awards_collect_hit
+  #   show_tokens:
+  #     light: l_scoop_lower_1
+  sh_awards_select_left:
+    profile: awards_select
+    switch: s_thin_standup_left
     show_tokens:
-      light: l_scoop_lower_1
-  sh_award_select_up:
-    profile: award_select
-    switch: s_target_right_1
+      light: l_thin_standup_left
+  sh_awards_select_right:
+    profile: awards_select
+    switch: s_thin_standup_right
     show_tokens:
-      light: l_target_right_1_0
-  sh_award_select_down:
-    profile: award_select
-    switch: s_target_right_2
+      light: l_thin_standup_right
+  sh_awards_0:
+    profile: awards
     show_tokens:
-      light: l_target_right_2_0
-  sh_award_0:
-    profile: award
+      light: l_drop_left_rectangle_0
+  sh_awards_1:
+    profile: awards
     show_tokens:
-      light: l_award_0
-  sh_award_1:
-    profile: award
+      light: l_drop_left_rectangle_1
+  sh_awards_2:
+    profile: awards
     show_tokens:
-      light: l_award_1
-  sh_award_2:
-    profile: award
+      light: l_drop_left_rectangle_2
+  sh_awards_3:
+    profile: awards
     show_tokens:
-      light: l_award_2
-  sh_award_3:
-    profile: award
+      light: l_drop_left_rectangle_3
+  sh_awards_4:
+    profile: awards
     show_tokens:
-      light: l_award_3
-  sh_award_4:
-    profile: award
+      light: l_drop_left_rectangle_4
+  sh_awards_5:
+    profile: awards
     show_tokens:
-      light: l_award_4
-  sh_award_5:
-    profile: award
+      light: l_drop_left_rectangle_5
+  sh_awards_6:
+    profile: awards
     show_tokens:
-      light: l_award_5
-  sh_award_6:
-    profile: award
-    show_tokens:
-      light: l_award_6
+      light: l_drop_left_rectangle_6
   
-timers:
-  award_collect:
-    end_value: 5
-    control_events:
-      - action: start
-        event: s_hook_release_active
-      - action: reset
-        event: timer_award_collect_complete
-      - action: reset
-        event: sh_award_collect_hit
+# timers:
+#   awards_collect:
+#     end_value: 5
+#     control_events:
+#       - action: start
+#         event: s_hook_active
+#       - action: reset
+#         event: timer_awards_collect_complete
+#       - action: reset
+#         event: sh_awards_collect_hit

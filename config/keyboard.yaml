@@ -20,7 +20,7 @@ keyboard:
   #   event: drop_target_bank_drops_down
   # l:
   #   event: dev_award_letter
-  # n:
-  #   event: s_left_flipper_active
-  # m:
-  #   event: s_right_flipper_active
+  n:
+    event: s_thin_standup_left
+  m:
+    event: s_thin_standup_right
