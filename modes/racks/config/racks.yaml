@@ -100,8 +100,8 @@ shots:
     switch: s_saucer
     show_tokens:
       light: l_drop_left_arrow_1
-  # sh_tl_0:
-  #   hit_events: s_standup_left_0_active, spot_ball_0
+  sh_tl_0:
+    hit_events: s_standup_left_0_active, spot_ball_0
   sh_tl_1:
     hit_events: s_standup_left_1_active, spot_ball_1
   sh_tl_2:
@@ -114,26 +114,26 @@ shots:
     hit_events: s_standup_left_5_active, spot_ball_5
   sh_tl_6:
     hit_events: s_standup_left_6_active, spot_ball_6
-  # l_0_0:
-  #   profile: l
-  #   # show_tokens:
-  #   #   light: l_standup_left_0_0
-  # l_0_1:
-  #   profile: l
-  #   # show_tokens:
-  #   #   light: l_standup_left_0_1
-  # l_0_2:
-  #   profile: l
-  #   # show_tokens:
-  #   #   light: l_standup_left_0_2
-  # l_0_3:
-  #   profile: l
-  #   # show_tokens:
-  #   #   light: l_standup_left_0_3
-  # l_0_4:
-  #   profile: l
-  #   # show_tokens:
-  #   #   light: l_standup_left_0_4
+  l_0_0:
+    profile: l
+    show_tokens:
+      light: l_standup_left_0_0
+  l_0_1:
+    profile: l
+    show_tokens:
+      light: l_standup_left_0_1
+  l_0_2:
+    profile: l
+    show_tokens:
+      light: l_standup_left_0_2
+  l_0_3:
+    profile: l
+    show_tokens:
+      light: l_standup_left_0_3
+  l_0_4:
+    profile: l
+    show_tokens:
+      light: l_standup_left_0_4
   l_1_0:
     profile: l
     show_tokens:

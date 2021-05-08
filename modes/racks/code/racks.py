@@ -1,7 +1,7 @@
 from mpf.core.mode import Mode
 
 NUM_TARGETS = 7
-MAX_PROGRESS = 4
+MAX_PROGRESS = 3
 NUM_RACKS = 8
 
 OFF = 0
@@ -11,7 +11,7 @@ FLASH = 2
 class Racks(Mode):
     def mode_start(self, **kwargs):
         self.init_lights()
-        for i in range(1, NUM_TARGETS):
+        for i in range(0, NUM_TARGETS):
             self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
 
         self.add_mode_event_handler("timer_base_drop_left_complete", self.update_if_rack_can_be_collected)
@@ -31,7 +31,7 @@ class Racks(Mode):
             else:
                 status_shot.jump(0)
             
-        for i in range(1, NUM_TARGETS):
+        for i in range(0, NUM_TARGETS):
             progress = self.player["tl_{}_progress".format(i)]
             for j in range(0, MAX_PROGRESS):
                 shot_name = "l_{}_{}".format(i, j)
@@ -60,7 +60,7 @@ class Racks(Mode):
         self.player.racks += 1
         self.player.score += 1000000
 
-        for i in range(1 ,NUM_TARGETS):
+        for i in range(0 ,NUM_TARGETS):
             self.player["tl_{}_progress".format(i)] = 0
 
         self.init_lights()
@@ -79,7 +79,7 @@ class Racks(Mode):
 
     def update_if_rack_can_be_collected(self, **kwargs):
         update = True
-        for i in range(1, NUM_TARGETS):
+        for i in range(0, NUM_TARGETS):
             progress = self.player["tl_{}_progress".format(i)]
             if progress == 0:
                 update = False

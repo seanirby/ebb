@@ -10,7 +10,6 @@ shows:
     - duration: -1
       lights:
         (light): on
-        (vpx_light): on
     
 shot_profiles:
   wsl:
@@ -40,37 +39,30 @@ shots:
     profile: wsl
     show_tokens:
       light: l_target_left_0_3
-      vpx_light: l_wide_shot_vpx_0
   sh_wsl_1:
     profile: wsl
     show_tokens:
       light: l_target_left_1_3
-      vpx_light: l_wide_shot_vpx_1
   sh_wsl_2:
     profile: wsl
     show_tokens:
       light: l_target_left_2_3
-      vpx_light: l_wide_shot_vpx_2
   sh_wsl_3:
     profile: wsl
     show_tokens:
       light: l_target_left_3_3
-      vpx_light: l_wide_shot_vpx_3
   sh_wsl_4:
     profile: wsl
     show_tokens:
       light: l_target_left_4_3
-      vpx_light: l_wide_shot_vpx_4
   sh_wsl_5:
     profile: wsl
     show_tokens:
       light: l_target_left_5_3
-      vpx_light: l_wide_shot_vpx_5
   sh_wsl_6:
     profile: wsl
     show_tokens:
       light: l_target_left_6_3
-      vpx_light: l_wide_shot_vpx_6
 
 event_player:
   sh_wide_shot_hit{device.shots.sh_wide_shot.state_name=='flash'}:  wide_shot_qualified

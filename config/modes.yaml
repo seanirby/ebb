@@ -19,7 +19,7 @@ modes:
   - mball_locked
   - mball
   - racks
-  # - wide_shot
+  - wide_shot
   # - spot_ball
   - awards
 
