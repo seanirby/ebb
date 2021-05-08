@@ -22,18 +22,22 @@ shot_profiles:
       - name: on
         show: wsl_on
   wide_shot:
-    advance_on_hit: False
     states:
       - name: flash
-        show: flash_stop
-      - name: on
-        show: on
+        show: flash_color
+        speed: 6
+        show_tokens:
+          color: yellow
 
 shots:
   sh_wide_shot:
     switch: s_standup_upper
-    advance_events: wide_shot_qualified, wide_shot_collected
+    disable_events: wide_shot_qualified, wide_shot_init_disable
+    enable_events: wide_shot_collected, wide_shot_init_enable
     profile: wide_shot
+    show_tokens:
+      light: l_standup_upper
+      color: yellow
   # 'shots' for lights on grid
   sh_wsl_0:
     profile: wsl
@@ -65,7 +69,9 @@ shots:
       light: l_standup_left_6_4
 
 event_player:
-  sh_wide_shot_hit{device.shots.sh_wide_shot.state_name=='flash'}:  wide_shot_qualified
+  sh_wide_shot_hit{device.shots.sh_wide_shot.enabled}:  wide_shot_qualified
+  mode_wide_shot_started{current_player.wide_shot_progress==1}: wide_shot_init_disable
+  mode_wide_shot_started{current_player.wide_shot_progress==0}: wide_shot_init_enable
   wide_shot_qualified: wide_shot_advance_progress
   # sh_wide_shot_hit{device.shots.sh_wide_shot.state_name=='on' and current_player.wide_shot_progress < 2}: wide_shot_advance_progress
-
+  

@@ -51,14 +51,14 @@ switches:
     number: A1-B1-0
   s_inlane_left:
     number: A1-B1-1
-  s_sling_left_lower:
+  # s_sling_left_lower:
+  #   number: A1-B1-2
+  s_sling_left:
     number: A1-B1-2
-  s_sling_left_upper:
-    number: A1-B1-3
-  s_sling_right_upper:
+  s_sling_right:
     number: A1-B1-4
-  s_sling_right_lower:
-    number: A1-B1-5
+  # s_sling_right_lower:
+  #   number: A1-B1-5
   s_inlane_right:
     number: A1-B1-6
   s_outlane_right:

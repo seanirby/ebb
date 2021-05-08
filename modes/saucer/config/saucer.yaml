@@ -1,0 +1,20 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+shots:
+  sh_saucer:
+    switch: s_saucer
+
+timers:
+  saucer_sh_saucer:
+    end_value: 1
+    control_events:
+      - action: start
+        event: sh_saucer_hit
+      - action: reset
+        event: timer_saucer_sh_saucer_complete
+
+event_player:
+  timer_saucer_sh_saucer_complete: sh_saucer_debounced_hit

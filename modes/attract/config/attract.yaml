@@ -9,7 +9,7 @@ slides:
 show_player:
   mode_attract_started:
     color_wheel:
-      speed: 100
+      speed: 20
 
 slide_player:
   mode_attract_started: attract

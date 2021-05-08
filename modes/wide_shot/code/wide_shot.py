@@ -22,7 +22,7 @@ class WideShot(Mode):
             self.update_lights()
 
     def handle_progress_change(self, **kwargs):
-        self.player["wide_shot_progress"] += 1
+        self.player["wide_shot_progress"] = 1
         self.update_lights()
 
     def update_lights(self):
@@ -43,8 +43,8 @@ class WideShot(Mode):
         # reset progress
         self.player["wide_shot_progress"] = 0
 
-        # reset wide shot target
-        shot = self.machine.shots["sh_wide_shot"].jump(0)
+        # # reset wide shot target
+        # shot = self.machine.shots["sh_wide_shot"].jump(0)
 
         # reset wsl indicators
         for i in range(0, NUM_TARGETS):

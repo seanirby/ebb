@@ -38,7 +38,7 @@ shots:
     show_tokens:
       light: l_hook_0
   sh_awards_collect:
-    switch: s_saucer
+    hit_events: sh_saucer_debounced_hit
     profile: awards_collect
     enable_events: timer_base_drop_left_started
     disable_events: mode_awards_started, timer_base_drop_left_complete

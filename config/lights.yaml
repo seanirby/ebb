@@ -1,7 +1,7 @@
 #config_version=5
 
 light_settings:
-  default_fade_ms: 100
+  default_fade_ms: 40
   default_color_correction_profile: correction_profile
   color_correction_profiles:
     correction_profile:

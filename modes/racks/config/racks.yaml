@@ -97,7 +97,7 @@ shots:
     profile: racks_collect
     enable_events: sh_racks_qualify_collect_hit
     disable_events: racks_rack_collected, timer_base_drop_left_complete
-    switch: s_saucer
+    hit_events: sh_saucer_debounced_hit
     show_tokens:
       light: l_drop_left_arrow_1
   sh_tl_0:

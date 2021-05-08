@@ -1,22 +1,22 @@
 #config_version=5
 
 autofire_coils:
-  ac_sling_left_upper:
+  ac_sling_left:
     coil: c_sling_left
-    switch: s_sling_left_upper
+    switch: s_sling_left
     # enable_events: machine_reset_phase_3
-  ac_sling_right_upper:
+  ac_sling_right:
     coil: c_sling_right
-    switch: s_sling_right_upper
+    switch: s_sling_right
     # enable_events: machine_reset_phase_3
-  ac_sling_left_lower:
-    coil: c_sling_left
-    switch: s_sling_left_lower
-    # enable_events: machine_reset_phase_3
-  ac_sling_right_lower:
-    coil: c_sling_right
-    switch: s_sling_right_lower
-    # enable_events: machine_reset_phase_3
+  # ac_sling_left_lower:
+  #   coil: c_sling_left
+  #   switch: s_sling_left_lower
+  #   # enable_events: machine_reset_phase_3
+  # ac_sling_right_lower:
+  #   coil: c_sling_right
+  #   switch: s_sling_right_lower
+  #   # enable_events: machine_reset_phase_3
   pop_center:
     coil: c_pop_center
     switch: s_pop_center
