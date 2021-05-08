@@ -130,6 +130,11 @@ shows:
         l_standup_left_1_2: white
         l_standup_left_1_3: white
         l_standup_left_1_4: white
+        l_standup_left_0_0: white
+        l_standup_left_0_1: white
+        l_standup_left_0_2: white
+        l_standup_left_0_3: white
+        l_standup_left_0_4: white
         l_serial_chain_0_26: green
         l_serial_chain_0_27: blue 
         l_serial_chain_0_28: green
@@ -203,13 +208,11 @@ shows:
         l_standup_left_1_2: off
         l_standup_left_1_3: off
         l_standup_left_1_4: off
-        l_serial_chain_0_26: blue
-        l_serial_chain_0_27: green
-        l_serial_chain_0_28: blue
-        l_serial_chain_0_29: green
-        l_serial_chain_0_30: blue
-        l_serial_chain_0_31: green
-        l_serial_chain_0_32: blue
+        l_standup_left_0_0: off
+        l_standup_left_0_1: off
+        l_standup_left_0_2: off
+        l_standup_left_0_3: off
+        l_standup_left_0_4: off
         l_status_circle_7: green
         l_status_circle_6: blue
         l_status_circle_5: green

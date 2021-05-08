@@ -11,7 +11,6 @@ light_settings:
       linear_cutoff: 0.0
 
 lights:
-  # drop upper
   l_drop_upper:
     number: 8-100-101-102
     subtype: led
@@ -123,7 +122,6 @@ lights:
     number: 8-172-173-174
     subtype: led
     type: grb
-# Need to make room for 35 new lights
   l_standup_left_6_4:
     number: 8-175-176-177
     subtype: led
@@ -245,98 +243,97 @@ lights:
     subtype: led
     type: rgb
 
-# Finish these when I get LEDs in from digikey
-  # l_standup_left_0_4:
-  #   number: 
-  #   subtype: led
-  #   type: rgb
-  # l_standup_left_0_3:
-  #   number: 
-  #   subtype: led
-  #   type: rgb
-  # l_standup_left_0_2:
-  #   number: 
-  #   subtype: led
-  #   type: rgb
-  # l_standup_left_0_1:
-  #   number: 
-  #   subtype: led
-  #   type: rgb
-  # l_standup_left_0_0:
-  #   number: 
-  #   subtype: led
-  #   type: rgb
+  l_standup_left_0_4:
+    number: 8-265-266-267
+    subtype: led
+    type: rgb
+  l_standup_left_0_3:
+    number: 8-268-269-270
+    subtype: led
+    type: rgb
+  l_standup_left_0_2:
+    number: 8-271-272-273
+    subtype: led
+    type: rgb
+  l_standup_left_0_1:
+    number: 8-274-275-276
+    subtype: led
+    type: rgb
+  l_standup_left_0_0:
+    number: 8-277-278-279
+    subtype: led
+    type: rgb
 
 # Rename the 16 below
 
   # rectangle lower 3
   l_serial_chain_0_26:
-    number: 8-265-266-267
+    number: 8-280-281-282
     subtype: led
     type: grb
   # rectangle lower 2
   l_serial_chain_0_27:
-    number: 8-268-269-270
+    number: 8-283-284-285
     subtype: led
     type: grb
   # rectangle lower 1
   l_serial_chain_0_28:
-    number: 8-271-272-273
+    number: 8-286-287-288
     subtype: led
     type: grb
   # outlane right
   l_serial_chain_0_29:
-    number: 8-274-275-276
+    number: 8-289-290-291
     subtype: led
     type: grb
   # inlane right
   l_serial_chain_0_30:
-    number: 8-277-278-279
+    number: 8-292-293-294
     subtype: led
     type: grb
   # inlane left
   l_serial_chain_0_31:
-    number: 8-280-281-282
+    number: 8-295-296-297
     subtype: led
     type: grb
   # outlane left
   l_serial_chain_0_32:
-    number: 8-283-284-285
-    subtype: led
-    type: grb
-  l_status_circle_7:
-    number: 8-286-287-288
-    subtype: led
-    type: grb
-  l_status_circle_6:
-    number: 8-289-290-291
-    subtype: led
-    type: grb
-  l_status_circle_5:
-    number: 8-292-293-294
-    subtype: led
-    type: grb
-  l_status_circle_4:
-    number: 8-295-296-297
-    subtype: led
-    type: grb
-  l_status_circle_3:
     number: 8-298-299-300
     subtype: led
     type: grb
-  l_status_circle_2:
+  l_status_circle_7:
     number: 8-301-302-303
     subtype: led
     type: grb
-  l_status_circle_1:
+  l_status_circle_6:
     number: 8-304-305-306
     subtype: led
     type: grb
-  l_status_circle_0:
+  l_status_circle_5:
     number: 8-307-308-309
     subtype: led
     type: grb
-  l_ball_save:
+  l_status_circle_4:
     number: 8-310-311-312
+    subtype: led
+    type: grb
+  l_status_circle_3:
+    number: 8-313-314-315
+    subtype: led
+    type: grb
+  l_status_circle_2:
+    number: 8-316-317-318
+    subtype: led
+    type: grb
+  l_status_circle_1:
+    number: 8-319-320-321
+    subtype: led
+    type: grb
+  l_status_circle_0:
+    number: 8-322-323-324
+    subtype: led
+    type: grb
+  l_ball_save:
+    number: 8-325-326-327
     subtype: led
     type: grb
