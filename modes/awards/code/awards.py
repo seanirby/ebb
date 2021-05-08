@@ -20,7 +20,7 @@ class Awards(Mode):
         self.init_lights()
         self.add_mode_event_handler("sh_awards_select_left_hit", self.handle_select_award, direction = 1)
         self.add_mode_event_handler("sh_awards_select_right_hit", self.handle_select_award, direction = -1)
-        self.add_mode_event_handler("sh_awards_collect_hit", self.handle_award_collected)
+        self.add_mode_event_handler("sh_saucer_debounced_hit", self.handle_award_collected)
 
     def init_lights(self, **kwargs):
         for award in range(0, NUM_AWARDS):
@@ -77,6 +77,7 @@ class Awards(Mode):
             self.player["awards_{}_collected".format(award)] = 0
 
     def handle_award_collected(self, **kwargs):
+        # TODO: may need to add in logic so awards aren't always collected
         pos = self.award_selected()
         self.machine.events.post(AWARDS_EVENTS[pos])
 

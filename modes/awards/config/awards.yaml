@@ -38,10 +38,11 @@ shots:
     show_tokens:
       light: l_hook_0
   sh_awards_collect:
-    hit_events: sh_saucer_debounced_hit
     profile: awards_collect
     enable_events: timer_base_drop_left_started
     disable_events: mode_awards_started, timer_base_drop_left_complete
+    # TODO: have to handle this in code due to timing
+    # hit_events: sh_saucer_debounced_hit
     show_tokens:
       light: l_drop_left_arrow_0
   sh_awards_select_left:
