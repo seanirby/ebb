@@ -31,38 +31,38 @@ shot_profiles:
 
 shots:
   sh_wide_shot:
-    switch: s_target_right_0
+    switch: s_standup_upper
     advance_events: wide_shot_qualified, wide_shot_collected
     profile: wide_shot
   # 'shots' for lights on grid
   sh_wsl_0:
     profile: wsl
     show_tokens:
-      light: l_target_left_0_3
+      light: l_standup_left_0_4
   sh_wsl_1:
     profile: wsl
     show_tokens:
-      light: l_target_left_1_3
+      light: l_standup_left_1_4
   sh_wsl_2:
     profile: wsl
     show_tokens:
-      light: l_target_left_2_3
+      light: l_standup_left_2_4
   sh_wsl_3:
     profile: wsl
     show_tokens:
-      light: l_target_left_3_3
+      light: l_standup_left_3_4
   sh_wsl_4:
     profile: wsl
     show_tokens:
-      light: l_target_left_4_3
+      light: l_standup_left_4_4
   sh_wsl_5:
     profile: wsl
     show_tokens:
-      light: l_target_left_5_3
+      light: l_standup_left_5_4
   sh_wsl_6:
     profile: wsl
     show_tokens:
-      light: l_target_left_6_3
+      light: l_standup_left_6_4
 
 event_player:
   sh_wide_shot_hit{device.shots.sh_wide_shot.state_name=='flash'}:  wide_shot_qualified

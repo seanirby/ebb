@@ -5,6 +5,10 @@ keyboard:
     switch: s_start
   f:
     switch: s_force_knockdown_coils
+  a:
+    switch: s_left_flipper
+  d:
+    switch: s_right_flipper
   t:
     switch: s_trough_0
     toggle: True
@@ -45,4 +49,5 @@ keyboard:
     switch: s_standup_left_6
   7:
     switch: s_standup_left_7
-    
+  u:
+    switch: s_standup_upper
