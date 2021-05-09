@@ -9,6 +9,23 @@ event_player:
     - activate_drop_upper
   multiball_main_ended: start_mball_qualifying
 
+variable_player:
+  mode_mball_started{current_player.mballs_played==0}:
+    mball_progress:
+      action: set
+      int: 1
+  mode_mball_started{current_player.mballs_played==1}:
+    mball_progress:
+      action: set
+      int: 0
+  # TODO: Probably don't need this condition, unless updating mball logic
+  mode_mball_started{current_player.mballs_played>1}:
+    mball_progress:
+      action: set
+      int: 0
+  mode_mball_stopping:
+    mballs_played: 1
+
 timers:
   mball_eject_delay:
     start_running: True

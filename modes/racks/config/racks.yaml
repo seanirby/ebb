@@ -14,19 +14,19 @@ shot_profiles:
         show: off
       - name: current
         show: flash_color
-        speed: 6
+        speed: 10
       - name: collected
         show: led_color
   racks_qualify_collect:
     states:
       - name: flash
         show: flash
-        speed: 6
+        speed: 10
   racks_collect:
     states:
       - name: flash
         show: flash
-        speed: 6
+        speed: 10
   l:
     states:
       - name: off
@@ -35,7 +35,7 @@ shot_profiles:
         show: on
       - name: flash
         show: flash
-        speed: 6
+        speed: 10
 
 shots:
   sh_racks_status_0:

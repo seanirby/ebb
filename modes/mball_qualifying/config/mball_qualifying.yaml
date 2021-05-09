@@ -42,18 +42,16 @@ shows:
 shot_profiles:
   qualify_lock:
     states:
-      #TODO: do i even need this state
       - name: none_qualified
-      #TODO: do i need quotes around show names
         show: mball_qualifying_none_qualified
-        speed: 2
+        speed: 10
       - name: one_qualified
         show: mball_qualifying_one_qualified
-        speed: 4
+        speed: 10
       - name: two_qualified
         show: mball_qualifying_two_qualified
-        speed: 6
-      - name: lock_qualifying
+        speed: 10
+      - name: lock_qualified
         show: mball_qualifying_lock_qualified
         
   lock:
@@ -62,14 +60,14 @@ shot_profiles:
         show: off
       - name: lit
         show: flash_color
-        speed: 8
+        speed: 10
 
 shots:
   sh_qualify_lock:
     switch: s_drop_upper
+    reset_events: start_mball_locked
     advance_events: mball_qualifying_advance_progress_1, mball_qualifying_advance_progress_2
     profile: qualify_lock
-    reset_events: mode_mball_qualifying_stopping
     show_tokens:
       l0: l_spinner_arrow_0
       l1: l_spinner_arrow_1
@@ -79,30 +77,27 @@ shots:
     switch: s_scoop
     advance_events: mball_qualifying_lock_qualified
     profile: lock
-    reset_events: mode_mball_qualifying_stopping
+    reset_events: start_mball_locked
     show_tokens:
       light: l_drop_upper
       color: green
 
 
 variable_player:
-  s_drop_upper_active:
-    mball_progress:
-      int: 1
+  sh_qualify_lock_hit:
+    mball_progress: 1
 
 event_player:
-  # TODO handle setting shot to starting state based on progress
-  # What event gets fired when a player variable is updated
-  # init
-  mode_mball_qualifying_started{current_player.mball_progress==1}: mball_qualifying_advance_progress_1
-  mode_mball_qualifying_started{current_player.mball_progress==2}:
+  mode_mball_qualifying_started{current_player.mball_progress==2 and current_player.shot_sh_qualify_lock==0}:
     - mball_qualifying_advance_progress_1
     - mball_qualifying_advance_progress_2
-  mode_mball_qualifying_started{current_player.mball_progress<3}: activate_drop_upper
-  mode_mball_qualifying_started{current_player.mball_progress==3}: mball_qualifying_lock_qualified, deactivate_drop_upper
+  mode_mball_qualifying_started{current_player.mball_progress==1 and current_player.shot_sh_qualify_lock==0}:
+    - mball_qualifying_advance_progress_1
+  mode_mball_qualifying_started{current_player.shot_sh_qualify_lock<3}: activate_drop_upper
+  mode_mball_qualifying_started{current_player.shot_sh_qualify_lock>=3}: mball_qualifying_lock_qualified, deactivate_drop_upper
 
   # progression
-  sh_qualify_lock_hit{current_player.mball_progress < 3}: activate_drop_upper
-  sh_qualify_lock_hit{current_player.mball_progress >= 3}: mball_qualifying_lock_qualified, deactivate_drop_upper
+  sh_qualify_lock_hit{current_player.shot_sh_qualify_lock<3}: activate_drop_upper
+  sh_qualify_lock_hit{current_player.shot_sh_qualify_lock>=3}: mball_qualifying_lock_qualified, deactivate_drop_upper
   multiball_lock_scoop_full: start_mball_locked
 

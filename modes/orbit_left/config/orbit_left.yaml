@@ -1,0 +1,6 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+# TODO: create orbit left sequence shot once spiner switch is hooked up

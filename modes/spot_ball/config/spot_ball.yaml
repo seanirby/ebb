@@ -9,7 +9,7 @@ shot_profiles:
     states:
       - name: flash
         show: flash
-        speed: 6
+        speed: 10
 
 shots:
   sh_spot_ball:

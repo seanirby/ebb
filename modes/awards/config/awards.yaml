@@ -9,14 +9,14 @@ shot_profiles:
     states:
       - name: flash
         show: flash_color
-        speed: 6
+        speed: 10
         show_tokens:
           color: orange
   awards_collect:
     states:
       - name: flash
         show: flash_color
-        speed: 6
+        speed: 10
         show_tokens:
           color: orange
   awards_select:

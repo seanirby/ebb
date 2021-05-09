@@ -5,20 +5,50 @@ mode:
   stop_events: start_mball
   # code: mball_locked.MballLocked
 
+shows:
+  mball_locked_release:
+    - time: 0
+      lights:
+        (l_0): (color)
+        (l_1): off
+        (l_2): off
+        (l_3): off
+    - time: "+1"
+      lights:
+        (l_0): off
+        (l_1): (color)
+        (l_2): off
+        (l_3): off
+    - time: "+2"
+      lights:
+        (l_0): off
+        (l_1): off
+        (l_2): (color)
+        (l_3): off
+    - time: "+3"
+      lights:
+        (l_0): off
+        (l_1): off
+        (l_2): off
+        (l_3): (color)
+
 shot_profiles:
   mball_locked_release:
     states:
       - name: lit
-        show: flash_color
+        show: mball_locked_release
+        show_tokens:
+          l_0: l_spinner_arrow_0
+          l_1: l_spinner_arrow_1
+          l_2: l_spinner_arrow_2
+          l_3: l_drop_upper
+          color: green
         speed: 10
 
 shots:
   sh_mball_locked_release:
     switch: s_drop_upper
     profile: mball_locked_release
-    show_tokens:
-      light: l_drop_upper
-      color: red
 
 event_player:
   mode_mball_locked_started: activate_drop_upper

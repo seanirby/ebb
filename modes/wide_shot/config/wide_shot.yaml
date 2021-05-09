@@ -18,7 +18,7 @@ shot_profiles:
         show: off
       - name: flash
         show: flash_color
-        speed: 6
+        speed: 10
         show_tokens:
           color: yellow
       - name: lit
@@ -29,7 +29,7 @@ shot_profiles:
     states:
       - name: flash
         show: flash_color
-        speed: 6
+        speed: 10
         show_tokens:
           color: yellow
 

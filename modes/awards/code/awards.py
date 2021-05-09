@@ -27,13 +27,10 @@ class Awards(Mode):
             light = self.machine.shots["sh_awards_{}".format(award)]
             if not(self.is_award_collected(award)):
                 if self.award_selected() == award:
-                    print("award {} selected".format(award))
                     light.jump(AWARDS_FLASH)
                 else:
-                    print("award {} off".format(award))
                     light.jump(AWARDS_OFF)
             else:
-                print("award {} collected".format(award))
                 light.jump(AWARDS_ON)
 
     def is_award_collected(self, award):

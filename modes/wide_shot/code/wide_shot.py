@@ -43,8 +43,9 @@ class WideShot(Mode):
         # reset progress
         self.player["wide_shot_progress"] = 0
 
-        # # reset wide shot target
-        # shot = self.machine.shots["sh_wide_shot"].jump(0)
+        # TODO: Figure out why 'wide_shot_collected' doesn't avan
+        # reset wide shot target
+        shot = self.machine.shots["sh_wide_shot"].jump(0)
 
         # reset wsl indicators
         for i in range(0, NUM_TARGETS):

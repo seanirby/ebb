@@ -6,13 +6,13 @@ mode:
 show_player:
   ball_save_default_timer_start:
     flash_color:
-      speed: 3
+      speed: 5
       show_tokens:
         light: l_ball_save
         color: white
   ball_save_default_hurry_up:
     flash_color:
-      speed: 6
+      speed: 10
       show_tokens:
         light: l_ball_save
         color: white

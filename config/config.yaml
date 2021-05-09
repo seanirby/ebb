@@ -8,9 +8,9 @@ hardware:
   driverboards: pdb
 
 virtual_platform_start_active_switches:
+  - s_trough_0
   - s_trough_1
   - s_trough_2
-  - s_trough_3
 
 p_roc:
   pd_led_boards:
