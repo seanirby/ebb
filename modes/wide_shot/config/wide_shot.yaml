@@ -14,13 +14,17 @@ shows:
 shot_profiles:
   wsl:
     states:
-      - name: off
-        show: off_stop
+      - name: unlit
+        show: off
       - name: flash
-        show: flash_stop
+        show: flash_color
         speed: 6
-      - name: on
-        show: wsl_on
+        show_tokens:
+          color: yellow
+      - name: lit
+        show: led_color
+        show_tokens:
+          color: yellow
   wide_shot:
     states:
       - name: flash

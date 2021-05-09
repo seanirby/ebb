@@ -8,25 +8,35 @@ shot_profiles:
   awards_qualify_collect:
     states:
       - name: flash
-        show: flash_stop
+        show: flash_color
         speed: 6
+        show_tokens:
+          color: orange
   awards_collect:
     states:
       - name: flash
-        show: flash_stop
+        show: flash_color
         speed: 6
+        show_tokens:
+          color: orange
   awards_select:
     states:
       - name: lit
-        show: on
+        show: led_color
+        show_tokens:
+          color: orange
   awards:
     states:
       - name: off
         show: off
-      - name: on
-        show: on
+      - name: lit
+        show: led_color
+        show_tokens:
+          color: orange
       - name: flash
-        show: flash_stop
+        show: flash_color
+        show_tokens:
+          color: orange
         speed: 10
 
 shots:
