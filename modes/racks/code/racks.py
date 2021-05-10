@@ -55,7 +55,7 @@ class Racks(Mode):
 
         targets=[target_number]
 
-        if wide_shot.state_name == "on":
+        if wide_shot.state_name == "lit":
             progress = self.player["wide_shot_progress"]
             self.machine.events.post("wide_shot_collected")
             # TODO: dedupe the formula below
