@@ -1,0 +1,113 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  code: spinner.Spinner
+
+state_machines:
+  spinner:
+    starting_state: off
+    states:
+      off:
+        label: spinner shot not qualified
+        events_when_started: spinner_state_off_started
+      qualified:
+        label: spinner shot is ready to be hit
+        events_when_started: spinner_state_qualified_started
+      spinning_on:
+        label: initial hit and all other even number of spins
+        events_when_started: spinner_state_spinning_on_started
+      spinning_off:
+        label: odd number of spins
+        events_when_started: spinner_state_spinning_off_started
+    transitions:
+      - source: off
+        target: qualified
+        # TODO: may need to update this to a more proper 'hit' or mode based event
+        events: s_inlane_right_active
+      - source: qualified
+        target: spinning_on
+        events: s_spinner_active
+      - source: spinning_on
+        target: spinning_off
+        events: s_spinner_active
+      - source: spinning_off
+        target: spinning_on
+        events: s_spinner_active
+        # timeouts
+      - source: qualified
+        target: off
+        events: timer_spinner_qualified_timeout_complete
+      - source: spinning_off
+        target: off
+        events: timer_spinner_spinning_timeout_complete
+      - source: spinning_on
+        target: off
+        events: timer_spinner_spinning_timeout_complete
+      - source: spinning_off
+        target: off
+        events: timer_spinner_spinning_timeout_complete
+        # TODO: add ball ending transitions too
+
+shot_profiles:
+  spinner:
+    advance_on_hit: False
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: led_color
+      - name: spinning_on
+        show: led_color
+      - name: spinning_off
+        show: off
+
+shots:
+  sh_spinner:
+    switch: s_spinner
+    advance_events: timer_spinning_started
+    profile: spinner
+    show_tokens:
+      light: l_spinner_rectangle
+      color: pink
+
+## TODO: if this doesn't work, then add code to jump
+#variable_player:
+#  spinner_state_off_started:
+#    shot_sh_spinner:
+#      action: set
+#      int: 0
+#  spinner_state_qualified_started:
+#    shot_sh_spinner:
+#      action: set
+#      int: 1
+#  spinner_state_spinning_on_started:
+#    shot_sh_spinner:
+#      action: set
+#      int: 2
+#  spinner_state_spinning_off_started:
+#    shot_sh_spinner:
+#      action: set
+#      int: 3
+
+timers:
+  spinner_spinning_timeout:
+    end_value: 3
+    control_events:
+      - action: start
+        event: spinner_state_spinning_on_started
+      # TODO: could potentially cause issues with timer starting/lights
+      - action: reset
+        event: spinner_state_spinning_on_started
+      - action: reset
+        event: spinner_state_spinning_off_started
+      - action: reset
+        event: timer_spinner_spinning_timeout_complete
+  spinner_qualified_timeout:
+    end_value: 10
+    control_events:
+      - action: start
+        event: spinner_state_qualified_started
+      - action: reset
+        event: timer_spinner_qualified_timeout_complete
+

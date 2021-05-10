@@ -16,14 +16,19 @@ keyboard:
     switch: s_force_ball_save
   o:
     switch: s_orbit
-  # i:
-  #   switch: s_right_inlane
+  # lanes
+  j:
+    switch: s_outlane_left
+  k:
+    switch: s_inlane_left
+  l:
+    switch: s_inlane_right
+  ;:
+    switch: s_outlane_right
+  i:
+    switch: s_spinner
   p:
     switch: s_plunger_lane
-  # d:
-  #   event: drop_target_bank_drops_down
-  # l:
-  #   event: dev_award_letter
   v:
     switch: s_saucer
     toggle: True

@@ -13,7 +13,7 @@ modes:
   - ball_save
   - saucer
   # - lanes
-  # - spinners
+  - spinner
   - multiball_config
   - mball_startup
   - mball_qualifying
