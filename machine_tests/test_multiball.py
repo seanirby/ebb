@@ -16,7 +16,6 @@ class TestMultiball(MpfMachineTestCase):
         self.assertEqual(1, self.machine.playfield.available_balls)
         self.assertPlaceholderEvaluates(True, "device.diverters.div_drop_upper.active")
 
-
     def assert_mball_qualifying(self):
         self.assertModeRunning("mball_qualifying")
         self.assertModeNotRunning("mball_startup")
@@ -38,8 +37,27 @@ class TestMultiball(MpfMachineTestCase):
         self.assert_mball_qualifying()
 
     def hit_upper_drop(self):
-        self.hit_and_release_switch("s_drop_upper")
+        self.assertModeRunning("orbit_left")
+        self.mock_event("sh_orbit_left_drop_hit")
+        self.assertPlaceholderEvaluates(True, "device.diverters.div_drop_upper.active")
+        self.hit_switch_and_run("s_spinner", .1)
+        self.advance_time_and_run(.1)
+        self.hit_switch_and_run("s_drop_upper", .1)
+        self.advance_time_and_run(.5)
         self.advance_time_and_run(5)
+        self.assertEventCalled("sh_orbit_left_drop_hit", 1)
+
+    def hit_scoop(self):
+        self.mock_event("sh_orbit_left_scoop_hit")
+        self.assertModeRunning("orbit_left")
+        self.assertPlaceholderEvaluates(False, "device.diverters.div_drop_upper.active")
+        print("FOO")
+        # self.hit_switch_and_run("s_spinner", .1)
+        self.post_event("s_spinner_active")
+        self.post_event("multiball_lock_scoop_locked_ball")
+        self.hit_switch_and_run("s_scoop", 4)
+        self.advance_time_and_run(10)
+        self.assertEventCalled("sh_orbit_left_scoop_hit", 1)
 
     def test_mball_qualifying_to_lock(self):
         self.test_start_game()
@@ -49,6 +67,7 @@ class TestMultiball(MpfMachineTestCase):
         # hitting upper drop makes lock qualified
         self.hit_upper_drop()
         self.assertPlaceholderEvaluates("lock_qualified", "device.shots.sh_qualify_lock.state_name")
+        self.assertPlaceholderEvaluates(False, "device.diverters.div_drop_upper.active")
 
     def test_mball_qualifying_with_drain(self):
         self.test_start_game()
@@ -87,11 +106,13 @@ class TestMultiball(MpfMachineTestCase):
         self.assertPlaceholderEvaluates(False, "device.diverters.div_drop_upper.active")
 
         # hit scoop
-        self.hit_switch_and_run("s_scoop", 5)
+        self.hit_scoop()
         self.assert_mball_locked()
         self.assertPlaceholderEvaluates(True, "device.diverters.div_drop_upper.active")
         self.assertPlaceholderEvaluates(1, "device.multiball_locks.scoop.locked_balls")
+        self.assertPlaceholderEvaluates(True, "device.diverters.div_drop_upper.active")
         self.hit_upper_drop()
+        self.assertPlaceholderEvaluates(False, "device.diverters.div_drop_upper.active")
         self.assert_mball_running()
 
         self.advance_time_and_run(50)

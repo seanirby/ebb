@@ -118,3 +118,5 @@ switches:
     number: A3-B1-3
   s_upper_lane_left:
     number: A3-B1-4
+  s_spinner:
+    number: A3-B1-5

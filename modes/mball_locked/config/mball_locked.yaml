@@ -47,7 +47,7 @@ shot_profiles:
 
 shots:
   sh_mball_locked_release:
-    switch: s_drop_upper
+    hit_events: sh_orbit_left_drop_hit
     profile: mball_locked_release
 
 event_player:

@@ -4,6 +4,23 @@ mode:
   start_events: start_mball
   stop_events: start_mball_qualifying
 
+shows:
+  mball_shoot_again:
+    - time: 0
+      lights:
+        l_ball_save: white
+    - time: 1
+      lights:
+        l_ball_save: off
+
+show_player:
+  mode_mball_started:
+    mball_shoot_again:
+      action: play
+  multiball_main_shoot_again:
+    mball_shoot_again:
+      action: stop
+
 event_player:
   timer_mball_eject_delay_complete:
     - activate_drop_upper

@@ -10,7 +10,7 @@ multiballs:
   main:
     ball_count: 2
     ball_count_type: total
-    shoot_again: 11s
+    shoot_again: 30s
     ball_locks: bd_scoop
     # TODO: rename this
     start_events: start_mball

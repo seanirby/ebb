@@ -23,6 +23,7 @@ modes:
   - wide_shot
   # - spot_ball
   - awards
+  - orbit_left
 
   # ball end
   # - bonus

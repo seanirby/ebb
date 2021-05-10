@@ -4,3 +4,14 @@ mode:
   start_events: ball_starting
 
 # TODO: create orbit left sequence shot once spiner switch is hooked up
+sequence_shots:
+  sh_orbit_left_drop:
+    switch_sequence:
+      - s_spinner
+      - s_drop_upper
+    sequence_timeout: 3s
+  sh_orbit_left_scoop:
+    event_sequence:
+      - s_spinner_active
+      - multiball_lock_scoop_locked_ball
+    sequence_timeout: 3s
