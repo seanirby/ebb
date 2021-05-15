@@ -14,7 +14,7 @@ class Racks(Mode):
         for i in range(0, NUM_TARGETS):
             self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
 
-        self.add_mode_event_handler("timer_base_drop_left_complete", self.update_if_rack_can_be_collected)
+        self.add_mode_event_handler("timer_drops_lower_left_complete", self.update_if_rack_can_be_collected)
         self.add_mode_event_handler("sh_saucer_debounced_hit", self.handle_rack_collect_hit)
 
     def init_lights(self):
@@ -51,15 +51,16 @@ class Racks(Mode):
         
     def handle_target_hit(self, **kwargs):
         target_number = kwargs.get("target_number")
-        wide_shot = self.machine.shots["sh_wsl_{}".format(target_number)]
+        multicue = self.machine.shots["sh_multicue_{}".format(target_number)]
 
         targets=[target_number]
 
-        if wide_shot.state_name == "lit":
-            progress = self.player["wide_shot_progress"]
-            self.machine.events.post("wide_shot_collected")
+        if multicue.state_name == "lit":
+            progress = self.player["multicue_progress"]
+            multicue_position = self.player["multicue_position"]
+            self.machine.events.post("multicue_collected")
             # TODO: dedupe the formula below
-            targets = list(map(lambda x: x % NUM_TARGETS, list(range(target_number-progress, target_number+progress+1))))
+            targets = list(map(lambda x: x % NUM_TARGETS, list(range(multicue_position-progress, multicue_position+progress+1))))
 
         for target in targets:
             self.update_target_progress(target)

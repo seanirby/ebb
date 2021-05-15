@@ -97,6 +97,7 @@ event_player:
 
   # progression
   sh_qualify_lock_hit{current_player.shot_sh_qualify_lock<3}: activate_drop_upper
-  sh_qualify_lock_hit{current_player.shot_sh_qualify_lock>=3}: mball_qualifying_lock_qualified, deactivate_drop_upper
+  # TODO: I *shouldn't* need this deactivate event here but it's useful for my tests
+  sh_qualify_lock_hit{current_player.shot_sh_qualify_lock>=3}: mball_qualifying_lock_qualified, test_knockdown_upper
   sh_orbit_left_scoop_hit: start_mball_locked
 

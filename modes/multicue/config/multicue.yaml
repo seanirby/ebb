@@ -1,0 +1,76 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  code: multicue.Multicue
+  priority: 200
+
+shows:
+  multicue_on:
+    - duration: -1
+      lights:
+        (light): on
+    
+shot_profiles:
+  multicue:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: led_color
+        show_tokens:
+          color: yellow
+  multicue_activate:
+    states:
+      - name: flash
+        show: flash_color
+        speed: 10
+        show_tokens:
+          color: yellow
+
+shots:
+  sh_multicue:
+    switch: s_standup_upper
+    disable_events: multicue_qualified, multicue_init_disable
+    enable_events: multicue_collected, multicue_init_enable
+    profile: multicue_activate
+    show_tokens:
+      light: l_standup_upper
+      color: yellow
+  # 'shots' for lights on grid
+  sh_multicue_0:
+    profile: multicue
+    show_tokens:
+      light: l_standup_left_0_4
+  sh_multicue_1:
+    profile: multicue
+    show_tokens:
+      light: l_standup_left_1_4
+  sh_multicue_2:
+    profile: multicue
+    show_tokens:
+      light: l_standup_left_2_4
+  sh_multicue_3:
+    profile: multicue
+    show_tokens:
+      light: l_standup_left_3_4
+  sh_multicue_4:
+    profile: multicue
+    show_tokens:
+      light: l_standup_left_4_4
+  sh_multicue_5:
+    profile: multicue
+    show_tokens:
+      light: l_standup_left_5_4
+  sh_multicue_6:
+    profile: multicue
+    show_tokens:
+      light: l_standup_left_6_4
+
+event_player:
+  sh_multicue_hit{device.shots.sh_multicue.enabled}:  multicue_qualified
+  mode_multicue_started{current_player.multicue_progress==1}: multicue_init_disable
+  mode_multicue_started{current_player.multicue_progress==0}: multicue_init_enable
+  multicue_qualified: multicue_advance_progress
+  # sh_multicue_hit{device.shots.sh_multicue.state_name=='on' and current_player.multicue_progress < 2}: multicue_advance_progress
+  

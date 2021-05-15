@@ -1,15 +1,118 @@
 #config_version=5
 
 slides:
-  attract:
+  combined_slide:
+    widgets:
+      - type: display
+        source_display: normal
+        width: 1300
+        height: 400
+        opacity: 0
+        effects:
+          - type: glow
+            blur_size: 5.0
+            intensity: .6
+            glow_speed: 1.0
+            glow_amplitude: .2
+      - type: display
+        source_display: background
+        width: 1300
+        height: 400
+  background_slide:
     widgets:
       - type: text
-        text: PRESS START
-
-show_player:
-  mode_attract_started:
-    color_wheel:
-      speed: 10
+        text: yo
+        color: black
+  segment_slide:
+    widgets:
+      - type: segment_display_emulator
+        display_type: 14seg
+        name: row0
+        flash_mode: all
+        flash_frequency: 7
+        character_count: 16
+        character_slant_angle: 5
+        character_spacing: 20
+        segment_width: 0.15
+        segment_interval: 0.04
+        segment_off_color: 4b4c4a30
+        segment_on_color: FFFFFF
+        side_bevel_enabled: true
+        dot_enabled: false
+        comma_enabled: false
+        color: blue
+        text: "PRESS START"
+        width: 1300
+        height: 150
+        opacity: 1
+        x: 0
+        y: 50
+        anchor_x: left
+        anchor_y: bottom
+      - type: segment_display_emulator
+        display_type: 14seg
+        flash_mode: all
+        flash_frequency: 7
+        name: row1
+        character_count: 16
+        character_slant_angle: 5
+        character_spacing: 20
+        segment_width: 0.15
+        segment_interval: 0.04
+        segment_off_color: 4b4c4a30
+        segment_on_color: FFFFFF
+        side_bevel_enabled: true
+        dot_enabled: false
+        comma_enabled: false
+        text: "PRESS START"
+        width: 1300
+        height: 150
+        x: 0
+        y: 210
+        anchor_x: left
+        anchor_y: bottom
 
 slide_player:
-  mode_attract_started: attract
+  mode_attract_started: segment_slide
+
+shows:
+  attract_segment:
+    - time: 0
+      segment_displays:
+        row0:
+          text: "     PRESS START"
+          transition:
+            type: push
+            direction: left
+        row1:
+          text: "PRESS START     "
+          transition:
+            type: push
+            direction: right
+    - time: 1
+      segment_displays:
+        row0:
+          text: "PRESS START     "
+          transition:
+            type: push
+            direction: right
+        row1:
+          text: "     PRESS START"
+          transition:
+            type: push
+            direction: left
+
+# slides:
+#   attract:
+#     widgets:
+#       - type: text
+#         text: PRESS START
+
+# TODO: segments shows not working here
+show_player:
+  mode_attract_started.1:
+    color_wheel:
+      speed: 10
+  mode_attract_started.2: attract_segment
+    
+  

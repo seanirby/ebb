@@ -8,11 +8,12 @@ modes:
   # - slide_listener
   # - autostack
 
-  # global
+  # generic
   - base
   - ball_save
   - saucer
-  # - lanes
+  - drops
+  # game specific modes
   - spinner
   - multiball_config
   - mball_startup
@@ -20,7 +21,7 @@ modes:
   - mball_locked
   - mball
   - racks
-  - wide_shot
+  - multicue
   # - spot_ball
   - awards
   - orbit_left

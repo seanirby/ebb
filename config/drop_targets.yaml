@@ -1,35 +1,21 @@
 #config_version=5
 
 drop_targets:
-  drop_right:
-    switch: s_hook
+  right:
+    switch: s_drop_right
     reset_coil: c_drop_right
-    reset_events: sh_awards_qualify_collect_hit, sh_racks_qualify_collect_hit
-    knockdown_events: ball_starting, timer_base_drop_right_complete, s_force_knockdown_coils_active
     knockdown_coil: c_drop_right_knockdown
-  drop_left:
+    reset_events: activate_drop_right
+    knockdown_events: deactivate_drop_right, test_knockdown_right
+  left:
     switch: s_drop_left
     reset_coil: c_drop_left
-    reset_events: ball_starting, timer_base_drop_left_complete, reset_drop_left
-    knockdown_events: s_hook_active, s_force_knockdown_coils_active
     knockdown_coil: c_drop_left_knockdown
-  drop_upper:
+    reset_events: activate_drop_left
+    knockdown_events: deactivate_drop_left, test_knockdown_left
+  upper:
     switch: s_drop_upper
     reset_coil: c_drop_upper
-    reset_events: ball_starting, timer_base_drop_left_complete, reset_drop_upper
     knockdown_coil: c_drop_upper_knockdown
-    knockdown_events: s_force_knockdown_coils_active, balldevice_bd_scoop_ejecting_ball
-
-    # reset_events: ball_starting
-
-# drop_target_banks:
-#   drops:
-#     drop_targets: d_a
-
-# drop_target_banks:
-#   # posts event drop_target_bank_drops_down when all down
-#   drops:
-#     drop_targets: d_a,d_b,d_c
-#     reset_coils: c_drops
-#     # reset_events: drops_state_reset_bank
-
+    reset_events: activate_drop_upper
+    knockdown_events: deactivate_drop_upper, test_knockdown_upper, balldevice_bd_scoop_ejecting_ball

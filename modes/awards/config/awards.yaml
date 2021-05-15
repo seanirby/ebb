@@ -43,14 +43,14 @@ shots:
   sh_awards_qualify_collect:
     switch: s_hook
     profile: awards_qualify_collect
-    enable_events: mode_awards_started, timer_base_drop_left_complete
-    disable_events: timer_base_drop_left_started
+    enable_events: mode_awards_started, timer_drops_lower_left_complete
+    disable_events: timer_drops_lower_left_started
     show_tokens:
       light: l_hook_0
   sh_awards_collect:
     profile: awards_collect
-    enable_events: timer_base_drop_left_started
-    disable_events: mode_awards_started, timer_base_drop_left_complete
+    enable_events: timer_drops_lower_left_started
+    disable_events: mode_awards_started, timer_drops_lower_left_complete
     # TODO: have to handle this in code due to timing
     # hit_events: sh_saucer_debounced_hit
     show_tokens:
@@ -93,3 +93,9 @@ shots:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_6
+
+event_player:
+  sh_awards_qualify_collect_hit:
+    - activate_drop_right
+    - deactivate_drop_left
+    - start_saucer_shot_timers

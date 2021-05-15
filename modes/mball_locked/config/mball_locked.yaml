@@ -52,7 +52,11 @@ shots:
 
 event_player:
   mode_mball_locked_started: activate_drop_upper
-  sh_mball_locked_release_hit: start_mball
+  # TODO: need the test knockdown event for my tests
+  sh_mball_locked_release_hit:
+    - test_knockdown_upper
+    - start_mball
+
     
 variable_player:
   mode_mball_locked_started:

@@ -8,8 +8,8 @@ player_vars:
   racks:
     initial_value: 0
   # target left progress
-  # tl_0_progress:
-  #   initial_value: 0
+  tl_0_progress:
+    initial_value: 0
   tl_1_progress:
     initial_value: 0
   tl_2_progress:
@@ -23,13 +23,14 @@ player_vars:
   tl_6_progress:
     initial_value: 0
   # wide shot
-  wide_shot_progress:
+  # TODO: rename this to multicue_size
+  multicue_progress:
     initial_value: 0
-  wide_shot_position:
-    initial_value: 4
+  multicue_position:
+    initial_value: 3
   # awards collected
   award_selected:
-    initial_value: 0
+    initial_value: 3
   award_0_collected:
     initial_value: 0
   award_1_collected:

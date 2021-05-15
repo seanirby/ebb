@@ -1,0 +1,50 @@
+#config_version=5
+
+# Mode for managing drop target related logic
+
+mode:
+  start_events: ball_starting
+
+timers:
+  drops_raise_right:
+    end_value: 2
+    control_events:
+      - action: start
+        event: start_saucer_shot_timers
+      - action: reset
+        event: timer_drops_raise_right_complete
+  drops_lower_left:
+    end_value: 4
+    control_events:
+      - action: start
+        event: start_saucer_shot_timers
+      - action: reset
+        event: timer_drops_lower_left_complete
+
+event_player:
+  # init, leaving upper drop init to multiball mode
+  mode_drops_started:
+    - activate_drop_left
+    - deactivate_drop_right
+
+  # resetting left
+  s_drop_left_active{device.timers.drops_lower_left.running==False}: activate_drop_left
+
+  timer_drops_raise_right_complete: deactivate_drop_right
+  timer_drops_lower_left_complete: activate_drop_left
+
+  # keyboard control
+  s_force_knockdown_coils_active:
+    - deactivate_drop_left
+    - deactivate_drop_right
+    - deactivate_drop_upper
+
+  #   # reset_events: sh_awards_qualify_collect_hit, sh_racks_qualify_collect_hit
+  #   # knockdown_events: ball_starting, timer_base_drop_right_complete, s_force_knockdown_coils_active
+  #   knockdown_coil: c_drop_right_knockdown
+  # drop_left:
+  #   switch: s_drop_left
+  #   reset_coil: c_drop_left
+  #   # reset_events: ball_starting, timer_base_drop_left_complete, reset_drop_left
+  #   # knockdown_events: s_hook_active, s_force_knockdown_coils_active
+

@@ -27,7 +27,7 @@ coils:
   c_flipper_upper_right_main:
     number: A6-B0-0
     default_hold_power: 0.4
-    default_pulse_ms: 28
+    default_pulse_ms: 40
     # default_pulse_ms: 17
   c_drop_right_knockdown:
     number: A6-B0-1
