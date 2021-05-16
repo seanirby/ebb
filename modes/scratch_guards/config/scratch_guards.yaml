@@ -5,7 +5,7 @@ mode:
   stop_events: scratch_guards_stop
 
 shot_profiles:
-  scratch_guard:
+  scratch_guards:
     states:
       - name: on
         show: led_color
@@ -13,36 +13,36 @@ shot_profiles:
           color: blue
 
 shots:
-  sh_scratch_guard_left:
+  sh_scratch_guards_left:
     switch: s_outlane_left
-    profile: scratch_guard
+    profile: scratch_guards
     enable_events: scratch_guards_start
-    disable_events: sh_scratch_guard_left_hit
+    disable_events: sh_scratch_guards_left_hit
     show_tokens:
       light: l_outlane_left
-  sh_scratch_guard_right:
+  sh_scratch_guards_right:
     switch: s_outlane_right
-    profile: scratch_guard
+    profile: scratch_guards
     enable_events: scratch_guards_start
-    disable_events: sh_scratch_guard_right_hit
+    disable_events: sh_scratch_guards_right_hit
     show_tokens:
       light: l_outlane_right
 
 ball_saves:
-  scratch_guard_left:
+  scratch_guards_left:
     auto_launch: True
     balls_to_save: 1
-    enable_events: sh_scratch_guard_left_hit
-    disable_events: ball_save_scratch_guard_left_saving_ball
-  scratch_guard_right:
+    enable_events: sh_scratch_guards_left_hit
+    disable_events: ball_save_scratch_guards_left_saving_ball
+  scratch_guards_right:
     auto_launch: True
     balls_to_save: 1
-    enable_events: sh_scratch_guard_right_hit
-    disable_events: ball_save_scratch_guard_right_saving_ball
+    enable_events: sh_scratch_guards_right_hit
+    disable_events: ball_save_scratch_guards_right_saving_ball
 
 
 event_player:
   # TODO: test the case where both of these are hit at the same time, potential race condition
   # TODO: see if I can use 'not' instead of ==False
-  ball_save_scratch_guard_right_saving_ball{device.shots.sh_scratch_guard_left.enabled==False}: scratch_guards_stop
-  ball_save_scratch_guard_left_saving_ball{device.shots.sh_scratch_guard_right.enabled==False}: scratch_guards_stop
+  ball_save_scratch_guards_right_saving_ball{device.shots.sh_scratch_guards_left.enabled==False}: scratch_guards_stop
+  ball_save_scratch_guards_left_saving_ball{device.shots.sh_scratch_guards_right.enabled==False}: scratch_guards_stop
