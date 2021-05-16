@@ -1,15 +1,13 @@
 #config_version=5
 
 flippers:
-  lower_left_flipper:
-    main_coil: c_flipper_lower_left_main
-    # hold_coil: c_flipper_lower_left_hold
-    activation_switch: s_left_flipper
-  lower_right_flipper:
-    main_coil: c_flipper_lower_right_main
-    # hold_coil: c_flipper_lower_right_hold
-    activation_switch: s_right_flipper
-  upper_right_flipper: 
-    main_coil: c_flipper_upper_right_main
-    activation_switch: s_right_flipper
+  flipper_left:
+    main_coil: c_flipper_left
+    activation_switch: s_flipper_left
+  flipper_right:
+    main_coil: c_flipper_right
+    activation_switch: s_flipper_right
+  flipper_upper: 
+    main_coil: c_flipper_upper
+    activation_switch: s_flipper_right
 

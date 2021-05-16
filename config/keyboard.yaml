@@ -6,9 +6,9 @@ keyboard:
   f:
     switch: s_force_knockdown_coils
   a:
-    switch: s_left_flipper
+    switch: s_flipper_left
   d:
-    switch: s_right_flipper
+    switch: s_flipper_right
   t:
     event: scratch_guards_start
   b:

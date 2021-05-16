@@ -1,15 +1,11 @@
 from machine_tests.EbbMachineTestCase import EbbMachineTestCase
 
-MOVE_RIGHT_SWITCH = "s_right_flipper"
-
-MOVE_LEFT_SWITCH = "s_left_flipper"
-
 NUM_TARGETS = 7
 INITIAL_POSITION = 3
 # TODO: Finalize multicue size, either hardcoded or adjustable somehow
 SIZE= 1
-MOVE_LEFT_SWITCH = "s_left_flipper"
-MOVE_RIGHT_SWITCH = "s_right_flipper"
+MOVE_LEFT_SWITCH = "s_flipper_left"
+MOVE_RIGHT_SWITCH = "s_flipper_right"
 
 class TestMulticue(EbbMachineTestCase):
     def _activate_multicue(self):

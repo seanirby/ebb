@@ -6,8 +6,8 @@ NUM_TARGETS = 7
 
 class Multicue(Mode):
     def mode_start(self, **kwargs):
-        self.add_mode_event_handler("s_left_flipper_active", self.handle_move, direction=-1)
-        self.add_mode_event_handler("s_right_flipper_active", self.handle_move, direction=1)
+        self.add_mode_event_handler("s_flipper_left_active", self.handle_move, direction=-1)
+        self.add_mode_event_handler("s_flipper_right_active", self.handle_move, direction=1)
         self.add_mode_event_handler("multicue_advance_progress", self.handle_progress_change)
         self.add_mode_event_handler("multicue_collected", self.handle_collected)
 

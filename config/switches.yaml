@@ -17,11 +17,13 @@ switches:
   s_drain:
     number: A11-B0-4
   # Board 0
-  s_left_flipper:
+  s_flipper_left:
     number: A0-B1-2
+    # reason for tag: https://docs.missionpinball.org/en/latest/mechs/flippers/single_wound.html?highlight=left_flipper#add-your-flipper-buttons
     tags: left_flipper
-  s_right_flipper:
+  s_flipper_right:
     number: A0-B1-7
+    # reason for tag: https://docs.missionpinball.org/en/latest/mechs/flippers/single_wound.html?highlight=left_flipper#add-your-flipper-buttons
     tags: right_flipper
   # Board 1
   s_trough_5:
