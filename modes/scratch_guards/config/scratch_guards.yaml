@@ -1,0 +1,48 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  stop_events: scratch_guards_stop
+
+shot_profiles:
+  scratch_guard:
+    states:
+      - name: on
+        show: led_color
+        show_tokens:
+          color: blue
+
+shots:
+  sh_scratch_guard_left:
+    switch: s_outlane_left
+    profile: scratch_guard
+    enable_events: scratch_guards_start
+    disable_events: sh_scratch_guard_left_hit
+    show_tokens:
+      light: l_outlane_left
+  sh_scratch_guard_right:
+    switch: s_outlane_right
+    profile: scratch_guard
+    enable_events: scratch_guards_start
+    disable_events: sh_scratch_guard_right_hit
+    show_tokens:
+      light: l_outlane_right
+
+ball_saves:
+  scratch_guard_left:
+    auto_launch: True
+    balls_to_save: 1
+    enable_events: sh_scratch_guard_left_hit
+    disable_events: ball_save_scratch_guard_left_saving_ball
+  scratch_guard_right:
+    auto_launch: True
+    balls_to_save: 1
+    enable_events: sh_scratch_guard_right_hit
+    disable_events: ball_save_scratch_guard_right_saving_ball
+
+
+event_player:
+  # TODO: test the case where both of these are hit at the same time, potential race condition
+  # TODO: see if I can use 'not' instead of ==False
+  ball_save_scratch_guard_right_saving_ball{device.shots.sh_scratch_guard_left.enabled==False}: scratch_guards_stop
+  ball_save_scratch_guard_left_saving_ball{device.shots.sh_scratch_guard_right.enabled==False}: scratch_guards_stop

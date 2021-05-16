@@ -29,6 +29,8 @@ player_vars:
   multicue_position:
     initial_value: 3
   # awards collected
+  award_sets:
+    initial_value: 0
   award_selected:
     initial_value: 3
   award_0_collected:

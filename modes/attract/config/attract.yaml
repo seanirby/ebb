@@ -101,16 +101,21 @@ shows:
           transition:
             type: push
             direction: left
-
-# slides:
-#   attract:
-#     widgets:
-#       - type: text
-#         text: PRESS START
-
-# TODO: segments shows not working here
+  # beef:
+  #   - duration: -1
+  #     lights:
+  #       l_status_rectangle_2: green
+  #       l_status_rectangle_1: orange
+  #       l_status_rectangle_0: yellow
+  #       l_outlane_right: blue
+  #       l_outlane_left: purple
+  #       l_inlane_right: red
+  #       l_inlane_left: white
+    
 show_player:
+  # mode_attract_started.1: beef
   mode_attract_started.1:
+  # TODO: fix color wheel show because i had to fix light orders
     color_wheel:
       speed: 10
   mode_attract_started.2: attract_segment

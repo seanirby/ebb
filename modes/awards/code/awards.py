@@ -57,8 +57,8 @@ class Awards(Mode):
 
             i = awards.index(pos)
             next_i = (i + direction) % len(awards)
+            self.player["award_selected"] = awards[next_i]
 
-        self.player["award_selected"] = awards[next_i]
         self.machine.events.post("award_{}_selected".format(next_i))
         self.init_lights()
 
@@ -77,7 +77,9 @@ class Awards(Mode):
         pos = self.award_selected()
         self.machine.events.post("award_{}_collected".format(pos))
         self.player["award_{}_collected".format(pos)] = 1
+
         if self.are_all_awards_collected():
+            self.player["award_sets"] += 1
             self.player["award_selected"] = 0
             self.reset_awards()
         else:

@@ -27,3 +27,38 @@ class TestAwards(EbbMachineTestCase):
         self.collect_award()
         self.advance_time_and_run(5)
         self.assertPlayerVarEqual(1, "award_3_collected")
+
+    def test_collecting_award_1_last(self):
+        self.start_game()
+        self.select_award_left(1)
+        # award 2
+        self.collect_award()
+        self.advance_time_and_run(5)
+        self.assertPlayerVarEqual(1, "award_2_collected")
+        # award 3
+        self.collect_award()
+        self.advance_time_and_run(5)
+        self.assertPlayerVarEqual(1, "award_3_collected")
+        # award 4
+        self.collect_award()
+        self.advance_time_and_run(5)
+        self.assertPlayerVarEqual(1, "award_4_collected")
+        # award 5
+        self.collect_award()
+        self.advance_time_and_run(5)
+        self.assertPlayerVarEqual(1, "award_5_collected")
+        # award 6
+        self.collect_award()
+        self.advance_time_and_run(5)
+        self.assertPlayerVarEqual(1, "award_6_collected")
+        # award 0
+        self.collect_award()
+        self.advance_time_and_run(5)
+        self.assertPlayerVarEqual(1, "award_0_collected")
+        # award 1
+        self.collect_award()
+        self.advance_time_and_run(5)
+        # award sets incremented and awards reset
+        self.assertPlayerVarEqual(1, "award_sets")
+        for i in range(0, 6):
+            self.assertPlayerVarEqual(0, "award_{}_collected".format(i))

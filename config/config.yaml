@@ -37,12 +37,12 @@ window:
     width: 1300
     height: 400
     source_display: window
-    # effects:
-    #   - type: glow
-    #     blur_size: 5.0
-    #     intensity: .6
-    #     glow_speed: 1.0
-    #     glow_amplitude: .2
+    effects:
+      - type: glow
+        blur_size: 5.0
+        intensity: .6
+        glow_speed: 1.0
+        glow_amplitude: .2
         
 segment_displays:
   row0:

@@ -15,6 +15,7 @@ modes:
   - drops
   # game specific modes
   - spinner
+  - scratch_guards
   - multiball_config
   - mball_startup
   - mball_qualifying

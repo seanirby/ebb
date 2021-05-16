@@ -10,8 +10,7 @@ keyboard:
   d:
     switch: s_right_flipper
   t:
-    switch: s_trough_0
-    toggle: True
+    event: scratch_guards_start
   b:
     switch: s_force_ball_save
   o:

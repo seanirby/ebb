@@ -257,38 +257,33 @@ lights:
     subtype: led
     type: rgb
 
-  # rectangle lower 3
-  l_status_rectangle_2:
+  l_outlane_left:
     number: 8-280-281-282
     subtype: led
     type: grb
-  # rectangle lower 2
-  l_status_rectangle_1:
+  l_inlane_left:
     number: 8-283-284-285
     subtype: led
     type: grb
-  # rectangle lower 1
-  l_status_rectangle_0:
+  l_status_rectangle_2:
     number: 8-286-287-288
     subtype: led
     type: grb
-  # outlane right
-  l_outlane_right:
+  l_status_rectangle_1:
     number: 8-289-290-291
     subtype: led
     type: grb
-  # inlane right
-  l_inlane_right:
+  l_status_rectangle_0:
     number: 8-292-293-294
     subtype: led
     type: grb
   # inlane left
-  l_inlane_left:
+  l_outlane_right:
     number: 8-295-296-297
     subtype: led
     type: grb
   # outlane left
-  l_outlane_left:
+  l_inlane_right:
     number: 8-298-299-300
     subtype: led
     type: grb

@@ -7,7 +7,7 @@ coils:
     default_pulse_ms: 12
   c_trough_eject:
     number: A6-B1-1
-    default_pulse_ms: 18
+    default_pulse_ms: 40
   c_flipper_lower_right_main:
     number: A6-B1-2
     default_hold_power: 0.4
