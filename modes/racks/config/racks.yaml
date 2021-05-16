@@ -286,3 +286,18 @@ event_player:
     - activate_drop_right
     - deactivate_drop_left
     - start_saucer_shot_timers
+
+sound_player:
+  racks_play_target_collected_0_sound:
+    target_collected_0:
+      action: play
+
+timers:
+  racks_collect_transition:
+    end_value: 50
+    tick_interval: 192ms
+    # rest is controlled through code
+    control_events:
+      - action: reset
+        event: timer_racks_collect_transition_complete`
+

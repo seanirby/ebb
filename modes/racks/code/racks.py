@@ -84,16 +84,8 @@ class Racks(Mode):
         if self.machine.shots["sh_racks_collect"].state_name=="unlit":
             return
 
-        # TODO: differentiate between racks collecting and score collecting
-        # In each planet i'm only ever collecting 1 rack but I will get 
-        self.player.racks += 1
-        self.player.score += 1000000 * rack_progress_collecting
-
-        for i in range(0 ,NUM_TARGETS):
-            self.player["tl_{}_progress".format(i)] = 0
-
-        self.init_lights()
-        self.machine.events.post("racks_rack_collected")
+        # kickoff async transition handler
+        self.racks_collect_transition_start()
 
     def update_target_progress(self, target_number):
         target_progress_var = "tl_{}_progress".format(target_number)
@@ -110,7 +102,74 @@ class Racks(Mode):
 
         if update:
             self.machine.events.post("racks_enable_qualify_collect")
-        
+
+    def racks_collect_transition_start(self, **kwargs):
+        # assign tick handler
+
+        collected_targets = []
+        for i in reversed(range(NUM_TARGETS)):
+            progress = self.player["tl_{}_progress".format(i)]
+            progress_status_shots = []
+            if (progress > 0):
+                for j in reversed(range(progress)):
+                    shot = self.machine.shots["l_{}_{}".format(i, j)]
+                    progress_status_shots.append(shot)
+                collected_targets.append(progress_status_shots)
+
+        assert(len(collected_targets) > 0)
+        key = self.machine.events.add_handler('timer_racks_collect_transition_tick', self.racks_collect_transition_tick_handler, collected_targets=collected_targets)
+        # kick things off
+        self.machine.timers.racks_collect_transition.restart()
+        # add in a fallback for removing our transition tick handler
+        # TODO: not sure if this is needed
+        self.delay.add(6000, self.remove_transition_handler_fallback, None, transition_handler_key=key)
+
+    def racks_collect_transition_tick_handler(self, **kwargs):
+
+        key = kwargs.get("transition_handler_key")
+        ticks = kwargs.get("ticks")
+        collected_targets = kwargs.get("collected_targets")
+        # find first lit shot in collected_targets nested list
+        shot_to_update = None
+        for row in collected_targets:
+            for shot in row:
+                if shot.state == ON:
+                    shot_to_update = shot
+                    break
+            else:
+                continue
+            break
+
+        if not shot_to_update:
+            # game logic
+            self.player.racks += 1
+            for i in range(0 ,NUM_TARGETS):
+                self.player["tl_{}_progress".format(i)] = 0
+            self.init_lights()
+            self.machine.events.post("racks_rack_collected")
+
+            # # TODO: is there a way to remove this handler from within itself
+            # event cleanup
+            # self.machine.timers.racks_collect_transition.stop()
+            # self.machine.timers.racks_collect_transition.reset()
+            # self.machine.events.remove_handler_by_key(key)
+        else:
+            # TODO: fix scoring and updates here
+            # TODO: play fun sound on each tick
+            self.player.score += 100000
+            shot.jump(OFF)
+            self.machine.events.post("racks_play_target_collected_0_sound")
+
+
+        ## This is logic that needs to happen on each 'tick'
+        # # TODO: differentiate between racks collecting and score collecting
+        # # In each planet i'm only ever collecting 1 rack but I will get
+
+        # # this is final reset logic
+
+    def remove_transition_handler_fallback(self, **kwargs):
+        key = kwargs.get('transition_handler_key')
+        self.machine.events.remove_handler_by_key(key)
         
 
         

@@ -33,6 +33,43 @@ config:
 - playfields.yaml
 - switches.yaml
 
+# TODO: move sound system into it's own config
+sound_system:
+  master_volume: 1.5
+  tracks:
+     # music:
+     #   type: sound_loop
+     #   simultaneous_sounds: 1
+     #   volume: 0.5
+     # voice:
+     #   type: standard
+     #   simultaneous_sounds: 1
+     #   volume: 0.7
+     sfx:
+       type: standard
+       simultaneous_sounds: 30
+       volume: 1
+       preload: yes
+
+# TODO: move assets into it's own config
+assets:
+  sounds:
+    # default:
+    #   load: on_demand
+    # music:
+    #   track: music
+    #   # preload for testing purposes only
+    #   load: preload
+    sfx:
+      track: sfx
+      load: preload
+    # voice:
+    #   track: voice
+
+sounds:
+  target_collected_0:
+    max_queue_time: 0
+
 window:
     width: 1300
     height: 400
