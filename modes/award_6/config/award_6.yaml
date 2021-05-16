@@ -1,0 +1,9 @@
+#config_version=5
+
+# award_6 - tbd
+
+mode:
+  start_events: award_6_selected
+  stop_events: award_0_selected, award_1_selected, award_2_selected, award_3_selected, award_4_selected, award_5_selected
+
+

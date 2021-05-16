@@ -26,6 +26,11 @@ modes:
   - awards
   - award_0
   - award_1
+  - award_2
+  - award_3
+  - award_4
+  - award_5
+  - award_6
   - orbit_left
 
   # ball end
