@@ -65,15 +65,15 @@ shots:
     switch: s_thin_standup_right
     show_tokens:
       light: l_thin_standup_right
-  sh_awards_0:
+  sh_awards_6:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_0
-  sh_awards_1:
+  sh_awards_5:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_1
-  sh_awards_2:
+  sh_awards_4:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_2
@@ -81,15 +81,15 @@ shots:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_3
-  sh_awards_4:
+  sh_awards_2:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_4
-  sh_awards_5:
+  sh_awards_1:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_5
-  sh_awards_6:
+  sh_awards_0:
     profile: awards
     show_tokens:
       light: l_drop_left_rectangle_6

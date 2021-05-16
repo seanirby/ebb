@@ -24,6 +24,7 @@ modes:
   - multicue
   # - spot_ball
   - awards
+  - award_0
   - orbit_left
 
   # ball end
