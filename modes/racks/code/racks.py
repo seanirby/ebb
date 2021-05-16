@@ -18,6 +18,10 @@ class Racks(Mode):
         self.add_mode_event_handler("sh_saucer_debounced_hit", self.handle_rack_collect_hit)
 
     def init_lights(self):
+        self.update_status_lights()
+        self.update_target_lights()
+
+    def update_status_lights(self):
         rack_progress = self.player.racks
         for i in range(0, NUM_RACKS):
             status_shot_name = "sh_racks_status_{}".format(i)
@@ -31,7 +35,6 @@ class Racks(Mode):
             else:
                 status_shot.jump(0)
 
-        self.update_target_lights()
 
     def update_target_lights(self):
         for i in range(0, NUM_TARGETS):
@@ -39,15 +42,14 @@ class Racks(Mode):
             for j in range(0, MAX_PROGRESS):
                 shot_name = "l_{}_{}".format(i, j)
                 shot = self.machine.shots[shot_name]
-                if j < progress:
-                    # complete
-                    shot.jump(ON)
-                elif j == progress:
+                if progress == 0 and j == 0:
                     # current
                     shot.jump(FLASH)
                 else:
-                    # incomplete
-                    shot.jump(OFF)
+                    if j < progress:
+                        shot.jump(ON)
+                    else:
+                        shot.jump(OFF)
         
     def handle_target_hit(self, **kwargs):
         target_number = kwargs.get("target_number")
@@ -66,7 +68,6 @@ class Racks(Mode):
             self.update_target_progress(target)
 
         self.update_target_lights()
-
         self.update_if_rack_can_be_collected()
 
     def handle_rack_collect_hit(self, **kwargs):

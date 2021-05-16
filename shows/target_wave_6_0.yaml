@@ -1,0 +1,152 @@
+#show_version=5
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_standup_left_4_0: '1E1D1D'
+    l_standup_left_6_2: 'CFCCCC'
+    
+- time: '+1'
+  lights:
+    l_standup_left_3_0: '989696'
+    l_standup_left_4_0: stop
+    l_standup_left_4_2: '666464'
+    l_standup_left_5_3: 'D1CECE'
+    l_standup_left_6_2: stop
+    
+- time: '+1'
+  lights:
+    l_standup_center: 'D6D3D3'
+    l_standup_left_2_1: 'D6D3D3'
+    l_standup_left_3_0: stop
+    l_standup_left_3_3: 'A9A7A7'
+    l_standup_left_4_2: stop
+    l_standup_left_5_3: stop
+    l_standup_left_5_4: '282727'
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_6: 'D6D3D3'
+    l_standup_center: stop
+    l_standup_left_1_1: '9D9B9B'
+    l_standup_left_2_1: stop
+    l_standup_left_2_3: 'BCB9B9'
+    l_standup_left_3_3: stop
+    l_standup_left_3_4: '131313'
+    l_standup_left_5_4: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_6: stop
+    l_spinner_arrow_2: 'D6D3D3'
+    l_standup_left_0_1: '050505'
+    l_standup_left_0_2: 'D6D3D3'
+    l_standup_left_1_1: stop
+    l_standup_left_1_4: 'CDCACA'
+    l_standup_left_2_3: stop
+    l_standup_left_3_4: stop
+    
+- time: '+1'
+  lights:
+    l_spinner_arrow_2: stop
+    l_standup_left_0_1: stop
+    l_standup_left_0_2: stop
+    l_standup_left_0_4: 'D6D3D3'
+    l_standup_left_1_4: stop
+    l_thin_standup_left: 'D6D3D3'
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_1: 'D6D3D3'
+    l_standup_left_0_4: stop
+    l_status_rectangle_2: 'D6D3D3'
+    l_thin_standup_left: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_0: 'D6D3D3'
+    l_drop_left_rectangle_1: stop
+    l_hook_1: 'D6D3D3'
+    l_inlane_left: 'C0BEBE'
+    l_outlane_left: 'D6D3D3'
+    l_status_rectangle_1: 'D6D3D3'
+    l_status_rectangle_2: stop
+    l_thin_standup_right: 'D6D3D3'
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_0: stop
+    l_hook_1: stop
+    l_inlane_left: stop
+    l_outlane_left: stop
+    l_status_circle_7: 'D6D3D3'
+    l_status_rectangle_1: stop
+    l_thin_standup_right: stop
+    
+- time: '+1'
+  lights:
+    l_drop_right: 'D6D3D3'
+    l_lane_left: 'D6D3D3'
+    l_status_circle_5: 'D6D3D3'
+    l_status_circle_6: 'D6D3D3'
+    l_status_circle_7: stop
+    
+- time: '+1'
+  lights:
+    l_drop_right: stop
+    l_lane_center: 'D6D3D3'
+    l_lane_left: stop
+    l_status_circle_1: 'D6D3D3'
+    l_status_circle_2: 'D6D3D3'
+    l_status_circle_3: '010101'
+    l_status_circle_5: stop
+    l_status_circle_6: stop
+    
+- time: '+1'
+  lights:
+    l_inlane_right: 'D6D3D3'
+    l_lane_center: stop
+    l_status_circle_0: 'D6D3D3'
+    l_status_circle_1: stop
+    l_status_circle_2: stop
+    l_status_circle_3: stop
+    
+- time: '+1'
+  lights:
+    l_inlane_right: stop
+    l_outlane_right: 'D6D3D3'
+    l_status_circle_0: stop
+    
+- time: '+1'
+  lights:
+    l_drop_upper: 'C7C5C5'
+    l_outlane_right: stop
+    
+- time: '+1'
+  lights:
+    l_ball_save: '878686'
+    l_drop_upper: stop
+    
+- time: '+1'
+  lights:
+    l_ball_save: 'D6D3D3'
+    
+- time: '+1'
+  lights:
+    l_ball_save: stop
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

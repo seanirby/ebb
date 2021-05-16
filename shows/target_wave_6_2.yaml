@@ -1,0 +1,142 @@
+#show_version=5
+- time: 0
+  lights:
+    l_standup_left_6_3: '151515'
+    
+- time: '+1'
+  lights:
+    l_standup_left_4_2: '8E8D8D'
+    l_standup_left_6_0: 'BFBCBC'
+    l_standup_left_6_3: stop
+    l_standup_left_6_4: 'BAB8B8'
+    
+- time: '+1'
+  lights:
+    l_standup_left_3_0: '030303'
+    l_standup_left_3_1: 'AEABAB'
+    l_standup_left_3_2: '424141'
+    l_standup_left_3_3: 'D6D3D3'
+    l_standup_left_4_2: stop
+    l_standup_left_4_4: '040404'
+    l_standup_left_6_0: stop
+    l_standup_left_6_4: stop
+    
+- time: '+1'
+  lights:
+    l_spinner_arrow_0: 'D5D2D2'
+    l_standup_left_2_0: '232323'
+    l_standup_left_2_3: 'D6D3D3'
+    l_standup_left_3_0: stop
+    l_standup_left_3_1: stop
+    l_standup_left_3_2: stop
+    l_standup_left_3_3: stop
+    l_standup_left_4_4: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_3: 'D6D3D3'
+    l_spinner_arrow_0: stop
+    l_standup_left_1_3: '141414'
+    l_standup_left_1_4: 'D6D3D3'
+    l_standup_left_2_0: stop
+    l_standup_left_2_3: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_2: 'D6D3D3'
+    l_drop_left_rectangle_3: stop
+    l_standup_left_0_4: 'D6D3D3'
+    l_standup_left_1_3: stop
+    l_standup_left_1_4: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_2: stop
+    l_hook_0: 'D6D3D3'
+    l_spinner_arrow_2: '4F4E4E'
+    l_standup_left_0_4: stop
+    
+- time: '+1'
+  lights:
+    l_hook_0: stop
+    l_hook_1: '696868'
+    l_spinner_arrow_2: stop
+    l_spinner_rectangle: 'D6D3D3'
+    l_status_rectangle_0: '1A1A1A'
+    
+- time: '+1'
+  lights:
+    l_hook_1: stop
+    l_outlane_left: 'D6D3D3'
+    l_spinner_rectangle: stop
+    l_status_circle_7: 'D6D3D3'
+    l_status_rectangle_0: stop
+    
+- time: '+1'
+  lights:
+    l_outlane_left: stop
+    l_standup_upper: 'D6D3D3'
+    l_status_circle_3: '676666'
+    l_status_circle_4: 'D6D3D3'
+    l_status_circle_7: stop
+    
+- time: '+1'
+  lights:
+    l_inlane_right: '121212'
+    l_standup_upper: stop
+    l_status_circle_1: 'D6D3D3'
+    l_status_circle_2: 'D6D3D3'
+    l_status_circle_3: stop
+    l_status_circle_4: stop
+    
+- time: '+1'
+  lights:
+    l_inlane_right: stop
+    l_lane_center: 'D6D3D3'
+    l_lane_right: '919090'
+    l_outlane_right: '0C0B0B'
+    l_status_circle_0: '181818'
+    l_status_circle_1: stop
+    l_status_circle_2: stop
+    
+- time: '+1'
+  lights:
+    l_lane_center: stop
+    l_lane_right: stop
+    l_outlane_right: stop
+    l_status_circle_0: stop
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_ball_save: '555454'
+    l_drop_upper: 'D6D3D3'
+    
+- time: '+1'
+  lights:
+    l_ball_save: stop
+    l_drop_upper: stop
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

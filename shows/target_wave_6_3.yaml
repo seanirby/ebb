@@ -1,0 +1,152 @@
+#show_version=5
+- time: 0
+  lights:
+    l_standup_left_6_2: '545353'
+    
+- time: '+1'
+  lights:
+    l_drop_left_arrow_1: '5C5A5A'
+    l_standup_left_4_2: '828080'
+    l_standup_left_4_3: 'D5D3D3'
+    l_standup_left_5_1: 'CDCBCB'
+    l_standup_left_6_2: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_arrow_1: stop
+    l_drop_left_arrow_2: 'D4D1D1'
+    l_drop_left_rectangle_5: 'D5D3D3'
+    l_drop_left_rectangle_6: '080808'
+    l_standup_left_3_1: '111111'
+    l_standup_left_3_2: '040404'
+    l_standup_left_3_3: '020202'
+    l_standup_left_4_0: 'D6D3D3'
+    l_standup_left_4_2: stop
+    l_standup_left_4_3: stop
+    l_standup_left_5_1: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_arrow_2: stop
+    l_drop_left_rectangle_5: stop
+    l_drop_left_rectangle_6: stop
+    l_standup_left_2_0: '7F7D7D'
+    l_standup_left_2_4: 'D6D3D3'
+    l_standup_left_3_1: stop
+    l_standup_left_3_2: stop
+    l_standup_left_3_3: stop
+    l_standup_left_4_0: stop
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_0: 'CCC9C9'
+    l_standup_left_2_0: stop
+    l_standup_left_2_4: stop
+    l_thin_standup_left: 'A09E9E'
+    
+- time: '+1'
+  lights:
+    l_spinner_arrow_1: '050505'
+    l_standup_left_0_0: '5F5E5E'
+    l_standup_left_0_4: '010101'
+    l_standup_left_1_0: stop
+    l_status_rectangle_2: 'D6D3D3'
+    l_thin_standup_left: stop
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_0: 'AAA7A7'
+    l_spinner_arrow_1: stop
+    l_standup_left_0_0: stop
+    l_standup_left_0_4: stop
+    l_status_rectangle_1: 'D6D3D3'
+    l_status_rectangle_2: stop
+    l_thin_standup_right: 'D6D3D3'
+    
+- time: '+1'
+  lights:
+    l_drop_left_rectangle_0: stop
+    l_inlane_left: 'D6D3D3'
+    l_status_rectangle_0: '676666'
+    l_status_rectangle_1: stop
+    l_thin_standup_right: stop
+    
+- time: '+1'
+  lights:
+    l_drop_right: 'D6D3D3'
+    l_inlane_left: stop
+    l_outlane_left: 'D6D3D3'
+    l_status_circle_5: 'D6D3D3'
+    l_status_circle_6: 'D6D3D3'
+    l_status_rectangle_0: stop
+    
+- time: '+1'
+  lights:
+    l_drop_right: stop
+    l_outlane_left: stop
+    l_standup_upper: 'D6D3D3'
+    l_status_circle_2: '121111'
+    l_status_circle_3: 'D6D3D3'
+    l_status_circle_4: '343333'
+    l_status_circle_5: stop
+    l_status_circle_6: stop
+    
+- time: '+1'
+  lights:
+    l_inlane_right: 'D6D3D3'
+    l_standup_upper: stop
+    l_status_circle_0: 'D6D3D3'
+    l_status_circle_2: stop
+    l_status_circle_3: stop
+    l_status_circle_4: stop
+    
+- time: '+1'
+  lights:
+    l_inlane_right: stop
+    l_lane_center: 'D6D3D3'
+    l_lane_left: 'D6D3D3'
+    l_lane_right: 'D6D3D3'
+    l_outlane_right: 'D6D3D3'
+    l_status_circle_0: stop
+    
+- time: '+1'
+  lights:
+    l_lane_center: stop
+    l_lane_left: stop
+    l_lane_right: stop
+    l_outlane_right: stop
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_ball_save: 'D6D3D3'
+    l_drop_upper: 'D6D3D3'
+    
+- time: '+1'
+  lights:
+    l_ball_save: stop
+    l_drop_upper: stop
+
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

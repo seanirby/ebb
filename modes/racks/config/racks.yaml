@@ -256,6 +256,28 @@ shots:
     show_tokens:
       light: l_standup_left_6_4
 
+show_player:
+  sh_tl_6_hit.1{current_player.tl_6_progress==0}:
+    target_wave_6_0:
+      loops: 0
+      speed: 30
+      priority: 10
+  sh_tl_6_hit.2{current_player.tl_6_progress==1}:
+    target_wave_6_1:
+      loops: 0
+      speed: 30
+      priority: 10
+  sh_tl_6_hit.3{current_player.tl_6_progress==2}:
+    target_wave_6_2:
+      loops: 0
+      speed: 30
+      priority: 10
+  sh_tl_6_hit.4{current_player.tl_6_progress==3}:
+    target_wave_6_3:
+      loops: 0
+      speed: 30
+      priority: 10
+
 # TODO: move this 
 event_player:
   mode_racks_started{current_player.racks==0}: racks_collected_0
