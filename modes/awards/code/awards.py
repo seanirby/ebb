@@ -6,7 +6,7 @@ AWARDS_ON = 1
 AWARDS_FLASH = 2
 
 AWARDS_EVENTS = [
-    "awards_instant_million_collected",
+    "award_0_collected", #instant_million
     "awards_multiplied_rack_collected",
     "awards_super_spinner_collected",
     "awards_lower_drops_collected",
@@ -21,6 +21,12 @@ class Awards(Mode):
         self.add_mode_event_handler("sh_awards_select_left_hit", self.handle_select_award, direction = -1)
         self.add_mode_event_handler("sh_awards_select_right_hit", self.handle_select_award, direction = 1)
         self.add_mode_event_handler("sh_saucer_debounced_hit", self.handle_award_collected)
+
+        # ensure the right award mode is selected when mode starts
+        for i in range(0, NUM_AWARDS):
+            if i == self.award_selected():
+                self.machine.events.post("award_{}_selected".format(i))
+                break
 
     def init_lights(self, **kwargs):
         for award in range(0, NUM_AWARDS):

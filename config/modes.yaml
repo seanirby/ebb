@@ -25,6 +25,7 @@ modes:
   # - spot_ball
   - awards
   - award_0
+  - award_1
   - orbit_left
 
   # ball end
