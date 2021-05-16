@@ -4,6 +4,8 @@ mode:
   start_events: ball_starting
   code: spinner.Spinner
 
+# TODO: Add in a spinner qualified state that does NOT time out
+
 state_machines:
   spinner:
     starting_state: off
@@ -12,30 +14,39 @@ state_machines:
         label: spinner shot not qualified
         events_when_started: spinner_state_off_started
       qualified:
-        label: spinner shot is ready to be hit
+        label: spinner shot is ready to be hit, untimed
         events_when_started: spinner_state_qualified_started
-      spinning_on:
-        label: initial hit and all other even number of spins
-        events_when_started: spinner_state_spinning_on_started
+      qualified_timed:
+        label: spinner shot is ready to be hit, timed
+        events_when_started: spinner_state_qualified_timed_started
       spinning_off:
         label: odd number of spins
         events_when_started: spinner_state_spinning_off_started
+      spinning_on:
+        label: initial hit and all other even number of spins
+        events_when_started: spinner_state_spinning_on_started
     transitions:
       - source: off
-        target: qualified
+        target: qualified_timed
         # TODO: may need to update this to a more proper 'hit' or mode based event
         events: s_inlane_right_active
+      - source: off
+        target: qualified
+        events: spinner_qualified_from_award
       - source: qualified
-        target: spinning_on
+        target: spinning_off
         events: s_spinner_active
-      - source: spinning_on
+      - source: qualified_timed
         target: spinning_off
         events: s_spinner_active
       - source: spinning_off
         target: spinning_on
         events: s_spinner_active
+      - source: spinning_on
+        target: spinning_off
+        events: s_spinner_active
         # timeouts
-      - source: qualified
+      - source: qualified_timed
         target: off
         events: timer_spinner_qualified_timeout_complete
       - source: spinning_off
@@ -65,6 +76,7 @@ shot_profiles:
 shots:
   sh_spinner:
     switch: s_spinner
+    # NOTE: Other shot profile updates happening in spinner.py
     advance_events: timer_spinning_started
     profile: spinner
     show_tokens:
@@ -107,7 +119,7 @@ timers:
     end_value: 10
     control_events:
       - action: start
-        event: spinner_state_qualified_started
+        event: spinner_state_qualified_timed_started
       - action: reset
         event: timer_spinner_qualified_timeout_complete
 

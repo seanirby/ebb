@@ -8,6 +8,7 @@ class Spinner(Mode):
         self.change_spinner_shot_state(state=0)
         self.add_mode_event_handler("spinner_state_off_started", self.change_spinner_shot_state, state=0)
         self.add_mode_event_handler("spinner_state_qualified_started", self.change_spinner_shot_state, state=1)
+        self.add_mode_event_handler("spinner_state_qualified_timed_started", self.change_spinner_shot_state, state=1)
         self.add_mode_event_handler("spinner_state_spinning_on_started", self.change_spinner_shot_state, state=2)
         self.add_mode_event_handler("spinner_state_spinning_off_started", self.change_spinner_shot_state, state=3)
         # TODO: Find out how to fix a bug where the spinner light will flash on/off when you drain with it qualified

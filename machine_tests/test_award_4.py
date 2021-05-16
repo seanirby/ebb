@@ -14,4 +14,13 @@ class TestAward4(EbbMachineTestCase):
         self.assertModeNotRunning(AWARD)
 
     def test_collected(self):
+        self.mock_event("award_4_collected")
+        self.mock_event("spinner_qualified_from_award")
         self.start_game()
+        self.select_award_right(1)
+        self.advance_time_and_run(1)
+        self.assertModeRunning(AWARD)
+        self.collect_award()
+        self.advance_time_and_run(1)
+        self.assertEventCalled("award_4_collected", 1)
+        self.assertEventCalled("spinner_qualified_from_award", 1)
