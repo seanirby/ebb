@@ -77,8 +77,23 @@ slide_player:
 # show_player:
 #   mode_base_started: base_segment
 
+sound_player:
+  timer_base_test_sound_tick:
+    target_collected_ogg_0:
+      action: play
 
 timers:
+  base_test_sound:
+    start_value: 0
+    direction: up
+    end_value: 28
+    tick_interval: 32ms
+    start_running: True
+    control_events:
+      - action: start
+        event: force_timer_start
+      - action: stop
+        event: timer_base_test_sound_complete
   base_update_score:
     end_value: 1
     control_events:

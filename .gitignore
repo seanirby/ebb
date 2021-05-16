@@ -3,7 +3,6 @@
 lsp/*
 data/*
 logs/*
-sounds/*
 monitor/playfield.jpg
 monitor/logs/*
 .projectile

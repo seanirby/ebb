@@ -10,7 +10,7 @@ keyboard:
   d:
     switch: s_flipper_right
   t:
-    event: spinner_qualified_from_award
+    event: force_timer_start
   b:
     switch: s_force_ball_save
   o:
