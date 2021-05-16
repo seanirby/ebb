@@ -5,16 +5,6 @@ AWARDS_OFF = 0
 AWARDS_ON = 1
 AWARDS_FLASH = 2
 
-AWARDS_EVENTS = [
-    "award_0_collected", #instant_million
-    "awards_multiplied_rack_collected",
-    "awards_super_spinner_collected",
-    "awards_lower_drops_collected",
-    "awards_mystery_collected",
-    "awards_spot_3_balls",
-    "awards_ball_saver_collected"
-]
-
 class Awards(Mode):
     def mode_start(self, **kwargs):
         self.init_lights()
@@ -85,7 +75,7 @@ class Awards(Mode):
     def handle_award_collected(self, **kwargs):
         # TODO: may need to add in logic so awards aren't always collected
         pos = self.award_selected()
-        self.machine.events.post(AWARDS_EVENTS[pos])
+        self.machine.events.post("award_{}_collected".format(pos))
         self.player["award_{}_collected".format(pos)] = 1
         if self.are_all_awards_collected():
             self.player["award_selected"] = 0

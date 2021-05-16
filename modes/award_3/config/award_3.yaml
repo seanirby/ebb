@@ -6,4 +6,6 @@ mode:
   start_events: award_3_selected
   stop_events: award_0_selected, award_1_selected, award_2_selected, award_4_selected, award_5_selected, award_6_selected
 
-
+variable_player:
+  award_3_collected:
+    score: 1000000

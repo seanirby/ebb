@@ -1,13 +1,9 @@
 #config_version=5
 
-# instant million award
+# award 0 - tbd
 
 mode:
   start_events: award_0_selected
   stop_events: award_1_selected, award_2_selected, award_4_selected, award_4_selected, award_5_selected, award_6_selected
-
-variable_player:
-  award_0_collected:
-    score: 1000000
 
 

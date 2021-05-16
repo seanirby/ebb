@@ -15,9 +15,3 @@ class TestAward0(EbbMachineTestCase):
 
     def test_collected(self):
         self.start_game()
-        current_score = self.machine.game.player.vars["score"]
-        self.select_award_left(3)
-        self.collect_award()
-        new_score = self.machine.game.player.vars["score"]
-        # TODO: may need a fuzzier test once we start adding scores for shots made
-        self.assertEqual(1000000, new_score - current_score)
