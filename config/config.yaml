@@ -50,6 +50,10 @@ sound_system:
        simultaneous_sounds: 32
        volume: 1
        preload: yes
+     loops:
+       type: sound_loop
+       volume: 1
+       preload: yes
 
 assets:
   sounds:
@@ -62,19 +66,31 @@ assets:
     sfx:
       track: sfx
       load: preload
+    loops:
+      track: loops
+      load: preload
     # voice:
     #   track: voice
 
-# sounds:
-#   target_collected_0:
-#     max_queue_time: 0
-#   target_collected_ogg_0:
-#     max_queue_time: 0
+sounds:
+  target_collected_0:
+    max_queue_time: 0
+  target_collected_ogg_0:
+    max_queue_time: 0
+  loop_target_collected:
+    max_queue_time: 0
+  loop_target_collected_2:
+    max_queue_time: 0
   # target_collected_0:
   #   max_queue_time: 5ms
   # target_collected_ogg_0:
   #   max_queue_time: 5ms
 
+
+sound_loop_sets:
+  rack_collected:
+    sound: loop_target_collected_2
+    tempo: 937.5
 
 window:
     width: 1300
@@ -87,18 +103,18 @@ window:
         glow_speed: 1.0
         glow_amplitude: .2
         
-segment_displays:
-  row0:
-    number: 1
-    size: 16
-    # platform: virtual
-  row1:
-    number: 1
-    size: 16
-    # platform: virtual
+# segment_displays:
+#   row0:
+#     number: 1
+#     size: 16
+#     # platform: virtual
+#   row1:
+#     number: 1
+#     size: 16
+#     # platform: virtual
 
-virtual_segment_display_connector:
-  segment_displays: row0, row1
+# virtual_segment_display_connector:
+#   segment_displays: row0, row1
     
 displays:
   window:
