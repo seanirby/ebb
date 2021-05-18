@@ -1,86 +1,14 @@
 #config_version=5
 
-slides:
-  combined_slide:
-    widgets:
-      - type: display
-        source_display: normal
-        width: 1300
-        height: 400
-        effects:
-          - type: glow
-            blur_size: 5.0
-            intensity: .6
-            glow_speed: 1.0
-            glow_amplitude: .2
-      - type: display
-        source_display: background
-        width: 1300
-        height: 400
-  background_slide:
-    widgets:
-      - type: image
-        image: bg1
-        scale: 3
-  segment_slide:
-    target: normal
-    widgets:
-      - type: segment_display_emulator
-        display_type: 14seg
-        name: row0
-        flash_mode: all
-        flash_frequency: 7
-        character_count: 16
-        character_slant_angle: 5
-        character_spacing: 20
-        segment_width: 0.15
-        segment_interval: 0.04
-        segment_off_color: 4b4c4a30
-        segment_on_color: FFFFFF
-        side_bevel_enabled: true
-        dot_enabled: false
-        comma_enabled: false
-        color: blue
-        text: ""
-        width: 1300
-        height: 150
-        opacity: 1
-        x: 0
-        y: 50
-        anchor_x: left
-        anchor_y: bottom
-      - type: segment_display_emulator
-        display_type: 14seg
-        flash_mode: all
-        flash_frequency: 7
-        name: row1
-        character_count: 16
-        character_slant_angle: 5
-        character_spacing: 20
-        segment_width: 0.15
-        segment_interval: 0.04
-        segment_off_color: 4b4c4a30
-        segment_on_color: FFFFFF
-        side_bevel_enabled: true
-        dot_enabled: false
-        comma_enabled: false
-        text: ""
-        width: 1300
-        height: 150
-        x: 0
-        y: 210
-        anchor_x: left
-        anchor_y: bottom
-
 slide_player:
   mode_attract_started.1:
-    combined_slide:
+    combined:
       target: window
   mode_attract_started.2:
-    segment_slide:
+    segment:
       target: normal
   mode_attract_started.3:
-    background_slide:
+    background:
       target: background
 
 shows:

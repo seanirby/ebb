@@ -3,63 +3,6 @@
 mode:
   start_events: ball_starting
 
-slides:
-  # base:
-  #   widgets:
-  #     - type: text
-  #       text: BALL (ball)
-  #       z: 10
-  #       y: 0
-  #       x: right
-  #       anchor_x: right
-  #       anchor_y: bottom
-  #     - type: text
-  #       text: SCORE (score)
-  #       y: 100
-  #     - type: text
-  #       text: PLAYER (player)
-  #       y: 200
-  base:
-    - type: segment_display_emulator
-      display_type: 14seg
-      name: row0
-      character_count: 16
-      character_slant_angle: 5
-      character_spacing: 20
-      segment_width: 0.15
-      segment_interval: 0.04
-      segment_off_color: 4b4c4a30
-      segment_on_color: FFFFFF
-      side_bevel_enabled: true
-      dot_enabled: false
-      comma_enabled: false
-      text: ""
-      width: 1300
-      height: 150
-      x: 0
-      y: 210
-      anchor_x: left
-      anchor_y: bottom
-    - type: segment_display_emulator
-      display_type: 14seg
-      name: row1
-      character_count: 16
-      character_slant_angle: 5
-      character_spacing: 20
-      segment_width: 0.15
-      segment_interval: 0.04
-      segment_off_color: 4b4c4a30
-      segment_on_color: FFFFFF
-      side_bevel_enabled: true
-      dot_enabled: false
-      comma_enabled: false
-      text: ""
-      width: 1300
-      height: 150
-      x: 0
-      y: 50
-      anchor_x: left
-      anchor_y: bottom
 
 segment_display_player:
   timer_base_start_complete.1:
@@ -70,17 +13,6 @@ segment_display_player:
       text: "{players[0].score:<16}"
     row1:
       text: "          Ball {players[0].ball:d}"
-
-slide_player:
-  mode_base_started: base
-
-# show_player:
-#   mode_base_started: base_segment
-
-# sound_player:
-#   timer_base_test_sound_tick:
-#     target_collected_0:
-#       action: play
 
 variable_player:
   s_pop_center_active:
@@ -98,9 +30,20 @@ timers:
   base_start:
     start_running: True
     end_value: 1
+    tick_interval: 100ms
     control_events:
       - action: stop
         event: timer_base_start_complete
       - action: reset
         event: timer_base_start_complete
         
+slide_player:
+  mode_base_started.1:
+    combined:
+      target: window
+  mode_base_started.2:
+    segment:
+      target: normal
+  mode_base_started.3:
+    background:
+      target: background
