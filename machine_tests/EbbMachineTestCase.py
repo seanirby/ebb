@@ -5,7 +5,7 @@ class EbbMachineTestCase(MpfMachineTestCase):
     def drain_ball(self):
         self.hit_switch_and_run("s_trough_0", 1)
         self.assertBallsOnPlayfield(0)
-        self.advance_time_and_run(1)
+        self.advance_time_and_run(10)
 
     def activate_playfield(self):
         self.hit_and_release_switch("s_orbit")

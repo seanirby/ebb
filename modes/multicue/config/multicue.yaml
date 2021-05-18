@@ -27,13 +27,13 @@ shot_profiles:
         speed: 10
         show_tokens:
           color: yellow
-      - name: off
-        show: off
 
 shots:
   sh_multicue:
     switch: s_standup_upper
-    advance_events: multicue_qualified, multicue_collected
+    start_enabled: True
+    enable_events: multicue_collected
+    disable_events: multicue_qualified
     profile: multicue_activate
     show_tokens:
       light: l_standup_upper
@@ -69,4 +69,4 @@ shots:
       light: l_standup_left_6_4
 
 event_player:
-  sh_multicue_hit{device.shots.sh_multicue.state_name=="flash"}:  multicue_qualified
+  sh_multicue_hit:  multicue_qualified
