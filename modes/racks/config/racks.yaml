@@ -278,10 +278,8 @@ show_player:
       speed: 30
       priority: 10
 
-# TODO: move this 
+# TODO: duplicate logic in awards.yaml, do i need to abstract this out?
 event_player:
-  mode_racks_started{current_player.racks==0}: racks_collected_0
-  racks_rack_collected{current_player.racks==1}: racks_collected_1
   sh_racks_qualify_collect_hit:
     - activate_drop_right
     - deactivate_drop_left

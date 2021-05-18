@@ -150,27 +150,17 @@ class Racks(Mode):
             for i in range(0 ,NUM_TARGETS):
                 self.player["tl_{}_progress".format(i)] = 0
             self.init_lights()
+            self.machine.timers.racks_collect_transition.stop()
+            self.machine.timers.racks_collect_transition.reset()
             self.machine.events.post("racks_rack_collected")
             self.machine.events.post("racks_collected_loop_stop")
 
             # # TODO: is there a way to remove this handler from within itself
-            # event cleanup
-            # self.machine.timers.racks_collect_transition.stop()
-            # self.machine.timers.racks_collect_transition.reset()
             # self.machine.events.remove_handler_by_key(key)
         else:
             # TODO: fix scoring and updates here
-            # TODO: play fun sound on each tick
             self.player.score += 100000
             shot.jump(OFF)
-            self.machine.events.post("racks_play_target_collected_0_sound")
-
-
-        ## This is logic that needs to happen on each 'tick'
-        # # TODO: differentiate between racks collecting and score collecting
-        # # In each planet i'm only ever collecting 1 rack but I will get
-
-        # # this is final reset logic
 
     def remove_transition_handler_fallback(self, **kwargs):
         key = kwargs.get('transition_handler_key')
