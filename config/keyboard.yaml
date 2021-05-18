@@ -10,7 +10,7 @@ keyboard:
   d:
     switch: s_flipper_right
   t:
-    event: force_timer_start
+    event: debug_dump_stats
   b:
     switch: s_force_ball_save
   o:

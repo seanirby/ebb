@@ -7,6 +7,8 @@ NUM_RACKS = 8
 OFF = 0
 ON = 1
 FLASH = 2
+MULTICUE_SIZE = 1
+
 
 class Racks(Mode):
     def mode_start(self, **kwargs):
@@ -58,11 +60,10 @@ class Racks(Mode):
         targets=[target_number]
 
         if multicue.state_name == "lit":
-            progress = self.player["multicue_progress"]
             multicue_position = self.player["multicue_position"]
             self.machine.events.post("multicue_collected")
             # TODO: dedupe the formula below
-            targets = list(map(lambda x: x % NUM_TARGETS, list(range(multicue_position-progress, multicue_position+progress+1))))
+            targets = list(map(lambda x: x % NUM_TARGETS, list(range(multicue_position-MULTICUE_SIZE, multicue_position+MULTICUE_SIZE+1))))
 
         for target in targets:
             self.update_target_progress(target)

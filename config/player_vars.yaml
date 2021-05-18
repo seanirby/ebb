@@ -23,9 +23,6 @@ player_vars:
   tl_6_progress:
     initial_value: 0
   # wide shot
-  # TODO: rename this to multicue_size
-  multicue_progress:
-    initial_value: 0
   multicue_position:
     initial_value: 3
   # awards collected

@@ -4,72 +4,72 @@ mode:
   start_events: ball_starting
 
 slides:
-  base:
-    widgets:
-      - type: text
-        text: BALL (ball)
-        z: 10
-        y: 0
-        x: right
-        anchor_x: right
-        anchor_y: bottom
-      - type: text
-        text: SCORE (score)
-        y: 100
-      - type: text
-        text: PLAYER (player)
-        y: 200
   # base:
-  #   - type: segment_display_emulator
-  #     display_type: 14seg
-  #     name: row0
-  #     character_count: 16
-  #     character_slant_angle: 5
-  #     character_spacing: 20
-  #     segment_width: 0.15
-  #     segment_interval: 0.04
-  #     segment_off_color: 4b4c4a30
-  #     segment_on_color: FFFFFF
-  #     side_bevel_enabled: true
-  #     dot_enabled: false
-  #     comma_enabled: false
-  #     text: PLAYER (player)
-  #     width: 1300
-  #     height: 150
-  #     x: 0
-  #     y: 210
-  #     anchor_x: left
-  #     anchor_y: bottom
-  #   - type: segment_display_emulator
-  #     display_type: 14seg
-  #     name: row1
-  #     character_count: 16
-  #     character_slant_angle: 5
-  #     character_spacing: 20
-  #     segment_width: 0.15
-  #     segment_interval: 0.04
-  #     segment_off_color: 4b4c4a30
-  #     segment_on_color: FFFFFF
-  #     side_bevel_enabled: true
-  #     dot_enabled: false
-  #     comma_enabled: false
-  #     text: Ball
-  #     width: 1300
-  #     height: 150
-  #     x: 0
-  #     y: 50
-  #     anchor_x: left
-  #     anchor_y: bottom
+  #   widgets:
+  #     - type: text
+  #       text: BALL (ball)
+  #       z: 10
+  #       y: 0
+  #       x: right
+  #       anchor_x: right
+  #       anchor_y: bottom
+  #     - type: text
+  #       text: SCORE (score)
+  #       y: 100
+  #     - type: text
+  #       text: PLAYER (player)
+  #       y: 200
+  base:
+    - type: segment_display_emulator
+      display_type: 14seg
+      name: row0
+      character_count: 16
+      character_slant_angle: 5
+      character_spacing: 20
+      segment_width: 0.15
+      segment_interval: 0.04
+      segment_off_color: 4b4c4a30
+      segment_on_color: FFFFFF
+      side_bevel_enabled: true
+      dot_enabled: false
+      comma_enabled: false
+      text: ""
+      width: 1300
+      height: 150
+      x: 0
+      y: 210
+      anchor_x: left
+      anchor_y: bottom
+    - type: segment_display_emulator
+      display_type: 14seg
+      name: row1
+      character_count: 16
+      character_slant_angle: 5
+      character_spacing: 20
+      segment_width: 0.15
+      segment_interval: 0.04
+      segment_off_color: 4b4c4a30
+      segment_on_color: FFFFFF
+      side_bevel_enabled: true
+      dot_enabled: false
+      comma_enabled: false
+      text: ""
+      width: 1300
+      height: 150
+      x: 0
+      y: 50
+      anchor_x: left
+      anchor_y: bottom
 
-# segment_display_player:
-#   player_score:
-#     row0:
-#       text: "{players[0].score:<16}"
-#   timer_base_update_score_complete:
-#     row0:
-#       text: "{players[0].score:<16}"
-#     row1:
-#       text: "          Ball {players[0].ball:d}"
+segment_display_player:
+  timer_base_start_complete.1:
+    row0:
+      text: "{players[0].score:<16}"
+  timer_base_start_complete.2:
+    row0:
+      text: "{players[0].score:<16}"
+    row1:
+      text: "          Ball {players[0].ball:d}"
 
 slide_player:
   mode_base_started: base
@@ -94,3 +94,13 @@ variable_player:
   s_sling_right_active:
     score: 1000
 
+timers:
+  base_start:
+    start_running: True
+    end_value: 1
+    control_events:
+      - action: stop
+        event: timer_base_start_complete
+      - action: reset
+        event: timer_base_start_complete
+        

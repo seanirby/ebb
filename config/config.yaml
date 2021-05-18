@@ -3,8 +3,9 @@
 
 # hardware:
 #   platform: virtual_pinball
+
 hardware:
-  platform: p3_roc
+  platform: p3_roc, virtual
   driverboards: pdb
 
 virtual_platform_start_active_switches:
@@ -56,6 +57,9 @@ sound_system:
        preload: yes
 
 assets:
+  images:
+    default:
+      load: preload
   sounds:
     # default:
     #   load: on_demand
@@ -96,33 +100,33 @@ window:
     width: 1300
     height: 400
     source_display: window
-    effects:
-      - type: glow
-        blur_size: 5.0
-        intensity: .6
-        glow_speed: 1.0
-        glow_amplitude: .2
+    # effects:
+    #   - type: glow
+    #     blur_size: 5.0
+    #     intensity: .6
+    #     glow_speed: 1.0
+    #     glow_amplitude: .2
         
-# segment_displays:
-#   row0:
-#     number: 1
-#     size: 16
-#     # platform: virtual
-#   row1:
-#     number: 1
-#     size: 16
-#     # platform: virtual
+segment_displays:
+  row0:
+    number: 1
+    size: 16
+    platform: virtual
+  row1:
+    number: 2
+    size: 16
+    platform: virtual
 
-# virtual_segment_display_connector:
-#   segment_displays: row0, row1
+virtual_segment_display_connector:
+  segment_displays: row0, row1
     
 displays:
   window:
      width: 1300
      height: 400
-  # normal:
-  #    width: 1300
-  #    height: 400
-  # background:
-  #    width: 1300
-  #    height: 400
+  normal:
+     width: 1300
+     height: 400
+  background:
+     width: 1300
+     height: 400
