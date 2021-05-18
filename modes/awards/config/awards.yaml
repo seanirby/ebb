@@ -51,7 +51,7 @@ shots:
     profile: awards_collect
     enable_events: timer_drops_lower_left_started
     disable_events: mode_awards_started, timer_drops_lower_left_complete
-    # TODO: have to handle this in code due to timing
+    # easier to handle this in code
     # hit_events: sh_saucer_debounced_hit
     show_tokens:
       light: l_drop_left_arrow_0

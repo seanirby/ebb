@@ -35,11 +35,6 @@ variable_player:
     mball_progress:
       action: set
       int: 0
-  # TODO: Probably don't need this condition, unless updating mball logic
-  mode_mball_started{current_player.mballs_played>1}:
-    mball_progress:
-      action: set
-      int: 0
   mode_mball_stopping:
     mballs_played: 1
 

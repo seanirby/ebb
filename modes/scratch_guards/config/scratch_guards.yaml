@@ -45,6 +45,5 @@ ball_saves:
 
 event_player:
   # TODO: test the case where both of these are hit at the same time, potential race condition
-  # TODO: see if I can use 'not' instead of ==False
-  ball_save_scratch_guards_right_saving_ball{device.shots.sh_scratch_guards_left.enabled==False}: scratch_guards_stop
-  ball_save_scratch_guards_left_saving_ball{device.shots.sh_scratch_guards_right.enabled==False}: scratch_guards_stop
+  ball_save_scratch_guards_right_saving_ball{not device.shots.sh_scratch_guards_left.enabled}: scratch_guards_stop
+  ball_save_scratch_guards_left_saving_ball{not device.shots.sh_scratch_guards_right.enabled}: scratch_guards_stop

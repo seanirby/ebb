@@ -4,8 +4,6 @@ mode:
   start_events: ball_starting
   code: spinner.Spinner
 
-# TODO: Add in a spinner qualified state that does NOT time out
-
 state_machines:
   spinner:
     starting_state: off
@@ -28,7 +26,6 @@ state_machines:
     transitions:
       - source: off
         target: qualified_timed
-        # TODO: may need to update this to a more proper 'hit' or mode based event
         events: s_inlane_right_active
       - source: off
         target: qualified
@@ -83,36 +80,16 @@ shots:
       light: l_spinner_rectangle
       color: pink
 
-## TODO: if this doesn't work, then add code to jump
-#variable_player:
-#  spinner_state_off_started:
-#    shot_sh_spinner:
-#      action: set
-#      int: 0
-#  spinner_state_qualified_started:
-#    shot_sh_spinner:
-#      action: set
-#      int: 1
-#  spinner_state_spinning_on_started:
-#    shot_sh_spinner:
-#      action: set
-#      int: 2
-#  spinner_state_spinning_off_started:
-#    shot_sh_spinner:
-#      action: set
-#      int: 3
-
 timers:
   spinner_spinning_timeout:
     end_value: 3
     control_events:
       - action: start
-        event: spinner_state_spinning_on_started
-      # TODO: could potentially cause issues with timer starting/lights
-      - action: reset
-        event: spinner_state_spinning_on_started
+        event: spinner_state_spinning_off_started
       - action: reset
         event: spinner_state_spinning_off_started
+      - action: reset
+        event: spinner_state_spinning_on_started
       - action: reset
         event: timer_spinner_spinning_timeout_complete
   spinner_qualified_timeout:
