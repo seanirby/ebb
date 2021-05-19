@@ -7,6 +7,7 @@
 hardware:
   platform: p3_roc, virtual
   driverboards: pdb
+  segment_displays: virtual
 
 virtual_platform_start_active_switches:
   - s_trough_0
