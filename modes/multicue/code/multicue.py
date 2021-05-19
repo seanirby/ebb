@@ -33,8 +33,6 @@ class Multicue(Mode):
                 shot.jump(0)
             
     def handle_collected(self, **kwargs):
-        # TODO: Figure out why 'multicue_collected' doesn't avan
-        # reset multicue target
         shot = self.machine.shots["sh_multicue"].jump(0)
 
         for i in range(0, NUM_TARGETS):
