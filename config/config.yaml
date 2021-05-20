@@ -38,7 +38,7 @@ config:
 
 # create configs for sound stuff
 sound_system:
-  master_volume: 1.5
+  master_volume: .75
   tracks:
      # music:
      #   type: sound_loop
