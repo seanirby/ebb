@@ -15,6 +15,7 @@ lights:
     number: 8-100-101-102
     subtype: led
     type: grb
+  # TODO: rename to l_lane_upper_X
   l_lane_left:
     number: 8-103-104-105
     subtype: led

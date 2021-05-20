@@ -33,6 +33,7 @@ modes:
   - award_5
   - award_6
   - orbit_left
+  - lanes_upper
 
   # ball end
   # - bonus

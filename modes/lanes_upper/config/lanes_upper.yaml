@@ -1,0 +1,29 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+shots:
+  sh_lanes_upper_left:
+    switch: s_upper_lane_left
+    show_tokens:
+      light: l_lane_left
+  sh_lanes_upper_center:
+    switch: s_upper_lane_center
+    show_tokens:
+      light: l_lane_center
+  sh_lanes_upper_right:
+    switch: s_upper_lane_right
+    show_tokens:
+      light: l_lane_right
+
+shot_groups:
+  lanes_upper:
+    shots: sh_lanes_upper_left, sh_lanes_upper_center, sh_lanes_upper_right
+    rotate_left_events: s_flipper_left_active
+    rotate_right_events: s_flipper_right_active
+    reset_events: lanes_upper_lit_complete
+
+event_player:
+  lanes_upper_lit_complete: increment_bonus_x
+  

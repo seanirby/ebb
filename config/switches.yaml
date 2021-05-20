@@ -114,6 +114,7 @@ switches:
     type: NC
   s_drop_upper:
     number: A3-B1-1
+  # TODO: update naming so its s_lane_upper_X
   s_upper_lane_right:
     number: A3-B1-2
   s_upper_lane_center:
