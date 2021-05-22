@@ -3,19 +3,59 @@
 mode:
   start_events: ball_starting
 
+shows:
+  lanes_upper_complete:
+    - time: 0
+      lights:
+        l_lane_left: red
+        l_lane_center: red
+        l_lane_right: red
+    - time: "+1"
+      lights:
+        l_lane_left: off
+        l_lane_center: off
+        l_lane_right: off
+
 shots:
   sh_lanes_upper_left:
     switch: s_upper_lane_left
+    profile: ebb_default
     show_tokens:
       light: l_lane_left
+      color: red
   sh_lanes_upper_center:
     switch: s_upper_lane_center
+    profile: ebb_default
     show_tokens:
       light: l_lane_center
+      color: red
   sh_lanes_upper_right:
     switch: s_upper_lane_right
+    profile: ebb_default
     show_tokens:
       light: l_lane_right
+      color: red
+
+variable_player:
+  lanes_upper_lit_complete:
+    bonus_x: 1
+
+segment_display_player:
+  lanes_upper_lit_complete:
+    row0:
+      priority: 1000
+      text: "{players[0].bonus_x:<9}X BONUS"
+      expire: 2000
+    row1:
+      priority: 1000
+      text: "{players[0].bonus_x:<9}X BONUS"
+      expire: 2000
+
+show_player:
+  lanes_upper_lit_complete:
+    lanes_upper_complete:
+      loops: 5
+      speed: 10
 
 shot_groups:
   lanes_upper:

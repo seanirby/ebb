@@ -1,6 +1,8 @@
 #config_version=5
 
 player_vars:
+  bonus_x:
+    initial_value: 1
   mball_progress:
     initial_value: 2
   mballs_played:

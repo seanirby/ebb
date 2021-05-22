@@ -1,0 +1,9 @@
+#config_version=5
+
+shot_profiles:
+  ebb_default:
+    states:
+      - name: unlit
+        show: "off"
+      - name: lit
+        show: led_color

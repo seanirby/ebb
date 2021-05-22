@@ -34,6 +34,7 @@ config:
 - player_vars.yaml
 - playfields.yaml
 - slides.yaml
+- shot_profiles.yaml
 - switches.yaml
 
 # create configs for sound stuff

@@ -90,3 +90,13 @@ class TestLanesUpper(EbbMachineTestCase):
         # TODO: also assert that some success show ran
         self.advance_time_and_run(1)
         self.assert_lanes([0, 0, 0])
+
+    def test_show_is_played_when_lanes_are_completed(self):
+        self.start_game()
+        self.hit_and_release_switch_and_run("s_upper_lane_left")
+        self.hit_and_release_switch_and_run("s_upper_lane_center")
+        self.hit_and_release_switch_and_run("s_upper_lane_right")
+        self.assertLightOn("l_lane_left")
+        self.assertLightOn("l_lane_center")
+        self.assertLightOn("l_lane_right")
+        self.advance_time_and_run(.1)
