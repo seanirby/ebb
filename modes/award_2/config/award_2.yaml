@@ -1,13 +1,19 @@
 #config_version=5
 
-# award_2 - TBD
-
 mode:
-  start_events: award_2_selected
-  stop_events: award_0_selected, award_1_selected, award_3_selected, award_4_selected, award_5_selected, award_6_selected
+  start_events: ball_starting
 
-event_player:
-  award_2_collected: scratch_guards_start
+# TODO: end this mode once the show is done playing
+# TODO: add test so that show won't play twice if scratch guards are already activate
+show_player:
+  award_2_collected:
+    instant_million:
+      loops: 0
+      speed: 1
+      priority: 100
 
 
+variable_player:
+  award_2_collected:
+    score: 1000000
 
