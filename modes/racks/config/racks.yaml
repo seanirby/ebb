@@ -256,27 +256,189 @@ shots:
     show_tokens:
       light: l_standup_left_6_4
 
+
+# these sequence shots are helpers to let me show the right 'pulse' light show when two targets are hit at once
+sequence_shots:
+  sh_tl_5_6_6:
+    switch_sequence:
+      - s_standup_left_6
+      - s_standup_left_5
+    sequence_timeout: 50ms
+  sh_tl_5_6_5:
+    switch_sequence:
+      - s_standup_left_5
+      - s_standup_left_6
+    sequence_timeout: 50ms
+  sh_tl_4_5_5:
+    switch_sequence:
+      - s_standup_left_5
+      - s_standup_left_4
+    sequence_timeout: 50ms
+  sh_tl_4_5_4:
+    switch_sequence:
+      - s_standup_left_4
+      - s_standup_left_5
+    sequence_timeout: 50ms
+  sh_tl_3_4_4:
+    switch_sequence:
+      - s_standup_left_4
+      - s_standup_left_3
+    sequence_timeout: 50ms
+  sh_tl_3_4_3:
+    switch_sequence:
+      - s_standup_left_3
+      - s_standup_left_4
+    sequence_timeout: 50ms
+  sh_tl_2_3_3:
+    switch_sequence:
+      - s_standup_left_3
+      - s_standup_left_2
+    sequence_timeout: 50ms
+  sh_tl_2_3_2:
+    switch_sequence:
+      - s_standup_left_2
+      - s_standup_left_3
+    sequence_timeout: 50ms
+  sh_tl_1_2_2:
+    switch_sequence:
+      - s_standup_left_2
+      - s_standup_left_1
+    sequence_timeout: 50ms
+  sh_tl_1_2_1:
+    switch_sequence:
+      - s_standup_left_1
+      - s_standup_left_2
+    sequence_timeout: 50ms
+  sh_tl_0_1_1:
+    switch_sequence:
+      - s_standup_left_1
+      - s_standup_left_0
+    sequence_timeout: 50ms
+  sh_tl_0_1_0:
+    switch_sequence:
+      - s_standup_left_0
+      - s_standup_left_1
+    sequence_timeout: 50ms
+  
+
+# TODO: I should probably create new light shows for when two targets are hit at once
 show_player:
-  sh_tl_6_hit.1{current_player.tl_6_progress==0}:
-    target_wave_6_0:
+  # note hte slightly higher priority so the doublehits will show first
+  sh_tl_5_6_6_hit:
+    pulse_standup_left_6:
       loops: 0
-      speed: 30
-      priority: 10
-  sh_tl_6_hit.2{current_player.tl_6_progress==1}:
-    target_wave_6_1:
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_5_6_5_hit:
+    pulse_standup_left_5:
       loops: 0
-      speed: 30
-      priority: 10
-  sh_tl_6_hit.3{current_player.tl_6_progress==2}:
-    target_wave_6_2:
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_4_5_5_hit:
+    pulse_standup_left_5:
       loops: 0
-      speed: 30
-      priority: 10
-  sh_tl_6_hit.4{current_player.tl_6_progress==3}:
-    target_wave_6_3:
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_4_5_4_hit:
+    pulse_standup_left_4:
       loops: 0
-      speed: 30
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_3_4_4_hit:
+    pulse_standup_left_4:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_3_4_3_hit:
+    pulse_standup_left_3:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_2_3_3_hit:
+    pulse_standup_left_3:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_2_3_2_hit:
+    pulse_standup_left_2:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_1_2_2_hit:
+    pulse_standup_left_2:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_1_2_1_hit:
+    pulse_standup_left_1:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_0_1_1_hit:
+    pulse_standup_left_1:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+  sh_tl_0_1_0_hit:
+    pulse_standup_left_0:
+      loops: 0
+      speed: 50
+      priority: 11
+      sync_ms: 50
+
+  sh_tl_6_hit:
+    pulse_standup_left_6:
+      loops: 0
+      speed: 50
       priority: 10
+      sync_ms: 50
+  sh_tl_5_hit:
+    pulse_standup_left_5:
+      loops: 0
+      speed: 50
+      priority: 10
+      sync_ms: 50
+  sh_tl_4_hit:
+    pulse_standup_left_4:
+      loops: 0
+      speed: 50
+      priority: 10
+      sync_ms: 50
+  sh_tl_3_hit:
+    pulse_standup_left_3:
+      loops: 0
+      speed: 50
+      priority: 10
+      sync_ms: 50
+  sh_tl_2_hit:
+    pulse_standup_left_2:
+      loops: 0
+      speed: 50
+      priority: 10
+      sync_ms: 50
+  sh_tl_1_hit:
+    pulse_standup_left_1:
+      loops: 0
+      speed: 50
+      priority: 10
+      sync_ms: 50
+  sh_tl_0_hit:
+    pulse_standup_left_0:
+      loops: 0
+      speed: 50
+      priority: 10
+      sync_ms: 50
 
 # TODO: duplicate logic in awards.yaml, do i need to abstract this out?
 event_player:
