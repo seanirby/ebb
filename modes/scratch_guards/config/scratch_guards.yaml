@@ -36,12 +36,36 @@ ball_saves:
     balls_to_save: 1
     enable_events: sh_scratch_guards_left_hit
     disable_events: ball_save_scratch_guards_left_saving_ball
+    early_ball_save_events: timer_scratch_guards_left_enabled_delay_complete
   scratch_guards_right:
     auto_launch: True
     balls_to_save: 1
     enable_events: sh_scratch_guards_right_hit
     disable_events: ball_save_scratch_guards_right_saving_ball
+    early_ball_save_events: timer_scratch_guards_right_enabled_delay_complete
 
+# need a small delay so early ball save events work correctly
+timers:
+  scratch_guards_right_enabled_delay:
+    end_value: 1
+    tick_interval: 100ms
+    control_events:
+      - action: start
+        event: ball_save_scratch_guards_right_enabled
+      - action: stop
+        event: timer_scratch_guards_right_enabled_delay_complete
+      - action: reset
+        event: timer_scratch_guards_right_enabled_delay_complete
+  scratch_guards_left_enabled_delay:
+    end_value: 1
+    tick_interval: 100ms
+    control_events:
+      - action: start
+        event: ball_save_scratch_guards_left_enabled
+      - action: stop
+        event: timer_scratch_guards_left_enabled_delay_complete
+      - action: reset
+        event: timer_scratch_guards_left_enabled_delay_complete
 
 event_player:
   # TODO: test the case where both of these are hit at the same time, potential race condition
