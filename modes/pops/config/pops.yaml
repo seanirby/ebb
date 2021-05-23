@@ -15,17 +15,17 @@ show_player:
   s_pop_center_active:
     pulse_pop_center:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
   s_pop_left_active:
     pulse_pop_left:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
   s_pop_right_active:
     pulse_pop_right:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
   
 sound_player:

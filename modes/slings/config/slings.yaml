@@ -13,12 +13,12 @@ show_player:
   s_sling_left_active:
     pulse_sling_left:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
   s_sling_right_active:
     pulse_sling_right:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
   
 sound_player:

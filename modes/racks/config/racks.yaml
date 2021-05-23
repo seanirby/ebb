@@ -327,116 +327,116 @@ show_player:
   sh_tl_5_6_6_hit:
     pulse_standup_left_6:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_5_6_5_hit:
     pulse_standup_left_5:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_4_5_5_hit:
     pulse_standup_left_5:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_4_5_4_hit:
     pulse_standup_left_4:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_3_4_4_hit:
     pulse_standup_left_4:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_3_4_3_hit:
     pulse_standup_left_3:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_2_3_3_hit:
     pulse_standup_left_3:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_2_3_2_hit:
     pulse_standup_left_2:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_1_2_2_hit:
     pulse_standup_left_2:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_1_2_1_hit:
     pulse_standup_left_1:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_0_1_1_hit:
     pulse_standup_left_1:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
   sh_tl_0_1_0_hit:
     pulse_standup_left_0:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 11
       sync_ms: 50
 
   sh_tl_6_hit:
     pulse_standup_left_6:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
       sync_ms: 50
   sh_tl_5_hit:
     pulse_standup_left_5:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
       sync_ms: 50
   sh_tl_4_hit:
     pulse_standup_left_4:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
       sync_ms: 50
   sh_tl_3_hit:
     pulse_standup_left_3:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
       sync_ms: 50
   sh_tl_2_hit:
     pulse_standup_left_2:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
       sync_ms: 50
   sh_tl_1_hit:
     pulse_standup_left_1:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
       sync_ms: 50
   sh_tl_0_hit:
     pulse_standup_left_0:
       loops: 0
-      speed: 50
+      speed: 35
       priority: 10
       sync_ms: 50
 
@@ -478,5 +478,12 @@ sound_loop_player:
 sound_player:
   racks_collected_loop_stop: success_0
   racks_collected_loop_complete: success_0
-
+  sh_tl_0_hit: zap_0
+  sh_tl_1_hit: zap_1
+  sh_tl_2_hit: zap_2
+  sh_tl_3_hit: zap_3
+  sh_tl_4_hit: zap_4
+  sh_tl_5_hit: zap_5
+  sh_tl_6_hit: zap_6
+    
 
