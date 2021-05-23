@@ -6,12 +6,12 @@ mode:
 
 segment_display_player:
   timer_base_start_complete.1:
-    row0:
+    row_0:
       text: "{players[0].score:<16}"
   timer_base_start_complete.2:
-    row0:
+    row_0:
       text: "{players[0].score:<16}"
-    row1:
+    row_1:
       text: "          Ball {players[0].ball:d}"
 
 variable_player:

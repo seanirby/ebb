@@ -15,13 +15,13 @@ shows:
   attract_segment:
     - time: 0
       segment_displays:
-        row0:
+        row_0:
           color: white
           text: "     PRESS START"
           transition:
             type: push
             direction: left
-        row1:
+        row_1:
           color: white
           text: "PRESS START     "
           transition:
@@ -29,13 +29,13 @@ shows:
             direction: right
     - time: 1
       segment_displays:
-        row0:
+        row_0:
           color: white
           text: "PRESS START     "
           transition:
             type: push
             direction: right
-        row1:
+        row_1:
           color: white
           text: "     PRESS START"
           transition:

@@ -8,12 +8,11 @@ modes:
   # - slide_listener
   # - autostack
 
-  # generic
   - base
+  - base_bonus
   - ball_save
   - saucer
   - drops
-  # game specific modes
   - spinner
   - scratch_guards
   - multiball_config
@@ -23,7 +22,6 @@ modes:
   - mball
   - racks
   - multicue
-  # - spot_ball
   - awards
   - award_0
   - award_1

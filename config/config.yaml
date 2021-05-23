@@ -105,17 +105,17 @@ window:
     source_display: window
         
 segment_displays:
-  row0:
+  row_0:
     number: 1
     size: 16
     platform: virtual
-  row1:
+  row_1:
     number: 2
     size: 16
     platform: virtual
 
 virtual_segment_display_connector:
-  segment_displays: row0, row1
+  segment_displays: row_0, row_1
     
 displays:
   window:

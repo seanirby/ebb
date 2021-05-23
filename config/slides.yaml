@@ -27,7 +27,7 @@ slides:
     widgets:
       - type: segment_display_emulator
         display_type: 14seg
-        name: row0
+        name: row_1
         flash_mode: all
         flash_frequency: 7
         character_count: 16
@@ -53,7 +53,7 @@ slides:
         display_type: 14seg
         flash_mode: all
         flash_frequency: 7
-        name: row1
+        name: row_0
         character_count: 16
         character_slant_angle: 5
         character_spacing: 20
@@ -90,27 +90,7 @@ slides:
   base_segment:
     - type: segment_display_emulator
       display_type: 14seg
-      name: row0
-      character_count: 16
-      character_slant_angle: 5
-      character_spacing: 20
-      segment_width: 0.15
-      segment_interval: 0.04
-      segment_off_color: 4b4c4a30
-      segment_on_color: FFFFFF
-      side_bevel_enabled: true
-      dot_enabled: false
-      comma_enabled: false
-      text: ""
-      width: 1300
-      height: 150
-      x: 0
-      y: 210
-      anchor_x: left
-      anchor_y: bottom
-    - type: segment_display_emulator
-      display_type: 14seg
-      name: row1
+      name: row_0
       character_count: 16
       character_slant_angle: 5
       character_spacing: 20
@@ -126,5 +106,25 @@ slides:
       height: 150
       x: 0
       y: 50
+      anchor_x: left
+      anchor_y: bottom
+    - type: segment_display_emulator
+      display_type: 14seg
+      name: row_1
+      character_count: 16
+      character_slant_angle: 5
+      character_spacing: 20
+      segment_width: 0.15
+      segment_interval: 0.04
+      segment_off_color: 4b4c4a30
+      segment_on_color: FFFFFF
+      side_bevel_enabled: true
+      dot_enabled: false
+      comma_enabled: false
+      text: ""
+      width: 1300
+      height: 150
+      x: 0
+      y: 210
       anchor_x: left
       anchor_y: bottom

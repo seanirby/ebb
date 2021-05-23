@@ -40,17 +40,6 @@ variable_player:
   lanes_upper_lit_complete:
     bonus_x: 1
 
-segment_display_player:
-  lanes_upper_lit_complete:
-    row0:
-      priority: 1000
-      text: "{players[0].bonus_x:<9}X BONUS"
-      expire: 2000
-    row1:
-      priority: 1000
-      text: "{players[0].bonus_x:<9}X BONUS"
-      expire: 2000
-
 show_player:
   lanes_upper_lit_complete:
     lanes_upper_complete:

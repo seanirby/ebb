@@ -1,0 +1,43 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+shows:
+  base_bonus_incremented:
+    - time: 0
+      segment_displays:
+        row_0:
+          color: white
+          # TODO: Figure out how I can dynamically add the spaces, not sure with current placeholders
+          text: "    {players[0].bonus_x}X BONUS    "
+          transition:
+            type: push
+            direction: left
+        row_1:
+          color: white
+          text: "                "
+          transition:
+            type: push
+            direction: right
+    - time: 1
+      segment_displays:
+        row_0:
+          color: white
+          text: "    {players[0].bonus_x}X BONUS    "
+          transition:
+            type: push
+            direction: right
+        row_1:
+          color: white
+          text: "                "
+          transition:
+            type: push
+            direction: left
+
+show_player:
+  lanes_upper_lit_complete:
+    base_bonus_incremented:
+      loops: 1
+      speed: 1.5
+      priority: 100
