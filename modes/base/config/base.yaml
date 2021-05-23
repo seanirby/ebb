@@ -14,18 +14,6 @@ segment_display_player:
     row_1:
       text: "          Ball {players[0].ball:d}"
 
-variable_player:
-  s_pop_center_active:
-    score: 500
-  s_pop_left_active:
-    score: 500
-  s_pop_right_active:
-    score: 500
-  s_sling_left_active:
-    score: 1000
-  s_sling_right_active:
-    score: 1000
-
 timers:
   base_start:
     start_running: True

@@ -1,0 +1,35 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+variable_player:
+  s_pop_center_active:
+    score: 500
+  s_pop_left_active:
+    score: 500
+  s_pop_right_active:
+    score: 500
+
+show_player:
+  s_pop_center_active:
+    pulse_pop_center:
+      loops: 0
+      speed: 50
+      priority: 10
+  s_pop_left_active:
+    pulse_pop_left:
+      loops: 0
+      speed: 50
+      priority: 10
+  s_pop_right_active:
+    pulse_pop_right:
+      loops: 0
+      speed: 50
+      priority: 10
+  
+sound_player:
+  s_pop_center_active: wobble
+  s_pop_left_active: wobble
+  s_pop_right_active: wobble
+

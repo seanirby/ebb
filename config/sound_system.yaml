@@ -1,0 +1,15 @@
+#config_version=5
+
+sound_system:
+  master_volume: .75
+  tracks:
+     sfx:
+       type: standard
+       simultaneous_sounds: 32
+       volume: 1
+       preload: yes
+     loops:
+       type: sound_loop
+       volume: 1
+       preload: yes
+

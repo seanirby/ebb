@@ -21,6 +21,7 @@ p_roc:
       ws281x_0_last_address: 327
 
 config:
+- assets.yaml
 - autofire_coils.yaml
 - ball_devices.yaml
 - ball_saves.yaml
@@ -35,70 +36,13 @@ config:
 - playfields.yaml
 - slides.yaml
 - shot_profiles.yaml
+- sound_loop_sets.yaml
+- sound_pools.yaml
+- sound_system.yaml
+- sounds.yaml
 - switches.yaml
 
-# create configs for sound stuff
-sound_system:
-  master_volume: .75
-  tracks:
-     # music:
-     #   type: sound_loop
-     #   simultaneous_sounds: 1
-     #   volume: 0.5
-     # voice:
-     #   type: standard
-     #   simultaneous_sounds: 1
-     #   volume: 0.7
-     sfx:
-       type: standard
-       simultaneous_sounds: 32
-       volume: 1
-       preload: yes
-     loops:
-       type: sound_loop
-       volume: 1
-       preload: yes
-
-assets:
-  images:
-    default:
-      load: preload
-  sounds:
-    # default:
-    #   load: on_demand
-    # music:
-    #   track: music
-    #   # preload for testing purposes only
-    #   load: preload
-    sfx:
-      track: sfx
-      load: preload
-    loops:
-      track: loops
-      load: preload
-    # voice:
-    #   track: voice
-
-sounds:
-  target_collected_0:
-    max_queue_time: 0
-  target_collected_ogg_0:
-    max_queue_time: 0
-  loop_target_collected:
-    max_queue_time: 0
-  loop_target_collected_2:
-    max_queue_time: 0
-  # target_collected_0:
-  #   max_queue_time: 5ms
-  # target_collected_ogg_0:
-  #   max_queue_time: 5ms
-
-
-sound_loop_sets:
-  rack_collected:
-    sound: loop_target_collected_2
-    tempo: 937.5
-
+# TODO: create configs for this stuff
 window:
     width: 1300
     height: 400

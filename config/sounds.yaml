@@ -1,0 +1,16 @@
+#config_version=5
+
+sounds:
+  target_collected_0:
+    max_queue_time: 0
+  success_0:
+    max_queue_time: 0
+  success_0_snippet:
+    max_queue_time: 0
+  target_collected_ogg_0:
+    max_queue_time: 0
+  loop_target_collected:
+    max_queue_time: 0
+  loop_target_collected_2:
+    max_queue_time: 0
+

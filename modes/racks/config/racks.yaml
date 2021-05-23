@@ -11,7 +11,7 @@ shot_profiles:
   racks_status:
     states:
       - name: unlit
-        show: off
+        show: stop
       - name: current
         show: flash_color
         speed: 10
@@ -30,7 +30,7 @@ shot_profiles:
   l:
     states:
       - name: off
-        show: off
+        show: stop
       - name: on
         show: on
       - name: flash
@@ -446,6 +446,8 @@ event_player:
     - activate_drop_right
     - deactivate_drop_left
     - start_saucer_shot_timers
+  racks_collected_loop_stop: saucer_fire
+  racks_collected_loop_complete: saucer_fire
 
 timers:
   racks_collect_transition:
@@ -462,8 +464,19 @@ sound_loop_player:
   racks_collected_loop_start:
     loops:
       action: play
-      sound_loop_set: rack_collected
+      sound_loop_set: rack_collected_transition_start
+      timing: now
+  racks_collected_loop_complete:
+    loops:
+      action: play
+      sound_loop_set: rack_collected_transition_complete
       timing: now
   racks_collected_loop_stop:
     loops:
       action: stop_looping
+
+sound_player:
+  racks_collected_loop_stop: success_0
+  racks_collected_loop_complete: success_0
+
+

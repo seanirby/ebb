@@ -1,0 +1,17 @@
+#config_version=5
+
+sound_pools:
+  wobble:
+    type: random_force_all
+    track: sfx
+    sounds:
+      - wobble_0
+      - wobble_1
+      - wobble_2
+      - wobble_3
+      - wobble_4
+      - wobble_5
+      - wobble_6
+      - wobble_7
+
+

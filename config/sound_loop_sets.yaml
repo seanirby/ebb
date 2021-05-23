@@ -1,0 +1,10 @@
+#config_version=5
+
+sound_loop_sets:
+  rack_collected_transition_start:
+    sound: success_0_snippet
+    tempo: 937.5
+  rack_collected_transition_complete:
+    sound: success_0
+    tempo: 937.5
+

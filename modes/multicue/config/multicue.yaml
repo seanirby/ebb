@@ -3,7 +3,6 @@
 mode:
   start_events: ball_starting
   code: multicue.Multicue
-  priority: 200
 
 shows:
   multicue_on:
@@ -15,7 +14,7 @@ shot_profiles:
   multicue:
     states:
       - name: unlit
-        show: off
+        show: stop
       - name: lit
         show: led_color
         show_tokens:

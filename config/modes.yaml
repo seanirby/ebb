@@ -1,28 +1,6 @@
 #config_version=5
 
 modes:
-  # testing
-  # - test
-
-  # utility
-  # - slide_listener
-  # - autostack
-
-  - base
-  - base_bonus
-  - ball_save
-  - saucer
-  - drops
-  - spinner
-  - scratch_guards
-  - multiball_config
-  - mball_startup
-  - mball_qualifying
-  - mball_locked
-  - mball
-  - racks
-  - multicue
-  - awards
   - award_0
   - award_1
   - award_2
@@ -30,8 +8,23 @@ modes:
   - award_4
   - award_5
   - award_6
-  - orbit_left
+  - awards
+  - ball_save
+  - base
+  - base_bonus
+  - drops
   - lanes_upper
-
-  # ball end
+  - mball
+  - mball_locked
+  - mball_qualifying
+  - mball_startup
+  - multiball_config
+  - multicue
+  - orbit_left
+  - pops
+  - racks
+  - saucer
+  - scratch_guards
+  - slings
+  - spinner
   # - bonus

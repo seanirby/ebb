@@ -1,0 +1,21 @@
+#config_version=5
+
+assets:
+  images:
+    default:
+      load: preload
+  sounds:
+    # default:
+    #   load: on_demand
+    # music:
+    #   track: music
+    #   # preload for testing purposes only
+    #   load: preload
+    sfx:
+      track: sfx
+      load: preload
+    loops:
+      track: loops
+      load: preload
+    # voice:
+    #   track: voice
