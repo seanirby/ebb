@@ -17,7 +17,7 @@ segment_display_player:
 timers:
   base_start:
     start_running: True
-    end_value: 1
+    end_value: 3
     tick_interval: 100ms
     control_events:
       - action: stop
