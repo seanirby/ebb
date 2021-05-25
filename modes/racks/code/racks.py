@@ -1,3 +1,4 @@
+import subprocess
 from mpf.core.mode import Mode
 
 NUM_TARGETS = 7
@@ -13,6 +14,11 @@ MULTICUE_SIZE = 1
 class Racks(Mode):
     def mode_start(self, **kwargs):
         self.init_lights()
+
+        if self.player["ball"]==1:
+            self.speak("Rack em up <break time='150ms'/> human")
+
+
         for i in range(0, NUM_TARGETS):
             self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
 
@@ -66,10 +72,34 @@ class Racks(Mode):
             targets = list(map(lambda x: x % NUM_TARGETS, list(range(multicue_position-MULTICUE_SIZE, multicue_position+MULTICUE_SIZE+1))))
 
         for target in targets:
+            self.handle_speech(target)
             self.update_target_progress(target)
 
         self.update_target_lights()
         self.update_if_rack_can_be_collected()
+
+    def speak(self, message):
+        # Create subprocess
+        subprocess.Popen(["espeak", "-v", "robot", "-m", "'{}'".format(message)])
+
+    def handle_speech(self, hit_target_number):
+        hit_target_progress = self.player["tl_{}_progress".format(hit_target_number)]
+        others_completed=True
+
+        for target in range(NUM_TARGETS):
+            if hit_target_number==target:
+                continue
+            else:
+                progress = self.player["tl_{}_progress".format(target)]
+                if progress==0:
+                    others_completed = False
+                    break
+
+        if hit_target_progress==0:
+            if others_completed:
+                self.speak("{} Ball. Get <break time='30ms'> The <break time='100ms'> Eight <break time='150ms'> Ball".format(hit_target_number+1))
+            else:
+                self.speak("{} ball".format(hit_target_number+1))
 
     def handle_rack_collect_hit(self, **kwargs):
         all_progress = []
