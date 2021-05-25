@@ -1,9 +1,9 @@
 #config_version=5
 
 # award_4 - tbd
-
 mode:
-  start_events: ball_starting
+  start_events: award_4_selected
+  stop_events: award_4_unselected
 
 shows:
   spinner_qualified_from_award:
@@ -29,6 +29,7 @@ show_player:
       loops: 0
       speed: 1.5
       priority: 100
+      events_when_completed: award_x_show_complete
 
 event_player:
   award_4_collected: spinner_qualified_from_award

@@ -10,7 +10,7 @@ class Awards(Mode):
         self.init_lights()
         self.add_mode_event_handler("sh_awards_select_left_hit", self.handle_select_award, direction = -1)
         self.add_mode_event_handler("sh_awards_select_right_hit", self.handle_select_award, direction = 1)
-        self.add_mode_event_handler("sh_saucer_debounced_hit", self.handle_award_collected)
+        self.add_mode_event_handler("awards_award_collected", self.handle_award_collected)
 
         # ensure the right award mode is selected when mode starts
         for i in range(0, NUM_AWARDS):
@@ -57,6 +57,9 @@ class Awards(Mode):
 
             i = awards.index(pos)
             next_i = (i + direction) % len(awards)
+
+            self.machine.events.post("award_{}_unselected".format(pos))
+
             self.player["award_selected"] = awards[next_i]
 
         self.machine.events.post("award_{}_selected".format(next_i))

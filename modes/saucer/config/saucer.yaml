@@ -18,3 +18,57 @@ timers:
 
 event_player:
   timer_saucer_sh_saucer_complete: sh_saucer_debounced_hit
+
+shows:
+  saucer_rack_and_award_sequence:
+    - time: 0
+      events:
+        - saucer_rack_collect
+    - time: 1
+      events:
+        - saucer_collect_award
+    # TODO: add planets mode and have it handle showing planet related shows lights
+    # Before firing the saucer we should also play a crazy light show
+    - time: 2
+      events:
+        - saucer_fire
+  saucer_award_sequence:
+    - time: 0
+      events:
+        - saucer_collect_award
+    - time: 1
+      events:
+        - saucer_fire
+  saucer_dirty_pool:
+    - time: 0
+      events:
+        - saucer_fire
+      
+show_player:
+  # sh_saucer_debounced_hit{eight_ball_ready and jackpot ready}:
+  #   play jackpot sequence, play eight ball collect sequence, then play award sequence
+  # sh_saucer_debounced_hit{eight_ball_ready and jackpot not ready}:
+  #   play eight ball collect sequence, then play award sequence
+  # sh_saucer_debounced_hit{eight_ball_not_ready and jackpot ready}: 
+  #   play jackpot sequence then play award sequence
+
+  # rack collect enabled and jackpot disabled
+  sh_saucer_debounced_hit{device.shots.sh_racks_collect.enabled and not(False)}: 
+    saucer_rack_and_award_sequence:
+      manual_advance: True
+      loops: 0
+  # rack collected disabled and jackpot disabled
+  sh_saucer_debounced_hit{(not device.shots.sh_racks_collect.enabled) and not(False)}: 
+    saucer_award_sequence:
+      manual_advance: True
+      loops: 0
+  award_x_show_complete:
+    saucer_award_sequence:
+      action: advance
+  racks_rack_collected:
+    saucer_rack_and_award_sequence:
+      action: advance
+  # if none of the above conditions match then, dirty pool!
+  sh_saucer_debounce_hit{False}: saucer_dirty_pool
+      
+      

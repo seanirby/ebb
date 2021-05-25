@@ -439,6 +439,30 @@ show_player:
       speed: 35
       priority: 10
       sync_ms: 50
+  # TOOD: move this to planets mode
+  saucer_rack_collect:
+    racks_you_won:
+      loops: 2
+      speed: 1.5
+      priority: 101
+      events_when_completed: racks_you_won_complete
+
+shows:
+  racks_you_won:
+    - duration: 1
+      segment_displays:
+        row_0:
+          color: white
+          text: "YOU WON"
+          transition:
+            type: push
+            direction: left
+        row_1:
+          color: white
+          text: "YOU WON"
+          transition:
+            type: push
+            direction: right
 
 # TODO: duplicate logic in awards.yaml, do i need to abstract this out?
 event_player:

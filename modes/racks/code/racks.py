@@ -23,7 +23,7 @@ class Racks(Mode):
             self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
 
         self.add_mode_event_handler("timer_drops_lower_left_complete", self.update_if_rack_can_be_collected)
-        self.add_mode_event_handler("sh_saucer_debounced_hit", self.handle_rack_collect_hit)
+        self.add_mode_event_handler("saucer_rack_collect", self.handle_rack_collect_hit)
 
     def init_lights(self):
         self.update_status_lights()

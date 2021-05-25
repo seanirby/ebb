@@ -1,17 +1,18 @@
 #config_version=5
 
 mode:
-  start_events: ball_starting
+  start_events: award_2_selected
+  stop_events: award_2_unselected
 
 # TODO: end this mode once the show is done playing
 # TODO: add test so that show won't play twice if scratch guards are already activate
 show_player:
-  award_2_collected:
+  saucer_collect_award:
     instant_million:
       loops: 0
       speed: 1
       priority: 100
-
+      events_when_completed: award_x_show_complete
 
 variable_player:
   award_2_collected:
