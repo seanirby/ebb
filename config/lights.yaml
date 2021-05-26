@@ -48,7 +48,6 @@ lights:
     number: 8-124-125-126
     subtype: led
     type: grb
-    debug: True
   l_standup_center:
     number: 8-127-128-129
     subtype: led

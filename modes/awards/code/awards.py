@@ -1,3 +1,4 @@
+import pdb
 from mpf.core.mode import Mode
 
 NUM_AWARDS = 7
@@ -13,13 +14,13 @@ class Awards(Mode):
         self.add_mode_event_handler("awards_award_collected", self.handle_award_collected)
 
         # ensure the right award mode is selected when mode starts
-        for i in range(0, NUM_AWARDS):
+        for i in range(NUM_AWARDS):
             if i == self.award_selected():
                 self.machine.events.post("award_{}_selected".format(i))
                 break
 
     def init_lights(self, **kwargs):
-        for award in range(0, NUM_AWARDS):
+        for award in range(NUM_AWARDS):
             light = self.machine.shots["sh_awards_{}".format(award)]
             if not(self.is_award_collected(award)):
                 if self.award_selected() == award:
@@ -37,32 +38,49 @@ class Awards(Mode):
 
     def handle_select_award(self, **kwargs):
         awards = []
+        pos = self.award_selected()
 
         for award in range(0, NUM_AWARDS):
             if not(self.is_award_collected(award)):
                 awards.append(award)
 
-        next_i = None
+        j = None
         if len(awards) == 1:
             self.player["award_selected"] = awards[0]
-            next_i = awards[0]
+            j = awards[0]
         else:
             direction = kwargs["direction"]
-            pos = self.award_selected()
 
-            # because this function could be called from 'handle_awards_collected' we manually put in the active position into the awards array so it can be the basis for the next selection
-            awards.append(pos)
-            awards = list(set(awards))
-            awards.sort()
+            # # because this function could be called from 'handle_awards_collected' we manually put in the active position into the awards array so it can be the basis for the next selection
+            # awards.append(pos)
+            # awards = list(set(awards))
+            # awards.sort()
 
-            i = awards.index(pos)
-            next_i = (i + direction) % len(awards)
+            # i = awards.index(pos)
+            # next_i = (i + direction) % len(awards)
 
+            # if pos==4:
+            #     pdb.set_trace()
+
+            # [0, 1, 2, 5, 6]
+            j = pos + direction
+            while True:
+                if 0 <= j < NUM_AWARDS:
+                    if self.player["award_{}_collected".format(j)] > 0:
+                        j += direction
+                    else:
+                        break
+                elif j < 0:
+                    j = NUM_AWARDS-1
+                else:
+                    j = 0
+
+            self.player["award_selected"] = j
+
+        if j != pos:
             self.machine.events.post("award_{}_unselected".format(pos))
-
-            self.player["award_selected"] = awards[next_i]
-
-        self.machine.events.post("award_{}_selected".format(next_i))
+            
+        self.machine.events.post("award_{}_selected".format(j))
         self.init_lights()
 
     def are_all_awards_collected(self):
@@ -71,20 +89,21 @@ class Awards(Mode):
                 return False
         return True
 
-    def reset_awards(self):
-        for award in range(0, NUM_AWARDS):
-            self.player["award_{}_collected".format(award)] = 0
 
     def handle_award_collected(self, **kwargs):
         # TODO: may need to add in logic so awards aren't always collected
         pos = self.award_selected()
-        self.machine.events.post("award_{}_collected".format(pos))
         self.player["award_{}_collected".format(pos)] = 1
 
         if self.are_all_awards_collected():
             self.player["award_sets"] += 1
-            self.player["award_selected"] = 0
-            self.reset_awards()
+            self.player["award_selected"] = 3
+            self.machine.events.post("award_{}_selected".format(3))
+            self.machine.events.post("award_{}_unselected".format(pos))
+
+            for award in range(0, NUM_AWARDS):
+                self.player["award_{}_collected".format(award)] = 0
+
         else:
             self.handle_select_award(direction=1)
 

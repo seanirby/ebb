@@ -3,21 +3,29 @@
 mode:
   start_events: ball_starting
 
-shots:
-  sh_saucer:
-    switch: s_saucer
+# timers:
+#   saucer_sh_saucer:
+#     end_value: 1
+#     control_events:
+#       - action: start
+#         event: sh_saucer_hit
+#       - action: reset
+#         event: timer_saucer_sh_saucer_complete
 
-timers:
-  saucer_sh_saucer:
-    end_value: 1
-    control_events:
-      - action: start
-        event: sh_saucer_hit
-      - action: reset
-        event: timer_saucer_sh_saucer_complete
+# event_player:
+#   sh_saucer_debounced_hit: activate_drop_left
+#   timer_saucer_sh_saucer_complete: sh_saucer_debounced_hit
 
-event_player:
-  timer_saucer_sh_saucer_complete: sh_saucer_debounced_hit
+#   sh_saucer_debounce_hit{(not device.sh_awards_collect.enabled) and (not device.sh_racks_collect.enabled)}: saucer_fire
+
+
+# event_player:
+#   ball_device_bd_saucer_ball_entered: saucer_hit
+
+queue_relay_player:
+  balldevice_bd_saucer_ball_eject_attempt:
+    post: saucer_hit
+    wait_for: saucer_fire
 
 shows:
   saucer_rack_and_award_sequence:
@@ -35,9 +43,10 @@ shows:
   saucer_award_sequence:
     - time: 0
       events:
-        - saucer_collect_award
+        - saucer_collect_award_show_start
     - time: 1
       events:
+        - awards_award_collected
         - saucer_fire
   saucer_dirty_pool:
     - time: 0
@@ -45,20 +54,21 @@ shows:
         - saucer_fire
       
 show_player:
-  # sh_saucer_debounced_hit{eight_ball_ready and jackpot ready}:
+  # saucer_hit{eight_ball_ready and jackpot ready}:
   #   play jackpot sequence, play eight ball collect sequence, then play award sequence
-  # sh_saucer_debounced_hit{eight_ball_ready and jackpot not ready}:
+  # saucer_hit{eight_ball_ready and jackpot not ready}:
   #   play eight ball collect sequence, then play award sequence
-  # sh_saucer_debounced_hit{eight_ball_not_ready and jackpot ready}: 
+  # saucer_hit{eight_ball_not_ready and jackpot ready}: 
   #   play jackpot sequence then play award sequence
 
-  # rack collect enabled and jackpot disabled
-  sh_saucer_debounced_hit{device.shots.sh_racks_collect.enabled and not(False)}: 
-    saucer_rack_and_award_sequence:
-      manual_advance: True
-      loops: 0
+  # # rack collect enabled and jackpot disabled
+  # saucer_hit{device.shots.sh_racks_collect.enabled and not(False)}: 
+  #   saucer_rack_and_award_sequence:
+  #     manual_advance: True
+  #     loops: 0
+
   # rack collected disabled and jackpot disabled
-  sh_saucer_debounced_hit{(not device.shots.sh_racks_collect.enabled) and not(False)}: 
+  saucer_hit{(not device.shots.sh_racks_collect.enabled) and not(False)}: 
     saucer_award_sequence:
       manual_advance: True
       loops: 0
@@ -68,7 +78,10 @@ show_player:
   racks_rack_collected:
     saucer_rack_and_award_sequence:
       action: advance
+  saucer_fire:
+    saucer_award_sequence:
+      action: stop
   # if none of the above conditions match then, dirty pool!
-  sh_saucer_debounce_hit{False}: saucer_dirty_pool
+  saucer_hit{False}: saucer_dirty_pool
       
       

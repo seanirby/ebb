@@ -7,7 +7,7 @@ mode:
 
 shows:
   spinner_qualified_from_award:
-    - duration: 3.5
+    - duration: 2.5
       segment_displays:
         row_0:
           color: white
@@ -24,7 +24,7 @@ shows:
 
 # TODO: add test so that show won't play twice if scratch guards are already activated
 show_player:
-  award_4_collected:
+  saucer_collect_award_show_start:
     spinner_qualified_from_award:
       loops: 0
       speed: 1.5
@@ -32,4 +32,5 @@ show_player:
       events_when_completed: award_x_show_complete
 
 event_player:
-  award_4_collected: spinner_qualified_from_award
+  saucer_collect_award_show_start:
+    - spinner_qualified_from_award

@@ -19,13 +19,17 @@ ball_devices:
   bd_saucer:
     ball_switches: s_saucer
     eject_coil: c_saucer
-    entrance_count_delay: 1500ms
-    player_controlled_eject_event: saucer_fire
+    entrance_count_delay: 1000ms
+    eject_targets: playfield
+    target_on_unexpected_ball: playfield
+    confirm_eject_switch: s_inlane_left
+    confirm_eject_type: switch
   bd_scoop:
     ball_switches: s_scoop
     eject_coil: c_scoop
     entrance_count_delay: 2s
     eject_timeouts: 3s
+
   # bd_scoop_lower:
   #   ball_switches: s_scoop_lower
   #   eject_coil: c_scoop_lower
