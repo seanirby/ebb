@@ -14,12 +14,16 @@ timers:
       - action: reset
         event: timer_drops_raise_right_complete
   drops_lower_left:
-    end_value: 4
+    end_value: 5
     control_events:
       - action: start
         event: start_saucer_shot_timers
       - action: reset
         event: timer_drops_lower_left_complete
+      - action: stop
+        event: saucer_hit
+      - action: reset
+        event: saucer_hit
 
 event_player:
   # init, leaving upper drop init to multiball mode
@@ -32,6 +36,7 @@ event_player:
 
   timer_drops_raise_right_complete: deactivate_drop_right
   timer_drops_lower_left_complete: activate_drop_left
+  saucer_hit: activate_drop_left
 
   # keyboard control
   s_force_knockdown_coils_active:

@@ -23,7 +23,7 @@ class Racks(Mode):
             self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
 
         self.add_mode_event_handler("timer_drops_lower_left_complete", self.update_if_rack_can_be_collected)
-        self.add_mode_event_handler("saucer_rack_collect", self.handle_rack_collect_hit)
+        self.add_mode_event_handler("saucer_collect_rack_show_start", self.handle_rack_collect_hit)
 
     def init_lights(self):
         self.update_status_lights()
@@ -182,7 +182,7 @@ class Racks(Mode):
             self.init_lights()
             self.machine.timers.racks_collect_transition.stop()
             self.machine.timers.racks_collect_transition.reset()
-            self.machine.events.post("racks_rack_collected")
+            self.machine.events.post("racks_collect_show_complete")
             self.machine.events.post("racks_collected_loop_stop")
 
             # # TODO: is there a way to remove this handler from within itself

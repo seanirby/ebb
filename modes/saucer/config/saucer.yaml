@@ -28,23 +28,22 @@ queue_relay_player:
     wait_for: saucer_fire
 
 shows:
-  saucer_rack_and_award_sequence:
-    - time: 0
-      events:
-        - saucer_rack_collect
-    - time: 1
-      events:
-        - saucer_collect_award
-    # TODO: add planets mode and have it handle showing planet related shows lights
-    # Before firing the saucer we should also play a crazy light show
-    - time: 2
-      events:
-        - saucer_fire
   saucer_award_sequence:
     - time: 0
       events:
         - saucer_collect_award_show_start
     - time: 1
+      events:
+        - awards_award_collected
+        - saucer_fire
+  saucer_rack_award_sequence:
+    - time: 0
+      events:
+        - saucer_collect_rack_show_start
+    - time: 1
+      events:
+        - saucer_collect_award_show_start
+    - time: 2
       events:
         - awards_award_collected
         - saucer_fire
@@ -61,25 +60,29 @@ show_player:
   # saucer_hit{eight_ball_not_ready and jackpot ready}: 
   #   play jackpot sequence then play award sequence
 
-  # # rack collect enabled and jackpot disabled
-  # saucer_hit{device.shots.sh_racks_collect.enabled and not(False)}: 
-  #   saucer_rack_and_award_sequence:
-  #     manual_advance: True
-  #     loops: 0
+  # rack collect enabled and jackpot disabled
+  saucer_hit.1{device.shots.sh_racks_collect.enabled}: 
+    saucer_rack_award_sequence:
+      manual_advance: True
+      loops: 0
 
   # rack collected disabled and jackpot disabled
-  saucer_hit{(not device.shots.sh_racks_collect.enabled) and not(False)}: 
+  saucer_hit.2{not device.shots.sh_racks_collect.enabled}:
     saucer_award_sequence:
       manual_advance: True
       loops: 0
   award_x_show_complete:
     saucer_award_sequence:
       action: advance
-  racks_rack_collected:
-    saucer_rack_and_award_sequence:
+    saucer_rack_award_sequence:
+      action: advance
+  racks_collect_show_complete:
+    saucer_rack_award_sequence:
       action: advance
   saucer_fire:
     saucer_award_sequence:
+      action: stop
+    saucer_rack_award_sequence:
       action: stop
   # if none of the above conditions match then, dirty pool!
   saucer_hit{False}: saucer_dirty_pool

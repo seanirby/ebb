@@ -12,7 +12,7 @@ keyboard:
   d:
     event: debug_dump_stats
   t:
-    event: lanes_upper_lit_complete
+    event: s_hook_active
   b:
     switch: s_force_ball_save
   o:

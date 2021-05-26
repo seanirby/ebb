@@ -89,14 +89,14 @@ shots:
   sh_racks_qualify_collect:
     profile: racks_qualify_collect
     enable_events: racks_enable_qualify_collect
-    disable_events: racks_rack_collected, sh_racks_qualify_collect_hit
+    disable_events: saucer_hit, sh_racks_qualify_collect_hit
     switch: s_hook
     show_tokens:
       light: l_hook_1
   sh_racks_collect:
     profile: racks_collect
     enable_events: sh_racks_qualify_collect_hit
-    disable_events: racks_rack_collected, timer_drops_lower_left_complete
+    disable_events: saucer_collect_rack_show_start, timer_drops_lower_left_complete
     # Have to handle this in code
     # hit_events: sh_saucer_debounced_hit
     show_tokens:
@@ -440,12 +440,11 @@ show_player:
       priority: 10
       sync_ms: 50
   # TOOD: move this to planets mode
-  saucer_rack_collect:
+  saucer_collect_rack_show_start:
     racks_you_won:
-      loops: 2
-      speed: 1.5
-      priority: 101
-      events_when_completed: racks_you_won_complete
+      loops: 1
+      speed: 1
+      priority: 100
 
 shows:
   racks_you_won:
@@ -470,19 +469,19 @@ event_player:
     - activate_drop_right
     - deactivate_drop_left
     - start_saucer_shot_timers
-  racks_collected_loop_stop: saucer_fire
-  racks_collected_loop_complete: saucer_fire
+  racks_collected_loop_stop: racks_collect_show_complete
+  racks_collected_loop_complete: racks_collect_show_complete
 
 timers:
   racks_collect_transition:
     end_value: 50
     tick_interval: 64ms
     # rest is controlled through code
-    control_events:
-      - action: reset
-        event: timer_racks_collect_transition_complete
-      - action: reset
-        event: racks_collected_loop_stop
+    # control_events:
+    #   - action: reset
+    #     event: timer_racks_collect_transition_complete
+    #   - action: reset
+    #     event: racks_collected_loop_stop
 
 sound_loop_player:
   racks_collected_loop_start:
