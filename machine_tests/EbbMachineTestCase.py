@@ -1,7 +1,30 @@
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
 
+DROP_UPPER_DOWN_PLACEHOLDER = "device.drop_targets.upper.complete"
 
 class EbbMachineTestCase(MpfMachineTestCase):
+    def start_mball(self):
+        self.hit_upper_drop()
+        self.hit_scoop()
+        self.assertModeNotRunning('mball')
+        self.assertModeNotRunning('jackpot')
+        self.hit_upper_drop()
+
+    def hit_upper_drop(self):
+        self.assertModeRunning("orbit_left")
+        self.assertPlaceholderEvaluates(False, DROP_UPPER_DOWN_PLACEHOLDER)
+        self.hit_and_release_switch("s_spinner")
+        self.advance_time_and_run(.1)
+        self.hit_and_release_switch("s_drop_upper")
+        self.advance_time_and_run(1)
+
+    def hit_scoop(self):
+        self.assertModeRunning("orbit_left")
+        self.assertPlaceholderEvaluates(True, DROP_UPPER_DOWN_PLACEHOLDER)
+        self.post_event("s_spinner_active")
+        self.hit_switch_and_run("s_scoop", 4)
+        self.advance_time_and_run()
+
     def hit_and_release_switch_and_run(self, name, delta=.1):
         self.hit_and_release_switch(name)
         self.advance_time_and_run(delta)
@@ -16,9 +39,10 @@ class EbbMachineTestCase(MpfMachineTestCase):
             self.hit_and_release_switch('s_flipper_right')
             self.advance_time_and_run(.1)
 
-    def drain_ball(self):
+    # TODO: Implement balls_to_drain functionality
+    def drain_balls(self, balls_to_drain=1, balls_to_assert_on_playfield=0):
         self.hit_switch_and_run("s_trough_0", 1)
-        self.assertBallsOnPlayfield(0)
+        self.assertBallsOnPlayfield(balls_to_assert_on_playfield)
         self.advance_time_and_run(10)
 
     def activate_playfield(self):

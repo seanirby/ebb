@@ -18,10 +18,6 @@ mode:
 
 #   sh_saucer_debounce_hit{(not device.sh_awards_collect.enabled) and (not device.sh_racks_collect.enabled)}: saucer_fire
 
-
-# event_player:
-#   ball_device_bd_saucer_ball_entered: saucer_hit
-
 queue_relay_player:
   balldevice_bd_saucer_ball_eject_attempt:
     post: saucer_hit

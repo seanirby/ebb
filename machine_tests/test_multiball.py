@@ -1,6 +1,4 @@
-from machine_tests.EbbMachineTestCase import EbbMachineTestCase
-
-DROP_UPPER_DOWN_PLACEHOLDER = "device.drop_targets.upper.complete"
+from machine_tests.EbbMachineTestCase import EbbMachineTestCase, DROP_UPPER_DOWN_PLACEHOLDER
 
 class TestMultiball(EbbMachineTestCase):
     def assert_mball_qualifying(self):
@@ -23,20 +21,6 @@ class TestMultiball(EbbMachineTestCase):
         self.start_game()
         self.assert_mball_qualifying()
 
-    def hit_upper_drop(self):
-        self.assertModeRunning("orbit_left")
-        self.assertPlaceholderEvaluates(False, DROP_UPPER_DOWN_PLACEHOLDER)
-        self.hit_and_release_switch("s_spinner")
-        self.advance_time_and_run(.1)
-        self.hit_and_release_switch("s_drop_upper")
-        self.advance_time_and_run(1)
-
-    def hit_scoop(self):
-        self.assertModeRunning("orbit_left")
-        self.assertPlaceholderEvaluates(True, DROP_UPPER_DOWN_PLACEHOLDER)
-        self.post_event("s_spinner_active")
-        self.hit_switch_and_run("s_scoop", 4)
-        self.advance_time_and_run()
 
     def test_mball_qualifying_to_lock(self):
         self.start_game()
