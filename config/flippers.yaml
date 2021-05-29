@@ -2,12 +2,16 @@
 
 flippers:
   flipper_left:
-    main_coil: c_flipper_left
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
     activation_switch: s_flipper_left
   flipper_right:
-    main_coil: c_flipper_right
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
     activation_switch: s_flipper_right
   flipper_upper: 
-    main_coil: c_flipper_upper
+    main_coil: c_flipper_upper_main
+    hold_coil: c_flipper_upper_hold
     activation_switch: s_flipper_right
+
 

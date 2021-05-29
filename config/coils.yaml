@@ -8,32 +8,36 @@ coils:
   c_trough_eject:
     number: A6-B1-1
     default_pulse_ms: 40
-  c_flipper_right:
+  c_flipper_right_main:
     number: A6-B1-2
-    default_hold_power: 0.4
-    default_pulse_ms: 32
-    # default_pulse_ms: 20
-  c_flipper_left:
+    default_pulse_ms: 30
+  c_flipper_right_hold:
     number: A6-B1-3
-    default_hold_power: 0.4
-    default_pulse_ms: 32
-    # default_pulse_ms: 20
-  c_sling_right:
+    default_hold_power: 1
+  c_flipper_left_main:
     number: A6-B1-4
+    default_pulse_ms: 30
+  c_flipper_left_hold:
+    number: A6-B1-5
+    default_hold_power: 1
+  c_sling_right:
+    number: A6-B1-6
     default_pulse_ms: 6
   c_sling_left:
-    number: A6-B1-5
+    number: A6-B1-7
     default_pulse_ms: 6
-  c_flipper_upper:
+  c_flipper_upper_main:
     number: A6-B0-0
-    default_hold_power: 0.2
-    default_pulse_ms: 38
+    default_pulse_ms: 30 # 38
+  c_flipper_upper_hold:
+    number: A6-B0-1
+    default_hold_power: 1 #0.2
     # default_pulse_ms: 17
   c_drop_right_knockdown:
-    number: A6-B0-1
+    number: A6-B0-2
     default_pulse_ms: 12
   c_drop_right:
-    number: A6-B0-2
+    number: A6-B0-3
     default_pulse_ms: 25
   # Board 7 (Upper)
   c_scoop:
