@@ -1,0 +1,34 @@
+#config_version=5
+
+mode:
+  start_events: mode_mball_started
+  stop_events: mode_mball_stopping
+
+shot_profiles:
+  jackpot:
+    states:
+      - name: flash
+        show: flash_color
+        speed: 10
+
+variable_player:
+  sh_jackpot_collect_hit:
+    score: 5000000
+
+shots:
+  sh_jackpot_qualify:
+    switch: s_drop_right
+    enable_events: s_hook_active
+    disable_events: sh_jackpot_qualify_hit, deactivate_drop_right
+    profile: jackpot
+    show_tokens:
+      color: purple
+      light: l_drop_right
+  sh_jackpot_collect:
+    hit_events: saucer_hit
+    enable_events: sh_jackpot_qualify_hit
+    disable_events: sh_jackpot_collect_hit, activate_drop_left
+    profile: jackpot
+    show_tokens:
+      color: purple
+      light: l_drop_left_arrow_2
