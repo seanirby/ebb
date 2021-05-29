@@ -16,7 +16,7 @@ class Racks(Mode):
         self.init_lights()
 
         if self.player["ball"]==1:
-            self.speak("Rack em up <break time='150ms'/> human")
+            self.delay.add(500, self.announce_game_start, None)
 
 
         for i in range(0, NUM_TARGETS):
@@ -24,6 +24,10 @@ class Racks(Mode):
 
         self.add_mode_event_handler("timer_drops_lower_left_complete", self.update_if_rack_can_be_collected)
         self.add_mode_event_handler("saucer_collect_rack_show_start", self.handle_rack_collect_hit)
+
+    def announce_game_start(self, **kwargs):
+        self.speak("Rack em up <break time='100ms'/> human")
+
 
     def init_lights(self):
         self.update_status_lights()
