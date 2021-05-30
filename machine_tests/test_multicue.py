@@ -136,6 +136,6 @@ class TestMulticue(EbbMachineTestCase):
         self.start_game()
         self.activate_multicue()
         self.assertPlaceholderEvaluates(False, MULTICUE_SHOT_ENABLED_PLACEHOLDER)
-        self.drain_ball()
+        self.drain_balls(1, 0)
         self.assertPlaceholderEvaluates(False, MULTICUE_SHOT_ENABLED_PLACEHOLDER)
         self.assertPlayerVarEqual(2, "ball")

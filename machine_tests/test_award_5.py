@@ -15,3 +15,11 @@ class TestAward5(EbbMachineTestCase):
 
     def test_collected(self):
         self.start_game()
+        self.select_award_left(5)
+        self.advance_time_and_run(1)
+
+        current_score = self.machine.game.player.vars["score"]
+        self.collect_award()
+        new_score = self.machine.game.player.vars["score"]
+        # TODO: may need a fuzzier test once we start adding scores for shots made
+        self.assertGreater(new_score, 999999 + current_score)
