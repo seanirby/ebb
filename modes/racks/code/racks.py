@@ -1,5 +1,4 @@
-import subprocess
-from mpf.core.mode import Mode
+from modes.ebb_mode import EbbMode
 
 NUM_TARGETS = 7
 MAX_PROGRESS = 4
@@ -10,8 +9,7 @@ ON = 1
 FLASH = 2
 MULTICUE_SIZE = 1
 
-
-class Racks(Mode):
+class Racks(EbbMode):
     def mode_start(self, **kwargs):
         self.init_lights()
 
@@ -27,7 +25,6 @@ class Racks(Mode):
 
     def announce_game_start(self, **kwargs):
         self.speak("Rack em up <break time='100ms'/> human")
-
 
     def init_lights(self):
         self.update_status_lights()
@@ -83,8 +80,10 @@ class Racks(Mode):
         self.update_if_rack_can_be_collected()
 
     def speak(self, message):
+        pass
         # Create subprocess
-        subprocess.Popen(["espeak", "-v", "robot", "-m", "'{}'".format(message)])
+        # subprocess.Popen(["C:\Program Files (x86)\eSpeak\command_line\espeak.exe", "-v", "robot", "-m", "'{}'"].format(message)])
+        # subprocess.Popen(["espeak", "-v", "robot", "-m", "'{}'".format(message)])
 
     def handle_speech(self, hit_target_number):
         hit_target_progress = self.player["tl_{}_progress".format(hit_target_number)]
