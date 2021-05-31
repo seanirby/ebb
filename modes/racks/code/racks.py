@@ -1,8 +1,5 @@
-from modes.ebb_mode import EbbMode
-
-NUM_TARGETS = 7
-MAX_PROGRESS = 4
-NUM_RACKS = 8
+import pdb
+from modes.ebb_mode import EbbMode, NUM_TARGETS, MAX_PROGRESS, NUM_PLANETS, PLANETS
 
 OFF = 0
 ON = 1
@@ -11,148 +8,54 @@ MULTICUE_SIZE = 1
 
 class Racks(EbbMode):
     def mode_start(self, **kwargs):
-        self.init_lights()
-
-        if self.player["ball"]==1:
-            self.delay.add(500, self.announce_game_start, None)
-
-
-        for i in range(0, NUM_TARGETS):
-            self.add_mode_event_handler("sh_tl_{}_hit".format(i), self.handle_target_hit, target_number=i)
-
-        self.add_mode_event_handler("timer_drops_lower_left_complete", self.update_if_rack_can_be_collected)
-        self.add_mode_event_handler("saucer_collect_rack_show_start", self.handle_rack_collect_hit)
-
-    def announce_game_start(self, **kwargs):
-        self.speak("Rack em up <break time='100ms'/> human")
-
-    def init_lights(self):
-        self.update_status_lights()
-        self.update_target_lights()
-
-    def update_status_lights(self):
-        rack_progress = self.player.racks
-        for i in range(0, NUM_RACKS):
-            status_shot_name = "sh_racks_status_{}".format(i)
-            status_shot = self.machine.shots[status_shot_name]
-            if i < rack_progress:
-                # collected rack
-                status_shot.jump(2)
-            elif i == rack_progress:
-                # current rack
-                status_shot.jump(1)
-            else:
-                status_shot.jump(0)
-
-
-    def update_target_lights(self):
-        for i in range(0, NUM_TARGETS):
-            progress = self.player["tl_{}_progress".format(i)]
-            for j in range(0, MAX_PROGRESS):
-                shot_name = "l_{}_{}".format(i, j)
-                shot = self.machine.shots[shot_name]
-                if progress == 0 and j == 0:
-                    # current
-                    shot.jump(FLASH)
-                else:
-                    if j < progress:
-                        shot.jump(ON)
-                    else:
-                        shot.jump(OFF)
-        
-    def handle_target_hit(self, **kwargs):
-        target_number = kwargs.get("target_number")
-        multicue = self.machine.shots["sh_multicue_{}".format(target_number)]
-
-        targets=[target_number]
-
-        if multicue.state_name == "lit":
-            multicue_position = self.player["multicue_position"]
-            self.machine.events.post("multicue_collected")
-            # TODO: dedupe the formula below
-            targets = list(map(lambda x: x % NUM_TARGETS, list(range(multicue_position-MULTICUE_SIZE, multicue_position+MULTICUE_SIZE+1))))
-
-        for target in targets:
-            self.handle_speech(target)
-            self.update_target_progress(target)
-
-        self.update_target_lights()
-        self.update_if_rack_can_be_collected()
-
-    def speak(self, message):
-        pass
-        # Create subprocess
-        # subprocess.Popen(["C:\Program Files (x86)\eSpeak\command_line\espeak.exe", "-v", "robot", "-m", "'{}'"].format(message)])
-        # subprocess.Popen(["espeak", "-v", "robot", "-m", "'{}'".format(message)])
-
-    def handle_speech(self, hit_target_number):
-        hit_target_progress = self.player["tl_{}_progress".format(hit_target_number)]
-        others_completed=True
-
-        for target in range(NUM_TARGETS):
-            if hit_target_number==target:
-                continue
-            else:
-                progress = self.player["tl_{}_progress".format(target)]
-                if progress==0:
-                    others_completed = False
-                    break
-
-        if hit_target_progress==0:
-            if others_completed:
-                self.speak("{} Ball. Get <break time='30ms'> The <break time='100ms'> Eight <break time='150ms'> Ball".format(hit_target_number+1))
-            else:
-                self.speak("{} ball".format(hit_target_number+1))
+        self.add_mode_event_handler("sh_racks_collect_hit", self.handle_rack_collect_hit)
 
     def handle_rack_collect_hit(self, **kwargs):
-        all_progress = []
+        planet_finished_number = self.player["planets"] - 1
+        planet_finished = PLANETS[planet_finished_number]
 
-        for i in range(0 ,NUM_TARGETS):
-            all_progress.append(self.player["tl_{}_progress".format(i)])
+        if planet_finished=="mars" and self.player["mars_earth_enabled"]==1:
+            planet_finished="mars_earth"
 
-        rack_progress_collecting = min(all_progress)
-        self.machine.events.post("min_progress_is_{}".format(rack_progress_collecting))
-        if rack_progress_collecting == 0:
+        self.machine.events.post("racks_rack_collected")
+        self.machine.events.post("racks_rack_collected_{}".format(planet_finished_number))
+
+
+
+        self.racks_collect_transition_start(planet_finished)
+    
+    def reset_progress_vars(self):
+        # TODO: clean this up
+        # reset all progress vars
+        for planet in PLANETS:
+            for i in range(NUM_TARGETS):
+                self.player["{}_{}_progress".format(planet, i)] = 0
+
+        # reset mars earth too
+        for i in range(NUM_TARGETS):
+            self.player["mars_earth_{}_progress".format(planet, i)] = 0
+
+    def racks_collect_transition_start(self, planet):
+        if planet=="mars":
+            self.machine.events.post("racks_collect_show_complete")
+            self.machine.events.post("racks_collected_loop_stop")
+            self.reset_progress_vars()
             return
         
-        if self.machine.shots["sh_racks_collect"].state_name=="unlit":
-            return
-
-
-        # kickoff async transition handler
-        self.racks_collect_transition_start()
-
-    def update_target_progress(self, target_number):
-        target_progress_var = "tl_{}_progress".format(target_number)
-        current_progress = self.player[target_progress_var]
-        self.player[target_progress_var] = min(current_progress + 1, MAX_PROGRESS)
-
-    def update_if_rack_can_be_collected(self, **kwargs):
-        update = True
-        for i in range(0, NUM_TARGETS):
-            progress = self.player["tl_{}_progress".format(i)]
-            if progress == 0:
-                update = False
-                break
-
-        if update:
-            self.machine.events.post("racks_enable_qualify_collect")
-
-    def racks_collect_transition_start(self, **kwargs):
-        # assign tick handler
-
         collected_targets = []
         for i in reversed(range(NUM_TARGETS)):
-            progress = self.player["tl_{}_progress".format(i)]
+            # TODO: need to actually get the active mode instead of using the hardcoded 'tl'
+            progress = self.player["{}_{}_progress".format(planet, i)]
             progress_status_shots = []
             if (progress > 0):
                 for j in reversed(range(progress)):
-                    shot = self.machine.shots["l_{}_{}".format(i, j)]
+                    # TODO: need to actually get the active mode instead of using the hardcoded 'tl'
+                    shot = self.machine.shots["sh_{}_l_{}_{}".format(planet, i, j)]
                     progress_status_shots.append(shot)
                 collected_targets.append(progress_status_shots)
 
         assert(len(collected_targets) > 0)
-        key = self.machine.events.add_handler('timer_racks_collect_transition_tick', self.racks_collect_transition_tick_handler, collected_targets=collected_targets)
+        key = self.machine.events.add_handler('timer_racks_collect_transition_tick', self.racks_collect_transition_tick_handler, collected_targets=collected_targets, planet=planet)
         # kick things off
 
         self.machine.events.post("racks_collected_loop_start")
@@ -161,11 +64,14 @@ class Racks(EbbMode):
         # TODO: not sure if this is needed
         self.delay.add(6000, self.remove_transition_handler_fallback, None, transition_handler_key=key)
 
+    
     def racks_collect_transition_tick_handler(self, **kwargs):
-
+        # TODO: need to get shots from active mode, not hardcode tl_{} lights
         key = kwargs.get("transition_handler_key")
         ticks = kwargs.get("ticks")
         collected_targets = kwargs.get("collected_targets")
+        planet = kwargs.get("planet")
+
         # find first lit shot in collected_targets nested list
         shot_to_update = None
         for row in collected_targets:
@@ -181,13 +87,13 @@ class Racks(EbbMode):
             # game logic
             self.player.racks += 1
             for i in range(0 ,NUM_TARGETS):
-                self.player["tl_{}_progress".format(i)] = 0
-            self.init_lights()
+                self.player["{}_{}_progress".format(planet, i)] = 0
+            self.update_target_lights(planet)
             self.machine.timers.racks_collect_transition.stop()
             self.machine.timers.racks_collect_transition.reset()
             self.machine.events.post("racks_collect_show_complete")
             self.machine.events.post("racks_collected_loop_stop")
-
+            self.reset_progress_vars()
             # # TODO: is there a way to remove this handler from within itself
             # self.machine.events.remove_handler_by_key(key)
         else:
@@ -195,9 +101,21 @@ class Racks(EbbMode):
             self.player.score += 100000
             shot.jump(OFF)
 
+    def update_target_lights(self, planet):
+        for i in range(0, NUM_TARGETS):
+            progress = self.player["{}_{}_progress".format(planet, i)]
+            for j in range(0, MAX_PROGRESS):
+                shot_name = "sh_{}_l_{}_{}".format(planet, i, j)
+                shot = self.machine.shots[shot_name]
+                if progress == 0 and j == 0:
+                    # current
+                    shot.jump(FLASH)
+                else:
+                    if j < progress:
+                        shot.jump(ON)
+                    else:
+                        shot.jump(OFF)
+
     def remove_transition_handler_fallback(self, **kwargs):
         key = kwargs.get('transition_handler_key')
         self.machine.events.remove_handler_by_key(key)
-        
-
-        

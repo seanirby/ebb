@@ -57,8 +57,12 @@ switches:
   #   number: A1-B1-2
   s_sling_left:
     number: A1-B1-2
+    debounce: quick
+    ignore_window_ms: 0
   s_sling_right:
     number: A1-B1-4
+    debounce: quick
+    ignore_window_ms: 0
   # s_sling_right_lower:
   #   number: A1-B1-5
   s_inlane_right:
@@ -103,12 +107,15 @@ switches:
   s_pop_center:
     number: A3-B0-3
     debounce: quick
+    ignore_window_ms: 0
   s_pop_right:
     number: A3-B0-4
     debounce: quick
+    ignore_window_ms: 0
   s_pop_left:
     number: A3-B0-5
     debounce: quick
+    ignore_window_ms: 0
   s_scoop:
     number: A3-B1-0
     type: NC

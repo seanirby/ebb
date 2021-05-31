@@ -1,0 +1,118 @@
+#show_version=5
+
+- time: 0
+  lights:
+    (grid_r_rack_0):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_1):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_2):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_3):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_4):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_5):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_6):
+      color: stop
+      fade: (fade)
+- time: "+2"
+  lights:
+    (grid_r_rack_0):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_1):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_2):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_3):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_4):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_5):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_6):
+      color: stop
+      fade: (fade)
+- time: "+1"
+  lights:
+    (grid_r_rack_0):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_1):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_2):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_3):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_4):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_5):
+      color: stop
+      fade: (fade)
+    (grid_r_rack_6):
+      color: stop
+      fade: (fade)
+- time: "+1"
+  lights:
+    (grid_r_rack_0):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_1):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_2):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_3):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_4):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_5):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_6):
+      color: stop
+      fade: (fade)
+- time: "+1"
+  lights:
+    (grid_r_rack_0):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_1):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_2):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_3):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_4):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_5):
+      color: (color)
+      fade: (fade)
+    (grid_r_rack_6):
+      color: (color)
+      fade: (fade)
+- duration: -1

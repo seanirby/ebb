@@ -7,23 +7,58 @@ player_vars:
     initial_value: 2
   mballs_played:
     initial_value: 0
-  racks:
+  planets:
     initial_value: 0
-  # target left progress
-  tl_0_progress:
+  # earth target left progress
+  earth_0_progress:
     initial_value: 0
-  tl_1_progress:
+  earth_1_progress:
     initial_value: 0
-  tl_2_progress:
+  earth_2_progress:
     initial_value: 0
-  tl_3_progress:
+  earth_3_progress:
     initial_value: 0
-  tl_4_progress:
+  earth_4_progress:
     initial_value: 0
-  tl_5_progress:
+  earth_5_progress:
     initial_value: 0
-  tl_6_progress:
+  earth_6_progress:
     initial_value: 0
+  # earth target left progress
+  mars_hurry_up_completed:
+    initial_value: 0
+  mars_earth_enabled:
+    initial_value: 0
+  mars_0_progress:
+    initial_value: 0
+  mars_1_progress:
+    initial_value: 0
+  mars_2_progress:
+    initial_value: 0
+  mars_3_progress:
+    initial_value: 0
+  mars_4_progress:
+    initial_value: 0
+  mars_5_progress:
+    initial_value: 0
+  mars_6_progress:
+    initial_value: 0
+  # earth target left progress
+  mars_earth_0_progress:
+    initial_value: 0
+  mars_earth_1_progress:
+    initial_value: 0
+  mars_earth_2_progress:
+    initial_value: 0
+  mars_earth_3_progress:
+    initial_value: 0
+  mars_earth_4_progress:
+    initial_value: 0
+  mars_earth_5_progress:
+    initial_value: 0
+  mars_earth_6_progress:
+    initial_value: 0
+
   # wide shot
   multicue_position:
     initial_value: 3

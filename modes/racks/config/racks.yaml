@@ -1,22 +1,14 @@
 #config_version=5
 
-# when first row of racks is down, the scoop lights to collect
-
+# this is a generic mode for shared racks logic, repsonsibilities include:
+# showing light shows when a rack shot is collected
+# qualify collect and collect shot, (the eight ball shot)
 mode:
   start_events: ball_starting
   code: racks.Racks
   priority: 100
 
 shot_profiles:
-  racks_status:
-    states:
-      - name: unlit
-        show: stop
-      - name: current
-        show: flash_color
-        speed: 10
-      - name: collected
-        show: led_color
   racks_qualify_collect:
     states:
       - name: flash
@@ -27,65 +19,8 @@ shot_profiles:
       - name: flash
         show: flash
         speed: 10
-  l:
-    states:
-      - name: off
-        show: stop
-      - name: on
-        show: on
-      - name: flash
-        show: flash
-        speed: 10
 
 shots:
-  sh_racks_status_0:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_0
-      color: blue
-  sh_racks_status_1:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_1
-      color: blue
-  sh_racks_status_2:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_2
-      color: blue
-  sh_racks_status_3:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_3
-      color: blue
-  sh_racks_status_4:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_4
-      color: blue
-  sh_racks_status_5:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_5
-      color: blue
-  sh_racks_status_6:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_6
-      color: blue
-  sh_racks_status_7:
-    profile: racks_status
-    start_enabled: True
-    show_tokens:
-      light: l_status_circle_7
-      color: blue
   sh_racks_qualify_collect:
     profile: racks_qualify_collect
     enable_events: racks_enable_qualify_collect
@@ -95,374 +30,93 @@ shots:
       light: l_hook_1
   sh_racks_collect:
     profile: racks_collect
+    hit_events: saucer_collect_rack_show_start
     enable_events: sh_racks_qualify_collect_hit
-    disable_events: saucer_collect_rack_show_start, timer_drops_lower_left_complete
+    disable_events: sh_racks_collect_hit, timer_drops_lower_left_complete
     # Have to handle this in code
     # hit_events: sh_saucer_debounced_hit
     show_tokens:
       light: l_drop_left_arrow_1
-  sh_tl_0:
-    hit_events: s_standup_left_0_active, spot_ball_0
-  sh_tl_1:
-    hit_events: s_standup_left_1_active, spot_ball_1
-  sh_tl_2:
-    hit_events: s_standup_left_2_active, spot_ball_2
-  sh_tl_3:
-    hit_events: s_standup_left_3_active, spot_ball_3
-  sh_tl_4:
-    hit_events: s_standup_left_4_active, spot_ball_4
-  sh_tl_5:
-    hit_events: s_standup_left_5_active, spot_ball_5
-  sh_tl_6:
-    hit_events: s_standup_left_6_active, spot_ball_6
-  l_0_0:
-    profile: l
-    show_tokens:
-      light: l_standup_left_0_0
-  l_0_1:
-    profile: l
-    show_tokens:
-      light: l_standup_left_0_1
-  l_0_2:
-    profile: l
-    show_tokens:
-      light: l_standup_left_0_2
-  l_0_3:
-    profile: l
-    show_tokens:
-      light: l_standup_left_0_3
-  l_0_4:
-    profile: l
-    show_tokens:
-      light: l_standup_left_0_4
-  l_1_0:
-    profile: l
-    show_tokens:
-      light: l_standup_left_1_0
-  l_1_1:
-    profile: l
-    show_tokens:
-      light: l_standup_left_1_1
-  l_1_2:
-    profile: l
-    show_tokens:
-      light: l_standup_left_1_2
-  l_1_3:
-    profile: l
-    show_tokens:
-      light: l_standup_left_1_3
-  l_1_4:
-    profile: l
-    show_tokens:
-      light: l_standup_left_1_4
-  l_2_0:
-    profile: l
-    show_tokens:
-      light: l_standup_left_2_0
-  l_2_1:
-    profile: l
-    show_tokens:
-      light: l_standup_left_2_1
-  l_2_2:
-    profile: l
-    show_tokens:
-      light: l_standup_left_2_2
-  l_2_3:
-    profile: l
-    show_tokens:
-      light: l_standup_left_2_3
-  l_2_4:
-    profile: l
-    show_tokens:
-      light: l_standup_left_2_4
-  l_3_0:
-    profile: l
-    show_tokens:
-      light: l_standup_left_3_0
-  l_3_1:
-    profile: l
-    show_tokens:
-      light: l_standup_left_3_1
-  l_3_2:
-    profile: l
-    show_tokens:
-      light: l_standup_left_3_2
-  l_3_3:
-    profile: l
-    show_tokens:
-      light: l_standup_left_3_3
-  l_3_4:
-    profile: l
-    show_tokens:
-      light: l_standup_left_3_4
-  l_4_0:
-    profile: l
-    show_tokens:
-      light: l_standup_left_4_0
-  l_4_1:
-    profile: l
-    show_tokens:
-      light: l_standup_left_4_1
-  l_4_2:
-    profile: l
-    show_tokens:
-      light: l_standup_left_4_2
-  l_4_3:
-    profile: l
-    show_tokens:
-      light: l_standup_left_4_3
-  l_4_4:
-    profile: l
-    show_tokens:
-      light: l_standup_left_4_4
-  l_5_0:
-    profile: l
-    show_tokens:
-      light: l_standup_left_5_0
-  l_5_1:
-    profile: l
-    show_tokens:
-      light: l_standup_left_5_1
-  l_5_2:
-    profile: l
-    show_tokens:
-      light: l_standup_left_5_2
-  l_5_3:
-    profile: l
-    show_tokens:
-      light: l_standup_left_5_3
-  l_5_4:
-    profile: l
-    show_tokens:
-      light: l_standup_left_5_4
-  l_6_0:
-    profile: l
-    show_tokens:
-      light: l_standup_left_6_0
-  l_6_1:
-    profile: l
-    show_tokens:
-      light: l_standup_left_6_1
-  l_6_2:
-    profile: l
-    show_tokens:
-      light: l_standup_left_6_2
-  l_6_3:
-    profile: l
-    show_tokens:
-      light: l_standup_left_6_3
-  l_6_4:
-    profile: l
-    show_tokens:
-      light: l_standup_left_6_4
+  sh_racks_0:
+    hit_events: s_standup_left_0_active
+  sh_racks_1:
+    hit_events: s_standup_left_1_active
+  sh_racks_2:
+    hit_events: s_standup_left_2_active
+  sh_racks_3:
+    hit_events: s_standup_left_3_active
+  sh_racks_4:
+    hit_events: s_standup_left_4_active
+  sh_racks_5:
+    hit_events: s_standup_left_5_active
+  sh_racks_6:
+    hit_events: s_standup_left_6_active
 
-
-# these sequence shots are helpers to let me show the right 'pulse' light show when two targets are hit at once
+# TODO: I can potentially use these for other things to like detecting
+# double shots or announcing shots in the right order
 sequence_shots:
-  sh_tl_5_6_6:
+  sh_racks_5_6_6:
     switch_sequence:
       - s_standup_left_6
       - s_standup_left_5
     sequence_timeout: 50ms
-  sh_tl_5_6_5:
+  sh_racks_5_6_5:
     switch_sequence:
       - s_standup_left_5
       - s_standup_left_6
     sequence_timeout: 50ms
-  sh_tl_4_5_5:
+  sh_racks_4_5_5:
     switch_sequence:
       - s_standup_left_5
       - s_standup_left_4
     sequence_timeout: 50ms
-  sh_tl_4_5_4:
+  sh_racks_4_5_4:
     switch_sequence:
       - s_standup_left_4
       - s_standup_left_5
     sequence_timeout: 50ms
-  sh_tl_3_4_4:
+  sh_racks_3_4_4:
     switch_sequence:
       - s_standup_left_4
       - s_standup_left_3
     sequence_timeout: 50ms
-  sh_tl_3_4_3:
+  sh_racks_3_4_3:
     switch_sequence:
       - s_standup_left_3
       - s_standup_left_4
     sequence_timeout: 50ms
-  sh_tl_2_3_3:
+  sh_racks_2_3_3:
     switch_sequence:
       - s_standup_left_3
       - s_standup_left_2
     sequence_timeout: 50ms
-  sh_tl_2_3_2:
+  sh_racks_2_3_2:
     switch_sequence:
       - s_standup_left_2
       - s_standup_left_3
     sequence_timeout: 50ms
-  sh_tl_1_2_2:
+  sh_racks_1_2_2:
     switch_sequence:
       - s_standup_left_2
       - s_standup_left_1
     sequence_timeout: 50ms
-  sh_tl_1_2_1:
+  sh_racks_1_2_1:
     switch_sequence:
       - s_standup_left_1
       - s_standup_left_2
     sequence_timeout: 50ms
-  sh_tl_0_1_1:
+  sh_racks_0_1_1:
     switch_sequence:
       - s_standup_left_1
       - s_standup_left_0
     sequence_timeout: 50ms
-  sh_tl_0_1_0:
+  sh_racks_0_1_0:
     switch_sequence:
       - s_standup_left_0
       - s_standup_left_1
     sequence_timeout: 50ms
-  
 
 # TODO: I should probably create new light shows for when two targets are hit at once
-show_player:
-  # note hte slightly higher priority so the doublehits will show first
-  sh_tl_5_6_6_hit:
-    pulse_standup_left_6:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_5_6_5_hit:
-    pulse_standup_left_5:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_4_5_5_hit:
-    pulse_standup_left_5:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_4_5_4_hit:
-    pulse_standup_left_4:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_3_4_4_hit:
-    pulse_standup_left_4:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_3_4_3_hit:
-    pulse_standup_left_3:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_2_3_3_hit:
-    pulse_standup_left_3:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_2_3_2_hit:
-    pulse_standup_left_2:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_1_2_2_hit:
-    pulse_standup_left_2:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_1_2_1_hit:
-    pulse_standup_left_1:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_0_1_1_hit:
-    pulse_standup_left_1:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-  sh_tl_0_1_0_hit:
-    pulse_standup_left_0:
-      loops: 0
-      speed: 35
-      priority: 11
-      sync_ms: 50
-
-  sh_tl_6_hit:
-    pulse_standup_left_6:
-      loops: 0
-      speed: 35
-      priority: 10
-      sync_ms: 50
-  sh_tl_5_hit:
-    pulse_standup_left_5:
-      loops: 0
-      speed: 35
-      priority: 10
-      sync_ms: 50
-  sh_tl_4_hit:
-    pulse_standup_left_4:
-      loops: 0
-      speed: 35
-      priority: 10
-      sync_ms: 50
-  sh_tl_3_hit:
-    pulse_standup_left_3:
-      loops: 0
-      speed: 35
-      priority: 10
-      sync_ms: 50
-  sh_tl_2_hit:
-    pulse_standup_left_2:
-      loops: 0
-      speed: 35
-      priority: 10
-      sync_ms: 50
-  sh_tl_1_hit:
-    pulse_standup_left_1:
-      loops: 0
-      speed: 35
-      priority: 10
-      sync_ms: 50
-  sh_tl_0_hit:
-    pulse_standup_left_0:
-      loops: 0
-      speed: 35
-      priority: 10
-      sync_ms: 50
-  # TOOD: move this to planets mode
-  saucer_collect_rack_show_start:
-    racks_you_won:
-      loops: 1
-      speed: 1
-      priority: 100
-
-shows:
-  racks_you_won:
-    - duration: 1
-      segment_displays:
-        row_0:
-          color: white
-          text: "YOU WON"
-          transition:
-            type: push
-            direction: left
-        row_1:
-          color: white
-          text: "YOU WON"
-          transition:
-            type: push
-            direction: right
-
 # TODO: duplicate logic in awards.yaml, do i need to abstract this out?
 event_player:
   sh_racks_qualify_collect_hit:
@@ -487,12 +141,7 @@ sound_loop_player:
   racks_collected_loop_start:
     loops:
       action: play
-      sound_loop_set: rack_collected_transition_start
-      timing: now
-  racks_collected_loop_complete:
-    loops:
-      action: play
-      sound_loop_set: rack_collected_transition_complete
+      sound_loop_set: racks_collected_success_snippet
       timing: now
   racks_collected_loop_stop:
     loops:
@@ -500,7 +149,6 @@ sound_loop_player:
 
 sound_player:
   racks_collected_loop_stop: success_0
-  racks_collected_loop_complete: success_0
   sh_tl_0_hit: zap_0
   sh_tl_1_hit: zap_1
   sh_tl_2_hit: zap_2
@@ -508,5 +156,3 @@ sound_player:
   sh_tl_4_hit: zap_4
   sh_tl_5_hit: zap_5
   sh_tl_6_hit: zap_6
-    
-

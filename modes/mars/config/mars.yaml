@@ -1,0 +1,588 @@
+#config_version=5
+
+mode:
+  start_events: planets_mars_start
+  stop_events: sh_racks_collect_hit
+  code: mars.Mars
+
+shows:
+  mars_hurry_up_flash_one:
+    - duration: 1
+      lights:
+        (l_0): (color)
+        (l_1): stop
+        (l_2): stop
+        (l_3): stop
+    - duration: 1
+      lights:
+        (l_0): stop
+        (l_1): stop
+        (l_2): stop
+        (l_3): stop
+  mars_hurry_up_flash_two:
+    - duration: 1
+      lights:
+        (l_0): (color)
+        (l_1): (color)
+        (l_2): (color)
+        (l_3): (color)
+    - duration: 1
+      lights:
+        (l_0): (color)
+        (l_1): stop
+        (l_2): stop
+        (l_3): stop
+  mars_hurry_up_flash_three:
+    - duration: 1
+      lights:
+        (l_0): (color)
+        (l_1): (color)
+        (l_2): (color)
+        (l_3): (color)
+    - duration: 1
+      lights:
+        (l_0): (color)
+        (l_1): (color)
+        (l_2): stop
+        (l_3): stop
+  mars_hurry_up_flash_four:
+    - duration: 1
+      lights:
+        (l_0): (color)
+        (l_1): (color)
+        (l_2): (color)
+        (l_3): (color)
+    - duration: 1
+      lights:
+        (l_0): (color)
+        (l_1): (color)
+        (l_2): (color)
+        (l_3): stop
+  mars_hurry_up_complete:
+    - duration: -1
+      lights:
+        (l_0): (color)
+        (l_1): (color)
+        (l_2): (color)
+        (l_3): (color)
+
+shot_profiles:
+  mars_hurry_up:
+    states:
+      - name: flash_one
+        show: mars_hurry_up_flash_one
+        speed: 10
+      - name: flash_two
+        show: mars_hurry_up_flash_two
+        speed: 10
+      - name: flash_three
+        show: mars_hurry_up_flash_three
+        speed: 10
+      - name: flash_four
+        show: mars_hurry_up_flash_four
+        speed: 10
+      - name: complete
+        show: mars_hurry_up_complete
+  mars_multicue:
+    states:
+      - name: flash
+        show: flash_color
+        speed: 10
+  mars_earth_l:
+    states:
+      - name: off
+        show: stop
+      - name: on
+        show: on
+      - name: flash
+        show: flash
+        speed: 10
+
+variable_player:
+  sh_mars_hurry_up_flash_four_hit:
+    mars_hurry_up_completed:
+      action: set
+      int: 1
+    mars_earth_enabled:
+      action: set
+      int: 0
+  sh_mars_multicue_hit{current_player.mars_earth_enabled==1}:
+    mars_earth_enabled:
+      action: set
+      int: 0
+  timer_mars_hurry_up_complete{not current_player.mars_hurry_up_completed}:
+    mars_earth_enabled:
+      action: set
+      int: 1
+    
+event_player:
+  sh_mars_hurry_up_flash_four_hit.1:
+    - racks_enable_qualify_collect
+  player_mars_earth_enabled.1: mars_toggled_earth_rules
+  player_mars_earth_enabled.2{value==1}: mars_enable_earth_rules
+  player_mars_earth_enabled.3{value==0}: mars_disable_earth_rules
+  mode_mars_started.1{current_player.mars_earth_enabled==0}: mars_disable_earth_rules
+  mode_mars_started.2{current_player.mars_earth_enabled==1}: mars_enable_earth_rules
+
+  # announcer calls
+  sh_mars_multicue_hit:
+    announce_message:
+      message: "Martian hurry up activated"
+  sh_mars_hurry_up_flash_one_hit:
+    announce_message:
+      message: "Martian hurry up activatedd"
+  sh_mars_hurry_up_flash_two_hit:
+    announce_message:
+      message: "Hurry up level two completed"
+  sh_mars_hurry_up_flash_three_hit:
+    announce_message:
+      message: "Hurry up level three completed"
+  sh_mars_hurry_up_flash_four_hit.2:
+    announce_message:
+      message: "Martian hurry up completed.  Get <break time='30ms'> The <break time='100ms'> Eight <break time='150ms'> Ball"
+  timer_mars_hurry_up_tick{ticks_remaining==20}:
+    announce_message:
+      message: "20 seconds remaining"
+  timer_mars_hurry_up_tick{ticks_remaining==15}:
+    announce_message:
+      message: "15 seconds remaining"
+  timer_mars_hurry_up_tick{ticks_remaining==10}:
+    announce_message:
+      message: "10"
+  timer_mars_hurry_up_tick{ticks_remaining==9}:
+    announce_message:
+      message: "9"
+  timer_mars_hurry_up_tick{ticks_remaining==8}:
+    announce_message:
+      message: "8"
+  timer_mars_hurry_up_tick{ticks_remaining==7}:
+    announce_message:
+      message: "7"
+  timer_mars_hurry_up_tick{ticks_remaining==6}:
+    announce_message:
+      message: "6"
+  timer_mars_hurry_up_tick{ticks_remaining==5}:
+    announce_message:
+      message: "5"
+  timer_mars_hurry_up_tick{ticks_remaining==4}:
+    announce_message:
+      message: "4"
+  timer_mars_hurry_up_tick{ticks_remaining==3}:
+    announce_message:
+      message: "3"
+  timer_mars_hurry_up_tick{ticks_remaining==2}:
+    announce_message:
+      message: "2"
+  timer_mars_hurry_up_tick{ticks_remaining==1}:
+    announce_message:
+      message: "1. Hurry up deactivated"
+
+
+shots:
+  sh_mars_multicue:
+    switch: s_standup_upper
+    profile: mars_multicue
+    disable_events: sh_mars_hurry_up_flash_four_hit
+    enable_events: mars_enable_earth_rules, timer_mars_hurry_up_started
+    show_tokens:
+      light: l_standup_upper
+      color: red
+  sh_mars_hurry_up:
+    switch: s_standup_left_2
+    enable_events: mars_disable_earth_rules
+    disable_events: timer_mars_hurry_up_complete, mars_enable_earth_rules
+    profile: mars_hurry_up
+    show_tokens:
+      l_0: l_standup_left_2_0
+      l_1: l_standup_left_2_1
+      l_2: l_standup_left_2_2
+      l_3: l_standup_left_2_3
+      color: red
+  sh_mars_earth_0:
+    hit_events: s_standup_left_0_active
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+  sh_mars_earth_1:
+    hit_events: s_standup_left_1_active
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+  sh_mars_earth_2:
+    hit_events: s_standup_left_2_active
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+  sh_mars_earth_3:
+    hit_events: s_standup_left_3_active
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+  sh_mars_earth_4:
+    hit_events: s_standup_left_4_active
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+  sh_mars_earth_5:
+    hit_events: s_standup_left_5_active
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+  sh_mars_earth_6:
+    hit_events: s_standup_left_6_active
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+  sh_mars_earth_l_0_0:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_0_0
+  sh_mars_earth_l_0_1:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_0_1
+  sh_mars_earth_l_0_2:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_0_2
+  sh_mars_earth_l_0_3:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_0_3
+  sh_mars_earth_l_0_4:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_0_4
+  sh_mars_earth_l_1_0:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_1_0
+  sh_mars_earth_l_1_1:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_1_1
+  sh_mars_earth_l_1_2:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_1_2
+  sh_mars_earth_l_1_3:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_1_3
+  sh_mars_earth_l_1_4:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_1_4
+  sh_mars_earth_l_2_0:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_2_0
+  sh_mars_earth_l_2_1:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_2_1
+  sh_mars_earth_l_2_2:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_2_2
+  sh_mars_earth_l_2_3:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_2_3
+  sh_mars_earth_l_2_4:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_2_4
+  sh_mars_earth_l_3_0:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_3_0
+  sh_mars_earth_l_3_1:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_3_1
+  sh_mars_earth_l_3_2:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_3_2
+  sh_mars_earth_l_3_3:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_3_3
+  sh_mars_earth_l_3_4:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_3_4
+  sh_mars_earth_l_4_0:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_4_0
+  sh_mars_earth_l_4_1:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_4_1
+  sh_mars_earth_l_4_2:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_4_2
+  sh_mars_earth_l_4_3:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_4_3
+  sh_mars_earth_l_4_4:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_4_4
+  sh_mars_earth_l_5_0:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_5_0
+  sh_mars_earth_l_5_1:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_5_1
+  sh_mars_earth_l_5_2:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_5_2
+  sh_mars_earth_l_5_3:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_5_3
+  sh_mars_earth_l_5_4:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_5_4
+  sh_mars_earth_l_6_0:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_6_0
+  sh_mars_earth_l_6_1:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_6_1
+  sh_mars_earth_l_6_2:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_6_2
+  sh_mars_earth_l_6_3:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_6_3
+  sh_mars_earth_l_6_4:
+    profile: mars_earth_l
+    enable_events: mars_enable_earth_rules
+    disable_events: mars_disable_earth_rules
+    show_tokens:
+      light: l_standup_left_6_4
+
+timers:
+  mars_hurry_up:
+    end_value: 25
+    control_events:
+      - action: start
+        event: sh_mars_hurry_up_flash_one_hit
+      - action: restart
+        event: sh_mars_hurry_up_flash_two_hit
+      - action: restart
+        event: sh_mars_hurry_up_flash_three_hit
+      - action: restart
+        event: sh_mars_multicue_hit
+      - action: stop
+        event: racks_enable_qualify_collect
+      - action: reset
+        event: racks_enable_qualify_collect
+
+show_player:
+  sh_mars_hurry_up_flash_four_hit:
+    mars_fill_grid:
+      loops: 0
+      priority: 1000
+      speed: 2
+      show_tokens:
+        grid_r_rack_0: grid_r_rack_0
+        grid_r_rack_1: grid_r_rack_1
+        grid_r_rack_2: grid_r_rack_2
+        grid_r_rack_3: grid_r_rack_3
+        grid_r_rack_4: grid_r_rack_4
+        grid_r_rack_5: grid_r_rack_5
+        grid_r_rack_6: grid_r_rack_6
+        color: red
+        fade: 150
+  # note hte slightly higher priority so the doublehits will show first
+  sh_racks_5_6_6_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_6:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_5_6_5_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_5:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_4_5_5_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_5:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_4_5_4_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_4:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_3_4_4_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_4:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_3_4_3_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_3:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_2_3_3_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_3:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_2_3_2_hit{not current_player.mars_hurry_up_completed}:
+    pulse_standup_left_2:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_1_2_2_hit{not current_player.mars_hurry_up_completed}:
+    pulse_standup_left_2:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_1_2_1_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_1:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_0_1_1_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_1:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  sh_racks_0_1_0_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_0:
+      loops: 0
+      speed: 35
+      priority: 11
+      sync_ms: 50
+  # normal pulse shows
+  sh_racks_6_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_6:
+      loops: 0
+      speed: 35
+      priority: 10
+      sync_ms: 50
+  sh_racks_5_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_5:
+      loops: 0
+      speed: 35
+      priority: 10
+      sync_ms: 50
+  sh_racks_4_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_4:
+      loops: 0
+      speed: 35
+      priority: 10
+      sync_ms: 50
+  sh_racks_3_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_3:
+      loops: 0
+      speed: 35
+      priority: 10
+      sync_ms: 50
+  sh_racks_2_hit{not current_player.mars_hurry_up_completed}:
+    pulse_standup_left_2:
+      loops: 0
+      speed: 35
+      priority: 10
+      sync_ms: 50
+  sh_racks_1_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_1:
+      loops: 0
+      speed: 35
+      priority: 10
+      sync_ms: 50
+  sh_racks_0_hit{current_player.mars_earth_enabled==1}:
+    pulse_standup_left_0:
+      loops: 0
+      speed: 35
+      priority: 10
+      sync_ms: 50

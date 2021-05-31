@@ -90,7 +90,54 @@ shows:
 
 show_player:
   mode_attract_started.1:
-  # TODO: fix color wheel show because i had to fix light orders
     color_wheel:
       speed: 10
+  # TODO: fix color wheel show because i had to fix light orders
+    # mars_success_2:
+    #   priority: 10
+    #   speed: 10
+    #   show_tokens:
+    #     color: red
+    #     fade: 200
+    #     planet_full: planet_full
+    #     planet_medium: planet_medium
+    #     planet_small: planet_small
+    #     grid: grid
+  # mode_attract_started.2:
+  #   mars_surface_detail:
+  #     priority: 11
+  #     speed: 5
+  #     show_tokens:
+  #       color: red
+  #       fade: 200
+  #       br_0: "400000FF"
+  #       br_1: "800000FF"
+  #       br_2: "C00000FF"
+  #       br_3: "FF0000FF"
+  #       planet_full: planet_full
+  #       planet_medium: planet_medium
+  #       planet_small: planet_small
+  #       grid: grid
+  # trigger_planet_shadow:
+  #   planet_shadow:
+  #     # loops: 0
+  #     loops: 0
+  #     priority: 12
+  #     speed: 12
+  #     show_tokens:
+  #       br_0: off
+  #       br_1: off
+  #       br_2: off
+  #       br_3: "FF0000FF"
+  #       fade: 150
+      
+  #   # mars_surface_detail:
+  #   #   speed: 5
+  #   #   priority: 11
+  #   #   show_tokens:
+  #   #     br_0: "800000FF"
+  #   #     br_1: "800000FF"
+  #   #     br_2: "C00000FF"
+  #   #     br_3: "FF0000FF"
+  #   #     fade: 150
   mode_attract_started.2: attract_segment

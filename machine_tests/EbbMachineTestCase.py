@@ -1,8 +1,18 @@
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
 
+MAX_PROGRESS = 4
+NUM_TARGETS = 7
+MULTICUE_SHOT_ENABLED_PLACEHOLDER = "device.shots.sh_multicue.enabled"
 DROP_UPPER_DOWN_PLACEHOLDER = "device.drop_targets.upper.complete"
 
 class EbbMachineTestCase(MpfMachineTestCase):
+    def activate_multicue(self):
+        self.assertModeRunning('multicue')
+        self.assertPlaceholderEvaluates(True, MULTICUE_SHOT_ENABLED_PLACEHOLDER)
+        self.hit_switch_and_run("s_standup_upper", 1)
+        self.release_switch_and_run("s_standup_upper", 1)
+        self.assertPlaceholderEvaluates(False, MULTICUE_SHOT_ENABLED_PLACEHOLDER)
+
     def start_mball(self):
         self.hit_upper_drop()
         self.hit_scoop()
@@ -63,6 +73,9 @@ class EbbMachineTestCase(MpfMachineTestCase):
 
     # TODO: Need to update MPF Smart virtual platform so drop reset/knockdown events fire coils
     def start_game(self):
+        # TODO: do this properly
+        self.machine._ebb_running_from_test = True
+        
         self.hit_switch_and_run("s_trough_0", 0)
         self.hit_switch_and_run("s_trough_1", 1)
         self.advance_time_and_run(10)
@@ -82,9 +95,19 @@ class EbbMachineTestCase(MpfMachineTestCase):
         self.assertEqual("idle", self.machine.ball_devices["bd_plunger"].state)
         self.assertEqual(1, self.machine.ball_devices["bd_trough"].available_balls)
 
-    def hit_ball_target(self, target_number):
-        self.assertTrue(target_number in range(0, 7))
-        self.hit_and_release_switch("s_standup_left_{}".format(target_number))
+    def hit_ball_target(self, target):
+        self.assertTrue(target in range(7))
+        self.hit_and_release_switch("s_standup_left_{}".format(target))
+
+    def hit_ball_targets(self, targets=7):
+        for target in range(targets):
+            self.hit_and_release_switch("s_standup_left_{}".format(target))
+
+    def collect_earth_rack(self):
+        self.hit_ball_targets()
+        self.hit_and_release_switch_and_run("s_hook", .1)
+        self.hit_switch_and_run("s_saucer", 3)
+        self.release_switch_and_run("s_saucer", 1)
 
     def collect_award(self):
         # TODO: check drop target state, create diverters for my left/right single drop targets

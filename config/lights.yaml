@@ -120,144 +120,177 @@ lights:
     number: 8-175-176-177
     subtype: led
     type: rgb
+    tags: planet_mask
   l_standup_left_6_3:
     number: 8-178-179-180
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_6
   l_standup_left_6_2:
     number: 8-181-182-183
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_6
   l_standup_left_6_1:
     number: 8-184-185-186
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_6
   l_standup_left_6_0:
     number: 8-187-188-189
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_6
   l_standup_left_5_0:
     number: 8-190-191-192
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_5
   l_standup_left_5_1:
     number: 8-193-194-195
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_5
   l_standup_left_5_2:
     number: 8-196-197-198
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_5
   l_standup_left_5_3:
     number: 8-199-200-201
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_5
   l_standup_left_5_4:
     number: 8-202-203-204
     subtype: led
     type: rgb
+    tags: planet_mask, grid
   l_standup_left_4_4:
     number: 8-205-206-207
     subtype: led
     type: rgb
+    tags: planet_full, grid
   l_standup_left_4_3:
     number: 8-208-209-210
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_4
   l_standup_left_4_2:
     number: 8-211-212-213
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_4
   l_standup_left_4_1:
     number: 8-214-215-216
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_4
   l_standup_left_4_0:
     number: 8-217-218-219
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_4
   l_standup_left_3_0:
     number: 8-220-221-222
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_3
   l_standup_left_3_1:
     number: 8-223-224-225
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_3
   l_standup_left_3_2:
     number: 8-226-227-228
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, planet_small, grid, grid_r_rack_3
   l_standup_left_3_3:
     number: 8-229-230-231
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_3
   l_standup_left_3_4:
     number: 8-232-233-234
     subtype: led
     type: rgb
+    tags: planet_full, grid
   l_standup_left_2_4:
     number: 8-235-236-237
     subtype: led
     type: rgb
+    tags: planet_full, grid
   l_standup_left_2_3:
     number: 8-238-239-240
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_2
   l_standup_left_2_2:
     number: 8-241-242-243
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_2
   l_standup_left_2_1:
     number: 8-244-245-246
     subtype: led
     type: rgb
+    tags: planet_full, planet_medium, grid, grid_r_rack_2
   l_standup_left_2_0:
     number: 8-247-248-249
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_2
   l_standup_left_1_0:
     number: 8-250-251-252
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_1
   l_standup_left_1_1:
     number: 8-253-254-255
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_1
   l_standup_left_1_2:
     number: 8-256-257-258
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_1
   l_standup_left_1_3:
     number: 8-259-260-261
     subtype: led
     type: rgb
+    tags: planet_full, grid, grid_r_rack_1
   l_standup_left_1_4:
     number: 8-262-263-264
     subtype: led
     type: rgb
-
+    tags: planet_mask, grid
   l_standup_left_0_4:
     number: 8-265-266-267
     subtype: led
     type: rgb
+    tags: planet_mask, grid
   l_standup_left_0_3:
     number: 8-268-269-270
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_0
   l_standup_left_0_2:
     number: 8-271-272-273
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_0
   l_standup_left_0_1:
     number: 8-274-275-276
     subtype: led
     type: rgb
+    tags: planet_mask, grid, grid_r_rack_0
   l_standup_left_0_0:
     number: 8-277-278-279
     subtype: led
     type: rgb
-
+    tags: planet_mask, grid, grid_r_rack_0
   l_outlane_left:
     number: 8-280-281-282
     subtype: led

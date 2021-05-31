@@ -51,13 +51,16 @@ coils:
     default_pulse_ms: 25
   c_pop_right:
     number: A7-B1-0
-    default_pulse_ms: 15
+    default_pulse_ms: 17
+    default_recycle: False
   c_pop_center:
     number: A7-B1-1
-    default_pulse_ms: 15
+    default_pulse_ms: 17
+    default_recycle: False
   c_pop_left:
     number: A7-B1-2
-    default_pulse_ms: 15
+    default_pulse_ms: 17
+    default_recycle: False
   c_drop_left_knockdown:
     number: A7-B1-3
     default_pulse_ms: 15

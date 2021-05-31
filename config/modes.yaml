@@ -1,6 +1,7 @@
 #config_version=5
 
 modes:
+  - announcer
   - award_0
   - award_1
   - award_2
@@ -13,8 +14,10 @@ modes:
   - base
   - base_bonus
   - drops
-  - lanes_upper
+  - earth
   - jackpot
+  - lanes_upper
+  - mars
   - mball
   - mball_locked
   - mball_qualifying
@@ -22,10 +25,11 @@ modes:
   - multiball_config
   - multicue
   - orbit_left
+  - planets
   - pops
   - racks
   - saucer
   - scratch_guards
   - slings
   - spinner
-  # - bonus
+

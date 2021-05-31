@@ -1,4 +1,4 @@
-from machine_tests.EbbMachineTestCase import EbbMachineTestCase
+from machine_tests.EbbMachineTestCase import EbbMachineTestCase, MULTICUE_SHOT_ENABLED_PLACEHOLDER
 
 NUM_TARGETS = 7
 
@@ -8,7 +8,6 @@ SIZE = 1
 MOVE_LEFT_SWITCH = "s_flipper_left"
 MOVE_RIGHT_SWITCH = "s_flipper_right"
 
-MULTICUE_SHOT_ENABLED_PLACEHOLDER = "device.shots.sh_multicue.enabled"
 MULTICUE_SHOT_0_PLACEHOLDER = "device.shots.sh_multicue_0.state_name"
 MULTICUE_SHOT_1_PLACEHOLDER = "device.shots.sh_multicue_1.state_name"
 MULTICUE_SHOT_2_PLACEHOLDER = "device.shots.sh_multicue_2.state_name"
@@ -29,13 +28,6 @@ MULTICUE_SHOTS_PLACEHOLDERS = [
 
 
 class TestMulticue(EbbMachineTestCase):
-    def activate_multicue(self):
-        self.assertModeRunning('multicue')
-        self.assertPlaceholderEvaluates(True, MULTICUE_SHOT_ENABLED_PLACEHOLDER)
-        self.hit_switch_and_run("s_standup_upper", 1)
-        self.release_switch_and_run("s_standup_upper", 1)
-        self.assertPlaceholderEvaluates(False, MULTICUE_SHOT_ENABLED_PLACEHOLDER)
-
     def assert_multicue_shots(self, active_shot_indices):
         for i in range(0, NUM_TARGETS):
             shot = "sh_multicue_{}".format(i)
@@ -104,7 +96,8 @@ class TestMulticue(EbbMachineTestCase):
     def assert_progress(self, progress):
         self.assertEqual(7, len(progress))
         for i, p in enumerate(progress):
-            self.assertPlayerVarEqual(p, "tl_{}_progress".format(i))
+            # Assuming we'll always be testing earth in this test
+            self.assertPlayerVarEqual(p, "earth_{}_progress".format(i))
 
     def test_hitting_multicue(self):
         self.start_game()

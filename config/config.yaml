@@ -44,7 +44,7 @@ config:
 
 # TODO: create configs for this stuff
 window:
-    width: 1300
+    width: 1284
     height: 400
     source_display: window
         
@@ -63,11 +63,11 @@ virtual_segment_display_connector:
     
 displays:
   window:
-     width: 1300
+     width: 1284
      height: 400
   normal:
-     width: 1300
+     width: 1284
      height: 400
   background:
-     width: 1300
+     width: 1284
      height: 400

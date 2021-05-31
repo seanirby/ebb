@@ -1,0 +1,115 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+shot_profiles:
+  planets_status:
+    states:
+      - name: completed
+        show: led_color
+        
+shots:
+  sh_planets_status_0:
+    enable_events: planets_earth_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_0
+      color: blue
+  sh_planets_status_1:
+    enable_events: planets_mars_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_1
+      color: red
+  sh_planets_status_2:
+    enable_events: planets_jupiter_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_2
+      color: orange
+  sh_planets_status_3:
+    enable_events: planets_saturn_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_3
+      color: orange
+  sh_planets_status_4:
+    enable_events: planets_neptune_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_4
+      color: blue
+  sh_planets_status_5:
+    enable_events: planets_uranus_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_5
+      color: blue
+  sh_planets_status_6:
+    enable_events: planets_pluto_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_6
+      color: purple
+  sh_planets_status_7:
+    enable_events: planets_beyond_start
+    profile: planets_status
+    show_tokens:
+      light: l_status_circle_7
+      color: purple
+
+event_player:
+  # ball init
+  mode_planets_started.1{current_player.planets==0}:
+    - planets_earth_start
+  mode_planets_started.2{current_player.planets==1}:
+    - planets_mars_start
+  mode_planets_started.3{current_player.planets==2}:
+    - planets_jupiter_start
+  mode_planets_started.4{current_player.planets==3}:
+    - planets_saturn_start
+  mode_planets_started.5{current_player.planets==4}:
+    - planets_neptune_start
+  mode_planets_started.6{current_player.planets==5}:
+    - planets_uranus_start
+  mode_planets_started.7{current_player.planets==6}:
+    - planets_pluto_start
+  mode_planets_started.8{current_player.planets==7}:
+    - planets_beyond_start
+  # collected
+  racks_rack_collected_0: planets_mars_start
+  racks_rack_collected_1: planets_jupiter_start, planets_earth_start
+  racks_rack_collected_2: planets_saturn_start, planets_earth_start
+  racks_rack_collected_3: planets_neptune_start, planets_earth_start
+  racks_rack_collected_4: planets_uranus_start, planets_earth_start
+  racks_rack_collected_5: planets_pluto_start, planets_earth_start
+  racks_rack_collected_6: planets_beyond_start
+
+variable_player:
+  sh_racks_collect_hit:
+    planets: 1
+
+show_player:
+  saucer_collect_rack_show_start:
+    planets_you_won:
+      loops: 1
+      speed: 1
+      priority: 100
+
+shows:
+  planets_you_won:
+    - duration: 1
+      segment_displays:
+        row_0:
+          color: white
+          text: "YOU WON"
+          transition:
+            type: push
+            direction: left
+        row_1:
+          color: white
+          text: "YOU WON"
+          transition:
+            type: push
+            direction: right
