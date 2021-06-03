@@ -12,7 +12,7 @@ keyboard:
   d:
     event: debug_dump_stats
   t:
-    event: s_hook_active
+    event: trigger_pulse_shows
   b:
     switch: s_force_ball_save
   o:

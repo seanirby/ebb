@@ -44,9 +44,9 @@ switches:
   s_trough_0:
     number: A1-B0-05
     type: 'NC'
-  s_trough_jam:
-    number: A1-B0-06
-    type: 'NC'
+  # s_trough_jam:
+  #   number: A1-B0-06
+  #   type: 'NC'
   s_plunger_lane:
     number: A1-B0-07
   s_outlane_left:

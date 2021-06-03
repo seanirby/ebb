@@ -41,22 +41,56 @@ shows:
           transition:
             type: push
             direction: left
-  # beef:
-  #   - duration: -1
-  #     lights:
-  #       l_status_rectangle_2: green
-  #       l_status_rectangle_1: orange
-  #       l_status_rectangle_0: yellow
-  #       l_outlane_right: blue
-  #       l_outlane_left: purple
-  #       l_inlane_right: red
-  #       l_inlane_left: white
-    
+
+
+# shows:
+#   rack_collect_test:
+#     - time: 0
+#       shows:
+#         inverse_pulse_white:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#       shows:
+#         inverse_pulse_red:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#       shows:
+#         inverse_pulse_blue:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#       shows:
+#         inverse_pulse_purple:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#       shows:
+#         inverse_pulse_orange:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#       shows:
+#         inverse_pulse_green:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#       shows:
+#         inverse_pulse_pink:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#       shows:
+#         inverse_pulse_white:
+#           loops: 0
+#           speed: 40
+#     - time: "+1"
+#     - time: "+1"
+
 show_player:
   mode_attract_started.1:
   # TODO: fix color wheel show because i had to fix light orders
     color_wheel:
       speed: 10
   mode_attract_started.2: attract_segment
-    
-  

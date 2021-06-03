@@ -10,13 +10,13 @@ coils:
     default_pulse_ms: 40
   c_flipper_right_main:
     number: A6-B1-2
-    default_pulse_ms: 30
+    default_pulse_ms: 28
   c_flipper_right_hold:
     number: A6-B1-3
     default_hold_power: 1
   c_flipper_left_main:
     number: A6-B1-4
-    default_pulse_ms: 30
+    default_pulse_ms: 28
   c_flipper_left_hold:
     number: A6-B1-5
     default_hold_power: 1
@@ -28,7 +28,7 @@ coils:
     default_pulse_ms: 6
   c_flipper_upper_main:
     number: A6-B0-0
-    default_pulse_ms: 30 # 38
+    default_pulse_ms: 27 # 38
   c_flipper_upper_hold:
     number: A6-B0-1
     default_hold_power: 1 #0.2
@@ -51,13 +51,13 @@ coils:
     default_pulse_ms: 25
   c_pop_right:
     number: A7-B1-0
-    default_pulse_ms: 17
+    default_pulse_ms: 15
   c_pop_center:
     number: A7-B1-1
-    default_pulse_ms: 17
+    default_pulse_ms: 15
   c_pop_left:
     number: A7-B1-2
-    default_pulse_ms: 17
+    default_pulse_ms: 15
   c_drop_left_knockdown:
     number: A7-B1-3
     default_pulse_ms: 15
@@ -66,4 +66,4 @@ coils:
     default_pulse_ms: 18
   c_saucer:
     number: A7-B1-5
-    default_pulse_ms: 40 #was 50
+    default_pulse_ms: 65 #was 40
