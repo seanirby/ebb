@@ -17,7 +17,7 @@ NUM_TARGETS = 7
 MAX_PROGRESS = 4
 MULTICUE_SIZE = 1
 # TODO: Replace with actual platform check
-PLATFORM_IS_WINDOWS = True
+PLATFORM_IS_WINDOWS = False
 
 class EbbMode(Mode):
     # def __init__(self, *args, **kwargs):

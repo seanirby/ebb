@@ -1,4 +1,4 @@
-from machine_tests.EbbMachineTestCase import EbbMachineTestCase
+from machine_tests.EbbMachineTestCase import EbbMachineTestCase, MAX_BALLS
 
 LEFT_OUTLANE_ENABLED_PLACEHOLDER = "device.shots.sh_scratch_guards_left.enabled"
 RIGHT_OUTLANE_ENABLED_PLACEHOLDER = "device.shots.sh_scratch_guards_right.enabled"
@@ -40,7 +40,7 @@ class TestScratchGuards(EbbMachineTestCase):
         # still on ball 1
         self.assertPlayerVarEqual(1, "ball")
         self.assertBallsOnPlayfield(1)
-        self.assertEqual(1, self.machine.ball_devices["bd_trough"].available_balls)
+        self.assertEqual(MAX_BALLS-1, self.machine.ball_devices["bd_trough"].available_balls)
         self.assertPlaceholderEvaluates(False, LEFT_SAVE_ENABLED_PLACEHOLDER)
 
     def test_ball_saves_right(self):
@@ -57,7 +57,7 @@ class TestScratchGuards(EbbMachineTestCase):
         # still on ball 1
         self.assertPlayerVarEqual(1, "ball")
         self.assertBallsOnPlayfield(1)
-        self.assertEqual(1, self.machine.ball_devices["bd_trough"].available_balls)
+        self.assertEqual(MAX_BALLS-1, self.machine.ball_devices["bd_trough"].available_balls)
         self.assertPlaceholderEvaluates(False, RIGHT_SAVE_ENABLED_PLACEHOLDER)
 
     def test_disabled_when_both_saves_used(self):
@@ -77,7 +77,7 @@ class TestScratchGuards(EbbMachineTestCase):
         # still on ball 1
         self.assertPlayerVarEqual(1, "ball")
         self.assertBallsOnPlayfield(1)
-        self.assertEqual(1, self.machine.ball_devices["bd_trough"].available_balls)
+        self.assertEqual(MAX_BALLS-1, self.machine.ball_devices["bd_trough"].available_balls)
         self.assertPlaceholderEvaluates(False, LEFT_SAVE_ENABLED_PLACEHOLDER)
 
         # use right save
@@ -91,7 +91,7 @@ class TestScratchGuards(EbbMachineTestCase):
         # still on ball 1
         self.assertPlayerVarEqual(1, "ball")
         self.assertBallsOnPlayfield(1)
-        self.assertEqual(1, self.machine.ball_devices["bd_trough"].available_balls)
+        self.assertEqual(MAX_BALLS-1, self.machine.ball_devices["bd_trough"].available_balls)
         self.assertPlaceholderEvaluates(False, RIGHT_SAVE_ENABLED_PLACEHOLDER)
         self.assertModeNotRunning("scratch_guards")
 
@@ -110,7 +110,7 @@ class TestScratchGuards(EbbMachineTestCase):
         # still on ball 1
         self.assertPlayerVarEqual(1, "ball")
         self.assertBallsOnPlayfield(1)
-        self.assertEqual(1, self.machine.ball_devices["bd_trough"].available_balls)
+        self.assertEqual(MAX_BALLS-1, self.machine.ball_devices["bd_trough"].available_balls)
         self.assertPlaceholderEvaluates(False, LEFT_SAVE_ENABLED_PLACEHOLDER)
 
         self.drain_balls()

@@ -6,20 +6,30 @@ mode:
 
 shows:
   scratch_guards_activated:
-    - duration: 3.5
+    - time: 0
       segment_displays:
         row_0:
           color: white
           text: " SCRATCH GUARDS "
+          flashing: all
           transition:
             type: push
             direction: left
         row_1:
           color: white
           text: "     ONLINE     "
+          flashing: all
           transition:
             type: push
             direction: right
+    - time: 2.5
+      segment_displays:
+        row_0:
+          flashing: off
+        row_1:
+          flashing: off
+      
+            
 
 event_player:
   saucer_collect_award_show_start:

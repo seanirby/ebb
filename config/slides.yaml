@@ -5,18 +5,18 @@ slides:
     widgets:
       - type: display
         source_display: normal
-        width: 1284
+        width: 1300
         height: 400
-        # effects:
-        #   - type: glow
-        #     blur_size: 5.0
-        #     intensity: .6
-        #     glow_speed: 1.0
-        #     glow_amplitude: .2
-      # - type: display
-      #   source_display: background
-      #   width: 1284
-      #   height: 400
+        effects:
+          - type: glow
+            blur_size: 5.0
+            intensity: .6
+            glow_speed: 1.0
+            glow_amplitude: .2
+      - type: display
+        source_display: background
+        width: 1300
+        height: 400
   background:
     widgets:
       - type: image
@@ -42,7 +42,7 @@ slides:
         comma_enabled: false
         color: blue
         text: ""
-        width: 1284
+        width: 1300
         height: 150
         opacity: 1
         x: 0
@@ -65,7 +65,7 @@ slides:
         dot_enabled: false
         comma_enabled: false
         text: ""
-        width: 1284
+        width: 1300
         height: 150
         x: 0
         y: 210
@@ -102,7 +102,7 @@ slides:
       dot_enabled: false
       comma_enabled: false
       text: ""
-      width: 1284
+      width: 1300
       height: 150
       x: 0
       y: 50
@@ -122,7 +122,7 @@ slides:
       dot_enabled: false
       comma_enabled: false
       text: ""
-      width: 1284
+      width: 1300
       height: 150
       x: 0
       y: 210

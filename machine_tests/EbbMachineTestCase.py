@@ -1,5 +1,6 @@
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
 
+MAX_BALLS = 3
 MAX_PROGRESS = 4
 NUM_TARGETS = 7
 MULTICUE_SHOT_ENABLED_PLACEHOLDER = "device.shots.sh_multicue.enabled"
@@ -78,9 +79,10 @@ class EbbMachineTestCase(MpfMachineTestCase):
         
         self.hit_switch_and_run("s_trough_0", 0)
         self.hit_switch_and_run("s_trough_1", 1)
+        self.hit_switch_and_run("s_trough_2", 1)
         self.advance_time_and_run(10)
         self.assertFalse(self.machine.game)
-        self.assertEqual(2, self.machine.ball_devices["bd_trough"].available_balls)
+        self.assertEqual(MAX_BALLS, self.machine.ball_devices["bd_trough"].available_balls)
         self.hit_and_release_switch("s_start")
         self.advance_time_and_run(10)
         self.assertTrue(self.machine.game)
@@ -90,10 +92,10 @@ class EbbMachineTestCase(MpfMachineTestCase):
         self.advance_time_and_run(100)
 
         self.assertBallsOnPlayfield(1)
-        self.assertNumBallsKnown(2)
+        self.assertNumBallsKnown(MAX_BALLS)
         self.assertEqual("idle", self.machine.ball_devices["bd_trough"].state)
         self.assertEqual("idle", self.machine.ball_devices["bd_plunger"].state)
-        self.assertEqual(1, self.machine.ball_devices["bd_trough"].available_balls)
+        self.assertEqual(MAX_BALLS-1, self.machine.ball_devices["bd_trough"].available_balls)
 
     def hit_ball_target(self, target):
         self.assertTrue(target in range(7))
