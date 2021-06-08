@@ -149,10 +149,3 @@ sound_loop_player:
 
 sound_player:
   racks_collected_loop_stop: success_0
-  sh_tl_0_hit: zap_0
-  sh_tl_1_hit: zap_1
-  sh_tl_2_hit: zap_2
-  sh_tl_3_hit: zap_3
-  sh_tl_4_hit: zap_4
-  sh_tl_5_hit: zap_5
-  sh_tl_6_hit: zap_6

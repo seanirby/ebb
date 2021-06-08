@@ -291,3 +291,11 @@ show_player:
       priority: 10
       sync_ms: 50
 
+sound_player:
+  sh_racks_0_hit: zap_0
+  sh_racks_1_hit: zap_1
+  sh_racks_2_hit: zap_2
+  sh_racks_3_hit: zap_3
+  sh_racks_4_hit: zap_4
+  sh_racks_5_hit: zap_5
+  sh_racks_6_hit: zap_6

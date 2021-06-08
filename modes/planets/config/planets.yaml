@@ -10,8 +10,7 @@ shot_profiles:
         show: off_stop
       - name: current
         show: flash_color
-        show_tokens:
-          speed: 10
+        speed: 10
       - name: completed
         show: led_color
         
