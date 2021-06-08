@@ -6,54 +6,68 @@ mode:
 shot_profiles:
   planets_status:
     states:
+      - name: unlit
+        show: off_stop
+      - name: current
+        show: flash_color
+        show_tokens:
+          speed: 10
       - name: completed
         show: led_color
         
 shots:
   sh_planets_status_0:
     enable_events: planets_earth_start
+    hit_events: mode_earth_started, planets_mars_start
     profile: planets_status
     show_tokens:
       light: l_status_circle_0
       color: blue
   sh_planets_status_1:
     enable_events: planets_mars_start
+    hit_events: mode_mars_started, planets_jupiter_start
     profile: planets_status
     show_tokens:
       light: l_status_circle_1
       color: red
   sh_planets_status_2:
     enable_events: planets_jupiter_start
+    hit_events: mode_jupiter_started, planets_saturn_start
     profile: planets_status
     show_tokens:
       light: l_status_circle_2
       color: orange
   sh_planets_status_3:
     enable_events: planets_saturn_start
+    hit_events: mode_saturn_started, planets_neptune_start
     profile: planets_status
     show_tokens:
       light: l_status_circle_3
       color: orange
   sh_planets_status_4:
     enable_events: planets_neptune_start
+    hit_events: mode_neptune_started, planets_uranus_start
     profile: planets_status
     show_tokens:
       light: l_status_circle_4
       color: blue
   sh_planets_status_5:
     enable_events: planets_uranus_start
+    hit_events: mode_uranus_started, planets_pluto_start
     profile: planets_status
     show_tokens:
       light: l_status_circle_5
       color: blue
   sh_planets_status_6:
     enable_events: planets_pluto_start
+    hit_events: mode_pluto_started, planets_beyond_start
     profile: planets_status
     show_tokens:
       light: l_status_circle_6
       color: purple
   sh_planets_status_7:
     enable_events: planets_beyond_start
+    hit_events: mode_beyond_started
     profile: planets_status
     show_tokens:
       light: l_status_circle_7
