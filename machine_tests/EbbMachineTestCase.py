@@ -84,6 +84,8 @@ class EbbMachineTestCase(MpfMachineTestCase):
         self.assertFalse(self.machine.game)
         self.assertEqual(MAX_BALLS, self.machine.ball_devices["bd_trough"].available_balls)
         self.hit_and_release_switch("s_start")
+        self.advance_time_and_run(3)
+        self.hit_and_release_switch("s_launch")
         self.advance_time_and_run(10)
         self.assertTrue(self.machine.game)
         self.hit_switch_and_run("s_orbit", .1)

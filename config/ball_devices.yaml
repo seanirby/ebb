@@ -11,11 +11,14 @@ ball_devices:
     eject_coil_jam_pulse: 15ms
     eject_timeouts: 3s
   bd_plunger:
+    auto_fire_on_unexpected_ball: False
     ball_switches: s_plunger_lane
     mechanical_eject: True
     eject_coil: c_plunger_eject
+    confirm_eject_switch: s_orbit
     player_controlled_eject_event: s_launch_active
     eject_timeouts: 5s
+    debug: True
   bd_saucer:
     ball_switches: s_saucer
     eject_coil: c_saucer

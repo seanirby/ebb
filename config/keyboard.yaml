@@ -23,7 +23,7 @@ keyboard:
   k:
     switch: s_inlane_left
   l:
-    switch: s_inlane_right
+    switch: s_launch
   ;:
     switch: s_outlane_right
   i:
