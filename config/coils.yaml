@@ -10,13 +10,13 @@ coils:
     default_pulse_ms: 40
   c_flipper_right_main:
     number: A6-B1-2
-    default_pulse_ms: 28
+    default_pulse_ms: 33
   c_flipper_right_hold:
     number: A6-B1-3
     default_hold_power: 1
   c_flipper_left_main:
     number: A6-B1-4
-    default_pulse_ms: 28
+    default_pulse_ms: 33
   c_flipper_left_hold:
     number: A6-B1-5
     default_hold_power: 1
