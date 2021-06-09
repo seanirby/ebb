@@ -4,7 +4,7 @@ keyboard:
   s:
     switch: s_start
   f:
-    switch: s_force_knockdown_coils
+    event: s_force_knockdown_coils_active
   z:
     switch: s_flipper_left
   x:
@@ -12,7 +12,7 @@ keyboard:
   d:
     event: debug_dump_stats
   t:
-    event: trigger_pulse_shows
+    event: trigger_planet_shadow
   b:
     switch: s_force_ball_save
   o:

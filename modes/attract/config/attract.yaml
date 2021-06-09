@@ -41,6 +41,62 @@ shows:
           transition:
             type: push
             direction: left
+  attract_planets:
+    - time: 0
+      shows:
+        test_earth_scroll:
+          loops: 0
+          speed: 6
+          priority: 10
+    - time: "+3"
+      shows:
+        planet_shadow:
+          loops: 0
+          priority: 11
+          speed: 10
+          show_tokens:
+            br_0: off
+            br_1: off
+            br_2: off
+            br_3: "FF0000FF"
+            fade: 150
+    - time: "+1"
+      shows:
+        test_mars_scroll:
+          loops: 0
+          speed: 6
+          priority: 10
+    - time: "+3"
+      shows:
+        planet_shadow:
+          loops: 0
+          priority: 11
+          speed: 10
+          show_tokens:
+            br_0: off
+            br_1: off
+            br_2: off
+            br_3: "FF0000FF"
+            fade: 150
+    - time: "+1"
+      shows:
+        test_jupiter_scroll:
+          loops: 0
+          speed: 6
+          priority: 10
+    - time: "+3"
+      shows:
+        planet_shadow:
+          loops: 0
+          priority: 11
+          speed: 10
+          show_tokens:
+            br_0: off
+            br_1: off
+            br_2: off
+            br_3: "FF0000FF"
+            fade: 150
+
 
 
 # shows:
@@ -89,9 +145,10 @@ shows:
 #     - time: "+1"
 
 show_player:
-  mode_attract_started.1:
-    color_wheel:
-      speed: 10
+  mode_attract_started.1: attract_planets
+  # mode_attract_started.1:
+  #   color_wheel:
+  #     speed: 10
   # TODO: fix color wheel show because i had to fix light orders
     # mars_success_2:
     #   priority: 10
@@ -131,13 +188,13 @@ show_player:
   #       br_3: "FF0000FF"
   #       fade: 150
       
-  #   # mars_surface_detail:
-  #   #   speed: 5
-  #   #   priority: 11
-  #   #   show_tokens:
-  #   #     br_0: "800000FF"
-  #   #     br_1: "800000FF"
-  #   #     br_2: "C00000FF"
-  #   #     br_3: "FF0000FF"
-  #   #     fade: 150
-  mode_attract_started.2: attract_segment
+  # #   # mars_surface_detail:
+  # #   #   speed: 5
+  # #   #   priority: 11
+  # #   #   show_tokens:
+  # #   #     br_0: "800000FF"
+  # #   #     br_1: "800000FF"
+  # #   #     br_2: "C00000FF"
+  # #   #     br_3: "FF0000FF"
+  # #   #     fade: 150
+  # mode_attract_started.2: attract_segment

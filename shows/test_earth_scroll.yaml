@@ -1,0 +1,308 @@
+#show_version=5
+- time: 0
+  lights:
+    l_standup_left_1_1: 'FCFDFD'
+    l_standup_left_1_2: 'FCFDFD'
+    l_standup_left_1_3: 'FCFDFD'
+    l_standup_left_2_0: '1B5BC5'
+    l_standup_left_2_1: '3FF012'
+    l_standup_left_2_2: '1B5BC5'
+    l_standup_left_2_3: '1B5BC5'
+    l_standup_left_2_4: '1C5FC0'
+    l_standup_left_3_0: '3ADC29'
+    l_standup_left_3_1: '43FF00'
+    l_standup_left_3_2: '1B5BC5'
+    l_standup_left_3_3: '1B5BC5'
+    l_standup_left_3_4: '1B5BC5'
+    l_standup_left_4_0: '1B5BC5'
+    l_standup_left_4_1: '1B5BC5'
+    l_standup_left_4_2: '43FF00'
+    l_standup_left_4_3: '43FF00'
+    l_standup_left_4_4: '1B5BC5'
+    l_standup_left_5_1: 'FCFDFD'
+    l_standup_left_5_2: '1B5BC5'
+    l_standup_left_5_3: '237D9C'
+    
+- time: '+1'
+  lights:
+    l_standup_left_2_1: '1B5BC5'
+    l_standup_left_2_3: '1C5DC2'
+    l_standup_left_2_4: '1B5BC5'
+    l_standup_left_3_0: '40F40D'
+    l_standup_left_3_1: '42FC03'
+    l_standup_left_4_1: '41F60A'
+    l_standup_left_5_3: '248099'
+    
+- time: '+1'
+  lights:
+    l_standup_left_2_0: '3CE51E'
+    l_standup_left_2_3: '26888D'
+    l_standup_left_3_0: '43FF00'
+    l_standup_left_3_1: '1B5BC5'
+    l_standup_left_4_0: '1D62BC'
+    l_standup_left_4_1: '43FF00'
+    l_standup_left_4_3: '29957E'
+    l_standup_left_5_1: '1B5BC5'
+    l_standup_left_5_3: '1E6AB2'
+    
+- time: '+1'
+  lights:
+    l_standup_left_2_0: '43FF00'
+    l_standup_left_2_3: '43FF00'
+    l_standup_left_4_0: '1B5DC2'
+    l_standup_left_4_3: '1B5BC5'
+    l_standup_left_5_2: '237D9C'
+    l_standup_left_5_3: '31B35A'
+    
+- time: '+1'
+  lights:
+    l_standup_left_2_0: '1B5BC5'
+    l_standup_left_2_3: '1B5BC5'
+    l_standup_left_4_0: '3FEE14'
+    l_standup_left_5_2: '248099'
+    l_standup_left_5_3: '2174A6'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_3: 'E2EBF6'
+    l_standup_left_3_0: '1B5BC5'
+    l_standup_left_4_0: '43FF00'
+    l_standup_left_4_2: '42FA05'
+    l_standup_left_5_2: '1E6AB2'
+    l_standup_left_5_3: '1B5BC5'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_3: 'FCFDFD'
+    l_standup_left_2_2: '37D038'
+    l_standup_left_4_2: '1B5CC3'
+    l_standup_left_5_1: '1B5CC4'
+    l_standup_left_5_2: '31B35A'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_2: 'E2EAF7'
+    l_standup_left_2_1: '3ADA2B'
+    l_standup_left_2_2: '2279A1'
+    l_standup_left_4_2: '1B5BC5'
+    l_standup_left_5_1: '258295'
+    l_standup_left_5_2: '2174A6'
+    l_standup_left_5_3: '1B5DC3'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_2: '7199DA'
+    l_standup_left_2_1: '33BC50'
+    l_standup_left_2_2: '1B5BC5'
+    l_standup_left_4_4: '42FC03'
+    l_standup_left_5_1: '206EAD'
+    l_standup_left_5_2: '1B5BC5'
+    l_standup_left_5_3: '3ADB2B'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_2: 'F6F9FC'
+    l_standup_left_2_1: '43FF00'
+    l_standup_left_4_1: '258790'
+    l_standup_left_4_4: '43FF00'
+    l_standup_left_5_1: '258395'
+    l_standup_left_5_3: '33BD4F'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'C3D4EF'
+    l_standup_left_1_2: '8EADE2'
+    l_standup_left_2_1: '3FEF13'
+    l_standup_left_2_4: '43FF00'
+    l_standup_left_4_1: '1B5BC5'
+    l_standup_left_5_1: '1B5BC5'
+    l_standup_left_5_3: 'FCFDFD'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: '1B5BC5'
+    l_standup_left_1_2: '8BABE1'
+    l_standup_left_2_0: '43FF00'
+    l_standup_left_2_1: '1B5BC5'
+    l_standup_left_2_4: '40F20F'
+    l_standup_left_3_4: '43FE01'
+    l_standup_left_4_3: '3BE123'
+    l_standup_left_4_4: '3EEB18'
+    l_standup_left_5_2: '247F99'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: '1F5EC6'
+    l_standup_left_1_2: 'E1E9F6'
+    l_standup_left_2_4: '1B5BC5'
+    l_standup_left_3_4: '43FF00'
+    l_standup_left_4_3: '43FF00'
+    l_standup_left_4_4: '1B5BC5'
+    l_standup_left_5_2: '2172A8'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: '7CA0DD'
+    l_standup_left_1_2: 'FCFDFD'
+    l_standup_left_2_3: '2073A7'
+    l_standup_left_4_0: '1C5FBF'
+    l_standup_left_5_2: 'FCFDFD'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: '4A7CD1'
+    l_standup_left_2_0: '1B5BC5'
+    l_standup_left_2_3: '43FF00'
+    l_standup_left_4_0: '1B5BC5'
+    l_standup_left_4_2: '248097'
+    l_standup_left_5_1: '1D65B9'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'C0D2EE'
+    l_standup_left_2_3: '43FE01'
+    l_standup_left_3_3: '43FF00'
+    l_standup_left_3_4: '2FAD61'
+    l_standup_left_4_2: '43FF00'
+    l_standup_left_4_3: '1B5BC5'
+    l_standup_left_4_4: '2784FF'
+    l_standup_left_5_1: '258592'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'FCFDFD'
+    l_standup_left_2_3: '1B5BC5'
+    l_standup_left_3_4: '1B5BC5'
+    l_standup_left_4_4: '1B5BC5'
+    l_standup_left_5_1: 'FCFDFD'
+    
+- time: '+1'
+  lights:
+    l_standup_left_2_2: '42FA05'
+    l_standup_left_4_1: '1C5FC0'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'FAFCFD'
+    l_standup_left_1_2: 'F9FBFC'
+    l_standup_left_2_2: '43FF00'
+    l_standup_left_3_2: '43FF00'
+    l_standup_left_4_1: '42FB05'
+    l_standup_left_4_2: '3EEB18'
+    l_standup_left_4_4: '278B8A'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'FCFDFD'
+    l_standup_left_1_2: 'F8FAFC'
+    l_standup_left_2_2: '2A9979'
+    l_standup_left_3_3: '1B5BC5'
+    l_standup_left_3_4: '3FED15'
+    l_standup_left_4_1: '43FF00'
+    l_standup_left_4_2: '1B5BC5'
+    l_standup_left_4_4: '43FF00'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'D9E4F4'
+    l_standup_left_1_2: '93B1E3'
+    l_standup_left_2_2: '1B5BC5'
+    l_standup_left_3_4: '43FF00'
+    l_standup_left_4_0: '1B5CC4'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'E0E9F6'
+    l_standup_left_1_2: 'FCFDFD'
+    l_standup_left_2_1: '43FF00'
+    l_standup_left_3_4: '42FD02'
+    l_standup_left_4_0: '43FF00'
+    l_standup_left_4_4: '41F808'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: '92B1E3'
+    l_standup_left_3_1: '43FF00'
+    l_standup_left_3_2: '1B5BC5'
+    l_standup_left_3_4: '1B5BC5'
+    l_standup_left_4_1: '1B5BC5'
+    l_standup_left_4_3: '3CE320'
+    l_standup_left_4_4: '43FF00'
+    l_standup_left_5_2: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: '7BA0DD'
+    l_standup_left_2_1: '26898D'
+    l_standup_left_3_3: '43FF00'
+    l_standup_left_4_3: '43FF00'
+    l_standup_left_5_2: 'FCFDFD'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'DDE1E6'
+    l_standup_left_2_0: '1D65B9'
+    l_standup_left_2_1: '1B5BC5'
+    l_standup_left_3_0: '1B5CC4'
+    l_standup_left_4_3: '35C940'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'FCFDFD'
+    l_standup_left_2_0: '43FF00'
+    l_standup_left_3_0: '43FF00'
+    l_standup_left_3_1: '5EFF01'
+    l_standup_left_3_3: '43FE02'
+    l_standup_left_4_0: '1C62BC'
+    l_standup_left_4_1: '164CA5'
+    l_standup_left_4_2: '1C60BF'
+    l_standup_left_4_3: '237D9B'
+    l_standup_left_5_3: '9BB7E4'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_2: 'C7D7F0'
+    l_standup_left_3_1: '1B5BC5'
+    l_standup_left_3_2: '43FF00'
+    l_standup_left_3_3: '1B5BC5'
+    l_standup_left_4_0: '1B5BC5'
+    l_standup_left_4_1: '1B5BC5'
+    l_standup_left_4_2: '3EE81A'
+    l_standup_left_4_3: '43FF00'
+    l_standup_left_5_3: '3970CC'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_2: 'FCFDFD'
+    l_standup_left_2_0: '1B5DC2'
+    l_standup_left_4_2: '39D72F'
+    l_standup_left_5_3: '206EAE'
+    
+- time: '+1'
+  lights:
+    l_standup_left_2_0: '1B5BC5'
+    l_standup_left_3_0: '2073A7'
+    l_standup_left_4_2: '1B5BC5'
+    l_standup_left_5_3: '1B5BC5'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'BFD1EE'
+    l_standup_left_3_0: '1B5BC5'
+    l_standup_left_3_1: '2070AB'
+    l_standup_left_3_2: '1B5BC5'
+    l_standup_left_4_1: '289380'
+    l_standup_left_4_2: '43FF00'
+    l_standup_left_5_2: '3970CC'
+    
+- time: '+1'
+  lights:
+    l_standup_left_1_1: 'DDE7F5'
+    l_standup_left_2_1: '2EAB64'
+    l_standup_left_2_4: '1B5BC4'
+    l_standup_left_3_1: '43FF00'
+    l_standup_left_4_1: '30B25C'
+    l_standup_left_4_4: '1B5BC5'
+    l_standup_left_5_2: '206EAE'
+    l_standup_left_5_3: '1D63BB'
+    
