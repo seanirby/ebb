@@ -71,9 +71,9 @@ class EbbMode(Mode):
         return hasattr(self.machine, "_ebb_running_from_test") and self.machine._ebb_running_from_test
 
     def speak(self, message):
-        # # turn off speaking during tests
-        # if self.is_running_from_test():
-        #     return 
+        # turn off speaking during tests
+        if self.is_running_from_test():
+            return 
 
         command = []
         if PLATFORM_IS_LINUX:
