@@ -2,6 +2,8 @@ from modes.ebb_mode import EbbMode
 
 class Announcer(EbbMode):
     def mode_start(self, **kwargs):
+        super().mode_start(**kwargs)
+
         # TODO: only do this for player 1
         if self.player["ball"]==1:
             self.delay.add(500, self.announce_game_start, None)
