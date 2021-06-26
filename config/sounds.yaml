@@ -3,6 +3,8 @@
 sounds:
   target_collected_0:
     max_queue_time: 0
+  crash:
+    max_queue_time: 0
   success_0:
     max_queue_time: 0
   success_0_snippet:

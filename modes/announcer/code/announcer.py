@@ -25,4 +25,4 @@ class Announcer(EbbMode):
             self.speak("{} Ball".format(hit_target_number+1))
 
     def announce_game_start(self, **kwargs):
-        self.speak("Rackum up <break time='100ms'/> human")
+        self.speak("Rackum up human")

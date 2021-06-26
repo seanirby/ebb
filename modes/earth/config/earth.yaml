@@ -7,6 +7,10 @@ mode:
   priority: 100
   
 shot_profiles:
+  earth:
+    states:
+      - name: flash
+      - name: not_flash
   earth_l:
     states:
       - name: off
@@ -19,18 +23,25 @@ shot_profiles:
 
 shots:
   sh_earth_0:
+    profile: earth
     hit_events: s_standup_left_0_active
   sh_earth_1:
+    profile: earth
     hit_events: s_standup_left_1_active
   sh_earth_2:
+    profile: earth
     hit_events: s_standup_left_2_active
   sh_earth_3:
+    profile: earth
     hit_events: s_standup_left_3_active
   sh_earth_4:
+    profile: earth
     hit_events: s_standup_left_4_active
   sh_earth_5:
+    profile: earth
     hit_events: s_standup_left_5_active
   sh_earth_6:
+    profile: earth
     hit_events: s_standup_left_6_active
   sh_earth_l_0_0:
     profile: earth_l

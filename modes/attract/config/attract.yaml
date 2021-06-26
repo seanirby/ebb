@@ -197,4 +197,4 @@ show_player:
   # #   #     br_2: "C00000FF"
   # #   #     br_3: "FF0000FF"
   # #   #     fade: 150
-  # mode_attract_started.2: attract_segment
+  mode_attract_started.2: attract_segment

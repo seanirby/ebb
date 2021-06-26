@@ -1,0 +1,115 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+  code: sequencer.Sequencer
+
+sound_loop_player:
+  sequencer_play_earth:
+    loops:
+      action: play
+      sound_loop_set: earth_loop
+      fade_in: 3s
+      timing: now
+  sequencer_play_earth_0_with_fade:
+    loops:
+      action: play_layer
+      layer: 1
+      timing: now
+      fade_in: 3
+  sequencer_play_earth_0_no_fade:
+    loops:
+      action: play_layer
+      layer: 1
+      timing: now
+  sequencer_play_earth_1_with_fade:
+    loops:
+      action: play_layer
+      layer: 2
+      timing: now
+      fade_in: 3
+  sequencer_play_earth_1_no_fade:
+    loops:
+      action: play_layer
+      layer: 2
+      timing: now
+  sequencer_play_earth_2_with_fade:
+    loops:
+      action: play_layer
+      layer: 3
+      timing: now
+      fade_in: 3
+  sequencer_play_earth_2_no_fade:
+    loops:
+      action: play_layer
+      layer: 3
+      timing: now
+  sequencer_play_earth_3_with_fade:
+    loops:
+      action: play_layer
+      layer: 4
+      timing: now
+      fade_in: 3
+  sequencer_play_earth_3_no_fade:
+    loops:
+      action: play_layer
+      layer: 4
+      timing: now
+  sequencer_play_earth_4_with_fade:
+    loops:
+      action: play_layer
+      layer: 5
+      timing: now
+      fade_in: 3
+  sequencer_play_earth_4_no_fade:
+    loops:
+      action: play_layer
+      layer: 5
+      timing: now
+  sequencer_play_earth_5_with_fade:
+    loops:
+      action: play_layer
+      layer: 6
+      timing: now
+      fade_in: 3
+  sequencer_play_earth_5_no_fade:
+    loops:
+      action: play_layer
+      layer: 6
+      timing: now
+  sequencer_play_earth_6_with_fade:
+    loops:
+      action: play_layer
+      layer: 7
+      timing: now
+      fade_in: 3
+  sequencer_play_earth_6_no_fade:
+    loops:
+      action: play_layer
+      layer: 7
+      timing: now
+  sequencer_restart:
+    loops:
+      action: jump_to
+      time: 0.0
+
+event_player:
+  timer_sequencer_start_delay_complete: sequencer_delayed_audio_init
+  sh_earth_0_flash_hit: sequencer_play_earth_0_with_fade
+  sh_earth_1_flash_hit: sequencer_play_earth_1_with_fade
+  sh_earth_2_flash_hit: sequencer_play_earth_2_with_fade
+  sh_earth_3_flash_hit: sequencer_play_earth_3_with_fade
+  sh_earth_4_flash_hit: sequencer_play_earth_4_with_fade
+  sh_earth_5_flash_hit: sequencer_play_earth_5_with_fade
+  sh_earth_6_flash_hit: sequencer_play_earth_6_with_fade
+  s_sling_left_active: sequencer_restart
+  s_sling_right_active: sequencer_restart
+
+sound_player:
+  sequencer_restart: crash
+
+timers:
+  sequencer_start_delay:
+    end_value: 1
+    tick_interval: 1850ms
+    start_running: True

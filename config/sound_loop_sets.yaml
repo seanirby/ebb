@@ -3,4 +3,28 @@
 sound_loop_sets:
   racks_collected_success_snippet:
     sound: success_0_snippet
-
+  earth_loop:
+    sound: earth_loop_pulse
+    volume: 0.35
+    layers:
+      - sound: earth_loop_shimmer
+        volume: 0.35
+        initial_state: stop
+      - sound: earth_loop_pads
+        volume: 0.35
+        initial_state: stop
+      - sound: earth_loop_snare
+        volume: 0.40
+        initial_state: stop
+      - sound: earth_loop_kick
+        volume: 0.40
+        initial_state: stop
+      - sound: earth_loop_bass
+        volume: 0.35
+        initial_state: stop
+      - sound: earth_loop_hi_hat
+        volume: 0.35
+        initial_state: stop
+      - sound: earth_loop_synth
+        volume: 0.35
+        initial_state: stop
