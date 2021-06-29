@@ -100,3 +100,5 @@ timers:
       - action: reset
         event: timer_spinner_qualified_timeout_complete
 
+sound_player:
+  s_spinner_active: spin_0

@@ -1,0 +1,13 @@
+#config_version=5
+
+mode:
+  start_events: ball_starting
+
+event_player:
+  s_outlane_left_active{device.playfields.playfield.balls==1 and not device.ball_saves.default.enabled}: drain_draining
+  s_outlane_right_active{device.playfields.playfield.balls==1 and not device.ball_saves.default.enabled}: drain_draining
+  # TODO: do i need a way to detect a center drain, currently need to stop this from being called if it drained down an outlane
+  # s_trough_5_active: drain
+
+sound_player:
+  drain_draining: drain

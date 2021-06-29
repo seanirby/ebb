@@ -130,3 +130,4 @@ switches:
     number: A3-B1-4
   s_spinner:
     number: A3-B1-5
+    debounce: quick

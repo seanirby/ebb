@@ -1,10 +1,102 @@
 #config_version=5
 
 sounds:
+  launch:
+    volume: .9
+  neg_0:
+    volume: 0.7
+  neg_1:
+    volume: 0.7
+  neg_2:
+    volume: 0.7
+  neg_3:
+    volume: 0.7
+  neg_4:
+    volume: 0.7
+  neg_5:
+    volume: 0.3
+  wobl_0:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  wobl_1:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  wobl_2:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  wobl_3:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  wobl_4:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  wobl_5:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  wobl_6:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  wobl_7:
+    volume: 0.7
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
   target_collected_0:
     max_queue_time: 0
+  charge:
+    max_queue_time: 0
+    volume: 0.25
+    ducking:
+      target: loops
+      attack: 500ms
+      attenuation: 0.1
+      release: 500ms
+      release_point: 0
+  spin_0:
+    max_queue_time: 0.0
+    volume: 0.3
+    simultaneous_limit: 1
   crash:
     max_queue_time: 0
+    volume: .3
   success_0:
     max_queue_time: 0
   success_0_snippet:

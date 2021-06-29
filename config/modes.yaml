@@ -13,10 +13,12 @@ modes:
   - ball_save
   - base
   - base_bonus
+  - drain
   - drops
   - earth
   - jackpot
   - lanes_upper
+  - launch
   - mars
   - mball
   - mball_locked

@@ -4,14 +4,32 @@ sound_pools:
   wobble:
     type: random_force_all
     track: sfx
+    simultaneous_limit: 1
     sounds:
-      # - wobble_0
-      # - wobble_1
-      # - wobble_2
-      # - wobble_3
-      # - wobble_4
-      # - wobble_5
-      # - wobble_6
-      - wobble_7
+      - wobl_0
+      - wobl_1
+      - wobl_2
+      - wobl_3
+      - wobl_4
+      - wobl_5
+      - wobl_6
+      - wobl_7
+  drain:
+    type: random_force_all
+    track: sfx
+    simultaneous_limit: 1
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.0
+      release: 10ms
+      release_point: 0
+    sounds:
+      - neg_0
+      - neg_1
+      - neg_2
+      - neg_3
+      - neg_4
+      - neg_5
 
 

@@ -88,6 +88,10 @@ sound_loop_player:
       action: play_layer
       layer: 7
       timing: now
+  drain_draining:
+    loops:
+      action: stop
+      fade_out: 1
   sequencer_restart:
     loops:
       action: jump_to
@@ -107,9 +111,10 @@ event_player:
 
 sound_player:
   sequencer_restart: crash
-
+  
 timers:
   sequencer_start_delay:
     end_value: 1
     tick_interval: 1850ms
     start_running: True
+

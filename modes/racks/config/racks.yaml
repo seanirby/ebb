@@ -149,3 +149,8 @@ sound_loop_player:
 
 sound_player:
   racks_collected_loop_stop: success_0
+  player_shot_sh_racks_collect_enabled{value}: charge
+  player_shot_sh_racks_collect_enabled{not value}:
+    charge:
+      action: stop
+      fade_out: .25
