@@ -50,20 +50,8 @@ class Awards(Mode):
             j = awards[0]
         else:
             direction = kwargs["direction"]
-
-            # # because this function could be called from 'handle_awards_collected' we manually put in the active position into the awards array so it can be the basis for the next selection
-            # awards.append(pos)
-            # awards = list(set(awards))
-            # awards.sort()
-
-            # i = awards.index(pos)
-            # next_i = (i + direction) % len(awards)
-
-            # if pos==4:
-            #     pdb.set_trace()
-
-            # [0, 1, 2, 5, 6]
             j = pos + direction
+
             while True:
                 if 0 <= j < NUM_AWARDS:
                     if self.player["award_{}_collected".format(j)] > 0:

@@ -1,0 +1,11 @@
+#config_version=5
+
+segment_displays:
+  row_0:
+    number: 1
+    size: 16
+    platform: virtual
+  row_1:
+    number: 2
+    size: 16
+    platform: virtual

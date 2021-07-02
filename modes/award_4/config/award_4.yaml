@@ -41,3 +41,6 @@ show_player:
 event_player:
   saucer_collect_award_show_start:
     - spinner_qualified_from_award
+  awards_award_collected:
+    announce_message:
+      message: "super spinner online"

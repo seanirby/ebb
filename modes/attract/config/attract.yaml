@@ -149,7 +149,7 @@ show_player:
   # mode_attract_started.1:
   #   color_wheel:
   #     speed: 10
-  # TODO: fix color wheel show because i had to fix light orders
+      # TODO: fix color wheel show because i had to fix light orders
     # mars_success_2:
     #   priority: 10
     #   speed: 10

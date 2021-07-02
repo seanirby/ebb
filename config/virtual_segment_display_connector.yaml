@@ -1,0 +1,4 @@
+#config_version=5
+
+virtual_segment_display_connector:
+  segment_displays: row_0, row_1

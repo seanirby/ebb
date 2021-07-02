@@ -25,7 +25,6 @@ class TestMars(EbbMachineTestCase):
             if should_assert_state:
                 self.assertPlaceholderEvaluates(state, "device.shots.sh_mars_earth_l_{}_{}.state_name".format(i, column))
                 
-
     # def test_mars_not_running_on_game_start(self):
     #     self.start_game()
     #     self.assertModeNotRunning("mars")
@@ -171,13 +170,9 @@ class TestMars(EbbMachineTestCase):
     def test_mars_before_hurry_up_has_multicue_disabled(self):
         self.start_game()
 
-        # self.collect_earth_rack()
+        self.collect_earth_rack()
         self.assertPlaceholderEvaluates(False, "device.shots.sh_multicue.enabled")
         self.assertPlaceholderEvaluates(False, "device.shots.sh_mars_multicue.enabled")
         self.hit_and_release_switch_and_run("s_standup_upper", .1)
         self.assertPlaceholderEvaluates(False, "device.shots.sh_multicue.enabled")
         self.assertPlaceholderEvaluates(False, "device.shots.sh_mars_multicue.enabled")
-
-
-
-

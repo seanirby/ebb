@@ -1,0 +1,12 @@
+#config_version=5
+
+displays:
+  window:
+     width: 1300
+     height: 400
+  normal:
+     width: 1300
+     height: 400
+  background:
+     width: 1300
+     height: 400

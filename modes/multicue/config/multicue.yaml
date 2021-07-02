@@ -70,3 +70,10 @@ shots:
 
 event_player:
   sh_multicue_hit:  multicue_qualified
+  multicue_qualified: 
+    announce_message:
+      message: "Multeecue activated"
+      delay: 250
+
+sound_player:
+  multicue_qualified: multicue

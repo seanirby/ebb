@@ -99,3 +99,8 @@ event_player:
     - activate_drop_right
     - deactivate_drop_left
     - start_saucer_shot_timers
+
+sound_player:
+  player_award_selected.1{change < 0}: select_down_1
+  player_award_selected.2{change > 0}: select_up_1
+    

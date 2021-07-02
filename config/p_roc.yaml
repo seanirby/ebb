@@ -1,0 +1,7 @@
+#config_version=5
+
+p_roc:
+  pd_led_boards:
+    8:
+      use_ws281x_0: True
+      ws281x_0_last_address: 327

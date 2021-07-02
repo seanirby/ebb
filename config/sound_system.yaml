@@ -8,6 +8,7 @@ sound_system:
        simultaneous_sounds: 32
        volume: 1
        preload: yes
+     # TODO: May need to update this to not be preloaded
      loops:
        type: sound_loop
        volume: 1

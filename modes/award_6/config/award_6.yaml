@@ -17,3 +17,8 @@ show_player:
 variable_player:
   saucer_collect_award_show_start:
     score: 1000000
+
+event_player:
+  awards_award_collected:
+    announce_message:
+      message: "scratch guards online"

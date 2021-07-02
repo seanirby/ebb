@@ -13,16 +13,22 @@ class Announcer(EbbMode):
 
     def announce_message(self, **kwargs):
         message = kwargs.get("message")
-        self.speak(message)
+        delay = kwargs.get("delay")
+
+        if delay != None:
+            self.delay.add(delay, lambda: self.speak(message))
+        else:
+            self.speak(message)
 
     def announce_ball_collected(self, **kwargs):
         hit_target_number = kwargs.get("hit_target_number")
         is_rack_ready = kwargs.get("is_rack_ready")
 
         if is_rack_ready:
-            self.speak("{} Ball. Get <break time='30ms'> The <break time='100ms'> Eight <break time='150ms'> Ball".format(hit_target_number+1))
+            self.speak("{} Ball. Get The Eight Ball".format(hit_target_number+1))
         else:
             self.speak("{} Ball".format(hit_target_number+1))
 
     def announce_game_start(self, **kwargs):
-        self.speak("Rackum up human")
+        self.speak("Rackum up")
+

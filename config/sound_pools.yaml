@@ -6,14 +6,14 @@ sound_pools:
     track: sfx
     simultaneous_limit: 1
     sounds:
-      - wobl_0
-      - wobl_1
-      - wobl_2
-      - wobl_3
-      - wobl_4
-      - wobl_5
-      - wobl_6
-      - wobl_7
+      - wobble_0
+      - wobble_1
+      - wobble_2
+      - wobble_3
+      - wobble_4
+      - wobble_5
+      - wobble_6
+      - wobble_7
   drain:
     type: random_force_all
     track: sfx

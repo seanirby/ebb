@@ -1,73 +1,30 @@
 #config_version=5
 
-
-# hardware:
-#   platform: virtual_pinball
-
-hardware:
-  platform: p3_roc, virtual
-  driverboards: pdb
-  segment_displays: virtual
-
-virtual_platform_start_active_switches:
-  - s_trough_0
-  - s_trough_1
-  - s_trough_2
-
-p_roc:
-  pd_led_boards:
-    8:
-      use_ws281x_0: True
-      ws281x_0_last_address: 327
-
 config:
 - assets.yaml
 - autofire_coils.yaml
 - ball_devices.yaml
 - ball_saves.yaml
 - coils.yaml
+- displays.yaml
 - drop_targets.yaml
 - flippers.yaml
+- hardware.yaml
 - keyboard.yaml
 - lights.yaml
-# # - machine_vars.yaml
+- machine_vars.yaml
 - modes.yaml
+- p_roc.yaml
 - player_vars.yaml
 - playfields.yaml
-- slides.yaml
+- segment_displays.yaml
 - shot_profiles.yaml
+- slides.yaml
 - sound_loop_sets.yaml
 - sound_pools.yaml
 - sound_system.yaml
 - sounds.yaml
 - switches.yaml
-
-# TODO: create configs for this stuff
-window:
-    width: 1300
-    height: 400
-    source_display: window
-        
-segment_displays:
-  row_0:
-    number: 1
-    size: 16
-    platform: virtual
-  row_1:
-    number: 2
-    size: 16
-    platform: virtual
-
-virtual_segment_display_connector:
-  segment_displays: row_0, row_1
-    
-displays:
-  window:
-     width: 1300
-     height: 400
-  normal:
-     width: 1300
-     height: 400
-  background:
-     width: 1300
-     height: 400
+- virtual_platform_start_active_switches.yaml
+- virtual_segment_display_connector.yaml
+- window.yaml

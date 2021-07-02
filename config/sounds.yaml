@@ -15,7 +15,7 @@ sounds:
     volume: 0.7
   neg_5:
     volume: 0.3
-  wobl_0:
+  wobble_0:
     volume: 0.7
     ducking:
       target: loops
@@ -23,7 +23,7 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  wobl_1:
+  wobble_1:
     volume: 0.7
     ducking:
       target: loops
@@ -31,7 +31,7 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  wobl_2:
+  wobble_2:
     volume: 0.7
     ducking:
       target: loops
@@ -39,7 +39,7 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  wobl_3:
+  wobble_3:
     volume: 0.7
     ducking:
       target: loops
@@ -47,7 +47,7 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  wobl_4:
+  wobble_4:
     volume: 0.7
     ducking:
       target: loops
@@ -55,7 +55,7 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  wobl_5:
+  wobble_5:
     volume: 0.7
     ducking:
       target: loops
@@ -63,7 +63,7 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  wobl_6:
+  wobble_6:
     volume: 0.7
     ducking:
       target: loops
@@ -71,7 +71,7 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  wobl_7:
+  wobble_7:
     volume: 0.7
     ducking:
       target: loops
@@ -79,8 +79,6 @@ sounds:
       attenuation: 0.8
       release: 10ms
       release_point: 0
-  target_collected_0:
-    max_queue_time: 0
   charge:
     max_queue_time: 0
     volume: 0.25
@@ -91,7 +89,7 @@ sounds:
       release: 500ms
       release_point: 0
   spin_0:
-    max_queue_time: 0.0
+    max_queue_time: 0
     volume: 0.3
     simultaneous_limit: 1
   crash:
@@ -100,11 +98,5 @@ sounds:
   success_0:
     max_queue_time: 0
   success_0_snippet:
-    max_queue_time: 0
-  target_collected_ogg_0:
-    max_queue_time: 0
-  loop_target_collected:
-    max_queue_time: 0
-  loop_target_collected_2:
     max_queue_time: 0
 

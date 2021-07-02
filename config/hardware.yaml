@@ -1,0 +1,10 @@
+#config_version=5
+
+
+hardware:
+  platform: p3_roc, virtual
+  driverboards: pdb
+  segment_displays: virtual
+
+# hardware:
+#   platform: virtual_pinball

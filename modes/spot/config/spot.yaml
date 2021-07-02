@@ -2,19 +2,21 @@
 
 mode:
   start_events: ball_starting
-  code: spot_ball.SpotBall
 
 shot_profiles:
-  spot_ball:
+  spot:
     states:
       - name: flash
         show: flash
         speed: 10
 
 shots:
-  sh_spot_ball:
-    switch: s_target_right_3
-    profile: spot_ball
+  sh_spot:
+    switch: s_standup_center
+    profile: spot
     show_tokens:
-      light: l_target_right_3_0
+      light: l_standup_center
+
+sound_player:
+  sh_spot_hit: rack_advance
 
