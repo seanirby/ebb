@@ -44,12 +44,17 @@ class Earth(EbbMode):
             # TODO: dedupe the formula below
             targets = list(map(lambda x: x % NUM_TARGETS, list(range(multicue_position-MULTICUE_SIZE, multicue_position+MULTICUE_SIZE+1))))
 
-        for target in targets:
-            self.handle_speech(target)
-            self.update_target_progress(target)
-
-        self.update_target_lights()
-        self.update_if_rack_can_be_collected()
+        # this was a multicue hit
+        if len(targets) > 1:
+            for target_number in targets:
+                self.machine.events.post("earth_{}_multicue_hit".format(target_number))
+                # TODO play a three sequence hit sound and fade out the multicue
+        # normal hit
+        else:
+            self.handle_speech(targets[0])
+            self.update_target_progress(targets[0])
+            self.update_target_lights()
+            self.update_if_rack_can_be_collected()
 
     def handle_speech(self, hit_target_number):
         hit_target_progress = self.player["earth_{}_progress".format(hit_target_number)]

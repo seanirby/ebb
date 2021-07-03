@@ -24,25 +24,25 @@ shot_profiles:
 shots:
   sh_earth_0:
     profile: earth
-    hit_events: s_standup_left_0_active
+    hit_events: s_standup_left_0_active, earth_0_multicue_hit
   sh_earth_1:
     profile: earth
-    hit_events: s_standup_left_1_active
+    hit_events: s_standup_left_1_active, earth_1_multicue_hit
   sh_earth_2:
     profile: earth
-    hit_events: s_standup_left_2_active
+    hit_events: s_standup_left_2_active, earth_2_multicue_hit
   sh_earth_3:
     profile: earth
-    hit_events: s_standup_left_3_active
+    hit_events: s_standup_left_3_active, earth_3_multicue_hit
   sh_earth_4:
     profile: earth
-    hit_events: s_standup_left_4_active
+    hit_events: s_standup_left_4_active, earth_4_multicue_hit
   sh_earth_5:
     profile: earth
-    hit_events: s_standup_left_5_active
+    hit_events: s_standup_left_5_active, earth_5_multicue_hit
   sh_earth_6:
     profile: earth
-    hit_events: s_standup_left_6_active
+    hit_events: s_standup_left_6_active, earth_6_multicue_hit
   sh_earth_l_0_0:
     profile: earth_l
     show_tokens:
