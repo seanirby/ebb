@@ -51,7 +51,8 @@ class EbbMode(Mode):
         if stderr:
             print(f'[stderr]\n{stderr.decode()} stirby')
 
-        self.speech_stack.pop(0)
+        if self.speech_stack and len(self.speech_stack) > 0:
+            self.speech_stack.pop(0)
 
         if len(self.speech_stack) > 0:
             asyncio.create_task(self.speak_async())
