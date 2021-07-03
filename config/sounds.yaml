@@ -82,6 +82,7 @@ sounds:
   charge:
     max_queue_time: 0
     volume: 0.25
+    simultaneous_limit: 1
     ducking:
       target: loops
       attack: 500ms
@@ -99,4 +100,37 @@ sounds:
     max_queue_time: 0
   success_0_snippet:
     max_queue_time: 0
+  rack_advance:
+    volume: 1.0
+    simultaneous_limit: 1
+  select_down_1:
+    volume: 0.6
+    simultaneous_limit: 1
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  select_up_1:
+    volume: 0.6
+    simultaneous_limit: 1
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.8
+      release: 10ms
+      release_point: 0
+  load:
+    volume: 1.0
+  saucer:
+    volume: 1.0
+    simultaneous_limit: 1
+    ducking:
+      target: loops
+      attack: 10ms
+      attenuation: 0.1
+      release: 10ms
+      release_point: 0
+
 

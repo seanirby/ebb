@@ -149,7 +149,13 @@ sound_loop_player:
 
 sound_player:
   racks_collected_loop_stop: success_0
-  player_shot_sh_racks_collect_enabled{value}: charge
+  s_hook_active: load
+  # player_shot_sh_racks_collect_enabled{value}: charge
+  s_saucer_active:
+    saucer:
+      action: play
+    charge:
+      action: stop
   player_shot_sh_racks_collect_enabled{not value}:
     charge:
       action: stop
